@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -26,11 +26,11 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -38,7 +38,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,7 +54,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -73,7 +75,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -95,11 +99,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -127,8 +136,8 @@ CENTRO DE CIÊNCIA E TECNOLOGIA
 status collapsed
 
 \begin_layout Plain Layout
-O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
- em questão.
+O título deve ser o mais claro possível,
+ não deixando dúvidas sobre o assunto em questão.
  O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
 \end_layout
 
@@ -156,15 +165,51 @@ DESENVOLVIMENTO DO SOFTWARE
 \begin_inset Newline newline
 \end_inset
 
-XXX
+
+\size default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+OrganizaPetro
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+
+\size large
+
 \begin_inset Newline newline
 \end_inset
 
-DISCIPLINA LEP - 0XXXX: Introdução ao Projeto de Engenharia
+
+\size default
+Github:
+ SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia
+\size large
+
 \begin_inset Newline newline
 \end_inset
 
-Setor de Modelagem Matemática Computacional
+DISCIPLINA LEP - LEP01348 :
+ Introdução ao Projeto de Engenharia
+\begin_inset Newline newline
+\end_inset
+
+Setor de Modelagem Matemática e Computacional
 \end_layout
 
 \begin_layout Standard
@@ -186,6 +231,23 @@ AUTORES
 \begin_inset Newline newline
 \end_inset
 
+seu nome
+\begin_inset Newline newline
+\end_inset
+
+Prof.
+ André Duarte Bueno
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size large
 Versão 2:
 \begin_inset Newline newline
 \end_inset
@@ -198,6 +260,11 @@ Prof.
  André Duarte Bueno
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset VSpace 5cm
 \end_inset
@@ -207,7 +274,8 @@ Prof.
 status open
 
 \begin_layout Plain Layout
-o valor de 4cm pode ser alterado, para que a distribuição fique mais uniforme
+o valor de 4cm pode ser alterado,
+ para que a distribuição fique mais uniforme
 \end_layout
 
 \end_inset
@@ -223,7 +291,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Janeiro - 2023
+Março - 2025
 \begin_inset Note Note
 status open
 

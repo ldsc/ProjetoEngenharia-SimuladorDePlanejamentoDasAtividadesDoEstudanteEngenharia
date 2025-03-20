@@ -1,0 +1,149 @@
+#+TITLE: Projeto Engenharia - Simulador de Planejamento das Atividades do Estudante de Engenharia
+#+AUTHOR: [Nomes das Alunas]
+#+DATE: [Data de Criação]
+#+OPTIONS: toc:nil num:nil
+
+* 1. Visão Geral do Software
+  O "OrganizaPetro" será um software de apoio ao estudante de Engenharia de Petróleo, desenvolvido em C++23 com Qt 6.6 (ou superior), utilizando Git/GitHub para controle de versão, CMake para gerenciamento de compilação e bibliotecas utilitárias para gráficos, agenda e estatística. A metodologia de desenvolvimento será Scrum, com dois ciclos: ciclo 1 (funcionalidades principais sem interface gráfica) e ciclo 2 (implementação da interface gráfica).
+
+* 2. Requisitos Funcionais
+  * 2.1. Organização da Grade Curricular:
+    - Importar e exibir a grade curricular completa.
+    - Visualizar disciplinas por semestre, carga horária e pré-requisitos.
+    - Marcar disciplinas cursadas, reprovações e notas.
+    - Painel de progresso com carga horária total e atividades complementares.
+    - Cálculo da taxa de aprovação por área de conhecimento.
+    - Identificação do nível de dificuldade por tipo de disciplina (teórica/experimental).
+  * 2.2. Planejamento Semestral:
+    - Analisar histórico, taxa de aprovação e nível de dificuldade para sugerir disciplinas.
+    - Considerar disponibilidade de tempo (estágio, vida pessoal).
+    - Criação de cenários e cálculo da carga horária semestral.
+    - Ajuste automático do número de disciplinas com base em problemas pessoais.
+  * 2.3. Planejamento de Estudos:
+    - Quadro de horários semanal com aulas, estudos, exercícios e lazer.
+    - Personalização e alertas de conflitos.
+    - Ajuste dinâmico do tempo de estudo por disciplina.
+  * 2.4. Acompanhamento de Atividades Complementares:
+    - Registro e progresso de atividades de extensão (10%) e acadêmicas (60h).
+  * 2.5. Gerenciamento de Estágios:
+    - Registro de estágios obrigatórios e não obrigatórios.
+    - Verificação de requisitos para estágio obrigatório.
+    - Consideração do impacto do estágio no tempo disponível.
+  * 2.6. Trabalho de Conclusão de Curso (TCC):
+    - Registro e acompanhamento de TCC I e TCC II.
+  * 2.7. Gerenciamento de Vida Pessoal:
+    - Registro de problemas financeiros ou familiares (simples/complexos).
+    - Ajuste automático do número de disciplinas com base nos problemas.
+    - Opção de desativar o ajuste automático.
+
+* 3. Requisitos Não Funcionais
+  - Interface gráfica intuitiva.
+  - Desempenho rápido e baixo consumo de recursos.
+  - Portabilidade (Windows, macOS, Linux).
+  - Código organizado e documentado.
+
+* 4. Arquitetura do Software
+  - *Linguagem de Programação:* C++23
+  - *Interface Gráfica:* Qt 6.6 (ou superior)
+  - *Banco de Dados:* SQLite
+  - *Controle de Versão:* Git/GitHub
+  - *Gerenciamento de Compilação:* CMake
+  - *Metodologia de Desenvolvimento:* Scrum (2 ciclos)
+  - *Módulos:*
+    - Módulo de Grade Curricular
+    - Módulo de Planejamento Semestral
+    - Módulo de Planejamento de Estudos
+    - Módulo de Atividades Complementares
+    - Módulo de Estágios
+    - Módulo de TCC
+    - Módulo de Vida Pessoal
+  - *Bibliotecas Utilitárias:*
+    - QCustomPlot (gráficos)
+    - Biblioteca de agenda mensal (a ser definida)
+    - Biblioteca de estatística (a ser definida)
+
+* 5. Design da Interface Gráfica
+  * 5.1. Tela Inicial:
+    - Menu principal com acesso aos módulos.
+    - Painel de progresso com informações resumidas.
+  * 5.2. Módulo de Grade Curricular:
+    - Tabela com disciplinas (nome, código, carga horária, pré-requisitos).
+    - Filtros: semestre, área de conhecimento, tipo (teórica/experimental).
+    - Opções: marcar disciplinas cursadas, reprovações, notas.
+    - Gráficos: taxa de aprovação por área (QCustomPlot).
+  * 5.3. Módulo de Planejamento Semestral:
+    - Painel de sugestões de disciplinas (considerando histórico e dificuldades).
+- Criação de cenários (arrastar e soltar disciplinas).
+    - Cálculo da carga horária semestral e alertas de sobrecarga.
+    - Ajuste automático de disciplinas (problemas pessoais).
+  * 5.4. Módulo de Planejamento de Estudos:
+    - Quadro de horários semanal interativo (arrastar e soltar atividades).
+    - Opções: adicionar/remover atividades, personalizar horários.
+    - Alertas de conflitos e tempo de estudo ajustado.
+    - Agenda mensal de atividades.
+  * 5.5. Módulo de Atividades Complementares:
+    - Formulário para registrar atividades de extensão e acadêmicas.
+    - Painel de progresso com gráficos e porcentagens.
+  * 5.6. Módulo de Estágios:
+    - Formulário para registrar estágios obrigatórios e não obrigatórios.
+    - Verificação de requisitos e alertas.
+    - Visualização do impacto no tempo disponível.
+  * 5.7. Módulo de TCC:
+    - Formulário para registrar etapas do TCC I e TCC II.
+    - Acompanhamento do progresso e alertas de prazos.
+  * 5.8. Módulo de Vida Pessoal:
+    - Formulário para registrar problemas pessoais (nível de gravidade).
+    - Opção de ativar/desativar ajuste automático de disciplinas.
+
+* 6. Cálculos e Algoritmos
+  * 6.1. Taxa de Aprovação por Área:
+    - Porcentagem de aprovação em cada área (química, cálculo, física, etc.).
+    - Gráficos e tabelas comparativas (QCustomPlot).
+  * 6.2. Nível de Dificuldade por Disciplina:
+    - Análise de notas, reprovações e tipo de disciplina.
+    - Classificação: fácil, médio, difícil (ícones ou cores).
+    - Cálculos estatísticos para determinar a dificuldade.
+  * 6.3. Ajuste Automático de Disciplinas:
+    - Número base de disciplinas, redução por gravidade dos problemas.
+    - Priorização por pré-requisitos e dificuldade.
+    - Algoritmo de otimização para seleção de disciplinas.
+  * 6.4. Ajuste Dinâmico do Tempo de Estudo:
+    - Carga efetiva, dificuldade e tempo de estudo ideal.
+    - Ajuste no quadro de horários.
+  * 6.5. Geração de Gráficos:
+    - Utilização da biblioteca QCustomPlot para geração de gráficos informativos.
+
+* 7. Casos de Uso
+  - Planejar semestre com problemas pessoais (registro, sugestões, cenários).
+  - Criar quadro de horários com tempo de estudo ajustado (aulas, atividades, alertas).
+  - Acompanhar taxa de aprovação (gráficos e tabelas).
+  - Visualizar agenda mensal de atividades.
+
+* 8. Tecnologias
+  - C++23
+  - Qt 6.6 (ou superior)
+  - SQLite
+  - Git/GitHub
+  - CMake
+  - QCustomPlot
+  - Biblioteca de agenda mensal (a ser definida)
+  - Biblioteca de estatística (a ser definida)
+
+* 9. Cronograma (4 meses)
+  * Mês 1:
+    - Configuração do ambiente de desenvolvimento (C++23, Qt 6.6, Git, CMake).
+    - Desenvolvimento do módulo de Grade Curricular (sem interface gráfica).
+    - Implementação dos cálculos de taxa de aprovação e nível de dificuldade.
+    - Testes unitários e integração contínua.
+  * Mês 2:
+    - Desenvolvimento dos módulos de Planejamento Semestral e Planejamento de Estudos (sem interface gráfica).
+    - Implementação dos algoritmos de ajuste automático e dinâmico.
+    - Integração com a biblioteca de agenda mensal.
+    - Testes unitários e integração contínua.
+  * Mês 3:
+    - Desenvolvimento dos módulos de Atividades Complementares, Estágios, TCC e Vida Pessoal (sem interface gráfica).
+    - Integração com a biblioteca de estatística.
+    - Implementação da lógica de gerenciamento de dados e cálculos estatísticos.
+    - Testes unitários e integração contínua.
+  * Mês 4:
+    - Implementação da interface gráfica utilizando Qt 6.6.

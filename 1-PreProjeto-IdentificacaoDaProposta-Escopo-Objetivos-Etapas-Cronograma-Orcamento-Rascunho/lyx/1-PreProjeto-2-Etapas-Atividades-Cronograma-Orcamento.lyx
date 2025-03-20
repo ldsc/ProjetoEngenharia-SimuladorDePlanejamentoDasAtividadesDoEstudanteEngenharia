@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -26,11 +26,11 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -38,7 +38,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,7 +54,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -73,7 +75,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -95,17 +99,23 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-Etapas, Cronograma e Orçamento Preliminar
+Etapas,
+ Cronograma e Orçamento Preliminar
 \begin_inset CommandInset label
 LatexCommand label
 name "cha: Etapas, Cronograma e Orçamento  Preliminar"
@@ -116,7 +126,8 @@ name "cha: Etapas, Cronograma e Orçamento  Preliminar"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo temos a lista das etapas, cronograma e orçamento.
+Neste capítulo temos a lista das etapas,
+ cronograma e orçamento.
 \end_layout
 
 \begin_layout Section
@@ -131,8 +142,9 @@ name "sec: Etapas "
 \end_layout
 
 \begin_layout Standard
-Esta proposta, caso aprovada, será desenvolvida seguindo as etapas abaixo
- descritas.
+Esta proposta,
+ caso aprovada,
+ será desenvolvida seguindo as etapas abaixo descritas.
  Um detalhamento das etapas esta disponível 
 \begin_inset CommandInset href
 LatexCommand href
@@ -151,8 +163,9 @@ Etapa 0 - Definição do desafio tecnológico
 
 \begin_deeper
 \begin_layout Itemize
-Identificação do problema, descrição do desafio tecnológico, objetivo geral
- e solução esperada (TRL/CRL).
+Identificação do problema,
+ descrição do desafio tecnológico,
+ objetivo geral e solução esperada (TRL/CRL).
 \end_layout
 
 \end_deeper
@@ -162,7 +175,8 @@ Etapa 1 - Elaboração do pré-projeto
 
 \begin_deeper
 \begin_layout Itemize
-Elaboração da primeira versão do projeto, rascunho inicial (este documento).
+Elaboração da primeira versão do projeto,
+ rascunho inicial (este documento).
 \end_layout
 
 \end_deeper
@@ -173,8 +187,8 @@ Etapa 2 - Elaboração do projeto - detalhamento e contrato
 \begin_deeper
 \begin_layout Itemize
 Após aprovação do pré-projeto os alunos detalham o mesmo gerando o projeto.
- Os dados do pré-projeto podem ser copiados para o projeto, a seguir tudo
- deve ser detalhado.
+ Os dados do pré-projeto podem ser copiados para o projeto,
+ a seguir tudo deve ser detalhado.
  As etapas associadas devem ser bem definidas.
  O cronograma deve ser realista.
  O orçamento deve ser bem realizado.
@@ -192,7 +206,8 @@ status open
 
 \end_deeper
 \begin_layout Itemize
-Etapa 3 - Modelagem de engenharia: 
+Etapa 3 - Modelagem de engenharia:
+ 
 \begin_inset Note Note
 status open
 
@@ -207,18 +222,22 @@ Modelagem
 
 \begin_deeper
 \begin_layout Itemize
-Concepção; Elaboração; Análise Orientada a Objeto; Projeto do Sistema; Projeto
- Orientado a Objeto.
+Concepção;
+ Elaboração;
+ Análise Orientada a Objeto;
+ Projeto do Sistema;
+ Projeto Orientado a Objeto.
 \end_layout
 
 \begin_layout Itemize
-Realização de testes lógicos; Documentação (geração dos documentos de modelagem
- e diagramas associados).
+Realização de testes lógicos;
+ Documentação (geração dos documentos de modelagem e diagramas associados).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Etapa 4 - Ciclos de planejamento, detalhamento e construção/implementação:
+Etapa 4 - Ciclos de planejamento,
+ detalhamento e construção/implementação:
  
 \begin_inset Note Note
 status open
@@ -248,18 +267,18 @@ Detalhamento e construção das "
 \emph on
 features
 \emph default
-" do software (teremos aqui diversos ciclos de desenvolvimento, a depender
- a complexidade do sistema a ser desenvolvido).
+" do software (teremos aqui diversos ciclos de desenvolvimento,
+ a depender a complexidade do sistema a ser desenvolvido).
 \end_layout
 
 \begin_layout Itemize
-Realização de testes de integração e confecção dos manuais do desenvolvedor
- e do usuário.
+Realização de testes de integração e confecção dos manuais do desenvolvedor e do usuário.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Etapa 5 - Entrega do produto: 
+Etapa 5 - Entrega do produto:
+ 
 \begin_inset Note Note
 status open
 
@@ -295,6 +314,128 @@ name "sec:Cronograma"
 
 \begin_layout Standard
 Apresenta-se a seguir o cronograma de execução do projeto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Section*
+9.
+ Cronograma (4 meses)
+\end_layout
+
+\begin_layout Itemize
+Mês 1:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Configuração do ambiente de desenvolvimento (C++23,
+ Qt 6.6,
+ Git,
+ CMake).
+ 
+\end_layout
+
+\begin_layout Itemize
+Desenvolvimento do módulo de Grade Curricular (sem interface gráfica).
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação dos cálculos de taxa de aprovação e nível de dificuldade.
+ 
+\end_layout
+
+\begin_layout Itemize
+Testes unitários e integração contínua.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mês 2:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolvimento dos módulos de Planejamento Semestral e Planejamento de Estudos (sem interface gráfica).
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação dos algoritmos de ajuste automático e dinâmico.
+ 
+\end_layout
+
+\begin_layout Itemize
+Integração com a biblioteca de agenda mensal.
+ 
+\end_layout
+
+\begin_layout Itemize
+Testes unitários e integração contínua.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mês 3:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolvimento dos módulos de Atividades Complementares,
+ Estágios,
+ TCC e Vida Pessoal (sem interface gráfica).
+ 
+\end_layout
+
+\begin_layout Itemize
+Integração com a biblioteca de estatística.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação da lógica de gerenciamento de dados e cálculos estatísticos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Testes unitários e integração contínua.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mês 4:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementação da interface gráfica utilizando Qt 6.6.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Coloque aqui informações adicionais,
+ importantes,
+ relevantes e que não se encaixaram nos demais tópicos deste documento.
+\end_layout
+
+\begin_layout Itemize
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -642,7 +783,8 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-Etapa 4 - Ciclos de planejamento, detalhamento e implementação
+Etapa 4 - Ciclos de planejamento,
+ detalhamento e implementação
 \end_layout
 
 \end_inset
@@ -780,8 +922,7 @@ Exemplo considerando produto desenvolvido em 12 meses:
 
 \begin_deeper
 \begin_layout Itemize
-Note que estamos considerando 3 ciclos de desenvolvimento e para versão
- final um prazo para finalizar detalhes e manuais.
+Note que estamos considerando 3 ciclos de desenvolvimento e para versão final um prazo para finalizar detalhes e manuais.
 \end_layout
 
 \end_deeper
@@ -1648,8 +1789,7 @@ Exemplo considerando produto desenvolvido em 18 meses:
 
 \begin_deeper
 \begin_layout Itemize
-Note que estamos considerando 3 ciclos de desenvolvimento e para versão
- final um prazo para finalizar detalhes e manuais.
+Note que estamos considerando 3 ciclos de desenvolvimento e para versão final um prazo para finalizar detalhes e manuais.
 \end_layout
 
 \end_deeper
@@ -3025,8 +3165,7 @@ Exemplo considerando produto desenvolvido em 24 meses:
 \end_layout
 
 \begin_layout Itemize
-Note que estamos considerando 4 ciclos de desenvolvimento e para versão
- final um prazo para finalizar detalhes e manuais.
+Note que estamos considerando 4 ciclos de desenvolvimento e para versão final um prazo para finalizar detalhes e manuais.
 \end_layout
 
 \begin_layout Standard
