@@ -174,7 +174,7 @@ status collapsed
 
 \end_inset
 
-OrganizaPetro
+PetroPlanner
 \begin_inset ERT
 status collapsed
 
@@ -190,8 +190,10 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-Um software aplicado que visa auxiliar estudantes do curso de engenharia de petróleo na tomada de decisões acerca da hora certa de fazer as disciplinas obrigatórios,
- optativas,
+Um software aplicado que visa auxiliar estudantes do curso de engenharia de petróleo na organização da sua grade curricular,
+levando em consideração o nível de dificuldade das disciplinas obrigatórias,
+horas gastas semanais para o estudo de cada uma delas, baseado em pesquisas com ex-alunos,
+ optativas a serem feitas,
  atividades complementares - AAC,
  atividades de extensão,
  estágio e TCC - Trabalho de Conclusão de Curso.
@@ -345,7 +347,7 @@ Equipe:
 \end_layout
 
 \begin_layout Itemize
-Nome (gerente-equipe) [email/telefone]
+Abigail Ribeiro Pinto Silva Guimarães [abigailsilva@lenep.uenf.br/22-997886502]
 \begin_inset Note Note
 status open
 
@@ -361,7 +363,7 @@ o gerente da equipe é o aluno que faz a comunicação da equipe com a gerência
 \end_layout
 
 \begin_layout Itemize
-Nome [email/telefone] 
+Maria Luiza Cornelio Ramos [mariaramos@lenep.uenf.br/22-988356947] 
 \begin_inset Note Note
 status open
 
@@ -430,7 +432,7 @@ Data de submissão:
 \end_layout
 
 \begin_layout Itemize
-Coloque aqui a data de entrega do pré-projeto ao professor coordenador
+27/03/2025
 \end_layout
 
 \begin_layout Subsubsection
@@ -503,7 +505,7 @@ Título do projeto:
 \begin_inset Quotes eld
 \end_inset
 
-rojetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia
+ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia
 \begin_inset Quotes erd
 \end_inset
 
@@ -520,7 +522,7 @@ Simulador de Engenharia
 \end_layout
 
 \begin_layout Itemize
-Simulador de matrícula
+Acompanhamento curricular
 \end_layout
 
 \begin_layout Itemize
@@ -776,7 +778,7 @@ Painel de progresso com carga horária total e atividades complementares.
 \end_layout
 
 \begin_layout Itemize
-Cálculo da taxa de aprovação por área de conhecimento.
+Cálculo da taxa de aprovação e média por área de conhecimento.
  
 \end_layout
 
