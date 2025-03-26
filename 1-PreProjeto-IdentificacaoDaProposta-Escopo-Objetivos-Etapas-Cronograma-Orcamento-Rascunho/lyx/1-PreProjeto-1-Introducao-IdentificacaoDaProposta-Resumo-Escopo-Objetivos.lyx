@@ -211,7 +211,7 @@ status collapsed
 
 \end_inset
 
-OrganizaPetro
+PetroPlanner
 \begin_inset ERT
 status collapsed
 
@@ -570,16 +570,10 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Itemize
-Definir o escopo do projeto de engenharia,
- a ideia geral do software,
- acentuar sua importância,
- usos e aplicações em engenharia [de petróleo].
+O projeto foca na criação de um software que auxilie estudantes no planejamento acadêmico, reduzindo indecisões e ajudando na formação. O sistema se diferencia de outras soluções por sintetizar funcionalidades específicas para estudantes de engenharias no geral, mas principalmente a engenharia de exploração e produção de petróleo, como simulção de impacto do adiamento de disciplinas e sugestão de combinações estratégicas de disciplinas.
 \end_layout
 
 \begin_layout Itemize
-Delimitar o assunto.
- Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros softwares.
 \end_layout
 
 \begin_layout Section
@@ -607,16 +601,10 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia,
- incluindo vínculos com engenharia de petróleo e com modelagem matemática computacional (ideia de lógica,
- algoritmos,...).
+Desenvolver um software de apoio acadêmico para estudantes de engenharia de petróleo, aprimorando o planejamento curricular e a tomada de decisão.
 \end_layout
 
 \begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma clara,
- direta,
- objetiva,
- o objetivo geral do software].
 \end_layout
 
 \end_deeper
@@ -630,41 +618,39 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema.
+Modelar matematicamente as regras e restrições acadêmicas do curso.
 \end_layout
 
 \begin_layout Itemize
-Modelagem estática do software (diagramas de caso de uso,
- de pacotes,
- de classes).
+Criar diagramas de casos de uso, diagramas de pacotes e diagramas de classes para estruturar o software.
 \end_layout
 
 \begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificando os fluxos de processamento).
+Desenvolver a modelagem dinâmica do software, incluindo algoritmos para simulação de CR e fluxo de processamento das escolhas acadêmicas.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Calcular a carga horária semanal para garantir o cumprimento do mínimo exigido.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Calcular o impacto do adiamento de disciplinas na progressão acadêmica.
 \end_layout
 
 \begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
+Simular diferentes cenários para coeficiente de rendimento (CR) e sugerir notas necessárias para alcançar metas acadêmicas. 
 \end_layout
 
 \begin_layout Itemize
 Implementar manual simplificado de uso do software.
+\end_layout
+
+\begin_layout Itemize
+Implementar um módulo para controle e monitoramento de faltas.
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um simulador de equilíbrio de disciplinas para evitar sobrecarga em um único período.
 \end_layout
 
 \end_deeper
