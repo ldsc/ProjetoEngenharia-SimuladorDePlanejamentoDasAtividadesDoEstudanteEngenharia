@@ -4229,19 +4229,11 @@ name "sec:Orçamento Preliminar"
 \end_layout
 
 \begin_layout Standard
-Colocar aqui as informações sobre o orçamento do projeto.
-\end_layout
+Este projeto não possui financiamento ou orçamento envolvido, 
+uma vez que faz uso de códigos abertos e bibliotecas de livre acesso. 
+Todo desenvolvimento é realizado com fins acadêmicos e experimentais, 
+sem alocação de recursos financeiros ou contratações externas.
 
-\begin_layout Itemize
-Considerar os equipamentos (custo e depreciação associada);
-\end_layout
-
-\begin_layout Itemize
-Considerar a mão de obra;
-\end_layout
-
-\begin_layout Itemize
-Considerar outros custos;
 \end_layout
 
 \begin_layout Section
@@ -4255,9 +4247,6 @@ name "sec:  Informações Extras Mecanismos Gestão"
 
 \end_layout
 
-\begin_layout Itemize
-Coloque aqui informações extras pertinentes.
-\end_layout
 
 \end_body
 \end_document
