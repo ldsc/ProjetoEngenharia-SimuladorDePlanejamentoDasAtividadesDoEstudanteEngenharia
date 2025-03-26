@@ -1052,12 +1052,23 @@ Tela Inicial:
 
 \begin_deeper
 \begin_layout Itemize
+Informações gerais do estudante (nome, matrícula, CRA até o momento,
+semestre em que se encontra, horas gastas semanais com estágio, IC e extensão, etc).
+ 
+\end_layout
+
+\begin_layout Itemize
 Menu principal com acesso aos módulos.
  
 \end_layout
 
 \begin_layout Itemize
-Painel de progresso com informações resumidas.
+Disciplinas em andamento com o indicativo de horas cursadas no semestre.
+ 
+\end_layout
+
+\begin_layout Itemize
+Indicativos de faltas das disciplinas do semestre.
  
 \end_layout
 
@@ -1072,7 +1083,9 @@ Módulo de Grade Curricular:
 Tabela com disciplinas (nome,
  código,
  carga horária,
- pré-requisitos).
+ pré-requisitos, 
+nível de dificuldade baseado no formulário 
+respondido pelos estudantes que já cursaram a disciplina).
  
 \end_layout
 
@@ -1098,6 +1111,11 @@ Gráficos:
  
 \end_layout
 
+\begin_layout Itemize
+Porcentagem de disciplinas realizadas.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Módulo de Planejamento Semestral:
@@ -1107,6 +1125,16 @@ Módulo de Planejamento Semestral:
 \begin_deeper
 \begin_layout Itemize
 Painel de sugestões de disciplinas (considerando histórico e dificuldades).
+ 
+\end_layout
+
+\begin_layout Itemize
+Criação de cenários de planejamento de disciplina até o fim do curso.
+ 
+\end_layout
+
+\begin_layout Itemize
+Salvar cenários para o estudante escolher o melhor para si.
  
 \end_layout
 
@@ -1140,6 +1168,13 @@ Quadro de horários semanal interativo (arrastar e soltar atividades).
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Horários das disciplinas em curso serem adicionados automaticamente,
+restanto apenas os horários livres para melhor visualização
+dos tempos livres para encaixar estudos.
+ 
+\end_layout
+
 \begin_layout Itemize
 Opções:
  adicionar/remover atividades,
