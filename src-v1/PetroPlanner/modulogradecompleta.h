@@ -2,6 +2,8 @@
 #define MODULOGRADECOMPLETA_H
 
 #include <QMainWindow>
+#include <QGridLayout>
+#include "CDisciplinas.h"
 
 namespace Ui {
 class ModuloGradeCompleta;
@@ -17,6 +19,8 @@ public:
 
 private:
     Ui::ModuloGradeCompleta *ui;
+    QGridLayout *gridLayout;
+    void carregarDisciplinas();  // Método para popular o layout
 };
 
-#endif // MODULOGRADECOMPLETA_H
+#endif
