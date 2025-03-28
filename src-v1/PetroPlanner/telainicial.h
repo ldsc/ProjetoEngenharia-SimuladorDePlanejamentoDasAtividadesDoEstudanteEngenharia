@@ -2,6 +2,7 @@
 #define TELAINICIAL_H
 
 #include <QMainWindow>
+#include "modulogradecompleta.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,5 +23,7 @@ private slots:
 
 private:
     Ui::TelaInicial *ui;
+    ModuloGradeCompleta *gradeCompleta; // Ponteiro para a janela
 };
-#endif // TELAINICIAL_H
+
+#endif
