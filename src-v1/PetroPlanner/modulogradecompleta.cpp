@@ -1,23 +1,15 @@
 #include "modulogradecompleta.h"
 #include "ui_modulogradecompleta.h"
-#include "CDisciplinas.h"
-#include <QLabel>
-#include <QFrame>
-#include <QVBoxLayout>
+#include "CDisciplinas.h"  // Incluindo a classe CDisciplinas
+#include <QPushButton>     // Para criar botões ou etiquetas para as disciplinas
+#include <QGridLayout>     // Para usar o QGridLayout
+#include <QString>         // Para conversão de string para Qstring
 
 ModuloGradeCompleta::ModuloGradeCompleta(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ModuloGradeCompleta)
 {
     ui->setupUi(this);
-
-    // Criar o layout de grade
-    QWidget *centralWidget = new QWidget(this);
-    gridLayout = new QGridLayout(centralWidget);
-    centralWidget->setLayout(gridLayout);
-    setCentralWidget(centralWidget);
-
-    // Carregar disciplinas
     carregarDisciplinas();
 }
 
@@ -26,43 +18,44 @@ ModuloGradeCompleta::~ModuloGradeCompleta()
     delete ui;
 }
 
-void ModuloGradeCompleta::carregarDisciplinas()
-{
+void ModuloGradeCompleta::carregarDisciplinas() {
+    // Pegue as disciplinas do curso
     std::vector<CDisciplinas> disciplinas = getDisciplinasCurso();
 
-    std::map<int, int> linhaPorPeriodo;  // Guarda a linha de cada período no grid
+    // Crie um layout de grade (grid layout)
+    QGridLayout *layout = new QGridLayout();   // Define o layout
 
-    for (const auto& disciplina : disciplinas) {
-        int periodo = disciplina.periodo;
+    // Inicialize o número da linha como 0
+    int row = 0;
 
-        // Se o período ainda não foi registrado, adicione uma nova linha no grid
-        if (linhaPorPeriodo.find(periodo) == linhaPorPeriodo.end()) {
-            linhaPorPeriodo[periodo] = linhaPorPeriodo.size();
+    // Adicionar 10 linhas, uma para cada período
+    for (int periodo = 1; periodo <= 10; ++periodo) {
+        int column = 0; // Iniciar sempre na primeira coluna para cada período
+
+        // Iterar sobre as disciplinas para aquele período específico
+        for (const auto& disciplina : disciplinas) {
+            if (disciplina.periodo == periodo) {
+                // Criar um botão para cada disciplina (pode ser uma QLabel, QPushButton, etc)
+                QPushButton *botaoDisciplina = new QPushButton(QString::fromStdString(disciplina.nome));
+
+                // Adicionar a disciplina no layout na linha correspondente ao período
+                layout->addWidget(botaoDisciplina, row, column);
+
+                column++;  // Avançar para a próxima coluna
+
+                // Limitar a quantidade de disciplinas por linha (pode ajustar esse valor)
+                if (column > 4) {
+                    column = 0;  // Voltar à primeira coluna
+                    row++;  // Avançar para a próxima linha
+                }
+            }
         }
 
-        int row = linhaPorPeriodo[periodo];
-        int col = gridLayout->columnCount(); // Adiciona ao final da linha
-
-        // Criar um quadrado (QFrame) para representar a disciplina
-        QFrame *disciplinaFrame = new QFrame(this);
-        disciplinaFrame->setFrameShape(QFrame::Box);
-        disciplinaFrame->setFrameShadow(QFrame::Raised);
-        disciplinaFrame->setStyleSheet("background-color: #f0f0f0; padding: 10px;");
-        disciplinaFrame->setFixedSize(200, 100);
-
-        // Criar um layout dentro do quadrado
-        QVBoxLayout *frameLayout = new QVBoxLayout(disciplinaFrame);
-
-        // Criar um label com o nome da disciplina
-        QLabel *nomeDisciplina = new QLabel(QString::fromStdString(disciplina.nome), disciplinaFrame);
-        nomeDisciplina->setAlignment(Qt::AlignCenter);
-        nomeDisciplina->setStyleSheet("font-weight: bold;");
-
-        // Adicionar ao layout do quadrado
-        frameLayout->addWidget(nomeDisciplina);
-        disciplinaFrame->setLayout(frameLayout);
-
-        // Adicionar ao grid layout
-        gridLayout->addWidget(disciplinaFrame, row, col);
+        row++;  // Avançar para a próxima linha para o próximo período
     }
+
+    // Defina o layout no widget principal
+    QWidget *centralWidget = new QWidget(this);  // Crie um widget central
+    centralWidget->setLayout(layout);  // Defina o layout nele
+    setCentralWidget(centralWidget);  // Defina o widget como o central
 }
