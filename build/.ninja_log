@@ -1,0 +1,11 @@
+# ninja log v6
+38	532	7660853064250177	PetroPlanner_autogen/timestamp	11b7950e2188f26
+38	532	7660853064250177	PetroPlanner_autogen/mocs_compilation.cpp	11b7950e2188f26
+38	532	7660853064250177	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/build/PetroPlanner_autogen/timestamp	11b7950e2188f26
+38	532	7660853064250177	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/build/PetroPlanner_autogen/mocs_compilation.cpp	11b7950e2188f26
+556	1584	7660853065375346	CMakeFiles/PetroPlanner.dir/CDisciplinas.cpp.obj	6f75d96e21c85f5e
+542	3336	7660853065242654	CMakeFiles/PetroPlanner.dir/PetroPlanner_autogen/mocs_compilation.cpp.obj	94fa5eb4797a4507
+551	3372	7660853065320696	CMakeFiles/PetroPlanner.dir/telainicial.cpp.obj	6130439c63838798
+546	3406	7660853065252670	CMakeFiles/PetroPlanner.dir/main.cpp.obj	d0baa64a7a5cdcf1
+561	3461	7660853065424681	CMakeFiles/PetroPlanner.dir/modulogradecompleta.cpp.obj	6bb73303b365f78e
+3461	4028	7660853094434187	PetroPlanner.exe	c486aa16826db0c7
