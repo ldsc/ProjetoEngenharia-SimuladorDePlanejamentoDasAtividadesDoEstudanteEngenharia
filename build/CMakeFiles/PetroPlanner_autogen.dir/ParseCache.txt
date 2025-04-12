@@ -4,6 +4,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
 C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CAluno.h
 C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/QString
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q20iterator.h
@@ -167,6 +168,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qwidget.h
+ mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CAluno.h
  mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CDisciplinas.h
  mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.h
 C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/main.cpp
@@ -175,6 +177,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
 C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CAluno.cpp
 C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/telainicial.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/QString
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtCore/q20iterator.h
@@ -338,6 +341,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qwidget.h
+ mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CAluno.h
  mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CDisciplinas.h
  mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.h
  mdp:C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/telainicial.h

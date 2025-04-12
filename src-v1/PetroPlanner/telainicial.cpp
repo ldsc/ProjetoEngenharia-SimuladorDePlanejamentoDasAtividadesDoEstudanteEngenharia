@@ -23,7 +23,7 @@ TelaInicial::~TelaInicial()
 void TelaInicial::on_botaoVerGradeCompleta_clicked()
 {
     if (!gradeCompleta) {
-        gradeCompleta = new ModuloGradeCompleta(this);
+        gradeCompleta = new ModuloGradeCompleta(aluno, this);
     }
     gradeCompleta->show();
 }

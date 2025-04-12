@@ -68,11 +68,16 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
                 }
             }
 
-            if (std::find(situacoes.begin(), situacoes.end(), "Aprovada") != situacoes.end()) {
-                disciplinasAprovadas.push_back(*it);
-            } else if (std::find(situacoes.begin(), situacoes.end(), "Não Cursada") != situacoes.end()) {
-                disciplinasNaoCursadas.push_back(*it);
+            if (!situacoes.empty()) {
+                QString ultimaSituacao = situacoes.back();
+
+                if (ultimaSituacao == "Aprovada") {
+                    disciplinasAprovadas.push_back(*it);
+                } else if (ultimaSituacao == "Não Cursada") {
+                    disciplinasNaoCursadas.push_back(*it);
+                }
             }
+
         }
     }
 

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGridLayout>
 #include "CDisciplinas.h"
+#include "CAluno.h"
 
 namespace Ui {
 class ModuloGradeCompleta;
@@ -14,13 +15,14 @@ class ModuloGradeCompleta : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ModuloGradeCompleta(QWidget *parent = nullptr);
+    explicit ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent = nullptr);
     ~ModuloGradeCompleta();
 
 private:
     Ui::ModuloGradeCompleta *ui;
     QGridLayout *gridLayout;
-    void carregarDisciplinas();  // Método para popular o layout
+    CAluno aluno;  // cópia do aluno
+    void carregarDisciplinas();
 };
 
 #endif
