@@ -78,10 +78,17 @@ std::vector<CDisciplinas> getDisciplinasCurso() {
     disciplinas.push_back(CDisciplinas(9, "Seminarios em Engenharia de Petroleo", 1, 17, {}, "Geral", "Profissionalizante"));
     disciplinas.push_back(CDisciplinas(9, "Optativa 1*", 2, ?, {}, "Geral", "Profissionalizante"));
     disciplinas.push_back(CDisciplinas(9, "Optativa 2*", 3, ?, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(9, "Exigencia Trabalho Conclusao Curso", ?, 34, {}, "Geral", "Profissionalizante"));
 
     // Periodo 10
     disciplinas.push_back(CDisciplinas(10, "Energias Renovaveis", 2, 51, {}, "Geral", "Profissionalizante"));
     disciplinas.push_back(CDisciplinas(10, "Optativa 3*", 4, ?, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Trabalho de Conclusao de Curso", ?, 34, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Estagio Curricular Obrigatorio", ?, 170, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Academicas Complementares", ?, 60, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Curriculares de Extensao", ?, 370, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Projeto de Trabalho de Conclusao de Curso", ?, 68, {}, "Geral", "Profissionalizante"));
+
     
 
     return disciplinas;
