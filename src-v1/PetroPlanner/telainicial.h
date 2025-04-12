@@ -24,6 +24,7 @@ private slots:
 private:
     Ui::TelaInicial *ui;
     ModuloGradeCompleta *gradeCompleta; // Ponteiro para a janela
+    void carregarInformacoesAluno();
 };
 
 #endif

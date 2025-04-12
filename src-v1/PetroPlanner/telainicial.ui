@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="botaoVerGradeCompleta">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>160</y>
+      <x>30</x>
+      <y>190</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -26,6 +26,84 @@
     <property name="text">
      <string>Ver Grade Completa</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxInfoAluno">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>211</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Dados Gerais</string>
+    </property>
+    <widget class="QLabel" name="labelNome">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMatricula">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCurso">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPeriodo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCRA">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

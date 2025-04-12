@@ -19,6 +19,10 @@ set(PROJECT_SOURCES
         telainicial.ui
         CDisciplinas.h
         CDisciplinas.cpp
+        CAluno.h
+        CAluno.cpp
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

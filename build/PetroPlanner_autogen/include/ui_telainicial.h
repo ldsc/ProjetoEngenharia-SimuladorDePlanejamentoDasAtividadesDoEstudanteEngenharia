@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -24,6 +26,12 @@ class Ui_TelaInicial
 public:
     QWidget *centralwidget;
     QPushButton *botaoVerGradeCompleta;
+    QGroupBox *groupBoxInfoAluno;
+    QLabel *labelNome;
+    QLabel *labelMatricula;
+    QLabel *labelCurso;
+    QLabel *labelPeriodo;
+    QLabel *labelCRA;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -36,7 +44,25 @@ public:
         centralwidget->setObjectName("centralwidget");
         botaoVerGradeCompleta = new QPushButton(centralwidget);
         botaoVerGradeCompleta->setObjectName("botaoVerGradeCompleta");
-        botaoVerGradeCompleta->setGeometry(QRect(70, 160, 121, 31));
+        botaoVerGradeCompleta->setGeometry(QRect(30, 190, 121, 31));
+        groupBoxInfoAluno = new QGroupBox(centralwidget);
+        groupBoxInfoAluno->setObjectName("groupBoxInfoAluno");
+        groupBoxInfoAluno->setGeometry(QRect(20, 40, 211, 121));
+        labelNome = new QLabel(groupBoxInfoAluno);
+        labelNome->setObjectName("labelNome");
+        labelNome->setGeometry(QRect(10, 20, 191, 16));
+        labelMatricula = new QLabel(groupBoxInfoAluno);
+        labelMatricula->setObjectName("labelMatricula");
+        labelMatricula->setGeometry(QRect(10, 40, 191, 16));
+        labelCurso = new QLabel(groupBoxInfoAluno);
+        labelCurso->setObjectName("labelCurso");
+        labelCurso->setGeometry(QRect(10, 60, 191, 16));
+        labelPeriodo = new QLabel(groupBoxInfoAluno);
+        labelPeriodo->setObjectName("labelPeriodo");
+        labelPeriodo->setGeometry(QRect(10, 80, 191, 16));
+        labelCRA = new QLabel(groupBoxInfoAluno);
+        labelCRA->setObjectName("labelCRA");
+        labelCRA->setGeometry(QRect(10, 100, 191, 16));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
@@ -55,6 +81,12 @@ public:
     {
         TelaInicial->setWindowTitle(QCoreApplication::translate("TelaInicial", "TelaInicial", nullptr));
         botaoVerGradeCompleta->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
+        groupBoxInfoAluno->setTitle(QCoreApplication::translate("TelaInicial", "Dados Gerais", nullptr));
+        labelNome->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelMatricula->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelCurso->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelPeriodo->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelCRA->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
     } // retranslateUi
 
 };

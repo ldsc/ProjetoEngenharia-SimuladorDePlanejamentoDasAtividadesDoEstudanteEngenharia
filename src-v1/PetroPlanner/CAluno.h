@@ -1,31 +1,22 @@
-#ifndef CFLUIDO_H
-#define CFLUIDO_H
+#ifndef CALUNO_H
+#define CALUNO_H
 
-#include <string>
+#include <QString>
+#include <vector>
+#include "CDisciplinas.h"
 
-class CFluido {
-protected:
-    std::string nome;
-    double densidade = 0.0;
-    double viscosidade = 0.0;
-
+class CAluno {
 public:
-    // Construtor
-    CFluido() {}
-    ~CFluido() {}
-    CFluido(std::string nome, double Dens, double visc)
-    : nome(nome), densidade(Dens), viscosidade(visc) {}
+    QString nome;
+    QString matricula;
+    QString curso;
+    int periodo = 0;
+    float cra = 0.0;
 
-    // Getters
-    std::string Nome() const { return nome; }
-    double Densidade() const { return densidade; }
-    double Viscosidade() const { return viscosidade; }
+    std::vector<CDisciplinas> disciplinasAprovadas;
+    std::vector<CDisciplinas> disciplinasNaoCursadas;
 
-    // Setters
-    void Nome(double nome) { nome = nome; }
-    void Densidade(double Dens) { densidade = Dens; }
-    void Viscosidade(double visc) { viscosidade = visc; }
-
+    bool lerDoArquivo(const QString& caminho);
 };
 
 #endif

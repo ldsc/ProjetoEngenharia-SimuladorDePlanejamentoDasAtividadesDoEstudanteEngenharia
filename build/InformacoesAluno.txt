@@ -1,0 +1,26 @@
+Nome: João da Silva
+Matrícula: 202300123
+Curso: Engenharia de Petróleo
+Período: 4
+CRA: 8.3
+
+# Formato da tabela:
+# [Período] [Nome da Disciplina] [Nota1] [Situação1] [Nota2] [Situação2] ... (máx 4 reprovações + aprovação)
+
+1 Quimica Geral 2.5 Reprovada 5.0 Reprovada 7.2 Aprovada
+1 Portugues Instrumental I 7.5 Aprovada
+1 Desenho Tecnico 8.0 Aprovada
+
+2 Quimica Geral II - - Não Cursada
+2 Portugues Instrumental II - - Em Curso
+2 Fisica I 3.0 Reprovada 4.5 Reprovada 5.0 Reprovada 6.5 Aprovada
+2 Risco Experimental I 6.0 Aprovada
+
+3 Laboratorio de Quimica Analitica - - Não Cursada
+3 Fisica II - - Não Cursada
+3 Calculo Diferencial e Integral I 9.0 Aprovada
+3 Fundamentos de Computacao 8.5 Aprovada
+
+4 Fisica III - - Em Curso
+4 Risco Experimental III - - Não Cursada
+4 Calculo Diferencial e Integral II - - Não Cursada
