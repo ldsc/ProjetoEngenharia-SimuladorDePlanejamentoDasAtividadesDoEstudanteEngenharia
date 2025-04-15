@@ -4229,11 +4229,10 @@ name "sec:Orçamento Preliminar"
 \end_layout
 
 \begin_layout Standard
-Este projeto não possui financiamento ou orçamento envolvido, 
-uma vez que faz uso de códigos abertos e bibliotecas de livre acesso. 
-Todo desenvolvimento é realizado com fins acadêmicos e experimentais, 
-sem alocação de recursos financeiros ou contratações externas.
-
+Este projeto não possui financiamento ou orçamento envolvido,
+ uma vez que faz uso de códigos abertos e bibliotecas de livre acesso.
+ Todo desenvolvimento é realizado com fins acadêmicos e experimentais,
+ sem alocação de recursos financeiros ou contratações externas.
 \end_layout
 
 \begin_layout Section
@@ -4246,7 +4245,6 @@ name "sec:  Informações Extras Mecanismos Gestão"
 
 
 \end_layout
-
 
 \end_body
 \end_document
