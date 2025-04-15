@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -85,11 +85,11 @@
 %\noindent
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -97,7 +97,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -111,7 +113,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -132,7 +134,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -154,11 +158,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -239,9 +248,40 @@ today ele vai colocar data no material impresso
 \end_layout
 
 \begin_layout Standard
-Apresenta-se aqui a proposta de desenvolvimento do software XX_nome_XX.
- Um software aplicado a engenharia de petróleo e que visa ...descrever.
- em um parágrafo super resumido.
+Segundo o CREA/CONFEA,
+ uma das principais competências que distinguem o engenheiro do tecnólogo é a capacidade de desenvolver projetos de engenharia.
+ Neste contexto,
+ apresenta-se a proposta de um projeto de engenharia de software aplicado à solução de um problema específico da Engenharia de Petróleo.
+\end_layout
+
+\begin_layout Standard
+Este projeto propõe o desenvolvimento do PetroPlanner,
+ um software interativo e personalizável voltado para o planejamento da vida acadêmica de estudantes do curso de Engenharia de Petróleo.
+ A ferramenta visa facilitar a organização da grade curricular,
+ considerando fatores como a dificuldade das disciplinas obrigatórias,
+ tempo de estudo semanal recomendado,
+ atividades complementares,
+ extensão,
+ estágio e TCC.
+\end_layout
+
+\begin_layout Standard
+Com base em entrevistas e pesquisas com ex-alunos,
+ o PetroPlanner busca simular diferentes trajetórias acadêmicas,
+ prever impactos de reprovações e adiamentos de matérias,
+ e sugerir estratégias mais eficientes de combinação de disciplinas.
+ A proposta é que esse planejamento contribua para a melhoria do desempenho acadêmico dos estudantes,
+ reduzindo incertezas e aumentando a eficiência na gestão do tempo.
+\end_layout
+
+\begin_layout Standard
+O software será desenvolvido em C++23 com Qt 6.6 (ou superior),
+ utilizando SQLite para persistência dos dados e bibliotecas gráficas e estatísticas para visualizações.
+ O gerenciamento do projeto será feito com GitHub,
+ CMake,
+ e a metodologia de desenvolvimento será o Scrum,
+ com dois ciclos principais:
+ um ciclo inicial sem interface gráfica (backend e lógica) e outro com a implementação da interface gráfica e usabilidade.
 \end_layout
 
 \begin_layout Standard
@@ -249,18 +289,19 @@ Apresenta-se aqui a proposta de desenvolvimento do software XX_nome_XX.
 status open
 
 \begin_layout Plain Layout
-NOTE que este capítulo de introdução deve ser uma cópia do capítulo de introduçã
-o ao pré-projeto, mas agora vocês tiveram tempo para detalhar diversas informaçõ
-es da proposta;
+NOTE que este capítulo de introdução deve ser uma cópia do capítulo de introdução ao pré-projeto,
+ mas agora vocês tiveram tempo para detalhar diversas informações da proposta;
 \end_layout
 
 \begin_layout Plain Layout
-Coloque aqui todas as novidades e atualizações melhorando o escopo/resumo/objeti
-vos.
+Coloque aqui todas as novidades e atualizações melhorando o escopo/resumo/objetivos.
 \end_layout
 
 \begin_layout Plain Layout
-Ou seja, o projeto detalhado, como o nome diz, deve ser detalhado.
+Ou seja,
+ o projeto detalhado,
+ como o nome diz,
+ deve ser detalhado.
 \end_layout
 
 \end_inset
@@ -282,8 +323,9 @@ LDSC-2023-1-P50
 status open
 
 \begin_layout Plain Layout
-Numero informado pelo professor, leva em conta o número de projetos desenvolvido
-s no LDSC, ano e semestre
+Numero informado pelo professor,
+ leva em conta o número de projetos desenvolvidos no LDSC,
+ ano e semestre
 \end_layout
 
 \end_inset
@@ -296,8 +338,7 @@ Tipo de investimento /divulgação
 \end_layout
 
 \begin_layout Itemize
-PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão
- 2 
+PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão 2 
 \end_layout
 
 \begin_layout Subsubsection
@@ -310,7 +351,8 @@ Trabalho de disciplina
 status open
 
 \begin_layout Plain Layout
-ex: Termo de Cooperação / Convênio
+ex:
+ Termo de Cooperação / Convênio
 \end_layout
 
 \end_inset
@@ -327,7 +369,14 @@ Título do projeto
 \end_layout
 
 \begin_layout Itemize
-"Título do projeto aqui"
+\begin_inset Quotes eld
+\end_inset
+
+ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -335,11 +384,28 @@ Palavras-chave
 \end_layout
 
 \begin_layout Itemize
-...coloque aqui lista de palavras chaves - até 5...
+Simulador de Engenharia
+\end_layout
+
+\begin_layout Itemize
+Acompanhamento curricular
+\end_layout
+
+\begin_layout Itemize
+Agenda do aluno
+\end_layout
+
+\begin_layout Itemize
+Análise de desenvolvimento acadêmico
+\end_layout
+
+\begin_layout Itemize
+Dados estatísticos do estudante
 \end_layout
 
 \begin_layout Section
-Identificação da Universidade, Instituições e Empresas Participantes
+Identificação da Universidade,
+ Instituições e Empresas Participantes
 \end_layout
 
 \begin_layout Subsection
@@ -378,7 +444,8 @@ Representante pela universidade:
 
 \begin_deeper
 \begin_layout Itemize
-Professor(a): Nome/email/telefone.
+Professor(a):
+ André Duarte Bueno/bueno@lenep.uenf.br/22-999542635
 \end_layout
 
 \end_deeper
@@ -396,7 +463,8 @@ Representante da instituição/fundação:
 
 \begin_deeper
 \begin_layout Itemize
-Professor(a): Nome/email/telefone.
+Professor(a):
+ Nome/email/telefone.
 \end_layout
 
 \end_deeper
@@ -409,7 +477,8 @@ Nome empresa se houver.
 \end_layout
 
 \begin_layout Itemize
-Dados da empresa (CNPj, contatos).
+Dados da empresa (CNPj,
+ contatos).
 \end_layout
 
 \begin_layout Itemize
@@ -418,7 +487,8 @@ Representante pela empresa:
 
 \begin_deeper
 \begin_layout Itemize
-Engenheiro(a): Nome/email/telefone.
+Engenheiro(a):
+ Nome/email/telefone.
 \end_layout
 
 \end_deeper
@@ -427,15 +497,11 @@ Equipe
 \end_layout
 
 \begin_layout Itemize
-Nome aluno/email/telefone.
+Abigail Ribeiro Pinto Silva Guimarães/abigailsilva@lenep.uenf.br/22-997886502.
 \end_layout
 
 \begin_layout Itemize
-Nome aluno/email/telefone.
-\end_layout
-
-\begin_layout Itemize
-Nome aluno/email/telefone.
+Maria Luiza Cornelio Ramos/mariaramos@lenep.uenf.br/22-988356947.
 \end_layout
 
 \begin_layout Itemize
@@ -444,7 +510,12 @@ Representante pela equipe:
 
 \begin_deeper
 \begin_layout Itemize
-Estudante: Nome/email/telefone.
+Estudante:
+ Abigail Ribeiro Pinto Silva Guimarães/abigailsilva@lenep.uenf.br/22-997886502.
+\end_layout
+
+\begin_layout Itemize
+Maria Luiza Cornelio Ramos/mariaramos@lenep.uenf.br/22-988356947.
 \end_layout
 
 \end_deeper
@@ -460,11 +531,13 @@ name "sec:Resumo"
 \end_layout
 
 \begin_layout Itemize
-Limite de 500 palavras, então seja bem direto!
+Limite de 500 palavras,
+ então seja bem direto!
 \end_layout
 
 \begin_layout Itemize
-Escreva no final, depois de escrever todo o resto.
+Escreva no final,
+ depois de escrever todo o resto.
 \end_layout
 
 \begin_layout Section
@@ -478,32 +551,58 @@ name "sec:Escopo-do-Problema"
 
 \end_layout
 
-\begin_layout Itemize
-Definir o escopo do problema de engenharia
-\begin_inset Foot
-status open
-
-\begin_layout Itemize
-problemas vinculados à: i) engenharia de petróleo, ii) algoritmos computacionais
-, iii) sistemas de software
+\begin_layout Standard
+Durante a graduação em Engenharia de Petróleo,
+ estudantes enfrentam dificuldades recorrentes relacionadas ao planejamento acadêmico,
+ o que pode levar à sobrecarga de disciplinas,
+ atrasos na conclusão do curso e baixa performance.
+ Fatores como reprovações,
+ indisponibilidade de disciplinas e carga horária elevada são frequentemente mal gerenciados.
 \end_layout
 
-\end_inset
-
-, a ideia geral.
- Destacar sua importância/relevância.
+\begin_layout Standard
+O escopo do problema abordado por este projeto inclui:
 \end_layout
 
-\begin_layout Itemize
-Definir a abrangência, delimintando o assunto (para que caiba no prazo de
- até 24 meses).
- 
+\begin_layout Standard
+• O desenvolvimento de um sistema de apoio à decisão para o planejamento acadêmico,
+ com foco em estudantes de Engenharia de Petróleo.
 \end_layout
 
-\begin_layout Itemize
-Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros concorrentes (sistemas similares, como softwares
- similares).
+\begin_layout Standard
+• A modelagem computacional das regras do curso (pré-requisitos,
+ AAC,
+ estágios,
+ TCC).
+\end_layout
+
+\begin_layout Standard
+• O cálculo de simulações de CR,
+ estimativas de carga horária semanal,
+ e sugestões de organização de grade.
+\end_layout
+
+\begin_layout Standard
+• O desenvolvimento de algoritmos específicos para sugerir estratégias de combinação de disciplinas.
+\end_layout
+
+\begin_layout Standard
+• O uso de bases de dados locais para garantir portabilidade e leveza do sistema.
+\end_layout
+
+\begin_layout Standard
+Este projeto está inserido no contexto atual das engenharias e da demanda por ferramentas tecnológicas personalizadas,
+ e será desenvolvido no período de até 6 meses,
+ com versões incrementais e testes regulares.
+\end_layout
+
+\begin_layout Standard
+Comparando com sistemas genéricos de organização acadêmica (como Google Calendar,
+ Trello,
+ etc.),
+ o PetroPlanner se destaca por ser específico para Engenharia,
+ com simulações baseadas na matriz curricular do curso,
+ tornando-se uma solução única no mercado educacional universitário.
 \end_layout
 
 \begin_layout Section
@@ -531,14 +630,9 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia, incluindo vínculos
- com engenharia de petróleo e com modelagem matemática computacional (ideia
- de lógica, algoritmos,...).
-\end_layout
-
-\begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma
- clara, direta, objetiva, o objetivo geral do software].
+Desenvolver um software de apoio ao planejamento acadêmico voltado para estudantes de Engenharia de Petróleo,
+ utilizando princípios de engenharia de software e modelagem matemática computacional.
+ O sistema permitirá simulações e recomendações personalizadas baseadas em regras curriculares e dados históricos de rendimento acadêmico.
 \end_layout
 
 \end_deeper
@@ -552,35 +646,52 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema.
+Modelar matematicamente as restrições e regras da matriz curricular do curso de Engenharia de Petróleo.
 \end_layout
 
 \begin_layout Itemize
-Modelagem estática do software (diagramas de caso de uso, de pacotes, de
- classes).
+Desenvolver a modelagem estática do software:
+ incluir diagramas de caso de uso,
+ de pacotes e de classes.
 \end_layout
 
 \begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificand
-o os fluxos de processamento).
+Desenvolver a modelagem dinâmica:
+ elaborar algoritmos para simulação de CR,
+ cálculo de carga horária,
+ e previsão de impacto do adiamento de disciplinas.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
+Criar um módulo de simulação para teste de diferentes trajetórias acadêmicas.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
+Calcular a carga horária semanal ideal para cada aluno,
+ sugerindo ajustes de acordo com a disponibilidade de tempo e a dificuldade das disciplinas.
 \end_layout
 
 \begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
+Simular o impacto de reprovações ou adiamentos no tempo de conclusão do curso.
 \end_layout
 
 \begin_layout Itemize
-Implementar manual simplificado de uso do software.
+Projetar um módulo para controle de faltas e acompanhamento de AAC,
+ estágios e TCC.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementar visualizações gráficas com dados de desempenho e progresso.
+\end_layout
+
+\begin_layout Itemize
+Desenvolver interface gráfica intuitiva,
+ com integração de calendário e checklist.
+\end_layout
+
+\begin_layout Itemize
+Criar e entregar um manual simplificado de uso do sistema.
 \end_layout
 
 \begin_layout Itemize
@@ -588,13 +699,12 @@ Implementar manual simplificado de uso do software.
 status open
 
 \begin_layout Plain Layout
-No pré-projeto vocês colocaram os objetivos específicos; depois houve uma
- prazo para análise pelo coordenador e gerente técnico;
+No pré-projeto vocês colocaram os objetivos específicos;
+ depois houve uma prazo para análise pelo coordenador e gerente técnico;
 \end_layout
 
 \begin_layout Plain Layout
-neste meio tempo novas análises foram feitas e os objetivos específicos
- puderão ser mais bem detalhados;
+neste meio tempo novas análises foram feitas e os objetivos específicos puderão ser mais bem detalhados;
 \end_layout
 
 \begin_layout Plain Layout

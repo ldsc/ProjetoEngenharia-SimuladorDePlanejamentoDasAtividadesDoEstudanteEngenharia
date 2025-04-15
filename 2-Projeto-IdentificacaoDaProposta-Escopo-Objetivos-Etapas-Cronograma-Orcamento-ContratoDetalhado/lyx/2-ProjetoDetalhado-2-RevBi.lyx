@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -85,11 +85,11 @@
 %\noindent
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -97,7 +97,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -111,7 +113,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -132,7 +134,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -154,11 +158,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -174,13 +183,37 @@ name "sec:Justificativas"
 
 \end_layout
 
-\begin_layout Itemize
-Colocar as justificativas para o desenvolvimento da solução de engenharia
- (produto, processo, softwares ou sistema a ser desenvolvido).
+\begin_layout Standard
+A justificativa para o desenvolvimento do PetroPlanner está fundamentada na crescente necessidade dos estudantes de Engenharia de Petróleo de otimizarem sua jornada acadêmica diante de uma matriz curricular extensa,
+ com múltiplos pré-requisitos,
+ exigências de atividades complementares e práticas profissionais obrigatórias.
 \end_layout
 
-\begin_layout Itemize
-Apresentar usos e aplicações em engenharia.
+\begin_layout Standard
+O projeto visa preencher uma lacuna observada na ausência de ferramentas personalizadas para o planejamento acadêmico no contexto da engenharia.
+ Atualmente,
+ os estudantes utilizam planilhas,
+ anotações manuais ou ferramentas genéricas que não consideram a complexidade e as interdependências da matriz curricular do curso.
+\end_layout
+
+\begin_layout Standard
+O PetroPlanner propõe uma solução de engenharia de software que simula diferentes trajetórias acadêmicas,
+ calcula carga horária semanal ideal,
+ estima CR futuro e auxilia na tomada de decisões.
+ A ferramenta incorpora conceitos de sistemas especialistas,
+ simulação computacional e engenharia de requisitos,
+ sendo aplicável tanto no contexto universitário quanto em processos internos de monitoramento e gestão acadêmica por coordenadores de curso.
+\end_layout
+
+\begin_layout Standard
+Além do uso educacional,
+ a abordagem metodológica empregada (modelagem matemática,
+ programação orientada a objetos,
+ simulação e banco de dados) é aplicável a diversos outros problemas de engenharia,
+ como simulação de transferência de calor e massa em meios porosos,
+ planejamento de sistemas de produção,
+ otimização de recursos logísticos,
+ entre outros.
 \end_layout
 
 \begin_layout Section
@@ -195,18 +228,23 @@ name "sec:Resultados-Esperados"
 \end_layout
 
 \begin_layout Itemize
-Um simulador de engenharia com interface amigável, com manuais técnico cientític
-os, aplicado á 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ex: solução da transferência de calor e massa em meios porosos
+Um simulador de engenharia com interface amigável,
+ desenvolvido em C++ com Qt,
+ capaz de modelar e simular a trajetória acadêmica de estudantes de Engenharia de Petróleo.
 \end_layout
 
-\end_inset
+\begin_layout Itemize
+Manuais técnico-científicos explicando a lógica de funcionamento,
+ os algoritmos utilizados e os testes realizados.
+\end_layout
 
-.
+\begin_layout Itemize
+Um sistema validado em ambiente de testes,
+ com usuários reais (estudantes) utilizando a ferramenta em situações práticas.
+\end_layout
+
+\begin_layout Itemize
+Publicação dos códigos-fonte e documentação em repositório aberto (GitHub) e apresentação oral do projeto para a comunidade acadêmica.
 \end_layout
 
 \begin_layout Section
@@ -221,8 +259,45 @@ name "sec:Metodologia"
 \end_layout
 
 \begin_layout Itemize
-Descrever a metodologia da solução do problema teórico/conceitual..
- ou seja, metodologia para solução do problema de engenharia...
+Modelagem matemática do problema:
+ o planejamento acadêmico é tratado como um sistema sujeito a restrições (pré-requisitos,
+ tempo,
+ carga horária).
+\end_layout
+
+\begin_layout Itemize
+Construção de protótipos:
+ será utilizado o modelo de desenvolvimento incremental,
+ com entregas parciais (mínimos produtos viáveis – MVPs).
+\end_layout
+
+\begin_layout Itemize
+Programação orientada a objetos,
+ utilizando C++ com o framework Qt para interface gráfica,
+ e SQLite como banco de dados local.
+\end_layout
+
+\begin_layout Itemize
+Construção de diagramas UML (casos de uso,
+ classes,
+ pacotes) para organização da arquitetura do sistema.
+\end_layout
+
+\begin_layout Itemize
+Simulação computacional:
+ algoritmos serão aplicados para prever diferentes trajetórias possíveis e seus impactos sobre o desempenho acadêmico.
+\end_layout
+
+\begin_layout Itemize
+Validação com usuários reais:
+ estudantes testarão o sistema com base em seus históricos reais ou simulados.
+\end_layout
+
+\begin_layout Itemize
+Documentação:
+ todas as fases do projeto serão documentadas,
+ incluindo os testes,
+ resultados e ajustes feitos ao longo do desenvolvimento.
 \end_layout
 
 \begin_layout Itemize
@@ -230,11 +305,14 @@ A Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: Metodologia utilizada no desenvolvimento do sistema"
+nolink "false"
 
 \end_inset
 
  apresenta a metodologia a ser utilizada no desenvolvimento do sistema.
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -245,8 +323,8 @@ status open
 	filename ../../imagens/ProjetoEngenharia-Etapas-Geral-wide.png
 	lyxscale 50
 	width 100text%
-	height 80theight%
 	keepAspectRatio
+	special height=0.8\textheight
 
 \end_inset
 
@@ -289,20 +367,31 @@ name "sec:Mecanismos-de-Acompanhamento"
 \end_layout
 
 \begin_layout Itemize
-Para o acompanhamento da execução do projeto iremos usar a metodologia SCRUM
- com as atividades do projeto hospedadas no site 
-\emph on
-github/projects 
-\emph default
-(ou equivalente como o trello).
+Metodologia ágil SCRUM,
+ com ciclos de desenvolvimento curtos (sprints de 2 a 4 semanas).
 \end_layout
 
 \begin_layout Itemize
-Reuniões mensais com os clientes.
+Quadro de tarefas no GitHub Projects (ou Trello),
+ com acompanhamento das funcionalidades em desenvolvimento,
+ correções e backlog.
 \end_layout
 
 \begin_layout Itemize
-Relatórios no final do semestre, com apresentação oral.
+Reuniões mensais com os “clientes” do sistema (estudantes voluntários,
+ professores,
+ orientador),
+ para coleta de feedback e validações parciais.
+\end_layout
+
+\begin_layout Itemize
+Relatórios semanis,
+ descrevendo as etapas concluídas,
+ dificuldades encontradas e estratégias de superação.
+\end_layout
+
+\begin_layout Itemize
+Apresentação oral ao final do semestre letivo.
 \end_layout
 
 \begin_layout Section
@@ -317,8 +406,9 @@ name "sec:Informações-Adicionais-Específicas"
 \end_layout
 
 \begin_layout Itemize
-Coloque aqui informações adicionais, importantes, relevantes e que não se
- encaixaram nos demais tópicos deste documento.
+Coloque aqui informações adicionais,
+ importantes,
+ relevantes e que não se encaixaram nos demais tópicos deste documento.
 \end_layout
 
 \begin_layout Standard
@@ -326,7 +416,8 @@ Entre as referências utilizadas podemos citar:
 \end_layout
 
 \begin_layout Itemize
-UML: 
+UML:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "prog-UML-blaha,prog-UML-Rumbaugh"
@@ -338,7 +429,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Projetos: 
+Projetos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-introducao,projetos-pmi,projetos-projetoeletrico1,projetos-Woiler"
@@ -350,7 +442,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Gestão de Projetos: 
+Gestão de Projetos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-Abrantes,projetos-gestao,projetos-Heldman,projetos-Menezes,projetos-Pahl,projetos-Valeriano,projetos-Rosa"
@@ -362,7 +455,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Produtos: 
+Produtos:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "projetos-Abrantes"
@@ -374,7 +468,8 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-C++: 
+C++:
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "adb-prog-livroCpp"
