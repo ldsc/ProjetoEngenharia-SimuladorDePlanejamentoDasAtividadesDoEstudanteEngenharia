@@ -158,7 +158,7 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-Etapa 0 - Definição do desafio tecnológico
+Etapa 0- Definição do desafio tecnológico
 \end_layout
 
 \begin_deeper
@@ -378,7 +378,6 @@ Integração com a biblioteca de agenda mensal.
 
 \begin_layout Itemize
 Testes unitários e integração contínua.
- 
 \end_layout
 
 \end_deeper
