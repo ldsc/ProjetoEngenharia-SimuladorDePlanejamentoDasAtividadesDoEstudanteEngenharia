@@ -1,6 +1,5 @@
 #include "modulogradecompleta.h"
 #include "ui_modulogradecompleta.h"
-#include "ui_modulogradecompleta.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -32,18 +31,47 @@ ModuloGradeCompleta::~ModuloGradeCompleta()
 
 void ModuloGradeCompleta::carregarDisciplinas() {
     std::vector<CDisciplinas> todas = getDisciplinasCurso();
-    QGridLayout *grade = new QGridLayout();
-    int row = 0;
+
+    // ========================= TAB 1 - GRADE GERAL =========================
+    QVBoxLayout *layoutTab1 = new QVBoxLayout;
 
     for (int periodo = 1; periodo <= 10; ++periodo) {
-        int col = 0;
+        QHBoxLayout *linhaPeriodo = new QHBoxLayout;
+
         for (const auto& disc : todas) {
             if (disc.periodo != periodo) continue;
 
             QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
             botao->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-            botao->setMinimumWidth(200);  // Largura mínima para nome caber
-            botao->setMinimumHeight(40);  // Altura padrão
+            botao->setMinimumWidth(140);
+            botao->setMinimumHeight(30);
+            botao->setStyleSheet("background-color: lightgray; padding: 2px; border-radius: 8px; font-size: 10pt;");
+            linhaPeriodo->addWidget(botao);
+        }
+
+        layoutTab1->addLayout(linhaPeriodo);
+    }
+
+    QWidget *containerTab1 = new QWidget(this);
+    containerTab1->setLayout(layoutTab1);
+
+    QVBoxLayout *layoutGeral = new QVBoxLayout(ui->widget_gradeGeral);
+    layoutGeral->addWidget(containerTab1);
+    ui->widget_gradeGeral->setLayout(layoutGeral);
+
+    // ========================= TAB 2 - GRADE COM PROGRESSO =========================
+    QVBoxLayout *layoutTab2 = new QVBoxLayout;
+
+    for (int periodo = 1; periodo <= 10; ++periodo) {
+        QHBoxLayout *linhaPeriodo = new QHBoxLayout;
+
+        for (const auto& disc : todas) {
+            if (disc.periodo != periodo) continue;
+
+            QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
+            botao->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+            botao->setMinimumWidth(140);
+            botao->setMinimumHeight(30);
 
             QString cor = "background-color: lightgray";
 
@@ -89,30 +117,17 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                 }
             }
 
-            botao->setStyleSheet(cor + "; padding: 6px; border-radius: 10px;");
-            grade->addWidget(botao, row, col++);
-
-            if (col > 5) {
-                col = 0;
-                row++;
-            }
+            botao->setStyleSheet(cor + "; padding: 2px; border-radius: 8px; font-size: 10pt;");
+            linhaPeriodo->addWidget(botao);
         }
-        row++;
+
+        layoutTab2->addLayout(linhaPeriodo);
     }
 
-    QWidget *containerGrade = new QWidget;
-    containerGrade->setLayout(grade);
+    QWidget *containerTab2 = new QWidget(this);
+    containerTab2->setLayout(layoutTab2);
 
-    QVBoxLayout *layoutVertical = new QVBoxLayout;
-    layoutVertical->addSpacing(100);             // margem superior
-    layoutVertical->addWidget(containerGrade);
-    layoutVertical->addSpacing(80);             // margem inferior (6cm aprox)
-
-    QHBoxLayout *layoutHorizontal = new QHBoxLayout;
-    layoutHorizontal->addSpacing(50);           // margem esquerda REDUZIDA
-    layoutHorizontal->addLayout(layoutVertical);
-    layoutHorizontal->addSpacing(100);          // margem direita
-
-    ui->centralwidget->setLayout(layoutHorizontal);
-
+    QVBoxLayout *layoutProgresso = new QVBoxLayout(ui->widget_gradeProgresso);
+    layoutProgresso->addWidget(containerTab2);
+    ui->widget_gradeProgresso->setLayout(layoutProgresso);
 }

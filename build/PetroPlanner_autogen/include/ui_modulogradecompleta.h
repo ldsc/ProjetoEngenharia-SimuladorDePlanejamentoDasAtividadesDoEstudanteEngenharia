@@ -16,8 +16,8 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,9 +26,12 @@ class Ui_ModuloGradeCompleta
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton_grade;
-    QPushButton *pushButton_ProgressoGrade;
     QLabel *label;
+    QTabWidget *tabsGrade;
+    QWidget *tab_gradeGeral;
+    QWidget *widget_gradeGeral;
+    QWidget *tab_GradeProgresso;
+    QWidget *widget_gradeProgresso;
     QMenuBar *menubar;
     QMenu *menuGrade_Curricular;
     QStatusBar *statusbar;
@@ -37,32 +40,40 @@ public:
     {
         if (ModuloGradeCompleta->objectName().isEmpty())
             ModuloGradeCompleta->setObjectName("ModuloGradeCompleta");
-        ModuloGradeCompleta->resize(1483, 311);
+        ModuloGradeCompleta->resize(1483, 811);
         ModuloGradeCompleta->setStyleSheet(QString::fromUtf8("background-color: blue;"));
         centralwidget = new QWidget(ModuloGradeCompleta);
         centralwidget->setObjectName("centralwidget");
-        pushButton_grade = new QPushButton(centralwidget);
-        pushButton_grade->setObjectName("pushButton_grade");
-        pushButton_grade->setGeometry(QRect(570, 70, 101, 31));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Bookman Old Style")});
-        font.setBold(true);
-        pushButton_grade->setFont(font);
-        pushButton_grade->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
-        pushButton_ProgressoGrade = new QPushButton(centralwidget);
-        pushButton_ProgressoGrade->setObjectName("pushButton_ProgressoGrade");
-        pushButton_ProgressoGrade->setGeometry(QRect(740, 70, 101, 31));
-        pushButton_ProgressoGrade->setFont(font);
-        pushButton_ProgressoGrade->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(480, 0, 501, 51));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font.setPointSize(40);
+        font.setBold(true);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: white"));
+        tabsGrade = new QTabWidget(centralwidget);
+        tabsGrade->setObjectName("tabsGrade");
+        tabsGrade->setGeometry(QRect(60, 60, 1281, 561));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
-        font1.setPointSize(40);
         font1.setBold(true);
-        label->setFont(font1);
-        label->setStyleSheet(QString::fromUtf8("color: white"));
+        tabsGrade->setFont(font1);
+        tabsGrade->setStyleSheet(QString::fromUtf8("background: white; color: black"));
+        tab_gradeGeral = new QWidget();
+        tab_gradeGeral->setObjectName("tab_gradeGeral");
+        widget_gradeGeral = new QWidget(tab_gradeGeral);
+        widget_gradeGeral->setObjectName("widget_gradeGeral");
+        widget_gradeGeral->setGeometry(QRect(19, 30, 1231, 501));
+        tabsGrade->addTab(tab_gradeGeral, QString());
+        tab_GradeProgresso = new QWidget();
+        tab_GradeProgresso->setObjectName("tab_GradeProgresso");
+        tab_GradeProgresso->setFont(font1);
+        widget_gradeProgresso = new QWidget(tab_GradeProgresso);
+        widget_gradeProgresso->setObjectName("widget_gradeProgresso");
+        widget_gradeProgresso->setGeometry(QRect(20, 20, 1241, 501));
+        tabsGrade->addTab(tab_GradeProgresso, QString());
         ModuloGradeCompleta->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ModuloGradeCompleta);
         menubar->setObjectName("menubar");
@@ -78,15 +89,18 @@ public:
 
         retranslateUi(ModuloGradeCompleta);
 
+        tabsGrade->setCurrentIndex(1);
+
+
         QMetaObject::connectSlotsByName(ModuloGradeCompleta);
     } // setupUi
 
     void retranslateUi(QMainWindow *ModuloGradeCompleta)
     {
         ModuloGradeCompleta->setWindowTitle(QCoreApplication::translate("ModuloGradeCompleta", "MainWindow", nullptr));
-        pushButton_grade->setText(QCoreApplication::translate("ModuloGradeCompleta", "Ver Grade", nullptr));
-        pushButton_ProgressoGrade->setText(QCoreApplication::translate("ModuloGradeCompleta", "Ver Progresso", nullptr));
         label->setText(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_gradeGeral), QCoreApplication::translate("ModuloGradeCompleta", "Ver Grade", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeProgresso), QCoreApplication::translate("ModuloGradeCompleta", "Ver Progresso", nullptr));
         menuGrade_Curricular->setTitle(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
     } // retranslateUi
 
