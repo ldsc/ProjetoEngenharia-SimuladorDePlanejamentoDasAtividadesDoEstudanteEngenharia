@@ -13,58 +13,47 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
     std::vector<CDisciplinas> todasDisciplinas = getDisciplinasCurso();
 
     bool lendoTabela = false;
+
     while (!in.atEnd()) {
         QString linha = in.readLine().trimmed();
 
         if (linha.startsWith("Nome:"))
             nome = linha.section(":", 1).trimmed();
-        else if (linha.startsWith("Matrícula:"))
+        else if (linha.startsWith("Matricula:"))
             matricula = linha.section(":", 1).trimmed();
         else if (linha.startsWith("Curso:"))
             curso = linha.section(":", 1).trimmed();
-        else if (linha.startsWith("Período:"))
+        else if (linha.startsWith("Periodo:"))
             periodo = linha.section(":", 1).trimmed().toInt();
         else if (linha.startsWith("CRA:"))
             cra = linha.section(":", 1).trimmed().toFloat();
         else if (linha.startsWith("#") || linha.isEmpty())
             continue;
-        else {
+        else
             lendoTabela = true;
-        }
 
         if (lendoTabela && !linha.startsWith("#") && !linha.isEmpty()) {
-            QTextStream stream(&linha);
-            int periodoLinha;
-            stream >> periodoLinha;
+            QStringList partes = linha.split(";", Qt::SkipEmptyParts);
+            if (partes.size() < 4) continue;
 
-            QString palavra, nomeDisciplina;
-            while (!stream.atEnd()) {
-                stream >> palavra;
-                if (palavra.contains(QRegularExpression("^\\d+(\\.\\d+)?$")) || palavra == "-")
-                    break;
-                nomeDisciplina += (nomeDisciplina.isEmpty() ? "" : " ") + palavra;
-            }
+            int periodoLinha = partes[0].trimmed().toInt();
+            QString nomeDisciplina = partes[1].trimmed();
 
-            QString nomeTrim = nomeDisciplina.trimmed();
-            auto it = std::find_if(todasDisciplinas.begin(), todasDisciplinas.end(), [&nomeTrim](const CDisciplinas& d) {
-                return QString::fromStdString(d.nome).compare(nomeTrim, Qt::CaseInsensitive) == 0;
-            });
+            auto it = std::find_if(todasDisciplinas.begin(), todasDisciplinas.end(),
+                                   [&nomeDisciplina](const CDisciplinas& d) {
+                                       return QString::fromStdString(d.nome).compare(nomeDisciplina, Qt::CaseInsensitive) == 0;
+                                   });
 
             if (it == todasDisciplinas.end())
                 continue;
 
             std::vector<QString> situacoes;
-            while (!stream.atEnd()) {
-                QString valor;
-                stream >> valor;
-                if (valor == "Aprovada" || valor == "Reprovada") {
-                    situacoes.push_back(valor);
-                } else if (valor == "Em") {
-                    stream >> valor;
-                    situacoes.push_back("Em Curso");
-                } else if (valor == "Não") {
-                    stream >> valor;
-                    situacoes.push_back("Não Cursada");
+            for (int i = 2; i + 1 < partes.size(); i += 2) {
+                QString nota = partes[i].trimmed();
+                QString situacao = partes[i + 1].trimmed();
+
+                if (!situacao.isEmpty()) {
+                    situacoes.push_back(situacao);
                 }
             }
 
@@ -73,7 +62,9 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
 
                 if (ultimaSituacao == "Aprovada") {
                     disciplinasAprovadas.push_back(*it);
-                } else if (ultimaSituacao == "Não Cursada") {
+                } else if (ultimaSituacao == "Em Curso") {
+                    disciplinasEmCurso.push_back(*it);
+                } else if (ultimaSituacao == "Nao Cursada") {
                     disciplinasNaoCursadas.push_back(*it);
                 }
             }

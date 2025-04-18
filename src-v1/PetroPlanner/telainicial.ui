@@ -10,18 +10,46 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>TelaInicial</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: blue;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">w</string>
+   </property>
    <widget class="QPushButton" name="botaoVerGradeCompleta">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>190</y>
-      <width>121</width>
-      <height>31</height>
+      <x>20</x>
+      <y>220</y>
+      <width>301</width>
+      <height>111</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
     </property>
     <property name="text">
      <string>Ver Grade Completa</string>
@@ -32,9 +60,23 @@
      <rect>
       <x>20</x>
       <y>40</y>
-      <width>211</width>
-      <height>121</height>
+      <width>671</width>
+      <height>141</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Book Antiqua</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white; color: black; border: none;</string>
     </property>
     <property name="title">
      <string>Dados Gerais</string>
@@ -47,6 +89,18 @@
        <width>191</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -61,6 +115,12 @@
        <height>16</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="text">
       <string>TextLabel</string>
      </property>
@@ -73,6 +133,12 @@
        <width>191</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -87,6 +153,12 @@
        <height>16</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="text">
       <string>TextLabel</string>
      </property>
@@ -99,6 +171,31 @@
        <width>191</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDisciplinasEmCurso">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>661</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Book Antiqua</family>
+       <bold>false</bold>
+      </font>
      </property>
      <property name="text">
       <string>TextLabel</string>
