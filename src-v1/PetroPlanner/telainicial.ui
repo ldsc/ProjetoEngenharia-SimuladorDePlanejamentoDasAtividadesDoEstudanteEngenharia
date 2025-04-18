@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>839</width>
     <height>600</height>
    </rect>
   </property>
@@ -32,10 +32,10 @@
    <widget class="QPushButton" name="botaoVerGradeCompleta">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>220</y>
-      <width>301</width>
-      <height>111</height>
+      <x>50</x>
+      <y>290</y>
+      <width>191</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -58,9 +58,9 @@
    <widget class="QGroupBox" name="groupBoxInfoAluno">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>671</width>
+      <x>50</x>
+      <y>110</y>
+      <width>541</width>
       <height>141</height>
      </rect>
     </property>
@@ -202,13 +202,36 @@
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>30</y>
+      <width>421</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>40</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white</string>
+    </property>
+    <property name="text">
+     <string>PetroPlanner</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>839</width>
      <height>22</height>
     </rect>
    </property>

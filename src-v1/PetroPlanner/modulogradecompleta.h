@@ -21,7 +21,7 @@ public:
 private:
     Ui::ModuloGradeCompleta *ui;
     QGridLayout *gridLayout;
-    CAluno aluno;  // cópia do aluno
+    CAluno aluno;
     void carregarDisciplinas();
 };
 

@@ -1,7 +1,11 @@
 #include "modulogradecompleta.h"
 #include "ui_modulogradecompleta.h"
+#include "ui_modulogradecompleta.h"
 #include <QPushButton>
-#include <QGridLayout>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QScreen>
+#include <QGuiApplication>
 #include <QFile>
 #include <QTextStream>
 #include <QRegularExpression>
@@ -12,6 +16,12 @@ ModuloGradeCompleta::ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent
     , aluno(alunoRef)
 {
     ui->setupUi(this);
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    if (screen) {
+        this->setGeometry(screen->geometry());
+    }
+
     carregarDisciplinas();
 }
 
@@ -22,42 +32,37 @@ ModuloGradeCompleta::~ModuloGradeCompleta()
 
 void ModuloGradeCompleta::carregarDisciplinas() {
     std::vector<CDisciplinas> todas = getDisciplinasCurso();
-    QGridLayout *layout = new QGridLayout();
+    QGridLayout *grade = new QGridLayout();
     int row = 0;
 
     for (int periodo = 1; periodo <= 10; ++periodo) {
-        int column = 0;
-
+        int col = 0;
         for (const auto& disc : todas) {
-            if (disc.periodo != periodo)
-                continue;
+            if (disc.periodo != periodo) continue;
 
             QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
-            QString cor = "background-color: lightgray"; // padrão: não cursada
+            botao->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+            botao->setMinimumWidth(200);  // Largura mínima para nome caber
+            botao->setMinimumHeight(40);  // Altura padrão
 
-            // Verifica se está aprovada (no vetor do aluno)
+            QString cor = "background-color: lightgray";
+
             bool aprovada = std::any_of(
                 aluno.disciplinasAprovadas.begin(), aluno.disciplinasAprovadas.end(),
-                [&disc](const CDisciplinas& d) { return d.nome == disc.nome; }
-                );
+                [&disc](const CDisciplinas& d) { return d.nome == disc.nome; });
 
             if (aprovada) {
                 cor = "background-color: lightgreen";
             } else {
-                // Se não está no vetor, verificar no TXT
                 QFile file("InformacoesAluno.txt");
                 if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                     QTextStream in(&file);
                     while (!in.atEnd()) {
                         QString linha = in.readLine();
-                        if (linha.startsWith("#") || linha.trimmed().isEmpty())
-                            continue;
-
                         if (linha.contains(QString::fromStdString(disc.nome), Qt::CaseInsensitive)) {
                             QString ultimaSituacao;
                             QStringList partes = linha.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
 
-                            // Procurar pela última situação relevante
                             for (int i = partes.size() - 1; i >= 0; --i) {
                                 QString valor = partes[i];
                                 if (valor == "Aprovada" || valor == "Reprovada") {
@@ -72,16 +77,10 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                                 }
                             }
 
-                            // Atribuir cor com base na última situação
-                            if (ultimaSituacao == "Aprovada") {
-                                cor = "background-color: lightgreen";
-                            } else if (ultimaSituacao == "Reprovada") {
-                                cor = "background-color: red";
-                            } else if (ultimaSituacao == "Em Curso") {
-                                cor = "background-color: yellow";
-                            } else if (ultimaSituacao == "Nao Cursada") {
-                                cor = "background-color: lightgray";
-                            }
+                            if (ultimaSituacao == "Aprovada") cor = "background-color: lightgreen";
+                            else if (ultimaSituacao == "Reprovada") cor = "background-color: red";
+                            else if (ultimaSituacao == "Em Curso") cor = "background-color: yellow";
+                            else if (ultimaSituacao == "Nao Cursada") cor = "background-color: lightgray";
 
                             break;
                         }
@@ -90,19 +89,30 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                 }
             }
 
-            botao->setStyleSheet(cor);
-            layout->addWidget(botao, row, column++);
+            botao->setStyleSheet(cor + "; padding: 6px; border-radius: 10px;");
+            grade->addWidget(botao, row, col++);
 
-            if (column > 4) {
-                column = 0;
+            if (col > 5) {
+                col = 0;
                 row++;
             }
         }
-
         row++;
     }
 
-    QWidget *centralWidget = new QWidget(this);
-    centralWidget->setLayout(layout);
-    setCentralWidget(centralWidget);
+    QWidget *containerGrade = new QWidget;
+    containerGrade->setLayout(grade);
+
+    QVBoxLayout *layoutVertical = new QVBoxLayout;
+    layoutVertical->addSpacing(100);             // margem superior
+    layoutVertical->addWidget(containerGrade);
+    layoutVertical->addSpacing(80);             // margem inferior (6cm aprox)
+
+    QHBoxLayout *layoutHorizontal = new QHBoxLayout;
+    layoutHorizontal->addSpacing(50);           // margem esquerda REDUZIDA
+    layoutHorizontal->addLayout(layoutVertical);
+    layoutHorizontal->addSpacing(100);          // margem direita
+
+    ui->centralwidget->setLayout(layoutHorizontal);
+
 }

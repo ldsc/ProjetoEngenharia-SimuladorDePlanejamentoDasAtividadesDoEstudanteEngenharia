@@ -33,6 +33,7 @@ public:
     QLabel *labelPeriodo;
     QLabel *labelCRA;
     QLabel *labelDisciplinasEmCurso;
+    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,7 +41,7 @@ public:
     {
         if (TelaInicial->objectName().isEmpty())
             TelaInicial->setObjectName("TelaInicial");
-        TelaInicial->resize(800, 600);
+        TelaInicial->resize(839, 600);
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         font.setBold(true);
@@ -52,7 +53,7 @@ public:
         centralwidget->setStyleSheet(QString::fromUtf8("w"));
         botaoVerGradeCompleta = new QPushButton(centralwidget);
         botaoVerGradeCompleta->setObjectName("botaoVerGradeCompleta");
-        botaoVerGradeCompleta->setGeometry(QRect(20, 220, 301, 111));
+        botaoVerGradeCompleta->setGeometry(QRect(50, 290, 191, 81));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setPointSize(12);
@@ -62,7 +63,7 @@ public:
         botaoVerGradeCompleta->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         groupBoxInfoAluno = new QGroupBox(centralwidget);
         groupBoxInfoAluno->setObjectName("groupBoxInfoAluno");
-        groupBoxInfoAluno->setGeometry(QRect(20, 40, 671, 141));
+        groupBoxInfoAluno->setGeometry(QRect(50, 110, 541, 141));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Book Antiqua")});
         font2.setPointSize(12);
@@ -100,10 +101,19 @@ public:
         labelDisciplinasEmCurso->setObjectName("labelDisciplinasEmCurso");
         labelDisciplinasEmCurso->setGeometry(QRect(10, 120, 661, 16));
         labelDisciplinasEmCurso->setFont(font3);
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(480, 30, 421, 41));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font4.setPointSize(40);
+        font4.setBold(true);
+        label->setFont(font4);
+        label->setStyleSheet(QString::fromUtf8("color:white"));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 839, 22));
         TelaInicial->setMenuBar(menubar);
         statusbar = new QStatusBar(TelaInicial);
         statusbar->setObjectName("statusbar");
@@ -125,6 +135,7 @@ public:
         labelPeriodo->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelCRA->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelDisciplinasEmCurso->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        label->setText(QCoreApplication::translate("TelaInicial", "PetroPlanner", nullptr));
     } // retranslateUi
 
 };
