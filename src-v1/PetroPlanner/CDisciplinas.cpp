@@ -16,7 +16,7 @@ std::vector<CDisciplinas> getDisciplinasCurso() {
     // Periodo 2
     disciplinas.push_back(CDisciplinas(2, "Quimica Geral II", 3, 51, {}, "Geologia e Geoquimica", "Basico"));
     disciplinas.push_back(CDisciplinas(2, "Portugues Instrumental II", 2, 68, {}, "Geral", "Basico"));
-    disciplinas.push_back(CDisciplinas(2, "Optativa do CCH", 2, 68, {}, "Geral", "Basico"));
+    disciplinas.push_back(CDisciplinas(2, "Optativa do CCH", 2, 68, {}, "Optativa", "Basico"));
     disciplinas.push_back(CDisciplinas(2, "Fisica I", 4, 68, {}, "Geofisica", "Basico"));
     disciplinas.push_back(CDisciplinas(2, "Fisica Experimental I", 1, 34, {}, "Geofisica", "Basico"));
     disciplinas.push_back(CDisciplinas(2, "Calculo Diferencial e Integral II", 5, 68, {}, "Modelagem Matematica Computacional", "Basico"));
@@ -76,18 +76,18 @@ std::vector<CDisciplinas> getDisciplinasCurso() {
     // Periodo 9
     disciplinas.push_back(CDisciplinas(9, "Perfilagem de Pocos II", 4, 68, {}, "Petrofisica", "Profissionalizante"));
     disciplinas.push_back(CDisciplinas(9, "Seminarios em Engenharia de Petroleo", 1, 17, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(9, "Optativa 1", 2, 0 , {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(9, "Optativa 2", 3, 0 , {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(9, "Exigencia Trabalho Conclusao Curso", 0 , 34, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(9, "Optativa 1", 2, 0 , {}, "Optativa", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(9, "Optativa 2", 3, 0 , {}, "Optativa", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(9, "Exigencia Trabalho Conclusao Curso", 0 , 34, {}, "Exigencia", "Profissionalizante"));
 
     // Periodo 10
     disciplinas.push_back(CDisciplinas(10, "Energias Renovaveis", 2, 51, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Optativa 3", 4, 0 , {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Exigencia Trabalho de Conclusao de Curso", 0 , 34, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Exigencia Estagio Curricular Obrigatorio", 0 , 170, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Academicas Complementares", 0 , 60, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Curriculares de Extensao", 0 , 370, {}, "Geral", "Profissionalizante"));
-    disciplinas.push_back(CDisciplinas(10, "Exigencia Projeto de Trabalho de Conclusao de Curso", 0  , 68, {}, "Geral", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Optativa 3", 4, 0 , {}, "Optativa", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Trabalho de Conclusao de Curso", 0 , 34, {}, "Exigencia", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Estagio Curricular Obrigatorio", 0 , 170, {}, "Exigencia", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Academicas Complementares", 0 , 60, {}, "Exigencia", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Atividades Curriculares de Extensao", 0 , 370, {}, "Exigencia", "Profissionalizante"));
+    disciplinas.push_back(CDisciplinas(10, "Exigencia Projeto de Trabalho de Conclusao de Curso", 0  , 68, {}, "Exigencia", "Profissionalizante"));
 
     
 

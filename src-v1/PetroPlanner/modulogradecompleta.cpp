@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QRegularExpression>
+#include <QLabel>
 
 ModuloGradeCompleta::ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent)
     : QMainWindow(parent)
@@ -31,47 +32,60 @@ ModuloGradeCompleta::~ModuloGradeCompleta()
 
 void ModuloGradeCompleta::carregarDisciplinas() {
     std::vector<CDisciplinas> todas = getDisciplinasCurso();
+    QFont fonte("Bookman Old Style", 6);
 
     // ========================= TAB 1 - GRADE GERAL =========================
     QVBoxLayout *layoutTab1 = new QVBoxLayout;
+    layoutTab1->setContentsMargins(20, 20, 20, 20);
 
     for (int periodo = 1; periodo <= 10; ++periodo) {
         QHBoxLayout *linhaPeriodo = new QHBoxLayout;
+        linhaPeriodo->setSpacing(10);  // espaçamento entre botões
 
         for (const auto& disc : todas) {
             if (disc.periodo != periodo) continue;
 
             QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
+            botao->setFont(fonte);
+            botao->setMinimumSize(140, 30);
             botao->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-            botao->setMinimumWidth(140);
-            botao->setMinimumHeight(30);
-            botao->setStyleSheet("background-color: lightgray; padding: 2px; border-radius: 8px; font-size: 10pt;");
+
+            QString eixo = QString::fromStdString(disc.eixoTematico);
+            QString cor;
+
+            if (eixo == "Geologia e Geoquimica") cor = "#FF6B6B";
+            else if (eixo == "Geral") cor = "#D3D3D3";
+            else if (eixo == "Modelagem Matematica Computacional") cor = "#FFF799";
+            else if (eixo == "Geofisica") cor = "#ADD8E6";
+            else if (eixo == "Optativa") cor = "#C39BD3";
+            else if (eixo == "Petrofisica") cor = "#90EE90";
+            else if (eixo == "Engenharia de Petroleo") cor = "#4169E1";
+            else if (eixo.startsWith("Exigencia")) cor = "#000000; color: white";
+            else cor = "#D3D3D3";
+
+            botao->setStyleSheet("background-color: " + cor + "; padding: 4px; border-radius: 6px;");
             linhaPeriodo->addWidget(botao);
         }
 
         layoutTab1->addLayout(linhaPeriodo);
     }
 
-    QWidget *containerTab1 = new QWidget(this);
-    containerTab1->setLayout(layoutTab1);
-
-    QVBoxLayout *layoutGeral = new QVBoxLayout(ui->widget_gradeGeral);
-    layoutGeral->addWidget(containerTab1);
-    ui->widget_gradeGeral->setLayout(layoutGeral);
+    QVBoxLayout *containerTab1Layout = new QVBoxLayout(ui->widget_gradeGeral);
+    containerTab1Layout->addLayout(layoutTab1);
 
     // ========================= TAB 2 - GRADE COM PROGRESSO =========================
     QVBoxLayout *layoutTab2 = new QVBoxLayout;
 
     for (int periodo = 1; periodo <= 10; ++periodo) {
         QHBoxLayout *linhaPeriodo = new QHBoxLayout;
+        linhaPeriodo->setSpacing(10);
 
         for (const auto& disc : todas) {
             if (disc.periodo != periodo) continue;
 
             QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
-            botao->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-            botao->setMinimumWidth(140);
-            botao->setMinimumHeight(30);
+            botao->setFont(fonte);
+            botao->setMinimumSize(140, 30);
 
             QString cor = "background-color: lightgray";
 
@@ -79,9 +93,8 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                 aluno.disciplinasAprovadas.begin(), aluno.disciplinasAprovadas.end(),
                 [&disc](const CDisciplinas& d) { return d.nome == disc.nome; });
 
-            if (aprovada) {
-                cor = "background-color: lightgreen";
-            } else {
+            if (aprovada) cor = "background-color: lightgreen";
+            else {
                 QFile file("InformacoesAluno.txt");
                 if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                     QTextStream in(&file);
@@ -117,17 +130,39 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                 }
             }
 
-            botao->setStyleSheet(cor + "; padding: 2px; border-radius: 8px; font-size: 10pt;");
+            botao->setStyleSheet(cor + "; padding: 4px; border-radius: 8px;");
             linhaPeriodo->addWidget(botao);
         }
 
         layoutTab2->addLayout(linhaPeriodo);
     }
 
-    QWidget *containerTab2 = new QWidget(this);
-    containerTab2->setLayout(layoutTab2);
-
     QVBoxLayout *layoutProgresso = new QVBoxLayout(ui->widget_gradeProgresso);
-    layoutProgresso->addWidget(containerTab2);
-    ui->widget_gradeProgresso->setLayout(layoutProgresso);
+    layoutProgresso->addLayout(layoutTab2);
+
+    // ========================= TAB 3 - GRADE DIFICULDADE =========================
+    QVBoxLayout *layoutTab3 = new QVBoxLayout;
+    layoutTab3->setContentsMargins(20, 30, 20, 20);
+    layoutTab3->setSpacing(25);
+
+    for (int periodo = 1; periodo <= 10; ++periodo) {
+        QHBoxLayout *linhaPeriodo = new QHBoxLayout;
+        linhaPeriodo->setSpacing(15);
+
+        for (const auto& disc : todas) {
+            if (disc.periodo != periodo) continue;
+
+            QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
+            botao->setFont(fonte);
+            botao->setMinimumSize(140, 30);
+            botao->setStyleSheet("background-color: lightgray; padding: 4px; border-radius: 6px;");
+
+            linhaPeriodo->addWidget(botao);
+        }
+
+        layoutTab3->addLayout(linhaPeriodo);
+    }
+
+    QVBoxLayout *layoutDificuldade = new QVBoxLayout(ui->widget_gradeDificuldade);
+    layoutDificuldade->addLayout(layoutTab3);
 }

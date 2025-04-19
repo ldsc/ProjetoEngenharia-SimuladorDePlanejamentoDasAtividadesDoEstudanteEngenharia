@@ -32,6 +32,8 @@ public:
     QWidget *widget_gradeGeral;
     QWidget *tab_GradeProgresso;
     QWidget *widget_gradeProgresso;
+    QWidget *tab_GradeDificuldade;
+    QWidget *widget_gradeDificuldade;
     QMenuBar *menubar;
     QMenu *menuGrade_Curricular;
     QStatusBar *statusbar;
@@ -65,7 +67,7 @@ public:
         tab_gradeGeral->setObjectName("tab_gradeGeral");
         widget_gradeGeral = new QWidget(tab_gradeGeral);
         widget_gradeGeral->setObjectName("widget_gradeGeral");
-        widget_gradeGeral->setGeometry(QRect(19, 30, 1231, 501));
+        widget_gradeGeral->setGeometry(QRect(19, 20, 1231, 511));
         tabsGrade->addTab(tab_gradeGeral, QString());
         tab_GradeProgresso = new QWidget();
         tab_GradeProgresso->setObjectName("tab_GradeProgresso");
@@ -74,6 +76,13 @@ public:
         widget_gradeProgresso->setObjectName("widget_gradeProgresso");
         widget_gradeProgresso->setGeometry(QRect(20, 20, 1241, 501));
         tabsGrade->addTab(tab_GradeProgresso, QString());
+        tab_GradeDificuldade = new QWidget();
+        tab_GradeDificuldade->setObjectName("tab_GradeDificuldade");
+        tab_GradeDificuldade->setFont(font1);
+        widget_gradeDificuldade = new QWidget(tab_GradeDificuldade);
+        widget_gradeDificuldade->setObjectName("widget_gradeDificuldade");
+        widget_gradeDificuldade->setGeometry(QRect(10, 10, 1241, 501));
+        tabsGrade->addTab(tab_GradeDificuldade, QString());
         ModuloGradeCompleta->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ModuloGradeCompleta);
         menubar->setObjectName("menubar");
@@ -89,7 +98,7 @@ public:
 
         retranslateUi(ModuloGradeCompleta);
 
-        tabsGrade->setCurrentIndex(1);
+        tabsGrade->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(ModuloGradeCompleta);
@@ -101,6 +110,7 @@ public:
         label->setText(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
         tabsGrade->setTabText(tabsGrade->indexOf(tab_gradeGeral), QCoreApplication::translate("ModuloGradeCompleta", "Ver Grade", nullptr));
         tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeProgresso), QCoreApplication::translate("ModuloGradeCompleta", "Ver Progresso", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeDificuldade), QCoreApplication::translate("ModuloGradeCompleta", "Ver por N\303\255vel de Dificuldade", nullptr));
         menuGrade_Curricular->setTitle(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
     } // retranslateUi
 
