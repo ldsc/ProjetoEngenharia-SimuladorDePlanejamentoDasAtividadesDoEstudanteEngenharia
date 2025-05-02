@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2025-05-02T10:39:06" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
+<XMI verified="false" xmi.version="1.2" timestamp="2025-05-02T11:47:28" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -39,7 +39,7 @@
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="96">
-       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="class diagram" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="0" canvaswidth="0" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="100" xmi.id="ucsM01upSbdfN" documentation="" showscope="1" snapgrid="0" showatts="1" type="1">
+       <diagram showopsig="1" linecolor="#ff0000" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="0" showpackage="1" showpubliconly="0" showstereotype="1" name="class diagram" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="0" canvaswidth="0" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff00" zoom="500" xmi.id="ucsM01upSbdfN" documentation="" showscope="1" snapgrid="0" showatts="1" type="1">
         <widgets/>
         <messages/>
         <associations/>
@@ -77,7 +77,7 @@
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="96">
-       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="0" showpackage="1" showpubliconly="0" showstereotype="1" name="DiagramaDeCasoDeUso_TelaInicial" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="321.133" canvaswidth="463.574" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="10" xmi.id="uThmerx72O7MN" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
+       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="DiagramaDeCasoDeUso_TelaInicial" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="323.151" canvaswidth="698.233" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="93" xmi.id="uThmerx72O7MN" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
         <widgets>
          <actorwidget width="42" showstereotype="1" x="-305" usesdiagramusefillcolor="0" y="-259" usesdiagramfillcolor="0" isinstance="0" localid="uhb7VLm7zrsk1" fillcolor="#ffa308" height="42" linecolor="#004aad" xmi.id="uErKPJzfqQBtO" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="151.393" showstereotype="1" x="-242.381" usesdiagramusefillcolor="0" y="-341.125" usesdiagramfillcolor="0" isinstance="0" localid="udEjS8VOZIzj3" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uwLOa5m8xs1dF" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
@@ -86,6 +86,7 @@
          <usecasewidget width="181.92" showstereotype="1" x="-206.468" usesdiagramusefillcolor="0" y="-211.273" usesdiagramfillcolor="0" isinstance="0" localid="uyotpY0jfanK7" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uVx590gkXFn1g" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="261" showstereotype="1" x="-264.505" usesdiagramusefillcolor="0" y="-147.162" usesdiagramfillcolor="0" isinstance="0" localid="uDNeJ7S1bS0DY" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="um9B2YqZ9nAtl" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="215" showstereotype="1" x="-442.373" usesdiagramusefillcolor="0" y="-104.867" usesdiagramfillcolor="0" isinstance="0" localid="ujrFR1I1zTK7t" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uZW7gkMIAJyuB" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
+         <notewidget linecolor="#004aad" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="22.5806" showstereotype="1" y="-112.903" text="Projeto PetroPlanner&#xa;Abigail Ribeiro e Maria Luiza Cornelio&#xa;Diagrama de Caso de Uso Geral" font="Sans Serif,9,-1,0,50,0,0,0,0,0" localid="uZ4Jl68ElonFM" width="233.28" isinstance="0" noteType="0" usefillcolor="1" fillcolor="#ffa308" xmi.id="ukRgkXLGieY5N" autoresize="0" height="60.0538"/>
         </widgets>
         <messages/>
         <associations>
@@ -127,7 +128,7 @@
          </assocwidget>
         </associations>
        </diagram>
-       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="0" showpackage="1" showpubliconly="0" showstereotype="1" name="DCU_ModDisciplinasEmAnd" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="359" canvaswidth="402" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="100" xmi.id="ulVFC0UQrgwKx" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
+       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="DCU_ModDisciplinasEmAnd" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="377.151" canvaswidth="639.861" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="100" xmi.id="ulVFC0UQrgwKx" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
         <widgets>
          <actorwidget width="42" showstereotype="1" x="-337" usesdiagramusefillcolor="0" y="-422" usesdiagramfillcolor="0" isinstance="0" localid="urkZxiVnFFId6" fillcolor="#ffa308" height="42" linecolor="#004aad" xmi.id="uErKPJzfqQBtO" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="307" showstereotype="1" x="-371" usesdiagramusefillcolor="0" y="-547" usesdiagramfillcolor="0" isinstance="0" localid="uiUCBMrJbUJWI" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uSDDoH7HqjEBl" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
@@ -136,6 +137,7 @@
          <usecasewidget width="167" showstereotype="1" x="-166" usesdiagramusefillcolor="0" y="-344" usesdiagramfillcolor="0" isinstance="0" localid="ubx29SICOzneZ" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uv0732OQ57JIB" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="155" showstereotype="1" x="-235" usesdiagramusefillcolor="0" y="-283" usesdiagramfillcolor="0" isinstance="0" localid="uSjaT04R3H4Q2" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uFhZEuRavIoTO" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="144" showstereotype="1" x="-362" usesdiagramusefillcolor="0" y="-238" usesdiagramfillcolor="0" isinstance="0" localid="uj2y18wcfsTGC" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="ubbTNtLl7mPwh" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
+         <notewidget linecolor="#004aad" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="33.5806" showstereotype="1" y="-240.903" text="Projeto PetroPlanner&#xa;Abigail Ribeiro e Maria Luiza Cornelio&#xa;Diagrama de Caso de Uso Geral&#xa;Modulo Disciplinas em Andamento" font="Sans Serif,9,-1,0,50,0,0,0,0,0" localid="uOFav9HwUr8Bc" width="235.28" isinstance="0" noteType="0" usefillcolor="1" fillcolor="#ffa308" xmi.id="ukRgkXLGieY5N" autoresize="0" height="71.0538"/>
         </widgets>
         <messages/>
         <associations>
@@ -193,7 +195,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="ucsM01upSbdfN" uniqueid="uck71KfKawm0b" documentation=""/>
+  <docsettings viewid="ulVFC0UQrgwKx" uniqueid="uOFav9HwUr8Bc" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component_View"/>

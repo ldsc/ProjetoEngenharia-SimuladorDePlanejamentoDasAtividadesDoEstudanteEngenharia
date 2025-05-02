@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2025-05-02T10:43:15" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
+<XMI verified="false" xmi.version="1.2" timestamp="2025-05-02T11:32:15" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -57,11 +57,12 @@
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="96">
-       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="DCU_SimularGrade" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="158" canvaswidth="294" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="100" xmi.id="uAh4fnPbhDZ8n" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
+       <diagram showopsig="1" linecolor="#004aad" snapx="25" showattribassocs="1" snapy="25" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="DCU_SimularGrade" font="Sans Serif,9,-1,0,50,0,0,0,0,0" canvasheight="225.207" canvaswidth="559.557" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffa308" zoom="123,5923530609329" xmi.id="uAh4fnPbhDZ8n" documentation="" showscope="1" snapgrid="0" showatts="1" type="2">
         <widgets>
          <actorwidget width="42" showstereotype="1" x="-60" usesdiagramusefillcolor="0" y="-189" usesdiagramfillcolor="0" isinstance="0" localid="uDJ12M6HSNM2v" fillcolor="#ffa308" height="42" linecolor="#004aad" xmi.id="u2QwIChG33U5F" autoresize="1" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="210" showstereotype="1" x="24" usesdiagramusefillcolor="0" y="-248" usesdiagramfillcolor="0" isinstance="0" localid="uUvCHHfLq2E8x" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uZCtYCLBcdTME" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
          <usecasewidget width="176" showstereotype="1" x="44" usesdiagramusefillcolor="0" y="-140" usesdiagramfillcolor="0" isinstance="0" localid="u27xXLtQcnYS4" fillcolor="#ffa308" height="50" linecolor="#004aad" xmi.id="uByJt9cFncypg" autoresize="0" textcolor="#000000" usefillcolor="1" linewidth="0" font="Sans Serif,9,-1,0,50,0,0,0,0,0"/>
+         <notewidget linecolor="#004aad" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="250.574" showstereotype="1" y="-97.3567" text="Projeto PetroPlanner &#xa;Abigail Ribeiro e Maria Luiza Cornelio&#xa;Diagrama de Caso de Uso Geral&#xa;Modulo Simular Grade" font="Sans Serif,9,-1,0,50,0,0,0,0,0" localid="u4j1Uoub3tj2r" width="248.983" isinstance="0" noteType="0" usefillcolor="1" fillcolor="#ffa308" xmi.id="uvz2PgVUXeod2" autoresize="0" height="74.564"/>
         </widgets>
         <messages/>
         <associations>
@@ -95,7 +96,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="uAh4fnPbhDZ8n" uniqueid="uZJ42qOObAUGs" documentation=""/>
+  <docsettings viewid="uAh4fnPbhDZ8n" uniqueid="uSoAUenPtlHlD" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component_View"/>

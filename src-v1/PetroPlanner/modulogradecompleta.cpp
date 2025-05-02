@@ -155,7 +155,19 @@ void ModuloGradeCompleta::carregarDisciplinas() {
             QPushButton *botao = new QPushButton(QString::fromStdString(disc.nome));
             botao->setFont(fonte);
             botao->setMinimumSize(140, 30);
-            botao->setStyleSheet("background-color: lightgray; padding: 4px; border-radius: 6px;");
+
+            QString corDificuldade;
+            switch (disc.nivelDificuldade) {
+            case 1: corDificuldade = "#a1df82"; break; // Verde
+            case 2: corDificuldade = "#e7eb9e"; break; // Amarelo claro
+            case 3: corDificuldade = "#ffde59"; break; // Amarelo escuro
+            case 4: corDificuldade = "#ed9808"; break; // Laranja
+            case 5: corDificuldade = "#cf3e3d"; break; // Vermelho
+            default: corDificuldade = "#D3D3D3"; break; // Cinza para níveis indefinidos
+            }
+
+            botao->setStyleSheet("background-color: " + corDificuldade + "; padding: 4px; border-radius: 6px;");
+
 
             linhaPeriodo->addWidget(botao);
         }

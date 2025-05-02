@@ -98,7 +98,7 @@ public:
 
         retranslateUi(ModuloGradeCompleta);
 
-        tabsGrade->setCurrentIndex(2);
+        tabsGrade->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(ModuloGradeCompleta);
@@ -108,9 +108,9 @@ public:
     {
         ModuloGradeCompleta->setWindowTitle(QCoreApplication::translate("ModuloGradeCompleta", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
-        tabsGrade->setTabText(tabsGrade->indexOf(tab_gradeGeral), QCoreApplication::translate("ModuloGradeCompleta", "Ver Grade", nullptr));
-        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeProgresso), QCoreApplication::translate("ModuloGradeCompleta", "Ver Progresso", nullptr));
-        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeDificuldade), QCoreApplication::translate("ModuloGradeCompleta", "Ver por N\303\255vel de Dificuldade", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_gradeGeral), QCoreApplication::translate("ModuloGradeCompleta", "por \303\241rea", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeProgresso), QCoreApplication::translate("ModuloGradeCompleta", "por semestre", nullptr));
+        tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeDificuldade), QCoreApplication::translate("ModuloGradeCompleta", "por n\303\255vel de dificuldade", nullptr));
         menuGrade_Curricular->setTitle(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
     } // retranslateUi
 
