@@ -1,4 +1,5 @@
 #include "CAluno.h"
+#include "CDisciplinas.h"
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
@@ -72,5 +73,25 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
         }
     }
 
+
+
     return true;
+}
+
+
+//AQUI
+int CAluno::calcularCreditosEmCurso() const {
+    std::vector<CDisciplinas> todas = getDisciplinasCurso();
+    int total = 0;
+
+    for (const auto& discAluno : disciplinasEmCurso) {
+        for (const auto& discCurso : todas) {
+            if (discAluno.getNome() == discCurso.getNome()) {
+                total += discCurso.getCreditos();
+                break;
+            }
+        }
+    }
+
+    return total;
 }

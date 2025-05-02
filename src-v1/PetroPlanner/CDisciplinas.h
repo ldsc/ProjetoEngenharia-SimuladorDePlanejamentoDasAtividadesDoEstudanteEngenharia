@@ -47,7 +47,21 @@ public:
                 std::cout << co << " ";
             std::cout << "\n";
         }
+
     }
+
+
+    std::string getNome() const {
+
+        return nome;
+    };
+
+    int getCreditos() const{
+
+        return creditos;
+    };
+
+
 };
 
 // Função para retornar todas as disciplinas já pré-definidas

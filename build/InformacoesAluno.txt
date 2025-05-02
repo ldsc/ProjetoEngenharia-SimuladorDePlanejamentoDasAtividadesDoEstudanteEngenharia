@@ -12,16 +12,16 @@ CRA: 8.5
 1 ; Desenho Tecnico ; 2.5 ; Reprovada
 1 ; Calculo Diferencial e Integral I ; - ; Em Curso
 1 ; Introducao a Engenharia de Petroleo ; - ; Em Curso
-1 ; Fundamentos da Ciencia da Computacao ; - ; Nao Cursada
+1 ; Fundamentos da Ciencia da Computacao ; - ; Em Curso
 
 2 ; Quimica Geral II ; - ; Nao Cursada
-2 ; Portugues Instrumental II ; - ; Nao Cursada
+2 ; Portugues Instrumental II ; - ; Em Curso
 2 ; Optativa do CCH ; - ; Nao Cursada
 2 ; Fisica I ; - ; Nao Cursada
 2 ; Fisica Experimental I ; - ; Nao Cursada
 2 ; Calculo Diferencial e Integral II ; - ; Nao Cursada
 2 ; Higiene e Seguranca do Trabalho ; - ; Nao Cursada
-2 ; Algebra Linear ; - ; Nao Cursada
+2 ; Algebra Linear ; - ; Em Curso
 
 3 ; Laboratorio de Quimica Analitica ; - ; Nao Cursada
 3 ; Quimica Analitica ; - ; Nao Cursada
@@ -64,7 +64,7 @@ CRA: 8.5
 8 ; Perfilagem de Pocos I ; - ; Nao Cursada
 8 ; Elevacao e Escoamento ; - ; Nao Cursada
 8 ; Engenharia de Poco ; - ; Nao Cursada
-8 ; Projeto de Software Aplicado a Engenharia ; - ; Nao Cursada
+8 ; Projeto de Software Aplicado a Engenharia ; - ; Em Curso
 
 9 ; Perfilagem de Pocos II ; - ; Nao Cursada
 9 ; Seminarios em Engenharia de Petroleo ; - ; Nao Cursada

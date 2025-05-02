@@ -26,6 +26,9 @@ private:
     ModuloGradeCompleta *gradeCompleta; // Ponteiro para a janela
     void carregarInformacoesAluno();
     CAluno aluno; // guarda info do aluno para as disciplinas serem comparadas
+
+
+
 };
 
 #endif

@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 69,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 52,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -378,11 +378,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "PetroPlanner_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "PetroPlanner_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "PetroPlanner_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "PetroPlanner::@6890427a1f51a3e7e1df",
@@ -503,8 +503,9 @@
 				5,
 				7,
 				9,
-				12,
-				13
+				13,
+				14,
+				15
 			]
 		},
 		{
@@ -512,21 +513,22 @@
 			"sourceIndexes" : 
 			[
 				4,
-				11
+				11,
+				12
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				14
+				16
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				15
+				17
 			]
 		}
 	],
@@ -600,6 +602,11 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "modulograde.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/build/PetroPlanner_autogen/include/ui_telainicial.h",
@@ -609,6 +616,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/build/PetroPlanner_autogen/include/ui_modulogradecompleta.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/build/PetroPlanner_autogen/include/ui_modulograde.h",
 			"sourceGroupIndex" : 1
 		},
 		{

@@ -63,4 +63,15 @@ void TelaInicial::carregarInformacoesAluno()
 
     ui->labelDisciplinasEmCurso->setText("Disciplinas em curso: " + listaEmCurso);
 
+
+
+    //Aparecimento dos creditos cursados em Disciplinas em andamento
+    int creditos = aluno.calcularCreditosEmCurso();
+    int limite = 16;
+
+    ui->progressBarCreditos->setMaximum(limite);
+    ui->progressBarCreditos->setValue(std::min(creditos, limite)); // nunca passa de 16 na barra
+
+    ui->labelCreditosEmCurso->setText(QString::number(creditos) + "/16 créditos");
+
 }

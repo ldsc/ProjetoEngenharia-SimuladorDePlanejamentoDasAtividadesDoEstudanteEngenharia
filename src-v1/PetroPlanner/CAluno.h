@@ -13,11 +13,15 @@ public:
     int periodo = 0;
     float cra = 0.0;
 
+
     std::vector<CDisciplinas> disciplinasEmCurso;
     std::vector<CDisciplinas> disciplinasAprovadas;
     std::vector<CDisciplinas> disciplinasNaoCursadas;
 
     bool lerDoArquivo(const QString& caminho);
+    int calcularCreditosEmCurso() const;
+
+
 };
 
 #endif

@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -33,7 +34,13 @@ public:
     QLabel *labelPeriodo;
     QLabel *labelCRA;
     QLabel *labelDisciplinasEmCurso;
-    QLabel *label;
+    QLabel *labelTitulo;
+    QPushButton *botaoVerGradeCompleta_2;
+    QGroupBox *groupBoxDiscAnd;
+    QLabel *labelHorasEmCurso;
+    QProgressBar *progressBarCreditos;
+    QLabel *labelCreditosEmCurso;
+    QLabel *labelDiscAnd;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,7 +48,7 @@ public:
     {
         if (TelaInicial->objectName().isEmpty())
             TelaInicial->setObjectName("TelaInicial");
-        TelaInicial->resize(839, 600);
+        TelaInicial->resize(1278, 600);
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         font.setBold(true);
@@ -53,7 +60,7 @@ public:
         centralwidget->setStyleSheet(QString::fromUtf8("w"));
         botaoVerGradeCompleta = new QPushButton(centralwidget);
         botaoVerGradeCompleta->setObjectName("botaoVerGradeCompleta");
-        botaoVerGradeCompleta->setGeometry(QRect(50, 290, 191, 81));
+        botaoVerGradeCompleta->setGeometry(QRect(50, 290, 251, 81));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setPointSize(12);
@@ -101,19 +108,58 @@ public:
         labelDisciplinasEmCurso->setObjectName("labelDisciplinasEmCurso");
         labelDisciplinasEmCurso->setGeometry(QRect(10, 120, 661, 16));
         labelDisciplinasEmCurso->setFont(font3);
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(480, 30, 421, 41));
+        labelTitulo = new QLabel(centralwidget);
+        labelTitulo->setObjectName("labelTitulo");
+        labelTitulo->setGeometry(QRect(480, 30, 421, 41));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font4.setPointSize(40);
         font4.setBold(true);
-        label->setFont(font4);
-        label->setStyleSheet(QString::fromUtf8("color:white"));
+        labelTitulo->setFont(font4);
+        labelTitulo->setStyleSheet(QString::fromUtf8("color:white"));
+        botaoVerGradeCompleta_2 = new QPushButton(centralwidget);
+        botaoVerGradeCompleta_2->setObjectName("botaoVerGradeCompleta_2");
+        botaoVerGradeCompleta_2->setGeometry(QRect(330, 290, 251, 81));
+        botaoVerGradeCompleta_2->setFont(font1);
+        botaoVerGradeCompleta_2->setToolTipDuration(-4);
+        botaoVerGradeCompleta_2->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
+        groupBoxDiscAnd = new QGroupBox(centralwidget);
+        groupBoxDiscAnd->setObjectName("groupBoxDiscAnd");
+        groupBoxDiscAnd->setGeometry(QRect(690, 120, 541, 261));
+        groupBoxDiscAnd->setFont(font2);
+        groupBoxDiscAnd->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        groupBoxDiscAnd->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: none; border-radius: 30px;"));
+        labelHorasEmCurso = new QLabel(groupBoxDiscAnd);
+        labelHorasEmCurso->setObjectName("labelHorasEmCurso");
+        labelHorasEmCurso->setGeometry(QRect(20, 220, 121, 21));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font5.setPointSize(10);
+        font5.setBold(false);
+        labelHorasEmCurso->setFont(font5);
+        labelHorasEmCurso->setStyleSheet(QString::fromUtf8(""));
+        progressBarCreditos = new QProgressBar(groupBoxDiscAnd);
+        progressBarCreditos->setObjectName("progressBarCreditos");
+        progressBarCreditos->setGeometry(QRect(150, 220, 118, 23));
+        progressBarCreditos->setStyleSheet(QString::fromUtf8("QProgressBar {    border: 2px solid blue;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
+        progressBarCreditos->setMinimum(6);
+        progressBarCreditos->setValue(80);
+        labelCreditosEmCurso = new QLabel(groupBoxDiscAnd);
+        labelCreditosEmCurso->setObjectName("labelCreditosEmCurso");
+        labelCreditosEmCurso->setGeometry(QRect(280, 220, 181, 16));
+        labelDiscAnd = new QLabel(centralwidget);
+        labelDiscAnd->setObjectName("labelDiscAnd");
+        labelDiscAnd->setGeometry(QRect(780, 90, 341, 21));
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font6.setPointSize(18);
+        font6.setBold(true);
+        labelDiscAnd->setFont(font6);
+        labelDiscAnd->setStyleSheet(QString::fromUtf8("color: white"));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 839, 22));
+        menubar->setGeometry(QRect(0, 0, 1278, 22));
         TelaInicial->setMenuBar(menubar);
         statusbar = new QStatusBar(TelaInicial);
         statusbar->setObjectName("statusbar");
@@ -127,7 +173,7 @@ public:
     void retranslateUi(QMainWindow *TelaInicial)
     {
         TelaInicial->setWindowTitle(QCoreApplication::translate("TelaInicial", "TelaInicial", nullptr));
-        botaoVerGradeCompleta->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
+        botaoVerGradeCompleta->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa antigo", nullptr));
         groupBoxInfoAluno->setTitle(QCoreApplication::translate("TelaInicial", "Dados Gerais", nullptr));
         labelNome->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelMatricula->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
@@ -135,7 +181,12 @@ public:
         labelPeriodo->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelCRA->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelDisciplinasEmCurso->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
-        label->setText(QCoreApplication::translate("TelaInicial", "PetroPlanner", nullptr));
+        labelTitulo->setText(QCoreApplication::translate("TelaInicial", "PetroPlanner", nullptr));
+        botaoVerGradeCompleta_2->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
+        groupBoxDiscAnd->setTitle(QString());
+        labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Cr\303\251ditos em curso:", nullptr));
+        labelCreditosEmCurso->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
     } // retranslateUi
 
 };

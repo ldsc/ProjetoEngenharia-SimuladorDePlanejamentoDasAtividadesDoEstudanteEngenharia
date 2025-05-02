@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>839</width>
+    <width>1278</width>
     <height>600</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
      <rect>
       <x>50</x>
       <y>290</y>
-      <width>191</width>
+      <width>251</width>
       <height>81</height>
      </rect>
     </property>
@@ -52,7 +52,7 @@
      <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
     </property>
     <property name="text">
-     <string>Ver Grade Completa</string>
+     <string>Ver Grade Completa antigo</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBoxInfoAluno">
@@ -202,7 +202,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="labelTitulo">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -225,13 +225,144 @@
      <string>PetroPlanner</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="botaoVerGradeCompleta_2">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>290</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Ver Grade Completa</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxDiscAnd">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>120</y>
+      <width>541</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Book Antiqua</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white; color: black; border: none; border-radius: 30px;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="labelHorasEmCurso">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>10</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Créditos em curso:</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBarCreditos">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>220</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar {    border: 2px solid blue;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}</string>
+     </property>
+     <property name="minimum">
+      <number>6</number>
+     </property>
+     <property name="value">
+      <number>80</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCreditosEmCurso">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>220</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelDiscAnd">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>90</y>
+      <width>341</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white</string>
+    </property>
+    <property name="text">
+     <string>Disciplinas em Andamento</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>839</width>
+     <width>1278</width>
      <height>22</height>
     </rect>
    </property>
