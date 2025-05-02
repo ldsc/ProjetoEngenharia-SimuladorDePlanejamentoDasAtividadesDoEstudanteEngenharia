@@ -63,7 +63,7 @@
     </property>
     <widget class="QWidget" name="tab_gradeGeral">
      <attribute name="title">
-      <string>Ver Grade</string>
+      <string>por área</string>
      </attribute>
      <widget class="QWidget" name="widget_gradeGeral" native="true">
       <property name="geometry">
@@ -84,7 +84,7 @@
       </font>
      </property>
      <attribute name="title">
-      <string>Ver Progresso</string>
+      <string>por semestre</string>
      </attribute>
      <widget class="QWidget" name="widget_gradeProgresso" native="true">
       <property name="geometry">
@@ -105,7 +105,7 @@
       </font>
      </property>
      <attribute name="title">
-      <string>Ver por Nível de Dificuldade</string>
+      <string>por nível de dificuldade</string>
      </attribute>
      <widget class="QWidget" name="widget_gradeDificuldade" native="true">
       <property name="geometry">
