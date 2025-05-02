@@ -340,18 +340,7 @@ CH total= n∑i=1 CH i
 \end_layout
 
 \begin_layout Standard
-Onde CHi representa a carga horária da disciplina i e n é o número total de disciplinas no período planejado.
-\end_layout
 
-\begin_layout Standard
-Por fim,
- com os dados levantados nessa etapa e com essa formulação teórica em mente,
- vamos organizar o sistema em pacotes (assuntos) que representem as diferentes partes do projeto:
- cadastro de disciplinas,
- regras de elegibilidade,
- interface de planejamento,
- entre outros.
- Esses pacotes serão representados visualmente no próximo diagrama.
 \end_layout
 
 \begin_layout Section
