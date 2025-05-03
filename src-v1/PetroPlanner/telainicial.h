@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "modulogradecompleta.h"
+#include "acompanhamentoDisciplina.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

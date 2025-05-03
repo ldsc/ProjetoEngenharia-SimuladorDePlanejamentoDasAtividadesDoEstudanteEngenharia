@@ -58,8 +58,8 @@
    <widget class="QGroupBox" name="groupBoxInfoAluno">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>110</y>
+      <x>90</x>
+      <y>140</y>
       <width>541</width>
       <height>141</height>
      </rect>
@@ -76,7 +76,7 @@
      <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: white; color: black; border: none;</string>
+     <string notr="true">background-color: none; color: white; border: none;</string>
     </property>
     <property name="title">
      <string>Dados Gerais</string>
@@ -86,7 +86,7 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>191</width>
+       <width>421</width>
        <height>16</height>
       </rect>
      </property>
@@ -100,7 +100,7 @@
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">color: white</string>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -111,7 +111,7 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>191</width>
+       <width>471</width>
        <height>16</height>
       </rect>
      </property>
@@ -130,7 +130,7 @@
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>191</width>
+       <width>471</width>
        <height>16</height>
       </rect>
      </property>
@@ -149,7 +149,7 @@
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>191</width>
+       <width>451</width>
        <height>16</height>
       </rect>
      </property>
@@ -168,26 +168,7 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>191</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Book Antiqua</family>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="labelDisciplinasEmCurso">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>661</width>
+       <width>481</width>
        <height>16</height>
       </rect>
      </property>

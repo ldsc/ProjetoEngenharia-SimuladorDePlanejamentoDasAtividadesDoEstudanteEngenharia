@@ -65,7 +65,6 @@ void TelaInicial::carregarInformacoesAluno()
     if (!listaEmCurso.isEmpty())
         listaEmCurso.chop(2); // Remove a última vírgula
 
-    ui->labelDisciplinasEmCurso->setText("Disciplinas em curso: " + listaEmCurso);
 
 
 
@@ -125,6 +124,7 @@ void TelaInicial::PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& d
 
 
 void TelaInicial::abrirJanelaDisciplina(const std::string& nomeDisciplina) {
-    QMessageBox::information(this, "Disciplina", QString::fromStdString(nomeDisciplina));
+    AcompanhamentoDisciplina* janela = new AcompanhamentoDisciplina(QString::fromStdString(nomeDisciplina), this);
+    janela->show();
 }
 

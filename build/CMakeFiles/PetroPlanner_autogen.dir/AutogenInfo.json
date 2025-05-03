@@ -399,6 +399,12 @@
 			null
 		],
 		[
+			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/acompanhamentodisciplina.h",
+			"MU",
+			"EWIEGA46WW/moc_acompanhamentodisciplina.cpp",
+			null
+		],
+		[
 			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.h",
 			"MU",
 			"EWIEGA46WW/moc_modulogradecompleta.cpp",
@@ -473,6 +479,11 @@
 		],
 		[
 			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CDisciplinas.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/acompanhamentodisciplina.cpp",
 			"MU",
 			null
 		],
