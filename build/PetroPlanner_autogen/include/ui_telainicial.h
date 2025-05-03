@@ -17,6 +17,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -40,6 +41,8 @@ public:
     QLabel *labelHorasEmCurso;
     QProgressBar *progressBarCreditos;
     QLabel *labelCreditosEmCurso;
+    QScrollArea *scrollAreaDiscAnd;
+    QWidget *wi;
     QLabel *labelDiscAnd;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -48,7 +51,7 @@ public:
     {
         if (TelaInicial->objectName().isEmpty())
             TelaInicial->setObjectName("TelaInicial");
-        TelaInicial->resize(1278, 600);
+        TelaInicial->resize(1308, 728);
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         font.setBold(true);
@@ -125,7 +128,7 @@ public:
         botaoVerGradeCompleta_2->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         groupBoxDiscAnd = new QGroupBox(centralwidget);
         groupBoxDiscAnd->setObjectName("groupBoxDiscAnd");
-        groupBoxDiscAnd->setGeometry(QRect(690, 120, 541, 261));
+        groupBoxDiscAnd->setGeometry(QRect(690, 120, 601, 261));
         groupBoxDiscAnd->setFont(font2);
         groupBoxDiscAnd->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         groupBoxDiscAnd->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: none; border-radius: 30px;"));
@@ -147,6 +150,14 @@ public:
         labelCreditosEmCurso = new QLabel(groupBoxDiscAnd);
         labelCreditosEmCurso->setObjectName("labelCreditosEmCurso");
         labelCreditosEmCurso->setGeometry(QRect(280, 220, 181, 16));
+        scrollAreaDiscAnd = new QScrollArea(groupBoxDiscAnd);
+        scrollAreaDiscAnd->setObjectName("scrollAreaDiscAnd");
+        scrollAreaDiscAnd->setGeometry(QRect(20, 20, 561, 191));
+        scrollAreaDiscAnd->setWidgetResizable(true);
+        wi = new QWidget();
+        wi->setObjectName("wi");
+        wi->setGeometry(QRect(0, 0, 561, 191));
+        scrollAreaDiscAnd->setWidget(wi);
         labelDiscAnd = new QLabel(centralwidget);
         labelDiscAnd->setObjectName("labelDiscAnd");
         labelDiscAnd->setGeometry(QRect(780, 90, 341, 21));
@@ -159,7 +170,7 @@ public:
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1278, 22));
+        menubar->setGeometry(QRect(0, 0, 1308, 22));
         TelaInicial->setMenuBar(menubar);
         statusbar = new QStatusBar(TelaInicial);
         statusbar->setObjectName("statusbar");

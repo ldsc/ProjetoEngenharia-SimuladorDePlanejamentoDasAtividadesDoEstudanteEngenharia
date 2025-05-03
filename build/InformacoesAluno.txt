@@ -16,7 +16,7 @@ CRA: 8.5
 
 2 ; Quimica Geral II ; - ; Nao Cursada
 2 ; Portugues Instrumental II ; - ; Em Curso
-2 ; Optativa do CCH ; - ; Nao Cursada
+2 ; Optativa do CCH ; - ; Em Curso
 2 ; Fisica I ; - ; Nao Cursada
 2 ; Fisica Experimental I ; - ; Nao Cursada
 2 ; Calculo Diferencial e Integral II ; - ; Nao Cursada

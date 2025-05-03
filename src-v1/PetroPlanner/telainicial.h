@@ -18,14 +18,19 @@ public:
     TelaInicial(QWidget *parent = nullptr);
     ~TelaInicial();
 
+
 private slots:
     void on_botaoVerGradeCompleta_clicked();
 
 private:
     Ui::TelaInicial *ui;
     ModuloGradeCompleta *gradeCompleta; // Ponteiro para a janela
+
     void carregarInformacoesAluno();
     CAluno aluno; // guarda info do aluno para as disciplinas serem comparadas
+
+    void PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& disciplinasEmCurso);
+    void abrirJanelaDisciplina(const std::string& nomeDisciplina);
 
 
 

@@ -39,6 +39,10 @@ void TelaInicial::on_botaoVerGradeCompleta_clicked()
     gradeCompleta->show();
 }
 
+
+
+
+
 void TelaInicial::carregarInformacoesAluno()
 {
     CAluno aluno;
@@ -65,6 +69,7 @@ void TelaInicial::carregarInformacoesAluno()
 
 
 
+
     //Aparecimento dos creditos cursados em Disciplinas em andamento
     int creditos = aluno.calcularCreditosEmCurso();
     int limite = 16;
@@ -74,4 +79,52 @@ void TelaInicial::carregarInformacoesAluno()
 
     ui->labelCreditosEmCurso->setText(QString::number(creditos) + "/16 créditos");
 
+
+    PreencherDisciplinasEmCurso(aluno.disciplinasEmCurso);
+
 }
+
+
+//Disciplinas em curso aparecerem na tela inicial
+void TelaInicial::PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& disciplinasEmCurso) {
+    // Cria um novo widget de conteúdo para o scroll
+    QWidget* conteudo = new QWidget();
+    QGridLayout* gridLayout = new QGridLayout(conteudo);
+    conteudo->setLayout(gridLayout);
+
+    int row = 0, col = 0;
+
+    for (const auto& disc : disciplinasEmCurso) {
+        QPushButton* botao = new QPushButton(QString::fromStdString(disc.nome));
+        botao->setFixedSize(180, 40);
+        botao->setStyleSheet("QPushButton {"
+                             "background-color: #82b4cf;"
+                             "color: black;"
+                             "border-radius: 15px;"
+                             "font-weight: bold;"
+                             "}");
+
+        connect(botao, &QPushButton::clicked, this, [=]() {
+            abrirJanelaDisciplina(disc.nome);
+        });
+
+        gridLayout->addWidget(botao, row, col);
+        col++;
+        if (col == 3) {
+            col = 0;
+            row++;
+        }
+    }
+
+    ui->scrollAreaDiscAnd->setWidget(conteudo);
+    ui->scrollAreaDiscAnd->setWidgetResizable(true);
+
+
+}
+
+
+
+void TelaInicial::abrirJanelaDisciplina(const std::string& nomeDisciplina) {
+    QMessageBox::information(this, "Disciplina", QString::fromStdString(nomeDisciplina));
+}
+
