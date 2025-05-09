@@ -70,6 +70,7 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
                 }
             }
 
+
         }
     }
 
@@ -79,15 +80,15 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
 }
 
 
-//AQUI
-int CAluno::calcularCreditosEmCurso() const {
+
+int CAluno::calcularHorasEmCurso() const {
     std::vector<CDisciplinas> todas = getDisciplinasCurso();
     int total = 0;
 
     for (const auto& discAluno : disciplinasEmCurso) {
         for (const auto& discCurso : todas) {
             if (discAluno.getNome() == discCurso.getNome()) {
-                total += discCurso.getCreditos();
+                total += discCurso.getHoras();
                 break;
             }
         }

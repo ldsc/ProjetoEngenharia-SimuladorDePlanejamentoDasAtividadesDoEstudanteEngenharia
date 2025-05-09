@@ -38,8 +38,8 @@ public:
     QPushButton *botaoVerGradeCompleta_2;
     QGroupBox *groupBoxDiscAnd;
     QLabel *labelHorasEmCurso;
-    QProgressBar *progressBarCreditos;
-    QLabel *labelCreditosEmCurso;
+    QProgressBar *progressBarHoras;
+    QLabel *labelHorasEmCurso2;
     QScrollArea *scrollAreaDiscAnd;
     QWidget *wi;
     QLabel *labelDiscAnd;
@@ -136,15 +136,15 @@ public:
         font5.setBold(false);
         labelHorasEmCurso->setFont(font5);
         labelHorasEmCurso->setStyleSheet(QString::fromUtf8(""));
-        progressBarCreditos = new QProgressBar(groupBoxDiscAnd);
-        progressBarCreditos->setObjectName("progressBarCreditos");
-        progressBarCreditos->setGeometry(QRect(150, 220, 118, 23));
-        progressBarCreditos->setStyleSheet(QString::fromUtf8("QProgressBar {    border: 2px solid blue;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
-        progressBarCreditos->setMinimum(6);
-        progressBarCreditos->setValue(80);
-        labelCreditosEmCurso = new QLabel(groupBoxDiscAnd);
-        labelCreditosEmCurso->setObjectName("labelCreditosEmCurso");
-        labelCreditosEmCurso->setGeometry(QRect(280, 220, 181, 16));
+        progressBarHoras = new QProgressBar(groupBoxDiscAnd);
+        progressBarHoras->setObjectName("progressBarHoras");
+        progressBarHoras->setGeometry(QRect(150, 220, 118, 23));
+        progressBarHoras->setStyleSheet(QString::fromUtf8("QProgressBar {    border: 2px solid blue;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
+        progressBarHoras->setMinimum(6);
+        progressBarHoras->setValue(80);
+        labelHorasEmCurso2 = new QLabel(groupBoxDiscAnd);
+        labelHorasEmCurso2->setObjectName("labelHorasEmCurso2");
+        labelHorasEmCurso2->setGeometry(QRect(280, 220, 181, 16));
         scrollAreaDiscAnd = new QScrollArea(groupBoxDiscAnd);
         scrollAreaDiscAnd->setObjectName("scrollAreaDiscAnd");
         scrollAreaDiscAnd->setGeometry(QRect(20, 20, 561, 191));
@@ -189,8 +189,8 @@ public:
         labelTitulo->setText(QCoreApplication::translate("TelaInicial", "PetroPlanner", nullptr));
         botaoVerGradeCompleta_2->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
         groupBoxDiscAnd->setTitle(QString());
-        labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Cr\303\251ditos em curso:", nullptr));
-        labelCreditosEmCurso->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Horas em curso:", nullptr));
+        labelHorasEmCurso2->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
     } // retranslateUi
 

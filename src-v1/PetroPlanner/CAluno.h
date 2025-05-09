@@ -19,7 +19,7 @@ public:
     std::vector<CDisciplinas> disciplinasNaoCursadas;
 
     bool lerDoArquivo(const QString& caminho);
-    int calcularCreditosEmCurso() const;
+    int calcularHorasEmCurso() const;
 
 
 };

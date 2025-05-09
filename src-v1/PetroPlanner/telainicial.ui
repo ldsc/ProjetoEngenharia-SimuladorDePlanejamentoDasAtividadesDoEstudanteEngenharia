@@ -278,10 +278,10 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Créditos em curso:</string>
+      <string>Horas em curso:</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBarCreditos">
+    <widget class="QProgressBar" name="progressBarHoras">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -300,7 +300,7 @@
       <number>80</number>
      </property>
     </widget>
-    <widget class="QLabel" name="labelCreditosEmCurso">
+    <widget class="QLabel" name="labelHorasEmCurso2">
      <property name="geometry">
       <rect>
        <x>280</x>

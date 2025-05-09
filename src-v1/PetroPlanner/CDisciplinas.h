@@ -16,17 +16,18 @@ public:
     std::vector<std::string> coRequisitos;   // Lista de co-requisitos
     std::string eixoTematico;                // Eixo temático da disciplina
     std::string ciclo;                       // Ciclo da disciplina (Básico, Profissionalizante, etc.)
-    int nivelDificuldade;            // Nível de dificuldade
+    int nivelDificuldade;                    // Nível de dificuldade
+    int horaSemanalAula;                     // Horas Semanais de Aula
 
     // Construtor para inicializar os atributos da disciplina
     CDisciplinas(int periodo, std::string nome, int creditos, int cargaHoraria,
                  std::vector<std::string> preRequisitos,
                  std::vector<std::string> coRequisitos,
                  std::string eixoTematico, std::string ciclo,
-                 int nivelDificuldade)
+                 int nivelDificuldade, int horaSemanalAula)
         : periodo(periodo), nome(nome), creditos(creditos), cargaHoraria(cargaHoraria),
         preRequisitos(preRequisitos), coRequisitos(coRequisitos),
-        eixoTematico(eixoTematico), ciclo(ciclo), nivelDificuldade(nivelDificuldade) {}
+        eixoTematico(eixoTematico), ciclo(ciclo), nivelDificuldade(nivelDificuldade), horaSemanalAula(horaSemanalAula) {}
 
     // Método para exibir as informações de uma disciplina
     void exibirInformacoes() const {
@@ -56,9 +57,9 @@ public:
         return nome;
     };
 
-    int getCreditos() const{
+    int getHoras() const{
 
-        return creditos;
+        return horaSemanalAula;
     };
 
 

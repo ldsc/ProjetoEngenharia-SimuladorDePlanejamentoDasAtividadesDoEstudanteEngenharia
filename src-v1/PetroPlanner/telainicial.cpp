@@ -69,14 +69,14 @@ void TelaInicial::carregarInformacoesAluno()
 
 
 
-    //Aparecimento dos creditos cursados em Disciplinas em andamento
-    int creditos = aluno.calcularCreditosEmCurso();
+    //Aparecimento das horas cursadas em Disciplinas em andamento
+    int horas = aluno.calcularHorasEmCurso();
     int limite = 16;
 
-    ui->progressBarCreditos->setMaximum(limite);
-    ui->progressBarCreditos->setValue(std::min(creditos, limite)); // nunca passa de 16 na barra
+    ui->progressBarHoras->setMaximum(limite);
+    ui->progressBarHoras->setValue(std::min(horas, limite)); // nunca passa de 16 na barra
 
-    ui->labelCreditosEmCurso->setText(QString::number(creditos) + "/16 créditos");
+    ui->labelHorasEmCurso2->setText(QString::number(horas) + "/16 horas");
 
 
     PreencherDisciplinasEmCurso(aluno.disciplinasEmCurso);
