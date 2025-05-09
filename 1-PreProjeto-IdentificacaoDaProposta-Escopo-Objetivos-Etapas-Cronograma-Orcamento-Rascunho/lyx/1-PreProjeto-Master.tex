@@ -1,0 +1,64 @@
+%% LyX 2.4.3 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,brazil,normaltoc, sumarioincompleto]{extbook}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{makeidx}
+\makeindex
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=20mm,bmargin=20mm,lmargin=15mm,rmargin=10mm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=page,colorlinks=false]
+ {hyperref}
+\hypersetup{pdftitle={Projeto Engenharia: SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia},
+ pdfauthor={Maria, Abigail, Bueno},
+ pdfsubject={Descrever assunto},
+ pdfkeywords={Copiar do resumo}}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+% para usar abnt tem de instalar os arquivos: dnf install texlive-abnt2
+% verificar onde os mesmos estão: rpm -ql texlive-abntex2
+% reconfigurar o latex e o lyx (lyx->ferramentas->reconfigurar). E ativar linhas abaixo.
+% na aba de configuração do lyx, mude a classe de documento para abnt.
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+
+\renewcommand{\lstlistingname}{Listagem}
+
+\makeatother
+
+\begin{document}
+\include{1-PreProjeto-0-Capa}
+
+\tableofcontents{}
+
+\lfoot{NomeEquipeAqui} 
+\rfoot{\today}
+
+\noindent\lhead{Referências} \chead{} \rhead{}\bibliographystyle{apalike}
+\bibliography{bibliografia}
+
+\printindex
+\end{document}
