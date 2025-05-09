@@ -1335,10 +1335,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeCasoUso-Geral.png
+	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/{3EF1C4A9-AFCF-4067-B538-7347D441C99B}.png
 	lyxscale 50
 	width 100text%
-	keepAspectRatio
 	special height=0.3\textheight
 
 \end_inset
@@ -1449,7 +1448,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeCasoDeUso-Especifico-1.png
+	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/{515BC0BE-6113-4319-921D-9F4A82B505EA}.png
 	width 100text%
 
 \end_inset
@@ -1470,6 +1469,12 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/{C058C366-7452-44BB-96E7-FE8663F5FA06}.png
 
 \end_inset
 
