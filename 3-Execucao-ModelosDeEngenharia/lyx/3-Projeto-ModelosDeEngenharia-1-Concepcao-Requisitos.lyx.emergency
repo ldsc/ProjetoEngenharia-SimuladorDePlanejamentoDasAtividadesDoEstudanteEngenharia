@@ -1202,7 +1202,7 @@ Nome do caso de uso:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Acessar Módulo de Grade Curricular
+
 \end_layout
 
 \end_inset
@@ -1222,9 +1222,7 @@ Resumo/descrição:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Permite ao aluno visualizar sua grade curricular,
- disciplinas em andamento,
- e histórico de aprovações.
+
 \end_layout
 
 \end_inset
@@ -1244,26 +1242,7 @@ Etapas:
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
- O aluno seleciona "Grade Curricular" no menu.
-\end_layout
 
-\begin_layout Plain Layout
-2.
- O sistema carrega as disciplinas (em andamento,
- aprovadas,
- pendentes).
-\end_layout
-
-\begin_layout Plain Layout
-3.
- O aluno filtra por período ou ciclo (opcional).
-\end_layout
-
-\begin_layout Plain Layout
-4.
- O sistema exibe a grade com cores indicativas (ex:
- vermelho para disciplinas com pré-requisitos não atendidos).
 \end_layout
 
 \end_inset
@@ -1283,15 +1262,7 @@ Cenários alternativos:
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
- Dados não carregados:
- Sistema exibe mensagem de erro e sugere recarregar.
-\end_layout
 
-\begin_layout Plain Layout
-2.
- Disciplinas conflitantes:
- Sistema alerta sobre horários sobrepostos.
 \end_layout
 
 \end_inset
@@ -1331,6 +1302,15 @@ status open
 \end_layout
 
 \begin_layout Standard
+....coloque aqui caso de uso geral,
+ descrição + figura(s)...
+\end_layout
+
+\begin_layout Standard
+exemplo...
+\end_layout
+
+\begin_layout Standard
 O diagrama de caso de uso geral da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1339,7 +1319,9 @@ nolink "false"
 
 \end_inset
 
- mostra o usuário acessando o software.
+ mostra o usuário acessando os sistemas de ajuda do software,
+ calculando a área de uma função ou analisando resultados.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1406,7 +1388,50 @@ do software
 \end_layout
 
 \begin_layout Standard
+....coloque aqui casos de uso específicos,
+ descrição + figura(s)...
+\end_layout
 
+\begin_layout Standard
+exemplo...O caso de uso Calcular área função descrito na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
+nolink "false"
+
+\end_inset
+
+ e na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
+nolink "false"
+
+\end_inset
+
+ é detalhado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+nolink "false"
+
+\end_inset
+
+.
+ O usuário criará um objeto função matemática,
+ um objeto para sua integração;
+ em seguida,
+ definirá o intervalo de integração,
+ calculará a área da função criada e,
+  por fim,
+ analisará os resultados (eventualmente gerará gráficos com os resultados obtidos utilizando um sistema externo,
+ como o software 
+\emph on
+gnuplot
+\emph default
+).
+ Este diagrama de caso de uso ilustra as etapas a serem executadas pelo usuário ou sistema,
+ a iteração do usuário com o sistema.
 \end_layout
 
 \begin_layout Standard
