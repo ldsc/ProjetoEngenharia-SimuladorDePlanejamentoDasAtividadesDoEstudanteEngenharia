@@ -1,0 +1,94 @@
+Nome: Maria Luiza Cornelio Ramos
+Matricula: 20201100063
+Curso: Engenharia de Petroleo
+Periodo: 7
+CRA: 8.5
+
+# Formato da tabela:
+# Periodo ; Nome da Disciplina ; Nota1 ; Situacao1 ; Nota2 ; Situacao2 ; ... (max 4 reprovacoes + aprovacao)
+
+1 ; Quimica Geral I ; 2.5 ; Reprovada ; 3.0 ; Reprovada ; 4.0 ; Reprovada ; 7.5 ; Aprovada
+1 ; Portugues Instrumental I ; 8.0 ; Aprovada
+1 ; Desenho Tecnico ; 2.5 ; Reprovada; - ; Em Curso
+1 ; Calculo Diferencial e Integral I ; - ; Em Curso
+1 ; Introducao a Engenharia de Petroleo ; - ; Em Curso
+1 ; Fundamentos da Ciencia da Computacao ; - ; Em Curso
+
+2 ; Quimica Geral II ; - ; Nao Cursada
+2 ; Portugues Instrumental II ; - ; Nao Cursada
+2 ; Optativa do CCH ; - ; Nao Cursada
+2 ; Fisica I ; - ; Nao Cursada
+2 ; Fisica Experimental I ; - ; Nao Cursada
+2 ; Calculo Diferencial e Integral II ; - ; Nao Cursada
+2 ; Higiene e Seguranca do Trabalho ; - ; Nao Cursada
+2 ; Algebra Linear ; - ; Nao Cursada
+
+3 ; Laboratorio de Quimica Analitica ; - ; Nao Cursada
+3 ; Quimica Analitica ; - ; Nao Cursada
+3 ; Introducao a Economia ; - ; Nao Cursada
+3 ; Fisica II ; - ; Nao Cursada
+3 ; Fisica Experimental II ; - ; Nao Cursada
+3 ; Calculo Diferencial e Integral III ; - ; Nao Cursada
+3 ; Introducao a Probabilidade e Estatistica ; - ; Nao Cursada
+
+4 ; Quimica Organica ; - ; Nao Cursada
+4 ; Optativa do CCH ; - ; Nao Cursada
+4 ; Fisica III ; - ; Nao Cursada
+4 ; Fisica Experimental III ; - ; Nao Cursada
+4 ; Termodinamica para Engenharia ; - ; Nao Cursada
+4 ; Calculo Numerico ; - ; Nao Cursada
+
+5 ; Geologia Fisica ; - ; Nao Cursada
+5 ; Introducao a Analise e Processamento de Sinais ; - ; Nao Cursada
+5 ; Resistencia dos Materiais ; - ; Nao Cursada
+5 ; Mecanica dos Fluidos ; - ; Nao Cursada
+5 ; Fisica-Matematica I ; - ; Nao Cursada
+5 ; Introducao ao Projeto de Engenharia ; - ; Nao Cursada
+
+6 ; Mineralogia e Petrologia de Rochas Reservatorio ; - ; Nao Cursada
+6 ; Metodos Geofisicos de Exploracao ; - ; Nao Cursada
+6 ; Propriedades Fisicas de Minerais e Rochas ; - ; Nao Cursada
+6 ; Engenharia de Reservatorios I ; - ; Nao Cursada
+6 ; Fisica-Matematica II ; - ; Nao Cursada
+6 ; Programacao Orientada a Objeto com C++ ; - ; Nao Cursada
+
+7 ; Geoquimica do Petroleo ; - ; Nao Cursada
+7 ; Estratigrafia e Sedimentacao ; - ; Nao Cursada
+7 ; Analise de Dados Experimentais ; - ; Nao Cursada
+7 ; Petrofisica Experimental ; - ; Nao Cursada
+7 ; Engenharia de Reservatorios II ; - ; Nao Cursada
+7 ; Tecnicas de Modelamento Numerico I ; - ; Nao Cursada
+
+8 ; Geologia do Petroleo ; - ; Nao Cursada
+8 ; Controle Ambiental na Industria do Petroleo ; - ; Nao Cursada
+8 ; Perfilagem de Pocos I ; - ; Nao Cursada
+8 ; Elevacao e Escoamento ; - ; Nao Cursada
+8 ; Engenharia de Poco ; - ; Nao Cursada
+8 ; Projeto de Software Aplicado a Engenharia ; - ; Em Curso
+
+9 ; Perfilagem de Pocos II ; - ; Nao Cursada
+9 ; Seminarios em Engenharia de Petroleo ; - ; Nao Cursada
+9 ; Optativa 1; - ; Nao Cursada
+9 ; Optativa 2 ; - ; Nao Cursada
+9 ; Exigencia Trabalho Conclusao Curso ; - ; Nao Cursada
+
+10 ; Energias Renovaveis ; - ; Nao Cursada
+10 ; Optativa 3 ; - ; Nao Cursada
+10 ; Exigencia Trabalho de Conclusao de Curso ; - ; Nao Cursada
+10 ; Exigencia Estagio Curricular Obrigatorio ; - ; Nao Cursada
+10 ; Exigencia Atividades Academicas Complementares ; - ; Nao Cursada
+10 ; Exigencia Atividades Curriculares de Extensao ; - ; Nao Cursada
+10 ; Exigencia Projeto de Trabalho de Conclusao de Curso ; - ; Nao Cursada
+
+
+
+# Formato das disciplinas em andamento:
+# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...
+
+Disciplinas em Andamento:
+
+Desenho Tecnico ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: 70,-
+Calculo Diferencial e Integral I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -,-
+Introducao a Engenharia de Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: 30,90,-
+Fundamentos da Ciencia da Computacao ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -
+Projeto de Software Aplicado a Engenharia ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -

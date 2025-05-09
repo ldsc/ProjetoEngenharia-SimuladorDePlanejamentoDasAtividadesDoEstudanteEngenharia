@@ -76,7 +76,26 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
 
 
 
-    return true;
+
+    // Verifica se a seção "Disciplinas em Andamento" já existe no arquivo
+    arquivo.seek(0);
+    QString conteudo = in.readAll();
+    if (!conteudo.contains("Disciplinas em Andamento:")) {
+        // Reabre para append e escreve a seção
+        QFile arqAppend(caminho);
+        if (arqAppend.open(QIODevice::Append | QIODevice::Text)) {
+            QTextStream out(&arqAppend);
+            out << "\n\n\n# Formato das disciplinas em andamento:\n";
+            out << "# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...\n\n";
+            out << "Disciplinas em Andamento:\n\n";
+            for (const auto& disc : disciplinasEmCurso) {
+                out << QString::fromStdString(disc.nome)
+                << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -\n";
+            }
+            out.flush();
+            arqAppend.close();
+        }
+    }
 }
 
 
