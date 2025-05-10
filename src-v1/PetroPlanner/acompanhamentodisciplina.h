@@ -2,6 +2,7 @@
 #define ACOMPANHAMENTODISCIPLINA_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include <QHBoxLayout>
 
 namespace Ui {
@@ -18,8 +19,8 @@ public:
 
 private:
     Ui::AcompanhamentoDisciplina *ui;
-    void preencherNotas(QHBoxLayout* layout, const QString& notasStr);
 
+    void preencherNotas(QHBoxLayout* layout, const QString& notasStr);
 };
 
 #endif

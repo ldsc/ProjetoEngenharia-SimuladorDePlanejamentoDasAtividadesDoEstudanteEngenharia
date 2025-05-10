@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>668</width>
-    <height>553</height>
+    <width>805</width>
+    <height>682</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,7 +45,7 @@
      <rect>
       <x>40</x>
       <y>70</y>
-      <width>291</width>
+      <width>621</width>
       <height>51</height>
      </rect>
     </property>
@@ -61,7 +61,7 @@
      <rect>
       <x>60</x>
       <y>90</y>
-      <width>251</width>
+      <width>581</width>
       <height>16</height>
      </rect>
     </property>
@@ -83,8 +83,8 @@
      <rect>
       <x>40</x>
       <y>170</y>
-      <width>601</width>
-      <height>261</height>
+      <width>701</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="font">
@@ -108,7 +108,7 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>90</y>
+       <y>120</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -154,7 +154,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>170</y>
+       <y>220</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -179,7 +179,7 @@
        <x>130</x>
        <y>80</y>
        <width>381</width>
-       <height>41</height>
+       <height>81</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayoutTrabs"/>
@@ -188,9 +188,9 @@
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>160</y>
+       <y>180</y>
        <width>381</width>
-       <height>41</height>
+       <height>81</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayoutProvas"/>
@@ -199,7 +199,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>230</y>
+       <y>370</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -222,7 +222,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>230</y>
+       <y>370</y>
        <width>141</width>
        <height>21</height>
       </rect>
@@ -245,7 +245,7 @@
      <property name="geometry">
       <rect>
        <x>400</x>
-       <y>230</y>
+       <y>370</y>
        <width>141</width>
        <height>21</height>
       </rect>
@@ -268,7 +268,7 @@
      <property name="geometry">
       <rect>
        <x>200</x>
-       <y>230</y>
+       <y>370</y>
        <width>12</width>
        <height>12</height>
       </rect>
@@ -290,7 +290,7 @@ max-height: 12px;
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>230</y>
+       <y>370</y>
        <width>12</width>
        <height>12</height>
       </rect>
@@ -310,7 +310,7 @@ max-height: 12px;
      <property name="geometry">
       <rect>
        <x>380</x>
-       <y>230</y>
+       <y>370</y>
        <width>12</width>
        <height>12</height>
       </rect>
@@ -326,6 +326,162 @@ max-height: 12px;
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="botaoAdcTrab">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>80</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#a6a6a6; color: white; border-radius: 35px;</string>
+     </property>
+     <property name="text">
+      <string>+ Trab</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="botaoRemTrab">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>80</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #a6a6a6; color: white; border-radius: 35px;</string>
+     </property>
+     <property name="text">
+      <string>- Trab</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="botaoAdcProva">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>180</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #a6a6a6; color: white; border-radius: 35px;</string>
+     </property>
+     <property name="text">
+      <string>+ Prova</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="botaoRemProva">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>180</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #a6a6a6; color: white; border-radius: 35px;</string>
+     </property>
+     <property name="text">
+      <string>- Prova</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="botaoEditar">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>280</y>
+       <width>131</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+     </property>
+     <property name="text">
+      <string>Editar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="botaoSalvar">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>280</y>
+       <width>131</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTipDuration">
+      <number>-4</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #a6a6a6; color: white; border-radius: 30px;</string>
+     </property>
+     <property name="text">
+      <string>Salvar</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -333,7 +489,7 @@ max-height: 12px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>668</width>
+     <width>805</width>
      <height>22</height>
     </rect>
    </property>

@@ -43,6 +43,12 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QPushButton *botaoAdcTrab;
+    QPushButton *botaoRemTrab;
+    QPushButton *botaoAdcProva;
+    QPushButton *botaoRemProva;
+    QPushButton *botaoEditar;
+    QPushButton *botaoSalvar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,7 +56,7 @@ public:
     {
         if (AcompanhamentoDisciplina->objectName().isEmpty())
             AcompanhamentoDisciplina->setObjectName("AcompanhamentoDisciplina");
-        AcompanhamentoDisciplina->resize(668, 553);
+        AcompanhamentoDisciplina->resize(805, 682);
         AcompanhamentoDisciplina->setStyleSheet(QString::fromUtf8("background-color: blue; "));
         centralwidget = new QWidget(AcompanhamentoDisciplina);
         centralwidget->setObjectName("centralwidget");
@@ -65,11 +71,11 @@ public:
         labelTitulo->setStyleSheet(QString::fromUtf8("color: white"));
         pushButton_DiscEmAnd = new QPushButton(centralwidget);
         pushButton_DiscEmAnd->setObjectName("pushButton_DiscEmAnd");
-        pushButton_DiscEmAnd->setGeometry(QRect(40, 70, 291, 51));
+        pushButton_DiscEmAnd->setGeometry(QRect(40, 70, 621, 51));
         pushButton_DiscEmAnd->setStyleSheet(QString::fromUtf8("background-color: #82b4cf;  color: black ; border-radius: 15px; font-weight: bold;"));
         label_NomeDisc = new QLabel(centralwidget);
         label_NomeDisc->setObjectName("label_NomeDisc");
-        label_NomeDisc->setGeometry(QRect(60, 90, 251, 16));
+        label_NomeDisc->setGeometry(QRect(60, 90, 581, 16));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setBold(true);
@@ -77,7 +83,7 @@ public:
         label_NomeDisc->setStyleSheet(QString::fromUtf8("background: none;  qproperty-alignment: 'AlignHCenter';"));
         groupBoxDiscAnd = new QGroupBox(centralwidget);
         groupBoxDiscAnd->setObjectName("groupBoxDiscAnd");
-        groupBoxDiscAnd->setGeometry(QRect(40, 170, 601, 261));
+        groupBoxDiscAnd->setGeometry(QRect(40, 170, 701, 411));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Book Antiqua")});
         font2.setPointSize(12);
@@ -88,7 +94,7 @@ public:
         groupBoxDiscAnd->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: none; border-radius: 30px;"));
         labelTrab = new QLabel(groupBoxDiscAnd);
         labelTrab->setObjectName("labelTrab");
-        labelTrab->setGeometry(QRect(40, 90, 121, 21));
+        labelTrab->setGeometry(QRect(40, 120, 121, 21));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font3.setPointSize(10);
@@ -106,39 +112,39 @@ public:
         labelDiscAnd->setStyleSheet(QString::fromUtf8("color: black"));
         labelProvas = new QLabel(groupBoxDiscAnd);
         labelProvas->setObjectName("labelProvas");
-        labelProvas->setGeometry(QRect(50, 170, 121, 21));
+        labelProvas->setGeometry(QRect(50, 220, 121, 21));
         labelProvas->setFont(font3);
         labelProvas->setStyleSheet(QString::fromUtf8(""));
         horizontalLayoutWidget = new QWidget(groupBoxDiscAnd);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(130, 80, 381, 41));
+        horizontalLayoutWidget->setGeometry(QRect(130, 80, 381, 81));
         horizontalLayoutTrabs = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayoutTrabs->setObjectName("horizontalLayoutTrabs");
         horizontalLayoutTrabs->setContentsMargins(0, 0, 0, 0);
         horizontalLayoutWidget_2 = new QWidget(groupBoxDiscAnd);
         horizontalLayoutWidget_2->setObjectName("horizontalLayoutWidget_2");
-        horizontalLayoutWidget_2->setGeometry(QRect(130, 160, 381, 41));
+        horizontalLayoutWidget_2->setGeometry(QRect(130, 180, 381, 81));
         horizontalLayoutProvas = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayoutProvas->setObjectName("horizontalLayoutProvas");
         horizontalLayoutProvas->setContentsMargins(0, 0, 0, 0);
         label1 = new QLabel(groupBoxDiscAnd);
         label1->setObjectName("label1");
-        label1->setGeometry(QRect(80, 230, 121, 21));
+        label1->setGeometry(QRect(80, 370, 121, 21));
         label1->setFont(font3);
         label1->setStyleSheet(QString::fromUtf8(""));
         label2 = new QLabel(groupBoxDiscAnd);
         label2->setObjectName("label2");
-        label2->setGeometry(QRect(220, 230, 141, 21));
+        label2->setGeometry(QRect(220, 370, 141, 21));
         label2->setFont(font3);
         label2->setStyleSheet(QString::fromUtf8(""));
         label3 = new QLabel(groupBoxDiscAnd);
         label3->setObjectName("label3");
-        label3->setGeometry(QRect(400, 230, 141, 21));
+        label3->setGeometry(QRect(400, 370, 141, 21));
         label3->setFont(font3);
         label3->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(groupBoxDiscAnd);
         label->setObjectName("label");
-        label->setGeometry(QRect(200, 230, 12, 12));
+        label->setGeometry(QRect(200, 370, 12, 12));
         label->setStyleSheet(QString::fromUtf8("background-color: green; /* ou red, yellow, etc */\n"
 "border-radius: 6px;       /* metade do tamanho para ficar circular */\n"
 "min-width: 12px;\n"
@@ -148,7 +154,7 @@ public:
 ""));
         label_2 = new QLabel(groupBoxDiscAnd);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(60, 230, 12, 12));
+        label_2->setGeometry(QRect(60, 370, 12, 12));
         label_2->setStyleSheet(QString::fromUtf8("background-color: gray; border-radius: 6px; min-width: 12px;\n"
 "min-height: 12px;\n"
 "max-width: 12px;\n"
@@ -156,16 +162,56 @@ public:
 ""));
         label_3 = new QLabel(groupBoxDiscAnd);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(380, 230, 12, 12));
+        label_3->setGeometry(QRect(380, 370, 12, 12));
         label_3->setStyleSheet(QString::fromUtf8("background-color: red; border-radius: 6px; min-width: 12px;\n"
 "min-height: 12px;\n"
 "max-width: 12px;\n"
 "max-height: 12px;\n"
 ""));
+        botaoAdcTrab = new QPushButton(groupBoxDiscAnd);
+        botaoAdcTrab->setObjectName("botaoAdcTrab");
+        botaoAdcTrab->setGeometry(QRect(610, 80, 70, 70));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font5.setPointSize(12);
+        font5.setBold(true);
+        botaoAdcTrab->setFont(font5);
+        botaoAdcTrab->setToolTipDuration(-4);
+        botaoAdcTrab->setStyleSheet(QString::fromUtf8("background-color:#a6a6a6; color: white; border-radius: 35px;"));
+        botaoRemTrab = new QPushButton(groupBoxDiscAnd);
+        botaoRemTrab->setObjectName("botaoRemTrab");
+        botaoRemTrab->setGeometry(QRect(530, 80, 70, 70));
+        botaoRemTrab->setFont(font5);
+        botaoRemTrab->setToolTipDuration(-4);
+        botaoRemTrab->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 35px;"));
+        botaoAdcProva = new QPushButton(groupBoxDiscAnd);
+        botaoAdcProva->setObjectName("botaoAdcProva");
+        botaoAdcProva->setGeometry(QRect(610, 180, 70, 70));
+        botaoAdcProva->setFont(font5);
+        botaoAdcProva->setToolTipDuration(-4);
+        botaoAdcProva->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 35px;"));
+        botaoRemProva = new QPushButton(groupBoxDiscAnd);
+        botaoRemProva->setObjectName("botaoRemProva");
+        botaoRemProva->setGeometry(QRect(530, 180, 70, 70));
+        botaoRemProva->setFont(font5);
+        botaoRemProva->setToolTipDuration(-4);
+        botaoRemProva->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 35px;"));
+        botaoEditar = new QPushButton(groupBoxDiscAnd);
+        botaoEditar->setObjectName("botaoEditar");
+        botaoEditar->setGeometry(QRect(160, 280, 131, 61));
+        botaoEditar->setFont(font5);
+        botaoEditar->setToolTipDuration(-4);
+        botaoEditar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
+        botaoSalvar = new QPushButton(groupBoxDiscAnd);
+        botaoSalvar->setObjectName("botaoSalvar");
+        botaoSalvar->setGeometry(QRect(330, 280, 131, 61));
+        botaoSalvar->setFont(font5);
+        botaoSalvar->setToolTipDuration(-4);
+        botaoSalvar->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
         AcompanhamentoDisciplina->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AcompanhamentoDisciplina);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 668, 22));
+        menubar->setGeometry(QRect(0, 0, 805, 22));
         AcompanhamentoDisciplina->setMenuBar(menubar);
         statusbar = new QStatusBar(AcompanhamentoDisciplina);
         statusbar->setObjectName("statusbar");
@@ -192,6 +238,12 @@ public:
         label->setText(QString());
         label_2->setText(QString());
         label_3->setText(QString());
+        botaoAdcTrab->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "+ Trab", nullptr));
+        botaoRemTrab->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "- Trab", nullptr));
+        botaoAdcProva->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "+ Prova", nullptr));
+        botaoRemProva->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "- Prova", nullptr));
+        botaoEditar->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Editar", nullptr));
+        botaoSalvar->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Salvar", nullptr));
     } // retranslateUi
 
 };

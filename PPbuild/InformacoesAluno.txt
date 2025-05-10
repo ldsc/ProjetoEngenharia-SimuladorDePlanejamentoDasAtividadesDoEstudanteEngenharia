@@ -87,8 +87,12 @@ CRA: 8.5
 
 Disciplinas em Andamento:
 
-Desenho Tecnico ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: 70,-
+Desenho Tecnico ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 60, 60 ; Provas: 60, 10
 Calculo Diferencial e Integral I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -,-
 Introducao a Engenharia de Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: 30,90,-
 Fundamentos da Ciencia da Computacao ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -
 Projeto de Software Aplicado a Engenharia ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -
+
+
+
+
