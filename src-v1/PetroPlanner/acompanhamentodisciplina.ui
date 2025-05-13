@@ -198,7 +198,7 @@
     <widget class="QLabel" name="label1">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>50</x>
        <y>370</y>
        <width>121</width>
        <height>21</height>
@@ -221,7 +221,7 @@
     <widget class="QLabel" name="label2">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>190</x>
        <y>370</y>
        <width>141</width>
        <height>21</height>
@@ -244,7 +244,7 @@
     <widget class="QLabel" name="label3">
      <property name="geometry">
       <rect>
-       <x>400</x>
+       <x>370</x>
        <y>370</y>
        <width>141</width>
        <height>21</height>
@@ -267,7 +267,7 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>170</x>
        <y>370</y>
        <width>12</width>
        <height>12</height>
@@ -289,7 +289,7 @@ max-height: 12px;
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>30</x>
        <y>370</y>
        <width>12</width>
        <height>12</height>
@@ -309,7 +309,7 @@ max-height: 12px;
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>350</x>
        <y>370</y>
        <width>12</width>
        <height>12</height>
@@ -433,8 +433,8 @@ max-height: 12px;
     <widget class="QPushButton" name="botaoEditar">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>280</y>
+       <x>540</x>
+       <y>260</y>
        <width>131</width>
        <height>61</height>
       </rect>
@@ -459,8 +459,8 @@ max-height: 12px;
     <widget class="QPushButton" name="botaoSalvar">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>280</y>
+       <x>540</x>
+       <y>330</y>
        <width>131</width>
        <height>61</height>
       </rect>
@@ -480,6 +480,52 @@ max-height: 12px;
      </property>
      <property name="text">
       <string>Salvar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelProvas_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>310</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>10</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Média:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMedia">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>310</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black</string>
+     </property>
+     <property name="text">
+      <string>Media</string>
      </property>
     </widget>
    </widget>

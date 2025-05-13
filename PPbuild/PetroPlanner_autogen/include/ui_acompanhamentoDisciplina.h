@@ -49,6 +49,8 @@ public:
     QPushButton *botaoRemProva;
     QPushButton *botaoEditar;
     QPushButton *botaoSalvar;
+    QLabel *labelProvas_2;
+    QLabel *labelMedia;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -129,22 +131,22 @@ public:
         horizontalLayoutProvas->setContentsMargins(0, 0, 0, 0);
         label1 = new QLabel(groupBoxDiscAnd);
         label1->setObjectName("label1");
-        label1->setGeometry(QRect(80, 370, 121, 21));
+        label1->setGeometry(QRect(50, 370, 121, 21));
         label1->setFont(font3);
         label1->setStyleSheet(QString::fromUtf8(""));
         label2 = new QLabel(groupBoxDiscAnd);
         label2->setObjectName("label2");
-        label2->setGeometry(QRect(220, 370, 141, 21));
+        label2->setGeometry(QRect(190, 370, 141, 21));
         label2->setFont(font3);
         label2->setStyleSheet(QString::fromUtf8(""));
         label3 = new QLabel(groupBoxDiscAnd);
         label3->setObjectName("label3");
-        label3->setGeometry(QRect(400, 370, 141, 21));
+        label3->setGeometry(QRect(370, 370, 141, 21));
         label3->setFont(font3);
         label3->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(groupBoxDiscAnd);
         label->setObjectName("label");
-        label->setGeometry(QRect(200, 370, 12, 12));
+        label->setGeometry(QRect(170, 370, 12, 12));
         label->setStyleSheet(QString::fromUtf8("background-color: green; /* ou red, yellow, etc */\n"
 "border-radius: 6px;       /* metade do tamanho para ficar circular */\n"
 "min-width: 12px;\n"
@@ -154,7 +156,7 @@ public:
 ""));
         label_2 = new QLabel(groupBoxDiscAnd);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(60, 370, 12, 12));
+        label_2->setGeometry(QRect(30, 370, 12, 12));
         label_2->setStyleSheet(QString::fromUtf8("background-color: gray; border-radius: 6px; min-width: 12px;\n"
 "min-height: 12px;\n"
 "max-width: 12px;\n"
@@ -162,7 +164,7 @@ public:
 ""));
         label_3 = new QLabel(groupBoxDiscAnd);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(380, 370, 12, 12));
+        label_3->setGeometry(QRect(350, 370, 12, 12));
         label_3->setStyleSheet(QString::fromUtf8("background-color: red; border-radius: 6px; min-width: 12px;\n"
 "min-height: 12px;\n"
 "max-width: 12px;\n"
@@ -198,16 +200,26 @@ public:
         botaoRemProva->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 35px;"));
         botaoEditar = new QPushButton(groupBoxDiscAnd);
         botaoEditar->setObjectName("botaoEditar");
-        botaoEditar->setGeometry(QRect(160, 280, 131, 61));
+        botaoEditar->setGeometry(QRect(540, 260, 131, 61));
         botaoEditar->setFont(font5);
         botaoEditar->setToolTipDuration(-4);
         botaoEditar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         botaoSalvar = new QPushButton(groupBoxDiscAnd);
         botaoSalvar->setObjectName("botaoSalvar");
-        botaoSalvar->setGeometry(QRect(330, 280, 131, 61));
+        botaoSalvar->setGeometry(QRect(540, 330, 131, 61));
         botaoSalvar->setFont(font5);
         botaoSalvar->setToolTipDuration(-4);
         botaoSalvar->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
+        labelProvas_2 = new QLabel(groupBoxDiscAnd);
+        labelProvas_2->setObjectName("labelProvas_2");
+        labelProvas_2->setGeometry(QRect(50, 310, 121, 21));
+        labelProvas_2->setFont(font3);
+        labelProvas_2->setStyleSheet(QString::fromUtf8(""));
+        labelMedia = new QLabel(groupBoxDiscAnd);
+        labelMedia->setObjectName("labelMedia");
+        labelMedia->setGeometry(QRect(130, 310, 121, 21));
+        labelMedia->setFont(font4);
+        labelMedia->setStyleSheet(QString::fromUtf8("color: black"));
         AcompanhamentoDisciplina->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AcompanhamentoDisciplina);
         menubar->setObjectName("menubar");
@@ -244,6 +256,8 @@ public:
         botaoRemProva->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "- Prova", nullptr));
         botaoEditar->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Editar", nullptr));
         botaoSalvar->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Salvar", nullptr));
+        labelProvas_2->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "M\303\251dia:", nullptr));
+        labelMedia->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Media", nullptr));
     } // retranslateUi
 
 };

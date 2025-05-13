@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QHBoxLayout>
+#include <QPair>
+#include <QList>
 
 namespace Ui {
 class AcompanhamentoDisciplina;
@@ -20,7 +22,9 @@ public:
 private:
     Ui::AcompanhamentoDisciplina *ui;
 
-    void preencherNotas(QHBoxLayout* layout, const QString& notasStr);
+    void preencherAmbosLayouts(const QString& trabStr, const QString& provaStr);
+    void preencherNotas(QHBoxLayout* layout, const QString& notasStr, double& somaNotas, double& somaPesos, QList<QPair<QLabel*, double>>& previsoesCinza);
+    void atualizarMediaGeral(double somaNotas, double somaPesos, QList<QPair<QLabel*, double>> previsoesCinza);
 };
 
 #endif
