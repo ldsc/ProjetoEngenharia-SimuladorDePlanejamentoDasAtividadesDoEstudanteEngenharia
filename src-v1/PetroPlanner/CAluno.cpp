@@ -90,7 +90,7 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
             out << "Disciplinas em Andamento:\n\n";
             for (const auto& disc : disciplinasEmCurso) {
                 out << QString::fromStdString(disc.nome)
-                << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: - ; Provas: -\n";
+                << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)\n";
             }
             out.flush();
             arqAppend.close();

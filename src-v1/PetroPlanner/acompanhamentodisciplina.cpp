@@ -14,9 +14,12 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     ui->label_NomeDisc->setText(nomeDisciplina);
 
     QFile arquivo("InformacoesAluno.txt");
+    bool encontrado = false;
+
     if (arquivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&arquivo);
         bool secaoDisciplinas = false;
+
         while (!in.atEnd()) {
             QString linha = in.readLine().trimmed();
 
@@ -32,12 +35,27 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
                     QString provasStr = partes[4].trimmed().remove("Provas:").trimmed();
 
                     preencherAmbosLayouts(trabalhosStr, provasStr);
+                    encontrado = true;
                 }
                 break;
             }
         }
         arquivo.close();
     }
+
+    // Se não encontrou a disciplina no txt, adiciona uma linha padrão
+    if (!encontrado) {
+        QFile arqAppend("InformacoesAluno.txt");
+        if (arqAppend.open(QIODevice::Append | QIODevice::Text)) {
+            QTextStream out(&arqAppend);
+            out << nomeDisciplina << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)\n";
+            arqAppend.close();
+
+            // Preenche com a estrutura padrão
+            preencherAmbosLayouts("-(1)", "-(1)");
+        }
+    }
+
 }
 
 AcompanhamentoDisciplina::~AcompanhamentoDisciplina()
@@ -69,31 +87,15 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
 
     for (const Entrada& ent : entradas) {
         QString v = ent.valorStr;
-        QLabel* label = new QLabel;
-        QFont fonte("Bookman Old Style", 18, QFont::Bold);
-        label->setFont(fonte);
-
         double nota = 0.0, peso = 1.0;
 
+        // Interpretação do valor
         if (v.startsWith("-(") && v.endsWith(")")) {
             QString pesoStr = v.mid(2, v.length() - 3).trimmed();
             peso = pesoStr.toDouble();
-            label->setText("?");
-            label->setStyleSheet("color: gray;");
-            previsoesCinza.append({label, peso});
-            ent.layout->addWidget(label);
-            continue;
-        }
-
-        if (v == "-" || v.isEmpty()) {
-            label->setText("?");
-            label->setStyleSheet("color: gray;");
-            previsoesCinza.append({label, 1.0});
-            ent.layout->addWidget(label);
-            continue;
-        }
-
-        if (v.contains("(") && v.endsWith(")")) {
+        } else if (v == "-" || v.isEmpty()) {
+            peso = 1.0;
+        } else if (v.contains("(") && v.endsWith(")")) {
             QString notaStr = v.section("(", 0, 0).trimmed();
             QString pesoStr = v.section("(", 1, 1).remove(")").trimmed();
             nota = notaStr.toDouble();
@@ -103,12 +105,48 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
             peso = 1.0;
         }
 
+        // Criar os widgets
+        QLabel* labelNota = new QLabel;
+        QFont fonteNota("Bookman Old Style", 18, QFont::Bold);
+        labelNota->setFont(fonteNota);
+        labelNota->setAlignment(Qt::AlignHCenter);
+
+
+        QLabel* labelPeso = new QLabel;
+        QFont fontePeso("Bookman Old Style", 10);
+        labelPeso->setFont(fontePeso);
+        labelPeso->setText(QString("peso %1").arg(peso));
+        labelPeso->setAlignment(Qt::AlignHCenter);
+
+        QVBoxLayout* vbox = new QVBoxLayout;
+        vbox->setSpacing(0);
+        vbox->setContentsMargins(0, 0, 0, 0);
+        vbox->addWidget(labelNota);
+        vbox->addWidget(labelPeso);
+
+        QWidget* container = new QWidget;
+        container->setLayout(vbox);
+        ent.layout->addWidget(container);
+
+        // Lógica de cor e soma
+        if (v.startsWith("-(") && v.endsWith(")")) {
+            labelNota->setText("?");
+            labelNota->setStyleSheet("color: gray;");
+            previsoesCinza.append({labelNota, peso});
+            continue;
+        }
+
+        if (v == "-" || v.isEmpty()) {
+            labelNota->setText("?");
+            labelNota->setStyleSheet("color: gray;");
+            previsoesCinza.append({labelNota, peso});
+            continue;
+        }
+
+        labelNota->setText(QString::number(nota));
+        labelNota->setStyleSheet(nota >= 60 ? "color: green;" : "color: red;");
         somaNotas += nota * peso;
         somaPesos += peso;
-
-        label->setText(QString::number(nota));
-        label->setStyleSheet(nota >= 60 ? "color: green;" : "color: red;");
-        ent.layout->addWidget(label);
     }
 
     double pesoFaltante = 0.0;
@@ -126,7 +164,7 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
         }
     }
 
-    // Atualizar labelMedia com base nas notas simuladas de fato
+    // Média final
     double somaCinza = 0.0;
     for (const auto& par : previsoesCinza) {
         bool ok;
@@ -137,10 +175,8 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
 
     double mediaFinal = (somaPesos + pesoFaltante) > 0 ? ((somaNotas + somaCinza) / (somaPesos + pesoFaltante)) : 0.0;
     ui->labelMedia->setText(QString::number(mediaFinal, 'f', 1));
-
     if (!previsoesCinza.isEmpty())
         ui->labelMedia->setStyleSheet("color: gray;");
     else
         ui->labelMedia->setStyleSheet(mediaFinal >= 60 ? "color: green;" : "color: red;");
-
 }
