@@ -55,17 +55,24 @@ public:
     std::string getNome() const {
 
         return nome;
-    };
+    }
 
     int getHoras() const{
 
         return horaSemanalAula;
-    };
+    }
+
+    int getCH() const{
+        return cargaHoraria;
+    }
 
 
 };
 
 // Função para retornar todas as disciplinas já pré-definidas
 std::vector<CDisciplinas> getDisciplinasCurso();
+
+int calcularCargaHorariaTotalCurso();
+
 
 #endif

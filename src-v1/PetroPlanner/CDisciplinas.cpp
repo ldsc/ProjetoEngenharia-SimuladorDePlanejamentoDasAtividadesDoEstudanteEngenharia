@@ -93,3 +93,13 @@ std::vector<CDisciplinas> getDisciplinasCurso() {
 
     return disciplinas;
 }
+
+int calcularCargaHorariaTotalCurso() {
+    std::vector<CDisciplinas> todas = getDisciplinasCurso();
+    int total = 0;
+    for (const auto& disc : todas) {
+        total += disc.getCH();
+    }
+    return total;
+}
+

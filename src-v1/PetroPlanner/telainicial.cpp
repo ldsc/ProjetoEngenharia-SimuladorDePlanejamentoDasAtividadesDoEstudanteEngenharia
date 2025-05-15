@@ -45,8 +45,8 @@ void TelaInicial::on_botaoVerGradeCompleta_clicked()
 
 void TelaInicial::carregarInformacoesAluno()
 {
-    CAluno aluno;
-    if (!aluno.lerDoArquivo("InformacoesAluno.txt")) {
+
+    if (!this->aluno.lerDoArquivo("InformacoesAluno.txt")) {
         QMessageBox::warning(this, "Erro", "Não foi possível carregar o arquivo InformacoesAluno.txt");
         return;
     }
@@ -56,6 +56,7 @@ void TelaInicial::carregarInformacoesAluno()
     ui->labelCurso->setText("Curso: " + aluno.curso);
     ui->labelPeriodo->setText("Período: " + QString::number(aluno.periodo));
     ui->labelCRA->setText("CRA: " + QString::number(aluno.cra));
+
 
 
     QString listaEmCurso;

@@ -16,6 +16,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
@@ -34,6 +35,8 @@ public:
     QWidget *widget_gradeProgresso;
     QWidget *tab_GradeDificuldade;
     QWidget *widget_gradeDificuldade;
+    QLabel *labelCHGrade;
+    QProgressBar *progressBarGrade;
     QMenuBar *menubar;
     QMenu *menuGrade_Curricular;
     QStatusBar *statusbar;
@@ -57,7 +60,7 @@ public:
         label->setStyleSheet(QString::fromUtf8("color: white"));
         tabsGrade = new QTabWidget(centralwidget);
         tabsGrade->setObjectName("tabsGrade");
-        tabsGrade->setGeometry(QRect(60, 60, 1281, 561));
+        tabsGrade->setGeometry(QRect(60, 60, 1281, 501));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setBold(true);
@@ -67,7 +70,7 @@ public:
         tab_gradeGeral->setObjectName("tab_gradeGeral");
         widget_gradeGeral = new QWidget(tab_gradeGeral);
         widget_gradeGeral->setObjectName("widget_gradeGeral");
-        widget_gradeGeral->setGeometry(QRect(19, 20, 1231, 511));
+        widget_gradeGeral->setGeometry(QRect(19, 20, 1231, 441));
         tabsGrade->addTab(tab_gradeGeral, QString());
         tab_GradeProgresso = new QWidget();
         tab_GradeProgresso->setObjectName("tab_GradeProgresso");
@@ -83,6 +86,17 @@ public:
         widget_gradeDificuldade->setObjectName("widget_gradeDificuldade");
         widget_gradeDificuldade->setGeometry(QRect(10, 10, 1241, 501));
         tabsGrade->addTab(tab_GradeDificuldade, QString());
+        labelCHGrade = new QLabel(centralwidget);
+        labelCHGrade->setObjectName("labelCHGrade");
+        labelCHGrade->setGeometry(QRect(1140, 600, 201, 16));
+        labelCHGrade->setFont(font1);
+        labelCHGrade->setStyleSheet(QString::fromUtf8("color: white"));
+        progressBarGrade = new QProgressBar(centralwidget);
+        progressBarGrade->setObjectName("progressBarGrade");
+        progressBarGrade->setGeometry(QRect(60, 590, 1061, 31));
+        progressBarGrade->setStyleSheet(QString::fromUtf8("QProgressBar {color: white;    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
+        progressBarGrade->setMinimum(6);
+        progressBarGrade->setValue(80);
         ModuloGradeCompleta->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ModuloGradeCompleta);
         menubar->setObjectName("menubar");
@@ -111,6 +125,7 @@ public:
         tabsGrade->setTabText(tabsGrade->indexOf(tab_gradeGeral), QCoreApplication::translate("ModuloGradeCompleta", "por \303\241rea", nullptr));
         tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeProgresso), QCoreApplication::translate("ModuloGradeCompleta", "por semestre", nullptr));
         tabsGrade->setTabText(tabsGrade->indexOf(tab_GradeDificuldade), QCoreApplication::translate("ModuloGradeCompleta", "por n\303\255vel de dificuldade", nullptr));
+        labelCHGrade->setText(QCoreApplication::translate("ModuloGradeCompleta", "TextLabel", nullptr));
         menuGrade_Curricular->setTitle(QCoreApplication::translate("ModuloGradeCompleta", "Grade Curricular", nullptr));
     } // retranslateUi
 

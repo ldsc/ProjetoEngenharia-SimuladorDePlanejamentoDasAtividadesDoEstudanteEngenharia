@@ -20,6 +20,8 @@ public:
 
     bool lerDoArquivo(const QString& caminho);
     int calcularHorasEmCurso() const;
+    int calcularCHTotalCursada() const;
+
 
 
 };

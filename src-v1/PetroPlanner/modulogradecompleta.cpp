@@ -9,6 +9,8 @@
 #include <QTextStream>
 #include <QRegularExpression>
 #include <QLabel>
+#include <QMessageBox>
+
 
 ModuloGradeCompleta::ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent)
     : QMainWindow(parent)
@@ -25,10 +27,16 @@ ModuloGradeCompleta::ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent
     carregarDisciplinas();
 }
 
+
+
+
 ModuloGradeCompleta::~ModuloGradeCompleta()
 {
     delete ui;
 }
+
+
+
 
 void ModuloGradeCompleta::carregarDisciplinas() {
     std::vector<CDisciplinas> todas = getDisciplinasCurso();
@@ -177,4 +185,25 @@ void ModuloGradeCompleta::carregarDisciplinas() {
 
     QVBoxLayout *layoutDificuldade = new QVBoxLayout(ui->widget_gradeDificuldade);
     layoutDificuldade->addLayout(layoutTab3);
+
+
+
+
+    // Carga horária total cursada pelo aluno
+    int chCursada = aluno.calcularCHTotalCursada();
+
+    // Carga horária total do curso
+    int chTotalCurso = calcularCargaHorariaTotalCurso();
+
+    ui->progressBarGrade->setMaximum(chTotalCurso);
+    ui->progressBarGrade->setValue(chCursada);
+
+    ui->labelCHGrade->setText(QString::number(chCursada) + "/" + QString::number(chTotalCurso) + " horas");
+
 }
+
+
+
+
+
+

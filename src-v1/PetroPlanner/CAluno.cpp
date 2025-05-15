@@ -115,3 +115,27 @@ int CAluno::calcularHorasEmCurso() const {
 
     return total;
 }
+
+
+int CAluno::calcularCHTotalCursada() const {
+    std::vector<CDisciplinas> todas = getDisciplinasCurso();
+    int total = 0;
+
+    for (const auto& discAluno : disciplinasAprovadas) {
+        QString nomeAluno = QString::fromStdString(discAluno.getNome()).trimmed();
+
+        for (const auto& discCurso : todas) {
+            QString nomeCurso = QString::fromStdString(discCurso.getNome()).trimmed();
+
+            if (QString::compare(nomeAluno, nomeCurso, Qt::CaseInsensitive) == 0) {
+                total += discCurso.getCH();
+                break;
+            }
+        }
+    }
+
+    return total;
+}
+
+
+

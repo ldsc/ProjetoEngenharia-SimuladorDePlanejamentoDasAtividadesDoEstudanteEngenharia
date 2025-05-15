@@ -14,12 +14,12 @@ CRA: 8.5
 1 ; Introducao a Engenharia de Petroleo ; - ; Em Curso
 1 ; Fundamentos da Ciencia da Computacao ; - ; Em Curso
 
-2 ; Quimica Geral II ; - ; Nao Cursada
-2 ; Portugues Instrumental II ; - ; Nao Cursada
-2 ; Optativa do CCH ; - ; Nao Cursada
-2 ; Fisica I ; - ; Nao Cursada
-2 ; Fisica Experimental I ; - ; Nao Cursada
-2 ; Calculo Diferencial e Integral II ; - ; Nao Cursada
+2 ; Quimica Geral II ; 9.0 ; Aprovada
+2 ; Portugues Instrumental II ;  9.0 ; Aprovada
+2 ; Optativa do CCH ;  9.0 ; Aprovada
+2 ; Fisica I ; 9.0 ; Aprovada
+2 ; Fisica Experimental I ; 9.0 ; Aprovada
+2 ; Calculo Diferencial e Integral II ;  9.0 ; Aprovada
 2 ; Higiene e Seguranca do Trabalho ; - ; Nao Cursada
 2 ; Algebra Linear ; - ; Nao Cursada
 

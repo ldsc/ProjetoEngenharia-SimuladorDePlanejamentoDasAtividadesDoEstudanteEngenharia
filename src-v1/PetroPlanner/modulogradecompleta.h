@@ -15,7 +15,10 @@ class ModuloGradeCompleta : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent = nullptr);
+        explicit ModuloGradeCompleta(const CAluno& alunoRef, QWidget *parent = nullptr);
+
+
+
     ~ModuloGradeCompleta();
 
 private:

@@ -35,7 +35,6 @@ public:
     QLabel *labelPeriodo;
     QLabel *labelCRA;
     QLabel *labelTitulo;
-    QPushButton *botaoVerGradeCompleta_2;
     QGroupBox *groupBoxDiscAnd;
     QLabel *labelHorasEmCurso;
     QProgressBar *progressBarHoras;
@@ -104,7 +103,7 @@ public:
         labelPeriodo->setFont(font3);
         labelCRA = new QLabel(groupBoxInfoAluno);
         labelCRA->setObjectName("labelCRA");
-        labelCRA->setGeometry(QRect(10, 100, 481, 16));
+        labelCRA->setGeometry(QRect(10, 100, 571, 16));
         labelCRA->setFont(font3);
         labelTitulo = new QLabel(centralwidget);
         labelTitulo->setObjectName("labelTitulo");
@@ -115,12 +114,6 @@ public:
         font4.setBold(true);
         labelTitulo->setFont(font4);
         labelTitulo->setStyleSheet(QString::fromUtf8("color:white"));
-        botaoVerGradeCompleta_2 = new QPushButton(centralwidget);
-        botaoVerGradeCompleta_2->setObjectName("botaoVerGradeCompleta_2");
-        botaoVerGradeCompleta_2->setGeometry(QRect(330, 290, 251, 81));
-        botaoVerGradeCompleta_2->setFont(font1);
-        botaoVerGradeCompleta_2->setToolTipDuration(-4);
-        botaoVerGradeCompleta_2->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         groupBoxDiscAnd = new QGroupBox(centralwidget);
         groupBoxDiscAnd->setObjectName("groupBoxDiscAnd");
         groupBoxDiscAnd->setGeometry(QRect(690, 120, 601, 261));
@@ -179,7 +172,7 @@ public:
     void retranslateUi(QMainWindow *TelaInicial)
     {
         TelaInicial->setWindowTitle(QCoreApplication::translate("TelaInicial", "TelaInicial", nullptr));
-        botaoVerGradeCompleta->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa antigo", nullptr));
+        botaoVerGradeCompleta->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
         groupBoxInfoAluno->setTitle(QCoreApplication::translate("TelaInicial", "Dados Gerais", nullptr));
         labelNome->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelMatricula->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
@@ -187,7 +180,6 @@ public:
         labelPeriodo->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelCRA->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelTitulo->setText(QCoreApplication::translate("TelaInicial", "PetroPlanner", nullptr));
-        botaoVerGradeCompleta_2->setText(QCoreApplication::translate("TelaInicial", "Ver Grade Completa", nullptr));
         groupBoxDiscAnd->setTitle(QString());
         labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Horas em curso:", nullptr));
         labelHorasEmCurso2->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
