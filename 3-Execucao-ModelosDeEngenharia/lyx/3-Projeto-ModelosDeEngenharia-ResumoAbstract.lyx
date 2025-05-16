@@ -1,7 +1,9 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abnt
 \begin_preamble
 \usepackage {graphicx}
@@ -18,21 +20,25 @@
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package default
-\inputencoding latin1
-\fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
+\inputencoding iso8859-1
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -54,18 +60,30 @@
 \pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -80,15 +98,23 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -96,7 +122,11 @@
 \begin_layout Standard
 
 \emph on
-Titulo do Trabalho...Titulo do Trabalho...Titulo do Trabalho...
+PetroPlanner
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -119,6 +149,8 @@ Titulo do Trabalho...Titulo do Trabalho...Titulo do Trabalho...
 \size huge
 Resumo
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -164,12 +196,12 @@ addcontentsline{toc}{chapter}{Resumo}
 status collapsed
 
 \begin_layout Plain Layout
-Este trabalho objetiva, através da análise de imagens de rochas reservatório
- de petróleo, estudar, simular e determinar as propriedades petrofísicas
- que descrevem o escoamento multifásico no meio poroso.
- Tais informações descrevem a interação dinâmica entre os fluidos e o meio
- poroso, sendo então imprescindíveis para a compreensão do comportamento
- de produção dos reservatórios.
+Este trabalho objetiva,
+ através da análise de imagens de rochas reservatório de petróleo,
+ estudar,
+ simular e determinar as propriedades petrofísicas que descrevem o escoamento multifásico no meio poroso.
+ Tais informações descrevem a interação dinâmica entre os fluidos e o meio poroso,
+ sendo então imprescindíveis para a compreensão do comportamento de produção dos reservatórios.
 \end_layout
 
 \end_inset
@@ -178,120 +210,66 @@ Este trabalho objetiva, através da análise de imagens de rochas reservatório
 \end_layout
 
 \begin_layout Standard
-Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...
+Durante a graduação em Engenharia de Petróleo,
+ muitos estudantes enfrentam dificuldades para organizar sua trajetória acadêmica de forma eficiente.
+ Entre desafios como a escolha de disciplinas,
+ carga horária semanal,
+ estágio,
+ atividades complementares e Trabalho de Conclusão de Curso (TCC),
+ a falta de um planejamento estruturado pode impactar diretamente no desempenho acadêmico.
 \end_layout
 
-\begin_layout Itemize
-O resumo deve ser feito no início do trabalho, na etapa de especificação
- do trabalho (ajuda a esclarecer as ideias).
- 
-\end_layout
-
-\begin_layout Itemize
-Deve ter aproximadamente 200-500 palavras.
- 
-\end_layout
-
-\begin_layout Itemize
-A versão final deve ser feita depois das correções sugeridas pela banca.
-\end_layout
-
-\begin_layout Itemize
-O resumo deve ser completo, simples e direto, pois é um elemento externo
- a Tese/Dissertação/Monografia, disponibilizado em bibliotecas eletrônicas.
- Um bom resumo irá convencer o leitor a baixar o arquivo, se for ruim, com
- certeza seu trabalho não será lido - por melhor que seja a parte técnica!
-\end_layout
-
-\begin_layout Itemize
-Um bom resumo é completo e tem a mesma ordem do documento final:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Colocação do problema, 
-\series bold
-objetivos e metodologia
-\series default
-, seguido de desenvolvimento, simulações/experimentos, 
-\series bold
-resultados
-\series default
-, análises e 
-\series bold
-conclusões
-\series default
-.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Evite colocar citações no resumo; se o fizer, incluir a referência completa.
- Veja o exemplo a seguir:
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-\paragraph_spacing double
-Embora obtendo resultados muito expressivos, métodos de predição da permeabilida
-de intrínseca baseados no campo local de velocidades, como em Santos 
-\emph on
-et al.
-\emph default
-(2001) (Santos, L.O.E; Philippi, P.C; Damiani, M.C; Fernandes, C.P; 2001, 
-\emph on
-Using three-dimensional reconstructed microstructures for predicting intrinsic
- permeability of reservoir- rocks based on a boolean lattice gas method
-\emph default
-, Submitted to Journal of Petroleum Science and Engineering), são computacionalm
-ente caros e não se espera que sejam usados na rotina diária da engenharia
- de petróleo.
+Diante dessa necessidade,
+ este projeto propõe o desenvolvimento do PetroPlanner,
+ um software interativo que auxilia estudantes no planejamento de sua grade curricular e na gestão do tempo dedicado aos estudos.
+ A ferramenta permitirá a simulação de diferentes cenários acadêmicos,
+ considerando fatores como taxa de aprovação das disciplinas,
+ impacto do adiamento de matérias e carga horária semanal recomendada.
+ Além disso,
+ o software incluirá funcionalidades para acompanhamento de estágios,
+ atividades complementares e progressão do coeficiente de rendimento (CR),
+ oferecendo uma visão mais clara da jornada acadêmica do estudante.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "metcient-LaudemiraSilvaRabelo"
-
-\end_inset
-
-, "A NBR 6028 (1990) esclarece que um resumo deve passar informações suficientes
- sobre todo o conteúdo do texto, possibilitando ao leitor a decisão de lê
- em sua totalidade.
- É solicitado que o resumo contenha objetivo, método, resultados e as conclusões
- do trabalho.
- ...
- O resumo deve ser escrito em parágrafo único, numa seqüência corrente de
- frases lógicas sem nenhuma enumeração de tópicos.
- A norma 6028 (1990) explicita também que a primeira frase deve explicar
- o tema do artigo, dando-se preferência ao uso da terceira pessoa do singular
- e do verbo na voz ativa.
- Embora o artigo possa ter sido escrito por vários autores, a primeira pessoa
- do plural (nós) não deve ser utilizado.
- Deve-se, ainda, evitar o uso de frases negativas, símbolos, equações, tabelas,
- quadros etc no resumo ".
+\begin_layout Standard
+O PetroPlanner será desenvolvido em C++23 com a interface gráfica baseada no Qt 6.6 (ou superior),
+ utilizando SQLite para armazenamento de dados e bibliotecas específicas para gráficos e estatísticas.
+ O diferencial desse projeto está na personalização do planejamento acadêmico para estudantes de engenharia,
+ levando em conta a complexidade e carga horária das disciplinas,
+ o impacto de reprovações e a necessidade de conciliar estudos com a vida pessoal e profissional.
+ Com isso,
+ espera-se que o PetroPlanner se torne uma ferramenta essencial para ajudar universitários a tomar decisões estratégicas ao longo do curso,
+ reduzindo incertezas e contribuindo para uma trajetória acadêmica mais organizada e eficiente.
+ 
 \end_layout
 
 \begin_layout Standard
 
 \series bold
 \size large
-Palavras chave: 
-\series default
-\size default
-[até 5 palavras chaves].
+Palavras chave:
+ 
+\end_layout
+
+\begin_layout Standard
+Planejamento Acadêmico
+\end_layout
+
+\begin_layout Standard
+Engenharia de Petróleo
+\end_layout
+
+\begin_layout Standard
+Simulação de Grade Curricular
+\end_layout
+
+\begin_layout Standard
+Gestão do Tempo
+\end_layout
+
+\begin_layout Standard
+Software Educacional
 \end_layout
 
 \begin_layout Standard
@@ -304,8 +282,11 @@ Palavras chave:
 \begin_layout Standard
 
 \emph on
-Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...Titulo do Trabalho
- em ingles...
+Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -328,6 +309,8 @@ Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...Titulo do Trabalho
 \size huge
 Abstract
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -373,12 +356,12 @@ addcontentsline{toc}{chapter}{Abstract}
 status collapsed
 
 \begin_layout Plain Layout
-This work aims, through image analysis of oil reservoir rocks, study, simulate
- and determine the petrophysical properties that describe the multiphase
- flow in porous medium.
- Such information describes the dynamic interaction between the fluid and
- the porous media, is essential to understanding the behavior of reservoirs
- producing.
+This work aims,
+ through image analysis of oil reservoir rocks,
+ study,
+ simulate and determine the petrophysical properties that describe the multiphase flow in porous medium.
+ Such information describes the dynamic interaction between the fluid and the porous media,
+ is essential to understanding the behavior of reservoirs producing.
 \end_layout
 
 \end_inset
@@ -387,56 +370,83 @@ This work aims, through image analysis of oil reservoir rocks, study, simulate
 \end_layout
 
 \begin_layout Standard
-[coloque aqui o resumo em inglês].
-\lang english
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-Note que o documento tem uma língua, que pode ser setada utilizando-se Document-
-Settings->Language.
+During undergraduate studies in Petroleum Engineering,
+ many students struggle to efficiently organize their academic path.
+ Choosing courses,
+ managing weekly workload,
+ participating in internships,
+ completing extracurricular activities,
+ and working on a final thesis require structured planning—
+its absence may significantly affect academic performance.
 \end_layout
 
-\begin_layout Plain Layout
-
-\lang english
-Note que partes do texto podem ser definidos como tendo outra linguagem.
- Selecione o texto, vá em Edit->TextStyle->Customized, ou Edit->Language.
-\end_layout
-
-\end_inset
-
+\begin_layout Standard
 
 \end_layout
 
 \begin_layout Standard
-Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...
-\begin_inset space ~
-\end_inset
+To address this issue,
+ this project proposes the development of PetroPlanner,
+ an interactive software tool designed to assist students in planning their curriculum and managing their study time.
+ The tool will allow simulation of different academic scenarios,
+ considering course approval rates,
+ subject postponements,
+ and recommended weekly workload.
+ It will also include features for tracking internships,
+ extracurricular activities,
+ and the progression of the GPA.
+\end_layout
 
+\begin_layout Standard
 
+\end_layout
+
+\begin_layout Standard
+The system will be developed in C++23,
+ using a Qt 6.6 (or later) graphical interface,
+ SQLite for data storage,
+ and specific libraries for charts and statistics.
+ The project's main strength lies in its tailored approach to academic planning for engineering students,
+ accounting for course complexity,
+ failures,
+ and the need to balance academics with personal life.
+ PetroPlanner is expected to become an essential tool for helping students make strategic decisions throughout their degree,
+ reducing uncertainty and promoting a more organized and efficient academic journey.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newline newline
 \end_inset
 
 
 \series bold
 \size large
-Keywords: 
-\series default
-\size default
-[até 5 palavras chaves em inglês].
+Keywords:
+ 
+\end_layout
+
+\begin_layout Standard
+Academic Planning
+\end_layout
+
+\begin_layout Standard
+Petroleum Engineering
+\end_layout
+
+\begin_layout Standard
+Curriculum Simulation
+\end_layout
+
+\begin_layout Standard
+Time Management
+\end_layout
+
+\begin_layout Standard
+Educational Software
 \end_layout
 
 \end_body

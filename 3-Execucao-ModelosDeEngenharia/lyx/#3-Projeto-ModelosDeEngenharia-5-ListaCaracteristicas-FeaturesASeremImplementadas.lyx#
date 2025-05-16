@@ -183,6 +183,10 @@ nota importante,
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Itemize
 v0.1
 \end_layout
 
@@ -196,10 +200,15 @@ Nesta versão,
 Features v0.1:
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Itemize
 O sistema deve ser capaz de ler arquivos contendo os dados do aluno.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 O sistema deve armazenar e organizar disciplinas aprovadas,
  cursando e não cursadas.
@@ -221,85 +230,35 @@ Implementação do método lerDoArquivo() para carregar informações do aluno.
 Implementação do método calcularCreditosEmCurso().
 \end_layout
 
-\begin_layout Standard
+\end_deeper
+\begin_layout Itemize
 v0.3
 \end_layout
 
-\begin_layout Standard
-A versão 0.3 amplia a funcionalidade com a adição da interface gráfica básica,
- permitindo visualizar os dados previamente organizados.
- A primeira interação entre os módulos do frontend e os dados do backend ocorre aqui.
-\end_layout
-
-\begin_layout Standard
-Features v0.3:
+\begin_deeper
+\begin_layout Itemize
+Lista de classes a serem implementadas
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe TelaInicial.
+Testes
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Implementação da janela ModuloGradeCompleta.
-\end_layout
-
-\begin_layout Itemize
-Conexão entre os dados do aluno (CAluno) e a interface.
-\end_layout
-
-\begin_layout Itemize
-O sistema deve exibir a grade curricular com as disciplinas separadas por status (aprovadas,
- em curso,
- não cursadas).
-\end_layout
-
-\begin_layout Itemize
-Implementação do método carregarInformacoesAluno() para preparar os dados na interface.
-\end_layout
-
-\begin_layout Itemize
-Testes básicos de interface com navegação simples e abertura de janelas.
-\end_layout
-
-\begin_layout Itemize
-Implementação inicial do método carregarDisciplinas().
-\end_layout
-
-\begin_layout Standard
 v0.7
 \end_layout
 
-\begin_layout Standard
-Na versão 0.7 o sistema já está próximo da finalização,
- com recursos interativos adicionais,
- como exibir detalhes de uma disciplina clicada,
- e janelas auxiliares para acompanhamento.
-\end_layout
-
-\begin_layout Standard
-Features v0.7:
+\begin_deeper
+\begin_layout Itemize
+Lista de classes a serem implementadas
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe AcompanhamentoDisciplina.
+Testes
 \end_layout
 
-\begin_layout Itemize
-O sistema deve permitir abrir uma nova janela com os detalhes de cada disciplina ao clicar nela.
-\end_layout
-
-\begin_layout Itemize
-Implementação do método abrirJanelaDisciplina(nomeDisciplina) na TelaInicial.
-\end_layout
-
-\begin_layout Itemize
-Adição de validações e testes de integração entre as janelas.
-\end_layout
-
-\begin_layout Itemize
-Testes com diferentes perfis de aluno (diferentes arquivos de entrada).
-\end_layout
-
+\end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
