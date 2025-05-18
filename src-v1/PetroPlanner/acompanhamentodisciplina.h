@@ -39,6 +39,7 @@ private slots:
     void aoClicarEditar();
     void aoClicarSalvar();
     void adicionarTrabalho();
+    void removerTrabalho();
 
     void salvarAlteracoes();
 

@@ -26,6 +26,8 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     connect(ui->botaoEditar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarSalvar);
     connect(ui->botaoAdcTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarTrabalho);
+    connect(ui->botaoRemTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerTrabalho);
+
 
     QFile arquivo("InformacoesAluno.txt");
     bool encontrado = false;
@@ -101,10 +103,17 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
     };
 
     QList<Entrada> entradas;
-    for (const QString& val : trabs.split(",", Qt::KeepEmptyParts))
-        entradas.append({"trab", val.trimmed(), ui->horizontalLayoutTrabs});
-    for (const QString& val : provas.split(",", Qt::KeepEmptyParts))
-        entradas.append({"prova", val.trimmed(), ui->horizontalLayoutProvas});
+    for (const QString& val : trabs.split(",", Qt::KeepEmptyParts)) {
+        QString trimmedVal = val.trimmed();
+        if (!trimmedVal.isEmpty())
+            entradas.append({"trab", trimmedVal, ui->horizontalLayoutTrabs});
+    }
+
+    for (const QString& val : provas.split(",", Qt::KeepEmptyParts)) {
+        QString trimmedVal = val.trimmed();
+        if (!trimmedVal.isEmpty())
+            entradas.append({"prova", trimmedVal, ui->horizontalLayoutProvas});
+    }
 
     double somaNotas = 0.0, somaPesos = 0.0;
     QList<QPair<QLabel*, double>> previsoesCinza;
@@ -217,6 +226,19 @@ void AcompanhamentoDisciplina::adicionarTrabalho()
     novaListaTrabalhos.append("-(1)");
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
 }
+
+
+void AcompanhamentoDisciplina::removerTrabalho()
+{
+    if (!modoEdicaoAtivo) return;
+
+    if (!novaListaTrabalhos.isEmpty())
+        novaListaTrabalhos.removeLast();
+
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+
 
 void AcompanhamentoDisciplina::salvarAlteracoes()
 {
