@@ -27,6 +27,9 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarSalvar);
     connect(ui->botaoAdcTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarTrabalho);
     connect(ui->botaoRemTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerTrabalho);
+    connect(ui->botaoAdcProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarProva);
+    connect(ui->botaoRemProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerProva);
+
 
 
     QFile arquivo("InformacoesAluno.txt");
@@ -234,6 +237,25 @@ void AcompanhamentoDisciplina::removerTrabalho()
 
     if (!novaListaTrabalhos.isEmpty())
         novaListaTrabalhos.removeLast();
+
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+
+void AcompanhamentoDisciplina::adicionarProva()
+{
+    if (!modoEdicaoAtivo) return;
+
+    novaListaProvas.append("-(1)");
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+void AcompanhamentoDisciplina::removerProva()
+{
+    if (!modoEdicaoAtivo) return;
+
+    if (!novaListaProvas.isEmpty())
+        novaListaProvas.removeLast();
 
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
 }

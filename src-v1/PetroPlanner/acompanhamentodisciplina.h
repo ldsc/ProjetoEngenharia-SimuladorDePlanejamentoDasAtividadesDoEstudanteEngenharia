@@ -40,7 +40,8 @@ private slots:
     void aoClicarSalvar();
     void adicionarTrabalho();
     void removerTrabalho();
-
+    void adicionarProva();
+    void removerProva();
     void salvarAlteracoes();
 
 
