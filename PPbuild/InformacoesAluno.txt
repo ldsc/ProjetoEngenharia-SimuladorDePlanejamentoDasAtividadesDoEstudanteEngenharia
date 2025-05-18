@@ -85,12 +85,16 @@ CRA: 8.5
 
 
 
+
+
+
+
 # Formato das disciplinas em andamento:
 # Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...
 
 Disciplinas em Andamento:
 
-Desenho Tecnico ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 59(2),-(1) ; Provas: -(1)
+Desenho Tecnico ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1),-(1),-(1) ; Provas: 55(2), 78(1)
 Calculo Diferencial e Integral I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 Introducao a Engenharia de Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 Fundamentos da Ciencia da Computacao ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)

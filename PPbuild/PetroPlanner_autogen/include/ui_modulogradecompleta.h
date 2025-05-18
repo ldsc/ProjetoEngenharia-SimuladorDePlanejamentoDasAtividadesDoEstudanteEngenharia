@@ -112,7 +112,7 @@ public:
 
         retranslateUi(ModuloGradeCompleta);
 
-        tabsGrade->setCurrentIndex(0);
+        tabsGrade->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(ModuloGradeCompleta);

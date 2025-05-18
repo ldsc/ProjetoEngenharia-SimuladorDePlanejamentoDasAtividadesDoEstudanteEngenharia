@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -51,6 +52,8 @@ public:
     QPushButton *botaoSalvar;
     QLabel *labelProvas_2;
     QLabel *labelMedia;
+    QProgressBar *progressBarFaltas;
+    QLabel *labelFaltas;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -58,7 +61,7 @@ public:
     {
         if (AcompanhamentoDisciplina->objectName().isEmpty())
             AcompanhamentoDisciplina->setObjectName("AcompanhamentoDisciplina");
-        AcompanhamentoDisciplina->resize(805, 682);
+        AcompanhamentoDisciplina->resize(992, 879);
         AcompanhamentoDisciplina->setStyleSheet(QString::fromUtf8("background-color: blue; "));
         centralwidget = new QWidget(AcompanhamentoDisciplina);
         centralwidget->setObjectName("centralwidget");
@@ -220,10 +223,21 @@ public:
         labelMedia->setGeometry(QRect(130, 310, 121, 21));
         labelMedia->setFont(font4);
         labelMedia->setStyleSheet(QString::fromUtf8("color: black"));
+        progressBarFaltas = new QProgressBar(centralwidget);
+        progressBarFaltas->setObjectName("progressBarFaltas");
+        progressBarFaltas->setGeometry(QRect(10, 630, 731, 31));
+        progressBarFaltas->setStyleSheet(QString::fromUtf8("QProgressBar {color: white;    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
+        progressBarFaltas->setMinimum(6);
+        progressBarFaltas->setValue(80);
+        labelFaltas = new QLabel(centralwidget);
+        labelFaltas->setObjectName("labelFaltas");
+        labelFaltas->setGeometry(QRect(760, 640, 201, 16));
+        labelFaltas->setFont(font1);
+        labelFaltas->setStyleSheet(QString::fromUtf8("color: white"));
         AcompanhamentoDisciplina->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AcompanhamentoDisciplina);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 805, 22));
+        menubar->setGeometry(QRect(0, 0, 992, 22));
         AcompanhamentoDisciplina->setMenuBar(menubar);
         statusbar = new QStatusBar(AcompanhamentoDisciplina);
         statusbar->setObjectName("statusbar");
@@ -258,6 +272,7 @@ public:
         botaoSalvar->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Salvar", nullptr));
         labelProvas_2->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "M\303\251dia:", nullptr));
         labelMedia->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Media", nullptr));
+        labelFaltas->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "TextLabel", nullptr));
     } // retranslateUi
 
 };
