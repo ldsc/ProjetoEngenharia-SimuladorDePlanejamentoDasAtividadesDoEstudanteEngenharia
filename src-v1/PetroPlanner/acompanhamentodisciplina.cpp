@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QCheckBox>
 
 AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina, QWidget *parent)
     : QMainWindow(parent)
@@ -15,22 +16,18 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     nomeAtualDisciplina = nomeDisciplina.trimmed();
     modoEdicaoAtivo = false;
 
-    // Desabilita os botões até o modo de edição ser ativado
     ui->botaoAdcTrab->setEnabled(false);
     ui->botaoAdcProva->setEnabled(false);
     ui->botaoRemTrab->setEnabled(false);
     ui->botaoRemProva->setEnabled(false);
     ui->botaoSalvar->setEnabled(false);
 
-    // Conectar os botões aos slots
     connect(ui->botaoEditar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarSalvar);
     connect(ui->botaoAdcTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarTrabalho);
     connect(ui->botaoRemTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerTrabalho);
     connect(ui->botaoAdcProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarProva);
     connect(ui->botaoRemProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerProva);
-
-
 
     QFile arquivo("InformacoesAluno.txt");
     bool encontrado = false;
@@ -41,24 +38,20 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
 
         while (!in.atEnd()) {
             QString linha = in.readLine().trimmed();
-
             if (linha == "Disciplinas em Andamento:") {
                 secaoDisciplinas = true;
                 continue;
             }
 
-            if (secaoDisciplinas && !linha.isEmpty() &&
-                linha.section(";", 0, 0).trimmed() == nomeAtualDisciplina) {
+            if (secaoDisciplinas && !linha.isEmpty() && linha.section(";", 0, 0).trimmed() == nomeAtualDisciplina) {
                 QStringList partes = linha.split(";", Qt::SkipEmptyParts);
                 if (partes.size() >= 5) {
                     QString trabalhosStr = partes[3].trimmed().remove("Trabalhos:").trimmed();
                     QString provasStr = partes[4].trimmed().remove("Provas:").trimmed();
-
-                    preencherAmbosLayouts(trabalhosStr, provasStr);
-                    encontrado = true;
-
                     novaListaTrabalhos = trabalhosStr.split(",", Qt::KeepEmptyParts);
                     novaListaProvas = provasStr.split(",", Qt::KeepEmptyParts);
+                    preencherAmbosLayouts(trabalhosStr, provasStr);
+                    encontrado = true;
                 }
                 break;
             }
@@ -66,7 +59,6 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
         arquivo.close();
     }
 
-    // Se não encontrou a disciplina no txt, adiciona uma linha padrão
     if (!encontrado) {
         QFile arqAppend("InformacoesAluno.txt");
         if (arqAppend.open(QIODevice::Append | QIODevice::Text)) {
@@ -74,112 +66,91 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
             out << nomeAtualDisciplina << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)\n";
             arqAppend.close();
 
-            preencherAmbosLayouts("-(1)", "-(1)");
             novaListaTrabalhos = {"-(1)"};
             novaListaProvas = {"-(1)"};
+            preencherAmbosLayouts("-(1)", "-(1)");
         }
     }
 }
 
-AcompanhamentoDisciplina::~AcompanhamentoDisciplina()
-{
-    delete ui;
-}
+AcompanhamentoDisciplina::~AcompanhamentoDisciplina() { delete ui; }
 
-void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const QString& provas)
-{
-    // Limpa layouts antes de preencher novamente
-    QLayoutItem *item;
-    while ((item = ui->horizontalLayoutTrabs->takeAt(0)) != nullptr) {
-        delete item->widget();
-        delete item;
-    }
-    while ((item = ui->horizontalLayoutProvas->takeAt(0)) != nullptr) {
-        delete item->widget();
-        delete item;
-    }
-
-    struct Entrada {
-        QString tipo;
-        QString valorStr;
-        QHBoxLayout* layout;
+void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const QString& provas) {
+    auto limparLayout = [](QHBoxLayout* layout) {
+        QLayoutItem* item;
+        while ((item = layout->takeAt(0)) != nullptr) {
+            delete item->widget(); delete item;
+        }
     };
 
-    QList<Entrada> entradas;
-    for (const QString& val : trabs.split(",", Qt::KeepEmptyParts)) {
-        QString trimmedVal = val.trimmed();
-        if (!trimmedVal.isEmpty())
-            entradas.append({"trab", trimmedVal, ui->horizontalLayoutTrabs});
-    }
+    limparLayout(ui->horizontalLayoutTrabs);
+    limparLayout(ui->horizontalLayoutProvas);
+    entradasTrabalhos.clear();
+    entradasProvas.clear();
 
-    for (const QString& val : provas.split(",", Qt::KeepEmptyParts)) {
-        QString trimmedVal = val.trimmed();
-        if (!trimmedVal.isEmpty())
-            entradas.append({"prova", trimmedVal, ui->horizontalLayoutProvas});
-    }
-
-    double somaNotas = 0.0, somaPesos = 0.0;
-    QList<QPair<QLabel*, double>> previsoesCinza;
-
-    for (const Entrada& ent : entradas) {
-        QString v = ent.valorStr;
+    auto adicionarCampo = [&](const QString& valorStr, QHBoxLayout* layout, QList<EntradaNota>& listaDestino) {
         double nota = 0.0, peso = 1.0;
+        bool notaPreenchida = false;
 
-        if (v.startsWith("-(") && v.endsWith(")"))
-            peso = v.mid(2, v.length() - 3).trimmed().toDouble();
-        else if (v.contains("(") && v.endsWith(")")) {
-            nota = v.section("(", 0, 0).trimmed().toDouble();
-            peso = v.section("(", 1, 1).remove(")").trimmed().toDouble();
-        } else if (!v.isEmpty() && v != "-")
-            nota = v.toDouble();
+        if (valorStr.startsWith("-(") && valorStr.endsWith(")"))
+            peso = valorStr.mid(2, valorStr.length() - 3).toDouble();
+        else if (valorStr.contains("(") && valorStr.endsWith(")")) {
+            nota = valorStr.section("(", 0, 0).toDouble();
+            peso = valorStr.section("(", 1, 1).remove(")").toDouble();
+            notaPreenchida = true;
+        } else if (!valorStr.isEmpty() && valorStr != "-") {
+            nota = valorStr.toDouble();
+            notaPreenchida = true;
+        }
 
-        QLabel* labelNota = new QLabel;
-        labelNota->setFont(QFont("Bookman Old Style", 18, QFont::Bold));
-        labelNota->setAlignment(Qt::AlignHCenter);
+        QLineEdit* editNota = new QLineEdit;
+        QLineEdit* editPeso = new QLineEdit;
 
-        QLabel* labelPeso = new QLabel(QString("peso %1").arg(peso));
-        labelPeso->setFont(QFont("Bookman Old Style", 10));
-        labelPeso->setAlignment(Qt::AlignHCenter);
+        editNota->setText(notaPreenchida ? QString::number(nota, 'f', 1) : "");
+        editNota->setPlaceholderText("?");
+        editPeso->setText(QString::number(peso));
+
+        QFont fontNota("Bookman Old Style", 18, QFont::Bold);
+        QFont fontPeso("Bookman Old Style", 10);
+        editNota->setFont(fontNota);
+        editPeso->setFont(fontPeso);
+
+        editNota->setAlignment(Qt::AlignHCenter);
+        editPeso->setAlignment(Qt::AlignHCenter);
+
+        editNota->setReadOnly(!modoEdicaoAtivo);
+        editPeso->setReadOnly(!modoEdicaoAtivo);
+
+        QCheckBox* checkSimulado = new QCheckBox("Simulado");
+        checkSimulado->setChecked(!notaPreenchida);
+        checkSimulado->setEnabled(modoEdicaoAtivo);
 
         QVBoxLayout* vbox = new QVBoxLayout;
-        vbox->addWidget(labelNota);
-        vbox->addWidget(labelPeso);
+        vbox->addWidget(editNota);
+        vbox->addWidget(editPeso);
+        vbox->addWidget(checkSimulado);
+
         QWidget* container = new QWidget;
         container->setLayout(vbox);
-        ent.layout->addWidget(container);
+        layout->addWidget(container);
 
-        if (v.startsWith("-(") || v == "-" || v.isEmpty()) {
-            labelNota->setText("?");
-            labelNota->setStyleSheet("color: gray;");
-            previsoesCinza.append({labelNota, peso});
-        } else {
-            labelNota->setText(QString::number(nota));
-            labelNota->setStyleSheet(nota >= 60 ? "color: green;" : "color: red;");
-            somaNotas += nota * peso;
-            somaPesos += peso;
+        listaDestino.append({editNota, editPeso, checkSimulado});
+
+        if (modoEdicaoAtivo) {
+            connect(editNota, &QLineEdit::textChanged, this, &AcompanhamentoDisciplina::atualizarMedia);
+            connect(editPeso, &QLineEdit::textChanged, this, &AcompanhamentoDisciplina::atualizarMedia);
         }
-    }
+    };
 
-    double pesoFaltante = 0.0;
-    for (const auto& par : previsoesCinza) pesoFaltante += par.second;
+    for (const QString& val : trabs.split(",", Qt::KeepEmptyParts))
+        if (!val.trimmed().isEmpty())
+            adicionarCampo(val.trimmed(), ui->horizontalLayoutTrabs, entradasTrabalhos);
 
-    if (pesoFaltante > 0.0) {
-        double notaNecessaria = (60.0 * (somaPesos + pesoFaltante) - somaNotas) / pesoFaltante;
-        notaNecessaria = qMax(0.0, notaNecessaria);
-        for (auto& par : previsoesCinza)
-            par.first->setText(QString::number(notaNecessaria, 'f', 1));
-    }
+    for (const QString& val : provas.split(",", Qt::KeepEmptyParts))
+        if (!val.trimmed().isEmpty())
+            adicionarCampo(val.trimmed(), ui->horizontalLayoutProvas, entradasProvas);
 
-    double somaCinza = 0.0;
-    for (const auto& par : previsoesCinza) {
-        bool ok;
-        double valor = par.first->text().toDouble(&ok);
-        if (ok) somaCinza += valor * par.second;
-    }
-
-    double mediaFinal = (somaPesos + pesoFaltante) > 0 ? ((somaNotas + somaCinza) / (somaPesos + pesoFaltante)) : 0.0;
-    ui->labelMedia->setText(QString::number(mediaFinal, 'f', 1));
-    ui->labelMedia->setStyleSheet(previsoesCinza.isEmpty() ? (mediaFinal >= 60 ? "color: green;" : "color: red;") : "color: gray;");
+    atualizarMedia();
 }
 
 void AcompanhamentoDisciplina::aoClicarEditar()
@@ -198,13 +169,34 @@ void AcompanhamentoDisciplina::aoClicarEditar()
     ui->botaoAdcTrab->setEnabled(true);
     ui->botaoRemProva->setEnabled(true);
     ui->botaoRemTrab->setEnabled(true);
+
+    for (auto& e : entradasTrabalhos) {
+        e.editNota->setReadOnly(false);
+        e.editPeso->setReadOnly(false);
+        e.checkSimulado->setEnabled(true);
+    }
+    for (auto& e : entradasProvas) {
+        e.editNota->setReadOnly(false);
+        e.editPeso->setReadOnly(false);
+        e.checkSimulado->setEnabled(true);
+    }
 }
 
 void AcompanhamentoDisciplina::aoClicarSalvar()
 {
     if (!modoEdicaoAtivo) return;
-
     modoEdicaoAtivo = false;
+
+    for (auto& e : entradasTrabalhos) {
+        e.editNota->setReadOnly(true);
+        e.editPeso->setReadOnly(true);
+        e.checkSimulado->setEnabled(false);
+    }
+    for (auto& e : entradasProvas) {
+        e.editNota->setReadOnly(true);
+        e.editPeso->setReadOnly(true);
+        e.checkSimulado->setEnabled(false);
+    }
 
     ui->botaoEditar->setStyleSheet("background-color: #ffa308; color: white;");
     ui->botaoSalvar->setStyleSheet("background-color: #a6a6a6; color: white;");
@@ -220,50 +212,27 @@ void AcompanhamentoDisciplina::aoClicarSalvar()
     ui->botaoRemTrab->setEnabled(false);
 
     salvarAlteracoes();
-}
-
-void AcompanhamentoDisciplina::adicionarTrabalho()
-{
-    if (!modoEdicaoAtivo) return;
-
-    novaListaTrabalhos.append("-(1)");
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
 }
 
 
-void AcompanhamentoDisciplina::removerTrabalho()
-{
-    if (!modoEdicaoAtivo) return;
+void AcompanhamentoDisciplina::salvarAlteracoes() {
+    auto converter = [](const QList<EntradaNota>& entradas) {
+        QStringList lista;
+        for (const auto& e : entradas) {
+            QString nota = e.editNota->text().trimmed();
+            QString peso = e.editPeso->text().trimmed();
+            if (e.checkSimulado->isChecked() || nota.isEmpty())
+                lista << QString("-(%1)").arg(peso);
+            else
+                lista << QString("%1(%2)").arg(nota).arg(peso);
+        }
+        return lista;
+    };
 
-    if (!novaListaTrabalhos.isEmpty())
-        novaListaTrabalhos.removeLast();
+    novaListaTrabalhos = converter(entradasTrabalhos);
+    novaListaProvas = converter(entradasProvas);
 
-    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
-}
-
-
-void AcompanhamentoDisciplina::adicionarProva()
-{
-    if (!modoEdicaoAtivo) return;
-
-    novaListaProvas.append("-(1)");
-    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
-}
-
-void AcompanhamentoDisciplina::removerProva()
-{
-    if (!modoEdicaoAtivo) return;
-
-    if (!novaListaProvas.isEmpty())
-        novaListaProvas.removeLast();
-
-    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
-}
-
-
-
-void AcompanhamentoDisciplina::salvarAlteracoes()
-{
     QFile file("InformacoesAluno.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
@@ -285,16 +254,94 @@ void AcompanhamentoDisciplina::salvarAlteracoes()
     }
     file.close();
 
-    if (!linhaSubstituida) {
-        QString novaLinha = nomeAtualDisciplina + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: " +
-                            novaListaTrabalhos.join(",") + " ; Provas: " + novaListaProvas.join(",");
-        linhas.append(novaLinha);
-    }
-
     if (file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
         QTextStream out(&file);
         for (const QString& l : linhas)
             out << l.trimmed() << "\n";
         file.close();
     }
+}
+
+void AcompanhamentoDisciplina::atualizarMedia() {
+    double somaNotas = 0.0, somaPesos = 0.0;
+    QList<QPair<QLineEdit*, double>> previsoesCinza;
+
+    auto processar = [&](const QList<EntradaNota>& lista) {
+        for (const auto& e : lista) {
+            QString notaStr = e.editNota->text().trimmed();
+            QString pesoStr = e.editPeso->text().trimmed();
+            bool okNota = false, okPeso = false;
+            double nota = notaStr.toDouble(&okNota);
+            double peso = pesoStr.toDouble(&okPeso);
+            if (!okPeso) peso = 1.0;
+
+            if (e.checkSimulado->isChecked()) {
+                previsoesCinza.append({e.editNota, peso});
+                e.editNota->setStyleSheet("color: gray;");
+            } else if (okNota) {
+                somaNotas += nota * peso;
+                somaPesos += peso;
+                e.editNota->setStyleSheet(nota >= 60 ? "color: green;" : "color: red;");
+            }
+        }
+    };
+
+    processar(entradasTrabalhos);
+    processar(entradasProvas);
+
+    double pesoFaltante = 0.0;
+    for (const auto& par : previsoesCinza)
+        pesoFaltante += par.second;
+
+    double notaNecessaria = 60.0;
+    if (pesoFaltante > 0.0)
+        notaNecessaria = (60.0 * (somaPesos + pesoFaltante) - somaNotas) / pesoFaltante;
+
+    notaNecessaria = qMax(0.0, notaNecessaria);
+
+    for (auto& par : previsoesCinza) {
+        par.first->blockSignals(true);
+        par.first->setText(QString::number(notaNecessaria, 'f', 1));
+        par.first->blockSignals(false);
+    }
+
+    double somaCinza = 0.0;
+    for (const auto& par : previsoesCinza) {
+        bool ok;
+        double valor = par.first->text().toDouble(&ok);
+        if (ok) somaCinza += valor * par.second;
+    }
+
+    double mediaFinal = (somaPesos + pesoFaltante) > 0 ?
+                            ((somaNotas + somaCinza) / (somaPesos + pesoFaltante)) : 0.0;
+
+    ui->labelMedia->setText(QString::number(mediaFinal, 'f', 1));
+    ui->labelMedia->setStyleSheet(previsoesCinza.isEmpty() ?
+                                      (mediaFinal >= 60 ? "color: green;" : "color: red;") : "color: gray;");
+}
+
+void AcompanhamentoDisciplina::adicionarTrabalho() {
+    if (!modoEdicaoAtivo) return;
+    novaListaTrabalhos.append("-(1)");
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+void AcompanhamentoDisciplina::removerTrabalho() {
+    if (!modoEdicaoAtivo) return;
+    if (!novaListaTrabalhos.isEmpty())
+        novaListaTrabalhos.removeLast();
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+void AcompanhamentoDisciplina::adicionarProva() {
+    if (!modoEdicaoAtivo) return;
+    novaListaProvas.append("-(1)");
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+void AcompanhamentoDisciplina::removerProva() {
+    if (!modoEdicaoAtivo) return;
+    if (!novaListaProvas.isEmpty())
+        novaListaProvas.removeLast();
+    preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
 }

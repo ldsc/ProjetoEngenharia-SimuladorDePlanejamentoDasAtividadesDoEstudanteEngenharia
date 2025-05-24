@@ -107,8 +107,8 @@
     <widget class="QLabel" name="labelTrab">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>120</y>
+       <x>50</x>
+       <y>110</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -124,13 +124,13 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Trabalhos:</string>
+      <string>pesos</string>
      </property>
     </widget>
     <widget class="QLabel" name="labelDiscAnd">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>140</x>
        <y>20</y>
        <width>421</width>
        <height>21</height>
@@ -154,7 +154,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>220</y>
+       <y>230</y>
        <width>121</width>
        <height>21</height>
       </rect>
@@ -170,16 +170,16 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Provas:</string>
+      <string>pesos</string>
      </property>
     </widget>
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>80</y>
+       <y>60</y>
        <width>381</width>
-       <height>81</height>
+       <height>101</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayoutTrabs"/>
@@ -190,7 +190,7 @@
        <x>130</x>
        <y>180</y>
        <width>381</width>
-       <height>81</height>
+       <height>111</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayoutProvas"/>
@@ -482,29 +482,6 @@ max-height: 12px;
       <string>Salvar</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labelProvas_2">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>310</y>
-       <width>121</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bookman Old Style</family>
-       <pointsize>10</pointsize>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Média:</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="labelMedia">
      <property name="geometry">
       <rect>
@@ -526,6 +503,75 @@ max-height: 12px;
      </property>
      <property name="text">
       <string>Media</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMedia_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>310</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black</string>
+     </property>
+     <property name="text">
+      <string>Média:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMedia_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>210</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black</string>
+     </property>
+     <property name="text">
+      <string>Provas:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMedia_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bookman Old Style</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black</string>
+     </property>
+     <property name="text">
+      <string>Trabalhos:</string>
      </property>
     </widget>
    </widget>

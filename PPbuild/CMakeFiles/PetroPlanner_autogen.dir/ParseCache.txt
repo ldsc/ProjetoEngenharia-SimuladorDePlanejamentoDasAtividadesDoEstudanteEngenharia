@@ -314,6 +314,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixmap.h
@@ -321,22 +322,30 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtransform.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs_win.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QCheckBox
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QMainWindow
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qabstractbutton.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qboxlayout.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qcheckbox.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlayoutitem.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtabwidget.h
@@ -490,6 +499,7 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qpixmap.h
@@ -497,23 +507,31 @@ C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtivi
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qtransform.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs_win.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QCheckBox
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QGridLayout
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QMainWindow
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qabstractbutton.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qboxlayout.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qcheckbox.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlayoutitem.h
+ mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qtabwidget.h

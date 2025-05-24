@@ -6,6 +6,8 @@
 #include <QHBoxLayout>
 #include <QPair>
 #include <QList>
+#include <QLineEdit>
+#include <QCheckBox>
 
 namespace Ui {
 class AcompanhamentoDisciplina;
@@ -33,6 +35,19 @@ private:
     QStringList novaListaTrabalhos;
     QStringList novaListaProvas;
 
+    struct EntradaNota {
+        QLineEdit* editNota;
+        QLineEdit* editPeso;
+        QCheckBox* checkSimulado;
+    };
+
+    QList<EntradaNota> entradasTrabalhos;
+    QList<EntradaNota> entradasProvas;
+
+    QSet<QLineEdit*> camposSimulados;
+
+
+
 
 
 private slots:
@@ -43,6 +58,8 @@ private slots:
     void adicionarProva();
     void removerProva();
     void salvarAlteracoes();
+    void atualizarMedia();
+
 
 
 
