@@ -42,6 +42,7 @@ public:
     QScrollArea *scrollAreaDiscAnd;
     QWidget *wi;
     QLabel *labelDiscAnd;
+    QPushButton *botaoSimulacao;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -155,6 +156,12 @@ public:
         font6.setBold(true);
         labelDiscAnd->setFont(font6);
         labelDiscAnd->setStyleSheet(QString::fromUtf8("color: white"));
+        botaoSimulacao = new QPushButton(centralwidget);
+        botaoSimulacao->setObjectName("botaoSimulacao");
+        botaoSimulacao->setGeometry(QRect(340, 290, 331, 81));
+        botaoSimulacao->setFont(font1);
+        botaoSimulacao->setToolTipDuration(-4);
+        botaoSimulacao->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
@@ -184,6 +191,7 @@ public:
         labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Horas em curso:", nullptr));
         labelHorasEmCurso2->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
+        botaoSimulacao->setText(QCoreApplication::translate("TelaInicial", "Simular Planejamentos Semestrais", nullptr));
     } // retranslateUi
 
 };

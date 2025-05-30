@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "modulogradecompleta.h"
 #include "acompanhamentoDisciplina.h"
+#include "simulacaoplanejamentosem.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,12 +27,14 @@ private slots:
 private:
     Ui::TelaInicial *ui;
     ModuloGradeCompleta *gradeCompleta; // Ponteiro para a janela
+    SimulacaoPlanejamentoSEM* telaSimulacao; // Ponteiro para a janela
 
     void carregarInformacoesAluno();
     CAluno aluno; // guarda info do aluno para as disciplinas serem comparadas
 
     void PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& disciplinasEmCurso);
     void abrirJanelaDisciplina(const std::string& nomeDisciplina);
+    void abrirTelaSimulacao();
 
 
 

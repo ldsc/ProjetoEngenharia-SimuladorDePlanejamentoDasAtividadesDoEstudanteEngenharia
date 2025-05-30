@@ -31,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         modulogradecompleta.h modulogradecompleta.cpp modulogradecompleta.ui
         acompanhamentodisciplina.h acompanhamentodisciplina.cpp acompanhamentodisciplina.ui
+        simulacaoplanejamentosem.h simulacaoplanejamentosem.cpp simulacaoplanejamentosem.ui
 
     )
 # Define target properties for Android with Qt 6 as:

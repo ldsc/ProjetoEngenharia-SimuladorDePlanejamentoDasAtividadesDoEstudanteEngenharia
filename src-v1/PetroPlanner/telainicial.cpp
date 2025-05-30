@@ -11,6 +11,9 @@ TelaInicial::TelaInicial(QWidget *parent)
 {
     ui->setupUi(this);
 
+    connect(ui->botaoSimulacao, &QPushButton::clicked, this, &TelaInicial::abrirTelaSimulacao);
+
+
     // Tamanho da janela igual ao da tela do computador
     QScreen *screen = QGuiApplication::primaryScreen();
     if (screen) {
@@ -127,5 +130,13 @@ void TelaInicial::PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& d
 void TelaInicial::abrirJanelaDisciplina(const std::string& nomeDisciplina) {
     AcompanhamentoDisciplina* janela = new AcompanhamentoDisciplina(QString::fromStdString(nomeDisciplina), this);
     janela->show();
+}
+
+
+
+void TelaInicial::abrirTelaSimulacao()
+{
+    telaSimulacao = new SimulacaoPlanejamentoSEM(this);
+    telaSimulacao->show();
 }
 
