@@ -136,7 +136,6 @@ void TelaInicial::abrirJanelaDisciplina(const std::string& nomeDisciplina) {
 
 void TelaInicial::abrirTelaSimulacao()
 {
-    telaSimulacao = new SimulacaoPlanejamentoSEM(this);
+    telaSimulacao = new SimulacaoPlanejamentoSEM(&aluno, this);
     telaSimulacao->show();
 }
-

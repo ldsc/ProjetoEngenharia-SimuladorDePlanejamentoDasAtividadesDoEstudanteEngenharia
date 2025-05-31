@@ -96,6 +96,9 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
             arqAppend.close();
         }
     }
+
+    return true;
+
 }
 
 
@@ -135,7 +138,6 @@ int CAluno::calcularCHTotalCursada() const {
     }
 
     return total;
+
+
 }
-
-
-

@@ -23,7 +23,6 @@ public:
     int calcularCHTotalCursada() const;
 
 
-
 };
 
 #endif

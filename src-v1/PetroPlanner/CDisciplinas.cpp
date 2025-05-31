@@ -14,9 +14,9 @@ std::vector<CDisciplinas> getDisciplinasCurso() {
     disciplinas.push_back(CDisciplinas(1, "Fundamentos da Ciencia da Computacao", 4, 85, {}, {}, "Modelagem Matematica Computacional", "Basico" , 2, 4));
 
     // Periodo 2
-    disciplinas.push_back(CDisciplinas(2, "Quimica Geral II", 3, 51, {"Quimica geral I"}, {}, "Geologia e Geoquimica", "Basico" , 3, 3));
+    disciplinas.push_back(CDisciplinas(2, "Quimica Geral II", 3, 51, {"Quimica Geral I"}, {}, "Geologia e Geoquimica", "Basico" , 3, 3));
     disciplinas.push_back(CDisciplinas(2, "Portugues Instrumental II", 2, 68, {}, {}, "Geral", "Basico" , 1, 2));
-    disciplinas.push_back(CDisciplinas(2, "Optativa do CCH", 2, 68, {}, {}, "Optativa", "Basico" , 1, 2));
+    disciplinas.push_back(CDisciplinas(2, "Optativa do CCH", 2, 68,{}, {}, "Optativa", "Basico" , 1, 2));
     disciplinas.push_back(CDisciplinas(2, "Fisica I", 4, 68, {"Calculo Diferencial e Integral I"}, {"Fisica Experimental I"}, "Geofisica", "Basico" , 4, 4));
     disciplinas.push_back(CDisciplinas(2, "Fisica Experimental I", 1, 34, {"Calculo Diferencial e Integral I"}, {"Fisica I"}, "Geofisica", "Basico" , 2, 4));
     disciplinas.push_back(CDisciplinas(2, "Calculo Diferencial e Integral II", 5, 68, {"Calculo Diferencial e Integral I"}, {}, "Modelagem Matematica Computacional", "Basico" , 5, 4));
