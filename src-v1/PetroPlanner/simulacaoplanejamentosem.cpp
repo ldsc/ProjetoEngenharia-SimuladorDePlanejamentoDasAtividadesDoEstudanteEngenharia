@@ -20,8 +20,8 @@ SimulacaoPlanejamentoSEM::SimulacaoPlanejamentoSEM(CAluno* alunoPtr, QWidget *pa
 
     container = new QWidget;
     layoutSimulacao = new QVBoxLayout(container);
-    layoutSimulacao->setAlignment(Qt::AlignTop);     // Alinha ao topo
-    layoutSimulacao->setSpacing(20);                 // Espaço entre blocos
+    layoutSimulacao->setAlignment(Qt::AlignTop);
+    layoutSimulacao->setSpacing(20);
     container->setLayout(layoutSimulacao);
 
     scrollArea = new QScrollArea(this);
@@ -67,50 +67,40 @@ int detectarPeriodoAtualDoAluno(const CAluno* aluno) {
 }
 
 bool SimulacaoPlanejamentoSEM::preRequisitosOk(const CDisciplinas& disc) const {
-    auto aprovadoOuEmCurso = [&](const std::string& nome) {
-        for (const auto& d : disciplinasAprovadas)
-            if (d.nome == nome) return true;
-        for (const auto& d : disciplinasEmCurso)
-            if (d.nome == nome) return true;
-        for (const auto& semestre : semestres)
-            if (semestre.disciplinasEscolhidas.contains(QString::fromStdString(nome)))
-                return true;
-        return false;
-    };
+    QSet<QString> feitas;
+    for (const auto& d : disciplinasAprovadas)
+        feitas.insert(QString::fromStdString(d.nome));
+    for (const auto& d : disciplinasEmCurso)
+        feitas.insert(QString::fromStdString(d.nome));
+    for (const auto& s : semestres)
+        for (const auto& nome : s.disciplinasEscolhidas)
+            feitas.insert(nome);
 
     for (const auto& pre : disc.preRequisitos)
-        if (!aprovadoOuEmCurso(pre)) return false;
-
+        if (!feitas.contains(QString::fromStdString(pre)))
+            return false;
     return true;
 }
 
-void SimulacaoPlanejamentoSEM::avancarSemestre()
-{
+void SimulacaoPlanejamentoSEM::avancarSemestre() {
     QList<CDisciplinas> elegiveis;
-
     for (const auto& disc : disciplinasDisponiveis) {
-        // Ignora se já foi aprovado ou está em curso
-        bool jaFez = std::any_of(disciplinasAprovadas.begin(), disciplinasAprovadas.end(), [&](const CDisciplinas& d) {
-                         return d.nome == disc.nome;
-                     }) || std::any_of(disciplinasEmCurso.begin(), disciplinasEmCurso.end(), [&](const CDisciplinas& d) {
-                            return d.nome == disc.nome;
-                        });
-
+        bool jaFez =
+            std::any_of(disciplinasAprovadas.begin(), disciplinasAprovadas.end(), [&](const CDisciplinas& d) {
+                return d.nome == disc.nome;
+            }) ||
+            std::any_of(disciplinasEmCurso.begin(), disciplinasEmCurso.end(), [&](const CDisciplinas& d) {
+                return d.nome == disc.nome;
+            }) ||
+            std::any_of(semestres.begin(), semestres.end(), [&](const SimulacaoSemestre& s) {
+                return s.disciplinasEscolhidas.contains(QString::fromStdString(disc.nome));
+            });
         if (jaFez) continue;
-
-        // Somente paridade compatível (ex: simula semestre ímpar → só pega ímpares)
         if ((disc.periodo % 2) != (periodoAtualSimulado % 2)) continue;
-
-        // Não permite planejar algo muito à frente
-       // if (disc.periodo > periodoAtualSimulado) continue;
-
-        // Checa pré-requisitos
         if (preRequisitosOk(disc)) {
             elegiveis.append(disc);
         }
     }
-
-
 
     SimulacaoSemestre semestre;
     semestre.numero = periodoAtualSimulado;
@@ -119,16 +109,14 @@ void SimulacaoPlanejamentoSEM::avancarSemestre()
     QHBoxLayout* layoutBtns = new QHBoxLayout(containerDisciplinas);
     layoutBtns->setSpacing(10);
     layoutBtns->setContentsMargins(0, 0, 0, 0);
-    layoutBtns->setAlignment(Qt::AlignHCenter); // Centraliza o grupo
-
+    layoutBtns->setAlignment(Qt::AlignLeft);
     semestre.layoutDisciplinas = layoutBtns;
-    semestre.layoutDisciplinas->setSpacing(8);
-    semestre.layoutDisciplinas->setContentsMargins(0, 0, 0, 0);
 
     QLabel* label = new QLabel(QString("Semestre %1").arg(periodoAtualSimulado));
     label->setStyleSheet("font-weight: bold; color: black;");
     semestre.layoutCheck->addWidget(label);
 
+    int indiceSemestre = semestres.size();
     for (const auto& disc : elegiveis) {
         QString nome = QString::fromStdString(disc.nome);
         QCheckBox* chk = new QCheckBox(nome);
@@ -136,11 +124,8 @@ void SimulacaoPlanejamentoSEM::avancarSemestre()
         semestre.checkboxes.append(chk);
         semestre.layoutCheck->addWidget(chk);
 
-        int indiceSemestre = semestres.size();
-
         connect(chk, &QCheckBox::stateChanged, this, [=]() mutable {
             auto& semestreRef = semestres[indiceSemestre];
-
             if (chk->isChecked()) {
                 if (!semestreRef.botoesDisciplinas.contains(nome)) {
                     QPushButton* btn = new QPushButton(nome);
@@ -156,18 +141,21 @@ void SimulacaoPlanejamentoSEM::avancarSemestre()
                     semestreRef.botoesDisciplinas.remove(nome);
                     semestreRef.disciplinasEscolhidas.remove(nome);
                 }
-            }
-
-            // Atualizar semestres posteriores (remover se mudou o anterior)
-            while (!semestres.isEmpty() && semestres.last().numero > semestreRef.numero) {
-                QLayoutItem* item;
-                while ((item = layoutSimulacao->takeAt(layoutSimulacao->count() - 1))) {
-                    if (item->layout()) delete item->layout();
-                    else if (item->widget()) delete item->widget();
-                    delete item;
+                // Remove e refaz os semestres futuros
+                while (semestres.size() > indiceSemestre + 1) {
+                    auto s = semestres.takeLast();
+                    for (QCheckBox* c : s.checkboxes) delete c;
+                    for (auto b : s.botoesDisciplinas) delete b;
+                    delete s.layoutCheck;
+                    delete s.layoutDisciplinas;
+                    QLayoutItem* item;
+                    while ((item = layoutSimulacao->takeAt(layoutSimulacao->count() - 1))) {
+                        if (item->layout()) delete item->layout();
+                        else if (item->widget()) delete item->widget();
+                        delete item;
+                    }
+                    periodoAtualSimulado--;
                 }
-                semestres.removeLast();
-                periodoAtualSimulado--;
             }
         });
     }
@@ -180,32 +168,25 @@ void SimulacaoPlanejamentoSEM::avancarSemestre()
 
 void SimulacaoPlanejamentoSEM::salvarComoImagem()
 {
-    // Esconde os checkboxes
-    for (const auto& semestre : semestres) {
-        for (QCheckBox* chk : semestre.checkboxes) {
+    for (const auto& semestre : semestres)
+        for (QCheckBox* chk : semestre.checkboxes)
             chk->hide();
-        }
-    }
 
-    // Renderiza
-    QSize size = container->sizeHint();
+    container->adjustSize(); // <-- Força atualização do layout real
+    QSize size = container->size(); // <-- Usa o tamanho real necessário
+
     QPixmap imagem(size);
     imagem.fill(Qt::white);
     container->render(&imagem);
 
-    // Salva com nome novo
     QString nomeArquivo = "Simulacao_Planejamento.png";
     int contador = 1;
-    while (QFile::exists(nomeArquivo)) {
+    while (QFile::exists(nomeArquivo))
         nomeArquivo = QString("Simulacao_Planejamento_%1.png").arg(contador++);
-    }
 
-    // Mostra novamente os checkboxes
-    for (const auto& semestre : semestres) {
-        for (QCheckBox* chk : semestre.checkboxes) {
+    for (const auto& semestre : semestres)
+        for (QCheckBox* chk : semestre.checkboxes)
             chk->show();
-        }
-    }
 
     if (imagem.save(nomeArquivo)) {
         QMessageBox::information(this, "Sucesso", "Imagem salva como " + nomeArquivo);
