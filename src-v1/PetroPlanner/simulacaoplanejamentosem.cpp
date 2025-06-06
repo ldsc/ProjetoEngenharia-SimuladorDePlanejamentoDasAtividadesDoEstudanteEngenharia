@@ -22,6 +22,7 @@ SimulacaoPlanejamentoSEM::SimulacaoPlanejamentoSEM(CAluno* alunoPtr, QWidget *pa
     layoutSimulacao = new QVBoxLayout(container);
     layoutSimulacao->setAlignment(Qt::AlignTop);
     layoutSimulacao->setSpacing(20);
+    layoutSimulacao->setContentsMargins(10, 10, 10, 10);  // reduz margem lateral
     container->setLayout(layoutSimulacao);
 
     scrollArea = new QScrollArea(this);
@@ -51,9 +52,8 @@ SimulacaoPlanejamentoSEM::~SimulacaoPlanejamentoSEM()
 
 int detectarPeriodoAtualDoAluno(const CAluno* aluno) {
     std::map<int, int> contagem;
-    for (const auto& disc : aluno->disciplinasEmCurso) {
+    for (const auto& disc : aluno->disciplinasEmCurso)
         contagem[disc.periodo]++;
-    }
 
     int maisFrequente = 1;
     int maxContagem = 0;
@@ -85,6 +85,8 @@ bool SimulacaoPlanejamentoSEM::preRequisitosOk(const CDisciplinas& disc) const {
 void SimulacaoPlanejamentoSEM::avancarSemestre() {
     QList<CDisciplinas> elegiveis;
     for (const auto& disc : disciplinasDisponiveis) {
+        QString nomeDisc = QString::fromStdString(disc.nome);
+
         bool jaFez =
             std::any_of(disciplinasAprovadas.begin(), disciplinasAprovadas.end(), [&](const CDisciplinas& d) {
                 return d.nome == disc.nome;
@@ -93,8 +95,9 @@ void SimulacaoPlanejamentoSEM::avancarSemestre() {
                 return d.nome == disc.nome;
             }) ||
             std::any_of(semestres.begin(), semestres.end(), [&](const SimulacaoSemestre& s) {
-                return s.disciplinasEscolhidas.contains(QString::fromStdString(disc.nome));
+                return s.disciplinasEscolhidas.contains(nomeDisc);
             });
+
         if (jaFez) continue;
         if ((disc.periodo % 2) != (periodoAtualSimulado % 2)) continue;
         if (preRequisitosOk(disc)) {
@@ -105,12 +108,10 @@ void SimulacaoPlanejamentoSEM::avancarSemestre() {
     SimulacaoSemestre semestre;
     semestre.numero = periodoAtualSimulado;
     semestre.layoutCheck = new QHBoxLayout;
-    QWidget* containerDisciplinas = new QWidget;
-    QHBoxLayout* layoutBtns = new QHBoxLayout(containerDisciplinas);
-    layoutBtns->setSpacing(10);
-    layoutBtns->setContentsMargins(0, 0, 0, 0);
-    layoutBtns->setAlignment(Qt::AlignLeft);
-    semestre.layoutDisciplinas = layoutBtns;
+    semestre.layoutDisciplinas = new QHBoxLayout;
+    semestre.layoutDisciplinas->setSpacing(8);
+    semestre.layoutDisciplinas->setContentsMargins(0, 0, 0, 0);
+    semestre.layoutDisciplinas->setAlignment(Qt::AlignLeft);
 
     QLabel* label = new QLabel(QString("Semestre %1").arg(periodoAtualSimulado));
     label->setStyleSheet("font-weight: bold; color: black;");
@@ -126,6 +127,7 @@ void SimulacaoPlanejamentoSEM::avancarSemestre() {
 
         connect(chk, &QCheckBox::stateChanged, this, [=]() mutable {
             auto& semestreRef = semestres[indiceSemestre];
+
             if (chk->isChecked()) {
                 if (!semestreRef.botoesDisciplinas.contains(nome)) {
                     QPushButton* btn = new QPushButton(nome);
@@ -141,13 +143,14 @@ void SimulacaoPlanejamentoSEM::avancarSemestre() {
                     semestreRef.botoesDisciplinas.remove(nome);
                     semestreRef.disciplinasEscolhidas.remove(nome);
                 }
-                // Remove e refaz os semestres futuros
+
                 while (semestres.size() > indiceSemestre + 1) {
                     auto s = semestres.takeLast();
                     for (QCheckBox* c : s.checkboxes) delete c;
                     for (auto b : s.botoesDisciplinas) delete b;
                     delete s.layoutCheck;
                     delete s.layoutDisciplinas;
+
                     QLayoutItem* item;
                     while ((item = layoutSimulacao->takeAt(layoutSimulacao->count() - 1))) {
                         if (item->layout()) delete item->layout();
@@ -161,19 +164,18 @@ void SimulacaoPlanejamentoSEM::avancarSemestre() {
     }
 
     layoutSimulacao->addLayout(semestre.layoutCheck);
-    layoutSimulacao->addWidget(containerDisciplinas, Qt::AlignHCenter);
+    layoutSimulacao->addLayout(semestre.layoutDisciplinas);
     semestres.append(semestre);
     periodoAtualSimulado++;
 }
 
-void SimulacaoPlanejamentoSEM::salvarComoImagem()
-{
+void SimulacaoPlanejamentoSEM::salvarComoImagem() {
     for (const auto& semestre : semestres)
         for (QCheckBox* chk : semestre.checkboxes)
             chk->hide();
 
-    container->adjustSize(); // <-- Força atualização do layout real
-    QSize size = container->size(); // <-- Usa o tamanho real necessário
+    container->adjustSize();
+    QSize size = container->size();
 
     QPixmap imagem(size);
     imagem.fill(Qt::white);

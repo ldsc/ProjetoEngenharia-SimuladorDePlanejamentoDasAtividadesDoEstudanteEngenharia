@@ -411,6 +411,12 @@
 			null
 		],
 		[
+			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/quadrodehorarios.h",
+			"MU",
+			"EWIEGA46WW/moc_quadrodehorarios.cpp",
+			null
+		],
+		[
 			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/simulacaoplanejamentosem.h",
 			"MU",
 			"EWIEGA46WW/moc_simulacaoplanejamentosem.cpp",
@@ -500,6 +506,11 @@
 		],
 		[
 			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/quadrodehorarios.cpp",
 			"MU",
 			null
 		],

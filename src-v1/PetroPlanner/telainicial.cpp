@@ -12,6 +12,7 @@ TelaInicial::TelaInicial(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->botaoSimulacao, &QPushButton::clicked, this, &TelaInicial::abrirTelaSimulacao);
+    connect(ui->botaoQuadrodeHorarios, &QPushButton::clicked, this, &TelaInicial::abrirQuadroDeHorarios);
 
 
     // Tamanho da janela igual ao da tela do computador
@@ -139,3 +140,10 @@ void TelaInicial::abrirTelaSimulacao()
     telaSimulacao = new SimulacaoPlanejamentoSEM(&aluno, this);
     telaSimulacao->show();
 }
+
+
+void TelaInicial::abrirQuadroDeHorarios() {
+    QuadroDeHorarios* quadro = new QuadroDeHorarios(this);
+    quadro->show();
+}
+

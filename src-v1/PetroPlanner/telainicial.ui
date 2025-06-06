@@ -360,6 +360,32 @@
      <string>Simular Planejamentos Semestrais</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="botaoQuadrodeHorarios">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>420</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Quadro de Horários</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

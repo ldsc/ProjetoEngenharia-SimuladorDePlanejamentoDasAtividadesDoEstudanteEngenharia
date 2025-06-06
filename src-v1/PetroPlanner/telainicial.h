@@ -5,6 +5,8 @@
 #include "modulogradecompleta.h"
 #include "acompanhamentoDisciplina.h"
 #include "simulacaoplanejamentosem.h"
+#include "quadrodehorarios.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -35,6 +37,8 @@ private:
     void PreencherDisciplinasEmCurso(const std::vector<CDisciplinas>& disciplinasEmCurso);
     void abrirJanelaDisciplina(const std::string& nomeDisciplina);
     void abrirTelaSimulacao();
+    void abrirQuadroDeHorarios();
+
 
 
 

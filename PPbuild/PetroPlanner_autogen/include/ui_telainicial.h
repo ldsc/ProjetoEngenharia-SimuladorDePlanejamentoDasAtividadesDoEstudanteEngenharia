@@ -43,6 +43,7 @@ public:
     QWidget *wi;
     QLabel *labelDiscAnd;
     QPushButton *botaoSimulacao;
+    QPushButton *botaoQuadrodeHorarios;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -162,6 +163,12 @@ public:
         botaoSimulacao->setFont(font1);
         botaoSimulacao->setToolTipDuration(-4);
         botaoSimulacao->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
+        botaoQuadrodeHorarios = new QPushButton(centralwidget);
+        botaoQuadrodeHorarios->setObjectName("botaoQuadrodeHorarios");
+        botaoQuadrodeHorarios->setGeometry(QRect(50, 420, 251, 81));
+        botaoQuadrodeHorarios->setFont(font1);
+        botaoQuadrodeHorarios->setToolTipDuration(-4);
+        botaoQuadrodeHorarios->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
@@ -192,6 +199,7 @@ public:
         labelHorasEmCurso2->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
         labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
         botaoSimulacao->setText(QCoreApplication::translate("TelaInicial", "Simular Planejamentos Semestrais", nullptr));
+        botaoQuadrodeHorarios->setText(QCoreApplication::translate("TelaInicial", "Quadro de Hor\303\241rios", nullptr));
     } // retranslateUi
 
 };
