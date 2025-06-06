@@ -1352,39 +1352,86 @@ Uma análise inicial de otimização será realizada,
 \end_layout
 
 \begin_layout Itemize
-Conforme mencionado na seção de "Controle",
- a simulação de múltiplos cenários de grade,
- cálculos complexos e operações de I/O intensivas serão os principais candidatos para otimização com processos concorrentes (threads),
- utilizando as funcionalidades do Qt para threading.
+Identifique pontos a serem otimizados em que podem ser utilizados processos concorrentes.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto blablabla
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pense em incluir bibliotecas otimizadas.
 \end_layout
 
 \begin_layout Itemize
-As bibliotecas já selecionadas (Qt,
- STL) são otimizadas.
- Se surgir a necessidade de cálculos numéricos mais intensos ou manipulação de dados específicos,
- bibliotecas C++ de alto desempenho para esses domínios serão consideradas.
+Se o acesso a determinados objetos (atributos/métodos) requer um caminho longo (exemplo:
+ A->B->C->D.atributo),
+ pense em incluir associações extras (exemplo:
+ A-D.atributo).
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Serão avaliados os caminhos de acesso aos dados.
- Se um caminho longo (student->history->courseEnrollment->grades.getFinalGrade()) for comum e impactar a legibilidade ou performance,
- associações diretas (student->getFinalGradeForCourse(courseCode)) ou métodos helper serão adicionados para simplificar o acesso.
+Neste projeto blablabla
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Atributos auxiliares (e.g.,
- cache de resultados de cálculos,
- flags de estado para otimização de renderização da GUI) serão introduzidos se a análise de desempenho indicar um gargalo significativo.
+Atributos auxiliares podem ser incluídos.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-A ordem de execução de operações que não dependem umas das outras será revisada para permitir paralelismo ou otimização,
- especialmente em carregamento e salvamento de dados,
- e em cálculos complexos.
+Neste projeto blablabla
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-As associações nos diagramas de classes serão continuamente revisadas para refletir as decisões de otimização e a forma como os objetos se relacionam para um desempenho eficiente.
+A ordem de execução pode ser alterada.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto blablabla
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Revise as associações nos diagramas de classes.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto blablabla
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Depois de revisados os diagramas da análise você pode montar dois diagramas relacionados à infraestrutura do sistema.
+ As dependências dos arquivos e bibliotecas podem ser descritos pelo diagrama de componentes,
+ e as relações e dependências entre o sistema e o hardware podem ser ilustradas com o diagrama de implantação.
 \end_layout
 
 \begin_layout Section
