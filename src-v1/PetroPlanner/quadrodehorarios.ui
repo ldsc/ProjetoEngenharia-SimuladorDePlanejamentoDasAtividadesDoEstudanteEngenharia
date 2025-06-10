@@ -40,6 +40,134 @@
      <string>Quadro de Horários</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidgetQuadroHor">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>150</y>
+      <width>771</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <row>
+     <property name="text">
+      <string>6h às 7h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>7h às 8h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>8h às 9h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>9h às 10h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>10h às 11h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>11h às 12h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>12h às 13h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>13h às 14h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>14h às 15h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>15h às 16h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>16h às 17h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>19h às 20h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>20h às 21h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>21h às 22h</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>22h às 23h</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Seg</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Ter</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Qua</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Qui</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Sex</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Sab</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Dom</string>
+     </property>
+    </column>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

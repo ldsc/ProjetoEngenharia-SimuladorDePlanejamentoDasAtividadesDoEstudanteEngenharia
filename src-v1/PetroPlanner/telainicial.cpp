@@ -15,6 +15,7 @@ TelaInicial::TelaInicial(QWidget *parent)
     connect(ui->botaoQuadrodeHorarios, &QPushButton::clicked, this, &TelaInicial::abrirQuadroDeHorarios);
 
 
+
     // Tamanho da janela igual ao da tela do computador
     QScreen *screen = QGuiApplication::primaryScreen();
     if (screen) {
@@ -143,7 +144,7 @@ void TelaInicial::abrirTelaSimulacao()
 
 
 void TelaInicial::abrirQuadroDeHorarios() {
-    QuadroDeHorarios* quadro = new QuadroDeHorarios(this);
+    QuadroDeHorarios* quadro = new QuadroDeHorarios(&aluno, this);
     quadro->show();
 }
 

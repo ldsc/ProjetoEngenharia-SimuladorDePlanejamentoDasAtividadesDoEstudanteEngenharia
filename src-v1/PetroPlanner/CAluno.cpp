@@ -77,27 +77,103 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
 
 
 
-    // Verifica se a seção "Disciplinas em Andamento" já existe no arquivo
+    // Atualiza a seção "Disciplinas em Andamento" mantendo dados existentes válidos
     arquivo.seek(0);
-    QString conteudo = in.readAll();
-    if (!conteudo.contains("Disciplinas em Andamento:")) {
-        // Reabre para append e escreve a seção
-        QFile arqAppend(caminho);
-        if (arqAppend.open(QIODevice::Append | QIODevice::Text)) {
-            QTextStream out(&arqAppend);
-            out << "\n\n\n# Formato das disciplinas em andamento:\n";
-            out << "# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...\n\n";
-            out << "Disciplinas em Andamento:\n\n";
-            for (const auto& disc : disciplinasEmCurso) {
-                out << QString::fromStdString(disc.nome)
-                << " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)\n";
-            }
-            out.flush();
-            arqAppend.close();
+    QString conteudoOriginal = arquivo.readAll();
+    arquivo.close();
+
+    QStringList linhas = conteudoOriginal.split('\n');
+    QStringList resultadoFinal;
+
+    bool dentroDaSecao = false;
+    QSet<QString> nomesEmCurso;
+    for (const auto& d : disciplinasEmCurso)
+        nomesEmCurso.insert(QString::fromStdString(d.nome).trimmed());
+
+    QStringList novaSecao;
+    for (int i = 0; i < linhas.size(); ++i) {
+        QString linha = linhas[i].trimmed();
+
+        if (linha == "Disciplinas em Andamento:") {
+            dentroDaSecao = true;
+            novaSecao << linha;
+            continue;
+        }
+
+        if (!dentroDaSecao) {
+            resultadoFinal << linhas[i];
+            continue;
+        }
+
+        // Mantém comentários ou espaços dentro da seção
+        if (linha.startsWith("#") || linha.isEmpty()) {
+            novaSecao << linhas[i];
+            continue;
+        }
+
+        QString nomeDisc = linha.section(';', 0, 0).trimmed();
+
+        if (nomesEmCurso.contains(nomeDisc)) {
+            // Mantém a linha completa com notas, faltas etc.
+            novaSecao << linhas[i];
+            nomesEmCurso.remove(nomeDisc);  // já está na seção
         }
     }
 
-    return true;
+    // Adiciona as que faltaram
+    for (const auto& nome : nomesEmCurso) {
+        novaSecao << nome + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)";
+    }
+
+    // Junta tudo novamente
+    resultadoFinal << "" << "" << novaSecao;
+
+    // Reescreve o arquivo
+    QFile arquivoSaida(caminho);
+    if (arquivoSaida.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&arquivoSaida);
+        for (const auto& linha : resultadoFinal) {
+            out << linha.trimmed() << "\n";
+        }
+        arquivoSaida.close();
+    }
+
+
+
+    // Atualiza diasHorarios das disciplinas em curso, lendo da seção "Disciplinas em Andamento"
+    QFile arqReleitura(caminho);
+    if (arqReleitura.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream inReleitura(&arqReleitura);
+        bool lendoDisciplinasAndamento = false;
+
+        while (!inReleitura.atEnd()) {
+            QString linha = inReleitura.readLine().trimmed();
+
+            if (linha == "Disciplinas em Andamento:") {
+                lendoDisciplinasAndamento = true;
+                continue;
+            }
+
+            if (lendoDisciplinasAndamento && !linha.isEmpty() && !linha.startsWith("#")) {
+                QStringList partes = linha.split(";", Qt::SkipEmptyParts);
+                if (partes.size() < 3) continue;
+
+                QString nomeLinha = partes[0].trimmed();
+                QString diasHorarios = partes[2].trimmed();
+
+                for (auto& d : disciplinasEmCurso) {
+                    QString nomeAluno = QString::fromStdString(d.nome).trimmed();
+                    if (QString::compare(nomeAluno, nomeLinha, Qt::CaseInsensitive) == 0) {
+                        d.diasHorarios = diasHorarios;
+                        break;
+                    }
+                }
+            }
+        }
+
+        arqReleitura.close();
+    }
+
 
 }
 

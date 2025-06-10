@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <Qstring>
 
 // Classe que representa as disciplinas
 class CDisciplinas {
@@ -18,6 +19,8 @@ public:
     std::string ciclo;                       // Ciclo da disciplina (Básico, Profissionalizante, etc.)
     int nivelDificuldade;                    // Nível de dificuldade
     int horaSemanalAula;                     // Horas Semanais de Aula
+    QString diasHorarios;
+
 
     // Construtor para inicializar os atributos da disciplina
     CDisciplinas(int periodo, std::string nome, int creditos, int cargaHoraria,
