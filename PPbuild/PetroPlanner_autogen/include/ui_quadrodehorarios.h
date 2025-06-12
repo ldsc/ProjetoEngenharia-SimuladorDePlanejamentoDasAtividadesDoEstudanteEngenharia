@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
@@ -27,6 +28,8 @@ public:
     QWidget *centralwidget;
     QLabel *labelTitulo;
     QTableWidget *tableWidgetQuadroHor;
+    QPushButton *botaoEditar;
+    QPushButton *botaoSalvar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -99,8 +102,24 @@ public:
         QTableWidgetItem *__qtablewidgetitem22 = new QTableWidgetItem();
         tableWidgetQuadroHor->setVerticalHeaderItem(15, __qtablewidgetitem22);
         tableWidgetQuadroHor->setObjectName("tableWidgetQuadroHor");
-        tableWidgetQuadroHor->setGeometry(QRect(150, 150, 1171, 521));
+        tableWidgetQuadroHor->setGeometry(QRect(150, 150, 771, 521));
         tableWidgetQuadroHor->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        botaoEditar = new QPushButton(centralwidget);
+        botaoEditar->setObjectName("botaoEditar");
+        botaoEditar->setGeometry(QRect(1050, 340, 131, 61));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
+        font1.setPointSize(12);
+        font1.setBold(true);
+        botaoEditar->setFont(font1);
+        botaoEditar->setToolTipDuration(-4);
+        botaoEditar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
+        botaoSalvar = new QPushButton(centralwidget);
+        botaoSalvar->setObjectName("botaoSalvar");
+        botaoSalvar->setGeometry(QRect(1050, 430, 131, 61));
+        botaoSalvar->setFont(font1);
+        botaoSalvar->setToolTipDuration(-4);
+        botaoSalvar->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
         QuadroDeHorarios->setCentralWidget(centralwidget);
         menubar = new QMenuBar(QuadroDeHorarios);
         menubar->setObjectName("menubar");
@@ -165,6 +184,8 @@ public:
         ___qtablewidgetitem21->setText(QCoreApplication::translate("QuadroDeHorarios", "21h \303\240s 22h", nullptr));
         QTableWidgetItem *___qtablewidgetitem22 = tableWidgetQuadroHor->verticalHeaderItem(15);
         ___qtablewidgetitem22->setText(QCoreApplication::translate("QuadroDeHorarios", "22h \303\240s 23h", nullptr));
+        botaoEditar->setText(QCoreApplication::translate("QuadroDeHorarios", "Editar", nullptr));
+        botaoSalvar->setText(QCoreApplication::translate("QuadroDeHorarios", "Salvar", nullptr));
     } // retranslateUi
 
 };

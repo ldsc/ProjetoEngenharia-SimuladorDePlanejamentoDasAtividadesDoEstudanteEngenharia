@@ -5,6 +5,7 @@
 #include <QStringList>
 #include <QRegularExpression>
 
+
 bool CAluno::lerDoArquivo(const QString& caminho) {
     QFile arquivo(caminho);
     if (!arquivo.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -91,12 +92,16 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
         nomesEmCurso.insert(QString::fromStdString(d.nome).trimmed());
 
     QStringList novaSecao;
+    bool existeSecaoDisciplinasAndamento = false;
+
     for (int i = 0; i < linhas.size(); ++i) {
         QString linha = linhas[i].trimmed();
 
         if (linha == "Disciplinas em Andamento:") {
             dentroDaSecao = true;
-            novaSecao << linha;
+            existeSecaoDisciplinasAndamento = true;
+            novaSecao << ""; // linha em branco antes da seção
+            novaSecao << linha; // só adiciona o nome da seção aqui
             continue;
         }
 
@@ -105,20 +110,41 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
             continue;
         }
 
-        // Mantém comentários ou espaços dentro da seção
         if (linha.startsWith("#") || linha.isEmpty()) {
             novaSecao << linhas[i];
             continue;
         }
 
         QString nomeDisc = linha.section(';', 0, 0).trimmed();
-
         if (nomesEmCurso.contains(nomeDisc)) {
-            // Mantém a linha completa com notas, faltas etc.
             novaSecao << linhas[i];
-            nomesEmCurso.remove(nomeDisc);  // já está na seção
+            nomesEmCurso.remove(nomeDisc);
         }
     }
+
+
+
+    if (!existeSecaoDisciplinasAndamento) {
+        // Verifica se o cabeçalho já existe
+        bool jaTemCabecalhoDisciplinas = false;
+        for (const QString& linha : linhas) {
+            if (linha.contains("# Formato das disciplinas em andamento", Qt::CaseInsensitive)) {
+                jaTemCabecalhoDisciplinas = true;
+                break;
+            }
+        }
+
+        novaSecao.prepend(""); // linha em branco
+        novaSecao.prepend("Disciplinas em Andamento:");
+
+        if (!jaTemCabecalhoDisciplinas) {
+            novaSecao.prepend("# EXEMPLO: Mecanica dos Fluidos ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: 75.0(1),-(3) ; Provas: -(1)");
+            novaSecao.prepend("# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...");
+            novaSecao.prepend("# Formato das disciplinas em andamento:");
+        }
+    }
+
+
 
     // Adiciona as que faltaram
     for (const auto& nome : nomesEmCurso) {
@@ -175,8 +201,56 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
     }
 
 
-}
+    // === Verifica e carrega atividades extras, se existirem ===
+    bool encontrouCabecalhoExtras = false;
+    bool lendoAtividadesExtras = false;
+    atividadesExtras.clear();
 
+    for (int i = 0; i < linhas.size(); ++i) {
+        QString linha = linhas[i].trimmed();
+
+        if (linha.startsWith("# Formato: Nome da Atividade")) {
+            encontrouCabecalhoExtras = true;
+            lendoAtividadesExtras = true;
+            resultadoFinal << ""; // adiciona uma linha em branco antes do cabeçalho
+            resultadoFinal << linha;
+            continue;
+        }
+
+        if (linha.startsWith("# Exemplo:")) {
+            resultadoFinal << linha;
+            continue;
+        }
+
+        if (lendoAtividadesExtras) {
+            resultadoFinal << linha;
+            if (!linha.startsWith("#") && !linha.isEmpty()) {
+                atividadesExtras.push_back(linha);
+            }
+        }
+    }
+
+    // === Se não encontrou, adiciona o cabeçalho vazio ===
+    if (!encontrouCabecalhoExtras) {
+        resultadoFinal << ""
+                       << "# Formato: Nome da Atividade ; Dias e Horários"
+                       << "# Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:10h-12h";
+    }
+
+
+    // Se adicionou a seção de atividades extras, reescreve o arquivo
+    if (!encontrouCabecalhoExtras) {
+        QFile arquivoSaidaExtras(caminho);
+        if (arquivoSaidaExtras.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream outExtras(&arquivoSaidaExtras);
+            for (const auto& linha : resultadoFinal)
+                outExtras << linha.trimmed() << "\n";
+            arquivoSaidaExtras.close();
+        }
+    }
+
+
+}
 
 
 int CAluno::calcularHorasEmCurso() const {

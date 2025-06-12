@@ -17,6 +17,8 @@ public:
     std::vector<CDisciplinas> disciplinasEmCurso;
     std::vector<CDisciplinas> disciplinasAprovadas;
     std::vector<CDisciplinas> disciplinasNaoCursadas;
+    std::vector<QString> atividadesExtras;
+
 
     bool lerDoArquivo(const QString& caminho);
     int calcularHorasEmCurso() const;

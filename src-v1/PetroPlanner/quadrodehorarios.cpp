@@ -4,6 +4,8 @@
 #include <QTableWidgetItem>
 #include <QDebug>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 
 QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
     : QMainWindow(parent)
@@ -11,7 +13,32 @@ QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
     , aluno(aluno)
 {
     ui->setupUi(this);
+
+    connect(ui->botaoEditar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarEditar);
+    connect(ui->botaoSalvar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarSalvar);
+
+    coresDisponiveis = {
+        QColor("#F44336"), QColor("#2196F3"), QColor("#4CAF50"), QColor("#FF9800"),
+        QColor("#9C27B0"), QColor("#009688"), QColor("#FFEB3B"), QColor("#3F51B5"),
+        QColor("#CDDC39"), QColor("#E91E63"), QColor("#00BCD4"), QColor("#795548")
+    };
+
+    definirModoEdicao(false);
     preencherQuadro();
+
+
+
+    // Mostrar aviso com disciplinas e atividades
+    QString aviso = "Disciplinas em curso detectadas:\n";
+    for (const auto& d : aluno->disciplinasEmCurso)
+        aviso += "- " + QString::fromStdString(d.nome) + "\n";
+
+    aviso += "\nAtividades extras detectadas:\n";
+    for (const auto& a : aluno->atividadesExtras)
+        aviso += "- " + a + "\n";
+
+    QMessageBox::information(this, "Resumo Inicial", aviso);
+
 }
 
 QuadroDeHorarios::~QuadroDeHorarios()
@@ -19,72 +46,60 @@ QuadroDeHorarios::~QuadroDeHorarios()
     delete ui;
 }
 
+void QuadroDeHorarios::definirModoEdicao(bool ativo)
+{
+    modoEdicaoAtivo = ativo;
+
+    ui->tableWidgetQuadroHor->setEditTriggers(ativo ? QAbstractItemView::DoubleClicked : QAbstractItemView::NoEditTriggers);
+
+    ui->botaoEditar->setStyleSheet(ativo ? "background-color: #a6a6a6; color: white; border-radius: 10px;" : "background-color: #ffa308; color: white; border-radius: 10px;");
+    ui->botaoSalvar->setStyleSheet(ativo ? "background-color: #ffa308; color: white; border-radius: 10px;" : "background-color: #a6a6a6; color: white; border-radius: 10px;");
+
+    ui->botaoEditar->setEnabled(!ativo);
+    ui->botaoSalvar->setEnabled(ativo);
+}
+
+void QuadroDeHorarios::aoClicarEditar()
+{
+    definirModoEdicao(true);
+}
+
+void QuadroDeHorarios::aoClicarSalvar()
+{
+    definirModoEdicao(false);
+    salvarAtividadesExtras();
+}
+
 void QuadroDeHorarios::preencherQuadro()
 {
     ui->tableWidgetQuadroHor->clearContents();
 
-    QString resumoHorarios;
-
+    // Preencher com disciplinas em curso
     for (const auto& disc : aluno->disciplinasEmCurso) {
         QString nome = QString::fromStdString(disc.nome);
         QString diasHorarios = disc.diasHorarios;
 
-        resumoHorarios += nome + ": " + diasHorarios + "\n";
-
         QStringList blocos = diasHorarios.split(",", Qt::SkipEmptyParts);
-
         for (QString bloco : blocos) {
-            bloco = bloco.trimmed();
+            QString dia = bloco.section(":", 0, 0).trimmed();
+            QString faixa = bloco.section(":", 1, 1).trimmed();
 
-            if (!bloco.contains(":") || !bloco.contains("-"))
-                continue;
+            QString diaAbrev = dia.left(3).toLower();
+            diaAbrev[0] = diaAbrev[0].toUpper();
 
-            QString diaCompleto = bloco.section(":", 0, 0).trimmed();
-            QString faixa = bloco.section(":", 1).trimmed();
-
-            QString diaAbrev = diaCompleto.left(3).toLower();
-            diaAbrev[0] = diaAbrev[0].toUpper();  // "segunda" → "Seg"
-
-            QString horaIniStr = faixa.section("-", 0, 0).trimmed(); // "8h"
-            QString horaFimStr = faixa.section("-", 1, 1).trimmed(); // "10h"
-
-            bool okIni = false, okFim = false;
-            int horaIni = horaIniStr.remove("h").toInt(&okIni);
-            int horaFim = horaFimStr.remove("h").toInt(&okFim);
-
-            if (!okIni || !okFim) continue;
+            int horaIni = bloco.section(":", 1).section("-", 0, 0).remove("h").toInt();
+            int horaFim = bloco.section(":", 1).section("-", 1, 1).remove("h").toInt();
 
             for (int h = horaIni; h < horaFim; ++h) {
-                QString horaAtual = QString::number(h) + "h";
-                int linha = horarioParaLinha(horaAtual);
+                int linha = horarioParaLinha(QString::number(h) + "h");
                 int coluna = diaParaColuna(diaAbrev);
 
                 if (linha >= 0 && coluna >= 0) {
                     QTableWidgetItem* item = new QTableWidgetItem(nome);
-                    static QList<QColor> coresDisponiveis = {
-                        QColor("#F44336"), // Vermelho
-                        QColor("#2196F3"), // Azul
-                        QColor("#4CAF50"), // Verde
-                        QColor("#FF9800"), // Laranja
-                        QColor("#9C27B0"), // Roxo
-                        QColor("#009688"), // Verde-água
-                        QColor("#FFEB3B"), // Amarelo
-                        QColor("#3F51B5"), // Azul escuro
-                        QColor("#CDDC39"), // Verde limão
-                        QColor("#E91E63"), // Rosa forte
-                        QColor("#00BCD4"), // Azul piscina
-                        QColor("#795548")  // Marrom
-                    };
-
-                    static QMap<QString, QColor> mapaCores;
-
-                    if (!mapaCores.contains(nome)) {
-                        QColor cor = coresDisponiveis[mapaCores.size() % coresDisponiveis.size()];
-                        mapaCores[nome] = cor;
-                    }
+                    if (!mapaCores.contains(nome))
+                        mapaCores[nome] = coresDisponiveis[mapaCores.size() % coresDisponiveis.size()];
 
                     item->setBackground(mapaCores[nome]);
-
                     item->setTextAlignment(Qt::AlignCenter);
                     ui->tableWidgetQuadroHor->setItem(linha, coluna, item);
                 }
@@ -92,13 +107,9 @@ void QuadroDeHorarios::preencherQuadro()
         }
     }
 
-    // Exibe os horários lidos depois de preencher o quadro
-    //QMessageBox::information(this, "Horários Lidos", resumoHorarios);
+    // Preencher com atividades extras já lidas
+    carregarAtividadesExtras();
 }
-
-
-
-
 
 int QuadroDeHorarios::horarioParaLinha(const QString& horario)
 {
@@ -118,3 +129,84 @@ int QuadroDeHorarios::diaParaColuna(const QString& dia)
     return mapaDias.value(dia, -1);
 }
 
+void QuadroDeHorarios::carregarAtividadesExtras()
+{
+    for (const QString& linha : aluno->atividadesExtras) {
+        QString nome = linha.section(";", 0, 0).trimmed();
+        QString horarios = linha.section(";", 1).trimmed();
+
+        QStringList blocos = horarios.split(",", Qt::SkipEmptyParts);
+        for (QString bloco : blocos) {
+            QString dia = bloco.section(":", 0, 0).trimmed();
+            QString faixa = bloco.section(":", 1, 1).trimmed();
+
+            QString diaAbrev = dia.left(3).toLower();
+            diaAbrev[0] = diaAbrev[0].toUpper();
+
+            int horaIni = bloco.section("-", 0, 0).remove("h").toInt();
+            int horaFim = bloco.section("-", 1, 1).remove("h").toInt();
+
+            for (int h = horaIni; h < horaFim; ++h) {
+                int linha = horarioParaLinha(QString::number(h) + "h");
+                int coluna = diaParaColuna(diaAbrev);
+
+                if (linha >= 0 && coluna >= 0) {
+                    QTableWidgetItem* item = new QTableWidgetItem(nome);
+                    if (!mapaCores.contains(nome))
+                        mapaCores[nome] = coresDisponiveis[mapaCores.size() % coresDisponiveis.size()];
+
+                    item->setBackground(mapaCores[nome]);
+                    item->setTextAlignment(Qt::AlignCenter);
+                    ui->tableWidgetQuadroHor->setItem(linha, coluna, item);
+                }
+            }
+        }
+    }
+}
+
+void QuadroDeHorarios::salvarAtividadesExtras()
+{
+    QStringList novasAtividades;
+
+    for (int linha = 0; linha < ui->tableWidgetQuadroHor->rowCount(); ++linha) {
+        for (int col = 0; col < ui->tableWidgetQuadroHor->columnCount(); ++col) {
+            QTableWidgetItem* item = ui->tableWidgetQuadroHor->item(linha, col);
+            if (!item || item->text().isEmpty()) continue;
+
+            QString nome = item->text().trimmed();
+            bool ehDisciplina = std::any_of(aluno->disciplinasEmCurso.begin(), aluno->disciplinasEmCurso.end(),
+                                            [&nome](const CDisciplinas& d) {
+                                                return QString::fromStdString(d.nome).trimmed() == nome;
+                                            });
+
+            if (ehDisciplina) continue;
+
+            QString hora = QString::number(6 + linha) + "h";
+
+            QString dia;
+            switch (col) {
+            case 0: dia = "Segunda"; break;
+            case 1: dia = "Terca"; break;
+            case 2: dia = "Quarta"; break;
+            case 3: dia = "Quinta"; break;
+            case 4: dia = "Sexta"; break;
+            case 5: dia = "Sabado"; break;
+            case 6: dia = "Domingo"; break;
+            }
+
+            QString chave = nome;
+            QString linhaNova = QString("%1 ; %2:%3-%4")
+                                    .arg(nome).arg(dia).arg(hora).arg(QString::number(6 + linha + 1) + "h");
+
+            novasAtividades.append(linhaNova);
+        }
+    }
+
+
+    aluno->atividadesExtras.clear();
+    for (const QString& linha : novasAtividades)
+        aluno->atividadesExtras.push_back(linha);
+
+
+
+}

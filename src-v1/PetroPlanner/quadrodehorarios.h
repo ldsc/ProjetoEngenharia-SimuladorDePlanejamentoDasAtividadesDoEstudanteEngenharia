@@ -16,6 +16,10 @@ public:
     explicit QuadroDeHorarios(CAluno* aluno, QWidget *parent = nullptr);
     ~QuadroDeHorarios();
 
+private slots:
+    void aoClicarEditar();
+    void aoClicarSalvar();
+
 private:
     Ui::QuadroDeHorarios *ui;
     CAluno* aluno;
@@ -23,6 +27,15 @@ private:
     void preencherQuadro();
     int horarioParaLinha(const QString& horario);
     int diaParaColuna(const QString& dia);
+    void definirModoEdicao(bool ativo);
+
+    bool modoEdicaoAtivo = false;
+
+    QMap<QString, QColor> mapaCores;
+    QList<QColor> coresDisponiveis;
+
+    void carregarAtividadesExtras();
+    void salvarAtividadesExtras();
 };
 
 #endif

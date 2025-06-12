@@ -54,6 +54,8 @@ private:
 
     bool preRequisitosOk(const CDisciplinas& disc) const;
     void atualizarSemestres();
+
+
 };
 
 #endif
