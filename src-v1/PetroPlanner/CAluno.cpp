@@ -78,7 +78,6 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
 
 
 
-    // Atualiza a seção "Disciplinas em Andamento" mantendo dados existentes válidos
     arquivo.seek(0);
     QString conteudoOriginal = arquivo.readAll();
     arquivo.close();
@@ -86,83 +85,64 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
     QStringList linhas = conteudoOriginal.split('\n');
     QStringList resultadoFinal;
 
-    bool dentroDaSecao = false;
     QSet<QString> nomesEmCurso;
     for (const auto& d : disciplinasEmCurso)
         nomesEmCurso.insert(QString::fromStdString(d.nome).trimmed());
 
-    QStringList novaSecao;
-    bool existeSecaoDisciplinasAndamento = false;
+    bool dentroDaSecao = false;
+    int indiceInsercao = -1;
 
     for (int i = 0; i < linhas.size(); ++i) {
         QString linha = linhas[i].trimmed();
 
         if (linha == "Disciplinas em Andamento:") {
             dentroDaSecao = true;
-            existeSecaoDisciplinasAndamento = true;
-            novaSecao << ""; // linha em branco antes da seção
-            novaSecao << linha; // só adiciona o nome da seção aqui
+            resultadoFinal << linhas[i];
+            indiceInsercao = resultadoFinal.size();  // posição onde as novas serão inseridas
             continue;
         }
 
         if (!dentroDaSecao) {
             resultadoFinal << linhas[i];
-            continue;
-        }
-
-        if (linha.startsWith("#") || linha.isEmpty()) {
-            novaSecao << linhas[i];
-            continue;
-        }
-
-        QString nomeDisc = linha.section(';', 0, 0).trimmed();
-        if (nomesEmCurso.contains(nomeDisc)) {
-            novaSecao << linhas[i];
-            nomesEmCurso.remove(nomeDisc);
-        }
-    }
-
-
-
-    if (!existeSecaoDisciplinasAndamento) {
-        // Verifica se o cabeçalho já existe
-        bool jaTemCabecalhoDisciplinas = false;
-        for (const QString& linha : linhas) {
-            if (linha.contains("# Formato das disciplinas em andamento", Qt::CaseInsensitive)) {
-                jaTemCabecalhoDisciplinas = true;
-                break;
+        } else {
+            if (linha.startsWith("#") || linha.isEmpty()) {
+                resultadoFinal << linhas[i];
+            } else {
+                QString nomeDisc = linha.section(';', 0, 0).trimmed();
+                if (nomesEmCurso.contains(nomeDisc)) {
+                    resultadoFinal << linhas[i];
+                    nomesEmCurso.remove(nomeDisc);
+                }
             }
         }
-
-        novaSecao.prepend(""); // linha em branco
-        novaSecao.prepend("Disciplinas em Andamento:");
-
-        if (!jaTemCabecalhoDisciplinas) {
-            novaSecao.prepend("# EXEMPLO: Mecanica dos Fluidos ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: 75.0(1),-(3) ; Provas: -(1)");
-            novaSecao.prepend("# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...");
-            novaSecao.prepend("# Formato das disciplinas em andamento:");
-        }
     }
 
-
-
-    // Adiciona as que faltaram
+    // Inserir as disciplinas que faltam logo após o cabeçalho
+    QStringList novasDisciplinas;
     for (const auto& nome : nomesEmCurso) {
-        novaSecao << nome + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)";
+        novasDisciplinas << nome + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)";
     }
 
-    // Junta tudo novamente
-    resultadoFinal << "" << "" << novaSecao;
+    if (indiceInsercao != -1) {
+        resultadoFinal.insert(indiceInsercao, novasDisciplinas.join("\n"));
+    } else {
+        // Se a seção não existia, criar com cabeçalho completo
+        resultadoFinal << "# Formato das disciplinas em andamento:";
+        resultadoFinal << "# Nome da Disciplina ; Faltas ; Dias e Horarios ; Trabalhos: nota(peso),... ; Provas: nota(peso),...";
+        resultadoFinal << "# EXEMPLO: Mecanica dos Fluidos ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: 75.0(1),-(3) ; Provas: -(1)";
+        resultadoFinal << "Disciplinas em Andamento:";
+        resultadoFinal << novasDisciplinas;
+    }
 
     // Reescreve o arquivo
     QFile arquivoSaida(caminho);
     if (arquivoSaida.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&arquivoSaida);
-        for (const auto& linha : resultadoFinal) {
+        for (const auto& linha : resultadoFinal)
             out << linha.trimmed() << "\n";
-        }
         arquivoSaida.close();
     }
+
 
 
 
