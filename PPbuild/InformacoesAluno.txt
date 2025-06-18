@@ -93,21 +93,22 @@ Disciplinas em Andamento:
 
 
 
-
-
-
-
-Introducao ao Projeto de Engenharia ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: -(1) ; Provas: -(1)
-Geologia do Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: 87.0(1)
-Fisica-Matematica I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
-Controle Ambiental na Industria do Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
-Resistencia dos Materiais ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 60.0(1),67.0(1) ; Provas: 53.0(1),-(1)
+Introducao ao Projeto de Engenharia ; 0 ; Quarta:8h-10h,Segunda:8h-10h; Trabalhos: -(1) ; Provas: -(1)
+Geologia do Petroleo ; 0 ; Terca:10h-11h; Trabalhos: -(1) ; Provas: 87.0(1)
+Fisica-Matematica I ; 0 ; Terca:8h-10h; Trabalhos: -(1) ; Provas: -(1)
+Controle Ambiental na Industria do Petroleo ; 0 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: -(1)
+Resistencia dos Materiais ; 0 ; Sexta:8h-11h; Trabalhos: 60.0(1),67.0(1) ; Provas: 53.0(1),-(1)
 
 
 # Formato: Nome da Atividade ; Dias e Horários
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Estágio ; Segunda: 10-12, Quarta:10h-12h
 Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
+
+
+
+
+
 
 
 

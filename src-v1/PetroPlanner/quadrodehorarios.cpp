@@ -74,8 +74,123 @@ void QuadroDeHorarios::aoClicarEditar()
 void QuadroDeHorarios::aoClicarSalvar()
 {
     definirModoEdicao(false);
+
+    // === Atualiza os horários no objeto CAluno ===
+    QMap<QString, QStringList> horariosPorDisciplina;
+
+    for (int linha = 0; linha < ui->tableWidgetQuadroHor->rowCount(); ++linha) {
+        for (int coluna = 0; coluna < ui->tableWidgetQuadroHor->columnCount(); ++coluna) {
+            QTableWidgetItem* item = ui->tableWidgetQuadroHor->item(linha, coluna);
+            if (!item || item->text().isEmpty()) continue;
+
+            QString nome = item->text().trimmed();
+            QString horaInicio = QString::number(6 + linha) + "h";
+            QString horaFim = QString::number(6 + linha + 1) + "h";
+
+            QString dia;
+            switch (coluna) {
+            case 0: dia = "Segunda"; break;
+            case 1: dia = "Terca"; break;
+            case 2: dia = "Quarta"; break;
+            case 3: dia = "Quinta"; break;
+            case 4: dia = "Sexta"; break;
+            case 5: dia = "Sabado"; break;
+            case 6: dia = "Domingo"; break;
+            }
+
+            QString bloco = dia + ":" + horaInicio + "-" + horaFim;
+            horariosPorDisciplina[nome].append(bloco);
+        }
+    }
+
+    // === Atualiza os objetos disciplinasEmCurso com base no mapa atualizado ===
+    for (CDisciplinas& disc : aluno->disciplinasEmCurso) {
+        QString nome = QString::fromStdString(disc.nome).trimmed();
+        if (horariosPorDisciplina.contains(nome)) {
+            QStringList blocosOriginais = horariosPorDisciplina[nome];
+            QMap<QString, QList<QPair<int, int>>> blocosPorDia;
+
+            // Agrupar por dia
+            for (const QString& bloco : blocosOriginais) {
+                QString dia = bloco.section(":", 0, 0).trimmed();
+                QString faixa = bloco.section(":", 1).trimmed();
+                int ini = faixa.section("-", 0, 0).remove("h").toInt();
+                int fim = faixa.section("-", 1, 1).remove("h").toInt();
+                blocosPorDia[dia].append(qMakePair(ini, fim));
+            }
+
+            // Unir blocos consecutivos
+            QStringList blocosUnidos;
+            for (auto it = blocosPorDia.begin(); it != blocosPorDia.end(); ++it) {
+                QString dia = it.key();
+                QList<QPair<int, int>> lista = it.value();
+
+                // Ordenar blocos por hora de início
+                std::sort(lista.begin(), lista.end());
+
+                int ini = lista[0].first;
+                int fim = lista[0].second;
+
+                for (int i = 1; i < lista.size(); ++i) {
+                    if (lista[i].first == fim) {
+                        fim = lista[i].second; // bloco contínuo, estende o final
+                    } else {
+                        blocosUnidos << QString("%1:%2h-%3h").arg(dia).arg(ini).arg(fim);
+                        ini = lista[i].first;
+                        fim = lista[i].second;
+                    }
+                }
+                blocosUnidos << QString("%1:%2h-%3h").arg(dia).arg(ini).arg(fim);
+            }
+
+            disc.diasHorarios = blocosUnidos.join(",");
+
+        }
+    }
+
+    // === Atualiza o arquivo InformacoesAluno.txt ===
+    QFile file("InformacoesAluno.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+    QStringList novasLinhas;
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString linha = in.readLine();
+        QString nomeNaLinha = linha.section(";", 0, 0).trimmed();
+
+        bool atualizou = false;
+        for (const CDisciplinas& disc : aluno->disciplinasEmCurso) {
+            QString nome = QString::fromStdString(disc.nome).trimmed();
+            if (nome == nomeNaLinha) {
+                // Substitui apenas o campo "Dias e Horarios"
+                QString novaLinha = linha;
+                QStringList partes = linha.split(";");
+                if (partes.size() >= 5) {
+                    partes[2] = " " + disc.diasHorarios; // atualiza o campo diasHorarios
+                    novaLinha = partes.join(";");
+                }
+                novasLinhas << novaLinha;
+                atualizou = true;
+                break;
+            }
+        }
+
+        if (!atualizou)
+            novasLinhas << linha;
+    }
+    file.close();
+
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        QTextStream out(&file);
+        for (const QString& linha : novasLinhas)
+            out << linha.trimmed() << "\n";
+        file.close();
+    }
+
+    // Agora salva as atividades extras
     salvarAtividadesExtras();
 }
+
 
 void QuadroDeHorarios::preencherQuadro()
 {
