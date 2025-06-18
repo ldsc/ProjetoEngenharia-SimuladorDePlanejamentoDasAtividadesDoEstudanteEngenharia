@@ -44,9 +44,9 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>150</y>
+      <y>140</y>
       <width>771</width>
-      <height>521</height>
+      <height>511</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -172,7 +172,7 @@
     <property name="geometry">
      <rect>
       <x>1050</x>
-      <y>340</y>
+      <y>280</y>
       <width>131</width>
       <height>61</height>
      </rect>
@@ -198,7 +198,7 @@
     <property name="geometry">
      <rect>
       <x>1050</x>
-      <y>430</y>
+      <y>440</y>
       <width>131</width>
       <height>61</height>
      </rect>
@@ -218,6 +218,32 @@
     </property>
     <property name="text">
      <string>Salvar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoExcluir">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>360</y>
+      <width>131</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #a6a6a6; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Excluir</string>
     </property>
    </widget>
   </widget>

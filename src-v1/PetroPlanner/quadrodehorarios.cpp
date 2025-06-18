@@ -21,6 +21,7 @@ QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
     connect(ui->botaoEditar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarSalvar);
     connect(ui->tableWidgetQuadroHor, &QTableWidget::cellClicked, this, &QuadroDeHorarios::aoClicarSimplesCelula);
+    connect(ui->botaoExcluir, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarExcluir);
 
 
 
@@ -61,21 +62,21 @@ void QuadroDeHorarios::definirModoEdicao(bool ativo)
 
     ui->botaoEditar->setStyleSheet(ativo ? "background-color: #a6a6a6; color: white; border-radius: 10px;" : "background-color: #ffa308; color: white; border-radius: 10px;");
     ui->botaoSalvar->setStyleSheet(ativo ? "background-color: #ffa308; color: white; border-radius: 10px;" : "background-color: #a6a6a6; color: white; border-radius: 10px;");
+    ui->botaoExcluir->setStyleSheet(ativo ? "background-color: #ffa308; color: white; border-radius: 10px;" : "background-color: #a6a6a6; color: white; border-radius: 10px;");
+
 
     ui->botaoEditar->setEnabled(!ativo);
     ui->botaoSalvar->setEnabled(ativo);
+    ui->botaoExcluir->setEnabled(ativo);
 }
 
-void QuadroDeHorarios::aoClicarEditar()
-{
+void QuadroDeHorarios::aoClicarEditar() {
     definirModoEdicao(true);
 }
 
-void QuadroDeHorarios::aoClicarSalvar()
-{
+void QuadroDeHorarios::aoClicarSalvar() {
     definirModoEdicao(false);
 
-    // === Atualiza os horários no objeto CAluno ===
     QMap<QString, QStringList> horariosPorDisciplina;
 
     for (int linha = 0; linha < ui->tableWidgetQuadroHor->rowCount(); ++linha) {
@@ -103,14 +104,16 @@ void QuadroDeHorarios::aoClicarSalvar()
         }
     }
 
-    // === Atualiza os objetos disciplinasEmCurso com base no mapa atualizado ===
+    QStringList nomesDisciplinasEmCurso;
+    for (const CDisciplinas& d : aluno->disciplinasEmCurso)
+        nomesDisciplinasEmCurso << QString::fromStdString(d.nome).trimmed();
+
     for (CDisciplinas& disc : aluno->disciplinasEmCurso) {
         QString nome = QString::fromStdString(disc.nome).trimmed();
         if (horariosPorDisciplina.contains(nome)) {
             QStringList blocosOriginais = horariosPorDisciplina[nome];
             QMap<QString, QList<QPair<int, int>>> blocosPorDia;
 
-            // Agrupar por dia
             for (const QString& bloco : blocosOriginais) {
                 QString dia = bloco.section(":", 0, 0).trimmed();
                 QString faixa = bloco.section(":", 1).trimmed();
@@ -119,21 +122,17 @@ void QuadroDeHorarios::aoClicarSalvar()
                 blocosPorDia[dia].append(qMakePair(ini, fim));
             }
 
-            // Unir blocos consecutivos
             QStringList blocosUnidos;
             for (auto it = blocosPorDia.begin(); it != blocosPorDia.end(); ++it) {
                 QString dia = it.key();
                 QList<QPair<int, int>> lista = it.value();
-
-                // Ordenar blocos por hora de início
                 std::sort(lista.begin(), lista.end());
 
                 int ini = lista[0].first;
                 int fim = lista[0].second;
-
                 for (int i = 1; i < lista.size(); ++i) {
                     if (lista[i].first == fim) {
-                        fim = lista[i].second; // bloco contínuo, estende o final
+                        fim = lista[i].second;
                     } else {
                         blocosUnidos << QString("%1:%2h-%3h").arg(dia).arg(ini).arg(fim);
                         ini = lista[i].first;
@@ -144,41 +143,112 @@ void QuadroDeHorarios::aoClicarSalvar()
             }
 
             disc.diasHorarios = blocosUnidos.join(",");
-
         }
     }
 
-    // === Atualiza o arquivo InformacoesAluno.txt ===
+    // Processa atividades extras
+    QStringList novasAtividadesExtras;
+    for (auto it = horariosPorDisciplina.begin(); it != horariosPorDisciplina.end(); ++it) {
+        QString nome = it.key().trimmed();
+        if (nomesDisciplinasEmCurso.contains(nome)) continue;
+
+        QStringList blocosOriginais = it.value();
+        QMap<QString, QList<QPair<int, int>>> blocosPorDia;
+
+        for (const QString& bloco : blocosOriginais) {
+            QString dia = bloco.section(":", 0, 0).trimmed();
+            QString faixa = bloco.section(":", 1).trimmed();
+            int ini = faixa.section("-", 0, 0).remove("h").toInt();
+            int fim = faixa.section("-", 1, 1).remove("h").toInt();
+            blocosPorDia[dia].append(qMakePair(ini, fim));
+        }
+
+        QStringList blocosUnidos;
+        for (auto diaIt = blocosPorDia.begin(); diaIt != blocosPorDia.end(); ++diaIt) {
+            QString dia = diaIt.key();
+            QList<QPair<int, int>> lista = diaIt.value();
+            std::sort(lista.begin(), lista.end());
+
+            int ini = lista[0].first;
+            int fim = lista[0].second;
+            for (int i = 1; i < lista.size(); ++i) {
+                if (lista[i].first == fim) {
+                    fim = lista[i].second;
+                } else {
+                    blocosUnidos << QString("%1:%2h-%3h").arg(dia).arg(ini).arg(fim);
+                    ini = lista[i].first;
+                    fim = lista[i].second;
+                }
+            }
+            blocosUnidos << QString("%1:%2h-%3h").arg(dia).arg(ini).arg(fim);
+        }
+
+        novasAtividadesExtras << QString("%1 ; %2").arg(nome).arg(blocosUnidos.join(", "));
+    }
+    aluno->atividadesExtras = std::vector<QString>(novasAtividadesExtras.begin(), novasAtividadesExtras.end());
+
+
+    // Atualiza o arquivo
     QFile file("InformacoesAluno.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
     QStringList novasLinhas;
     QTextStream in(&file);
+    bool dentroAtividades = false;
+    bool encontrouCabecalhoExtras = false;
+
     while (!in.atEnd()) {
         QString linha = in.readLine();
         QString nomeNaLinha = linha.section(";", 0, 0).trimmed();
 
+        // Atualiza disciplina
         bool atualizou = false;
         for (const CDisciplinas& disc : aluno->disciplinasEmCurso) {
             QString nome = QString::fromStdString(disc.nome).trimmed();
-            if (nome == nomeNaLinha) {
-                // Substitui apenas o campo "Dias e Horarios"
-                QString novaLinha = linha;
+            QString nomeLinhaLimpo = nomeNaLinha.trimmed();
+
+            if (nome == nomeLinhaLimpo) {
                 QStringList partes = linha.split(";");
-                if (partes.size() >= 5) {
-                    partes[2] = " " + disc.diasHorarios; // atualiza o campo diasHorarios
-                    novaLinha = partes.join(";");
-                }
+                while (partes.size() < 5)
+                    partes << ""; // garante número mínimo de campos
+
+                partes[2] = " " + disc.diasHorarios;
+                QString novaLinha = partes.join(";");
                 novasLinhas << novaLinha;
                 atualizou = true;
                 break;
             }
         }
 
-        if (!atualizou)
-            novasLinhas << linha;
+
+        if (!atualizou) {
+            if (linha.startsWith("# Formato: Nome da Atividade")) {
+                encontrouCabecalhoExtras = true;
+                dentroAtividades = true;
+                novasLinhas << "# Formato: Nome da Atividade ; Dias e Horários";
+                novasLinhas << "# Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h";
+                for (const QString& atv : aluno->atividadesExtras)
+                    novasLinhas << atv;
+                continue;
+            }
+
+            if (dentroAtividades) {
+                if (linha.startsWith("#") || linha.trimmed().isEmpty())
+                    continue;
+            } else {
+                novasLinhas << linha;
+            }
+        }
     }
     file.close();
+
+    if (!encontrouCabecalhoExtras) {
+        novasLinhas << "";
+        novasLinhas << "# Formato: Nome da Atividade ; Dias e Horários";
+        novasLinhas << "# Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h";
+        for (const QString& atv : aluno->atividadesExtras)
+            novasLinhas << atv;
+    }
 
     if (file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
         QTextStream out(&file);
@@ -186,10 +256,9 @@ void QuadroDeHorarios::aoClicarSalvar()
             out << linha.trimmed() << "\n";
         file.close();
     }
-
-    // Agora salva as atividades extras
-    salvarAtividadesExtras();
 }
+
+
 
 
 void QuadroDeHorarios::preencherQuadro()
@@ -424,6 +493,81 @@ void QuadroDeHorarios::aoClicarSimplesCelula(int row, int column) {
 
 
 void QuadroDeHorarios::aoSelecionarDisciplina(const QString&) {
-    // Implementação vazia para evitar erro de linker
+
+}
+
+
+void QuadroDeHorarios::aoClicarExcluir()
+{
+    if (!modoEdicaoAtivo) return;
+
+    int row = ui->tableWidgetQuadroHor->currentRow();
+    int col = ui->tableWidgetQuadroHor->currentColumn();
+
+    if (row < 0 || col < 0) {
+        QMessageBox::warning(this, "Aviso", "Selecione uma célula com conteúdo para excluir.");
+        return;
+    }
+
+    QTableWidgetItem* item = ui->tableWidgetQuadroHor->item(row, col);
+    if (!item || item->text().trimmed().isEmpty()) {
+        QMessageBox::warning(this, "Aviso", "A célula selecionada está vazia.");
+        return;
+    }
+
+    QString nome = item->text().trimmed();
+
+    // Remover o item visualmente
+    ui->tableWidgetQuadroHor->removeCellWidget(row, col);
+    delete ui->tableWidgetQuadroHor->takeItem(row, col);
+
+    QString horaInicio = QString::number(6 + row) + "h";
+    QString horaFim = QString::number(6 + row + 1) + "h";
+
+    QString dia;
+    switch (col) {
+    case 0: dia = "Segunda"; break;
+    case 1: dia = "Terca"; break;
+    case 2: dia = "Quarta"; break;
+    case 3: dia = "Quinta"; break;
+    case 4: dia = "Sexta"; break;
+    case 5: dia = "Sabado"; break;
+    case 6: dia = "Domingo"; break;
+    }
+
+    QString horarioExcluir = QString("%1:%2-%3").arg(dia).arg(horaInicio).arg(horaFim);
+
+    bool ehDisciplina = std::any_of(aluno->disciplinasEmCurso.begin(), aluno->disciplinasEmCurso.end(),
+                                    [&nome](const CDisciplinas& d) {
+                                        return QString::fromStdString(d.nome).trimmed() == nome;
+                                    });
+
+    if (ehDisciplina) {
+        for (CDisciplinas& d : aluno->disciplinasEmCurso) {
+            if (QString::fromStdString(d.nome).trimmed() == nome) {
+                QStringList blocos = d.diasHorarios.split(",", Qt::SkipEmptyParts);
+                blocos.removeAll(horarioExcluir);
+                d.diasHorarios = blocos.isEmpty() ? "InserirDiaDeAula,InserirHorariosDaAula" : blocos.join(",");
+                break;
+            }
+        }
+    } else {
+        for (int i = 0; i < aluno->atividadesExtras.size(); ++i) {
+            QString linha = aluno->atividadesExtras[i];
+            QString nomeLinha = linha.section(";", 0, 0).trimmed();
+            QString horarios = linha.section(";", 1).trimmed();
+            if (nomeLinha == nome) {
+                QStringList blocos = horarios.split(",", Qt::SkipEmptyParts);
+                blocos.removeAll(horarioExcluir);
+                if (blocos.isEmpty()) {
+                    aluno->atividadesExtras[i] = nome + " ; InserirDiaDeAula,InserirHorariosDaAula";
+                } else {
+                    aluno->atividadesExtras[i] = nome + " ; " + blocos.join(", ");
+                }
+                break;
+            }
+        }
+    }
+
 }
 

@@ -243,10 +243,23 @@ void AcompanhamentoDisciplina::salvarAlteracoes() {
     while (!in.atEnd()) {
         QString linha = in.readLine();
         QString nomeNaLinha = linha.section(";", 0, 0).trimmed();
+
         if (!linhaSubstituida && nomeNaLinha == nomeAtualDisciplina) {
-            QString novaLinha = nomeAtualDisciplina + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: " +
-                                novaListaTrabalhos.join(",") + " ; Provas: " + novaListaProvas.join(",");
-            linhas.append(novaLinha);
+            QStringList partes = linha.split(";");
+            if (partes.size() >= 5) {
+                // Mantém faltas e dias/horários
+                QString faltas = partes[1].trimmed();
+                QString diasHorarios = partes[2].trimmed();
+                QString novaLinha = nomeAtualDisciplina + " ; " + faltas + " ; " + diasHorarios +
+                                    " ; Trabalhos: " + novaListaTrabalhos.join(",") +
+                                    " ; Provas: " + novaListaProvas.join(",");
+                linhas.append(novaLinha);
+            } else {
+                // Se a linha estiver malformada, mantém comportamento anterior como fallback
+                QString novaLinha = nomeAtualDisciplina + " ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: " +
+                                    novaListaTrabalhos.join(",") + " ; Provas: " + novaListaProvas.join(",");
+                linhas.append(novaLinha);
+            }
             linhaSubstituida = true;
         } else {
             linhas.append(linha);
@@ -261,6 +274,7 @@ void AcompanhamentoDisciplina::salvarAlteracoes() {
         file.close();
     }
 }
+
 
 void AcompanhamentoDisciplina::atualizarMedia() {
     double somaNotas = 0.0, somaPesos = 0.0;

@@ -30,6 +30,7 @@ public:
     QTableWidget *tableWidgetQuadroHor;
     QPushButton *botaoEditar;
     QPushButton *botaoSalvar;
+    QPushButton *botaoExcluir;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -102,11 +103,11 @@ public:
         QTableWidgetItem *__qtablewidgetitem22 = new QTableWidgetItem();
         tableWidgetQuadroHor->setVerticalHeaderItem(15, __qtablewidgetitem22);
         tableWidgetQuadroHor->setObjectName("tableWidgetQuadroHor");
-        tableWidgetQuadroHor->setGeometry(QRect(150, 150, 771, 521));
+        tableWidgetQuadroHor->setGeometry(QRect(150, 140, 771, 511));
         tableWidgetQuadroHor->setStyleSheet(QString::fromUtf8("background-color: white;"));
         botaoEditar = new QPushButton(centralwidget);
         botaoEditar->setObjectName("botaoEditar");
-        botaoEditar->setGeometry(QRect(1050, 340, 131, 61));
+        botaoEditar->setGeometry(QRect(1050, 280, 131, 61));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setPointSize(12);
@@ -116,10 +117,16 @@ public:
         botaoEditar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         botaoSalvar = new QPushButton(centralwidget);
         botaoSalvar->setObjectName("botaoSalvar");
-        botaoSalvar->setGeometry(QRect(1050, 430, 131, 61));
+        botaoSalvar->setGeometry(QRect(1050, 440, 131, 61));
         botaoSalvar->setFont(font1);
         botaoSalvar->setToolTipDuration(-4);
         botaoSalvar->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
+        botaoExcluir = new QPushButton(centralwidget);
+        botaoExcluir->setObjectName("botaoExcluir");
+        botaoExcluir->setGeometry(QRect(1050, 360, 131, 61));
+        botaoExcluir->setFont(font1);
+        botaoExcluir->setToolTipDuration(-4);
+        botaoExcluir->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
         QuadroDeHorarios->setCentralWidget(centralwidget);
         menubar = new QMenuBar(QuadroDeHorarios);
         menubar->setObjectName("menubar");
@@ -186,6 +193,7 @@ public:
         ___qtablewidgetitem22->setText(QCoreApplication::translate("QuadroDeHorarios", "22h \303\240s 23h", nullptr));
         botaoEditar->setText(QCoreApplication::translate("QuadroDeHorarios", "Editar", nullptr));
         botaoSalvar->setText(QCoreApplication::translate("QuadroDeHorarios", "Salvar", nullptr));
+        botaoExcluir->setText(QCoreApplication::translate("QuadroDeHorarios", "Excluir", nullptr));
     } // retranslateUi
 
 };
