@@ -6,6 +6,10 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QInputDialog>
+#include <QComboBox>
+
+
 
 QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
     : QMainWindow(parent)
@@ -16,6 +20,9 @@ QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
 
     connect(ui->botaoEditar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarSalvar);
+    connect(ui->tableWidgetQuadroHor, &QTableWidget::cellClicked, this, &QuadroDeHorarios::aoClicarSimplesCelula);
+
+
 
     coresDisponiveis = {
         QColor("#F44336"), QColor("#2196F3"), QColor("#4CAF50"), QColor("#FF9800"),
@@ -138,13 +145,23 @@ void QuadroDeHorarios::carregarAtividadesExtras()
         QStringList blocos = horarios.split(",", Qt::SkipEmptyParts);
         for (QString bloco : blocos) {
             QString dia = bloco.section(":", 0, 0).trimmed();
-            QString faixa = bloco.section(":", 1, 1).trimmed();
+            QString faixa = bloco.section(":", 1).trimmed();  // pega tudo após o :
+
+            if (!faixa.contains("-"))
+                continue;
+
+            QString horaIniStr = faixa.section("-", 0, 0).remove("h").trimmed();
+            QString horaFimStr = faixa.section("-", 1, 1).remove("h").trimmed();
+
+            bool okIni, okFim;
+            int horaIni = horaIniStr.toInt(&okIni);
+            int horaFim = horaFimStr.toInt(&okFim);
+
+            if (!okIni || !okFim || horaIni >= horaFim)
+                continue;
 
             QString diaAbrev = dia.left(3).toLower();
             diaAbrev[0] = diaAbrev[0].toUpper();
-
-            int horaIni = bloco.section("-", 0, 0).remove("h").toInt();
-            int horaFim = bloco.section("-", 1, 1).remove("h").toInt();
 
             for (int h = horaIni; h < horaFim; ++h) {
                 int linha = horarioParaLinha(QString::number(h) + "h");
@@ -163,6 +180,7 @@ void QuadroDeHorarios::carregarAtividadesExtras()
         }
     }
 }
+
 
 void QuadroDeHorarios::salvarAtividadesExtras()
 {
@@ -210,3 +228,87 @@ void QuadroDeHorarios::salvarAtividadesExtras()
 
 
 }
+
+
+void QuadroDeHorarios::aoClicarSimplesCelula(int row, int column) {
+    if (modoEdicaoAtivo && !ui->tableWidgetQuadroHor->item(row, column)) {
+        // Cria o combo box
+        QComboBox* combo = new QComboBox(ui->tableWidgetQuadroHor);
+        QStringList nomesDisciplinas;
+        for (const CDisciplinas& d : aluno->disciplinasEmCurso) {
+            nomesDisciplinas << QString::fromStdString(d.nome);
+        }
+
+        nomesDisciplinas << "Adicionar outra...";
+        combo->addItems(nomesDisciplinas);
+        combo->setEditable(false);
+        combo->setFocusPolicy(Qt::StrongFocus);
+
+        // Coloca o combo na célula
+        ui->tableWidgetQuadroHor->setCellWidget(row, column, combo);
+
+        // Conecta a seleção ao slot
+        connect(combo, &QComboBox::activated, this, [=](int index) {
+            QString nomeSelecionado = combo->itemText(index);
+
+            // Se for "Adicionar outra...", abre input para digitar
+            if (nomeSelecionado == "Adicionar outra...") {
+                bool ok;
+                QString novaAtividade = QInputDialog::getText(this, "Nova Atividade",
+                                                              "Digite o nome da atividade:", QLineEdit::Normal,
+                                                              "", &ok);
+                if (ok && !novaAtividade.trimmed().isEmpty()) {
+                    nomeSelecionado = novaAtividade.trimmed();
+                } else {
+                    // Cancelado: remove o combo e não faz nada
+                    ui->tableWidgetQuadroHor->removeCellWidget(row, column);
+                    return;
+                }
+            }
+
+            aoSelecionarDisciplina(nomeSelecionado);
+
+            // Remove o combobox e adiciona o item definitivo
+            QTableWidgetItem* item = new QTableWidgetItem(nomeSelecionado);
+            if (!mapaCores.contains(nomeSelecionado)) {
+                mapaCores[nomeSelecionado] = coresDisponiveis[mapaCores.size() % coresDisponiveis.size()];
+            }
+            item->setBackground(mapaCores[nomeSelecionado]);
+            item->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidgetQuadroHor->removeCellWidget(row, column);
+            ui->tableWidgetQuadroHor->setItem(row, column, item);
+
+            // Atualiza a disciplina com novo horário
+            for (CDisciplinas& d : aluno->disciplinasEmCurso) {
+                if (QString::fromStdString(d.nome) == nomeSelecionado) {
+                    QString dia;
+                    switch (column) {
+                    case 0: dia = "Segunda"; break;
+                    case 1: dia = "Terca"; break;
+                    case 2: dia = "Quarta"; break;
+                    case 3: dia = "Quinta"; break;
+                    case 4: dia = "Sexta"; break;
+                    case 5: dia = "Sabado"; break;
+                    case 6: dia = "Domingo"; break;
+                    }
+
+                    QString horario = QString::number(6 + row) + "h-" + QString::number(6 + row + 1) + "h";
+                    QString novoHorario = dia + ":" + horario;
+
+                    if (!d.diasHorarios.contains(novoHorario)) {
+                        if (!d.diasHorarios.isEmpty() && !d.diasHorarios.endsWith(","))
+                            d.diasHorarios += ",";
+                        d.diasHorarios += novoHorario;
+                    }
+                }
+            }
+        });
+
+    }
+}
+
+
+void QuadroDeHorarios::aoSelecionarDisciplina(const QString&) {
+    // Implementação vazia para evitar erro de linker
+}
+

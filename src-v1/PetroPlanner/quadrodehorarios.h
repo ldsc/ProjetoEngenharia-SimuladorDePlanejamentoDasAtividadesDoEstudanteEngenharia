@@ -19,6 +19,8 @@ public:
 private slots:
     void aoClicarEditar();
     void aoClicarSalvar();
+    void aoClicarSimplesCelula(int row, int column);
+    void aoSelecionarDisciplina(const QString& nomeSelecionado);
 
 private:
     Ui::QuadroDeHorarios *ui;

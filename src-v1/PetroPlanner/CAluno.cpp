@@ -6,7 +6,7 @@
 #include <QRegularExpression>
 
 
-bool CAluno::lerDoArquivo(const QString& caminho) {
+bool CAluno::lerDoArquivo(const QString& caminho)  {
     QFile arquivo(caminho);
     if (!arquivo.open(QIODevice::ReadOnly | QIODevice::Text))
         return false;
@@ -186,48 +186,79 @@ bool CAluno::lerDoArquivo(const QString& caminho) {
     bool lendoAtividadesExtras = false;
     atividadesExtras.clear();
 
+
     for (int i = 0; i < linhas.size(); ++i) {
         QString linha = linhas[i].trimmed();
 
         if (linha.startsWith("# Formato: Nome da Atividade")) {
             encontrouCabecalhoExtras = true;
             lendoAtividadesExtras = true;
-            resultadoFinal << ""; // adiciona uma linha em branco antes do cabeçalho
-            resultadoFinal << linha;
             continue;
         }
 
         if (linha.startsWith("# Exemplo:")) {
-            resultadoFinal << linha;
             continue;
         }
 
         if (lendoAtividadesExtras) {
-            resultadoFinal << linha;
             if (!linha.startsWith("#") && !linha.isEmpty()) {
                 atividadesExtras.push_back(linha);
             }
         }
     }
 
-    // === Se não encontrou, adiciona o cabeçalho vazio ===
-    if (!encontrouCabecalhoExtras) {
-        resultadoFinal << ""
-                       << "# Formato: Nome da Atividade ; Dias e Horários"
-                       << "# Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:10h-12h";
-    }
 
+    QSet<QString> atividadesExistentes;
+    for (const auto& a : atividadesExtras)
+        atividadesExistentes.insert(a.trimmed());
 
-    // Se adicionou a seção de atividades extras, reescreve o arquivo
-    if (!encontrouCabecalhoExtras) {
-        QFile arquivoSaidaExtras(caminho);
-        if (arquivoSaidaExtras.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            QTextStream outExtras(&arquivoSaidaExtras);
-            for (const auto& linha : resultadoFinal)
-                outExtras << linha.trimmed() << "\n";
-            arquivoSaidaExtras.close();
+    bool dentroSecaoExtras = false;
+    int indiceInsercaoExtras = -1;
+
+    for (int i = 0; i < resultadoFinal.size(); ++i) {
+        QString linha = resultadoFinal[i].trimmed();
+
+        if (linha.startsWith("# Formato: Nome da Atividade")) {
+            dentroSecaoExtras = true;
+            indiceInsercaoExtras = i + 2;  // Pula o exemplo
+            continue;
+        }
+
+        if (dentroSecaoExtras) {
+            if (!linha.startsWith("#") && !linha.isEmpty()) {
+                QString atividade = linha.trimmed();
+                atividadesExistentes.remove(atividade);  // Já está lá, então não precisa adicionar depois
+            }
         }
     }
+
+    // Só adiciona o que ainda não está presente
+    if (!atividadesExistentes.isEmpty()) {
+        QStringList novasAtividades = atividadesExistentes.values();
+
+        if (indiceInsercaoExtras != -1) {
+            resultadoFinal.insert(indiceInsercaoExtras, novasAtividades.join("\n"));
+        } else {
+            // Se a seção não existe ainda
+            resultadoFinal << ""
+                           << "# Formato: Nome da Atividade ; Dias e Horários"
+                           << "# Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h";
+            resultadoFinal << novasAtividades;
+        }
+    }
+
+
+
+
+    // Sempre reescreve o arquivo com todas as informações atualizadas
+    QFile arquivoFinal(caminho);
+    if (arquivoFinal.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream outFinal(&arquivoFinal);
+        for (const auto& linha : resultadoFinal)
+            outFinal << linha.trimmed() << "\n";
+        arquivoFinal.close();
+    }
+
 
 
 }
