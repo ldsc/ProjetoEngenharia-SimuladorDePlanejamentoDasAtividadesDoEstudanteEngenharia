@@ -42,12 +42,12 @@ CRA: 8.5
 4 ; Termodinamica para Engenharia ; 8.0 ; Aprovada
 4 ; Calculo Numerico ; 8.0 ; Aprovada
 
-5 ; Geologia Fisica ; 8.0 ; Aprovada
+5 ; Geologia Fisica ; - ; Em Curso
 5 ; Introducao a Analise e Processamento de Sinais ; 8.0 ; Aprovada
-5 ; Resistencia dos Materiais ; - ; Em Curso
+5 ; Resistencia dos Materiais ; 67.7 ; Aprovada
 5 ; Mecanica dos Fluidos ; - ; Nao Cursada
-5 ; Fisica-Matematica I ; - ; Em Curso
-5 ; Introducao ao Projeto de Engenharia ; - ; Em Curso
+5 ; Fisica-Matematica I ; 60.0 ; Aprovada
+5 ; Introducao ao Projeto de Engenharia ; 55.0 ; Reprovada
 
 6 ; Mineralogia e Petrologia de Rochas Reservatorio ; 8.0 ; Aprovada
 6 ; Metodos Geofisicos de Exploracao ; - ; Nao Cursada
@@ -63,8 +63,8 @@ CRA: 8.5
 7 ; Engenharia de Reservatorios II ; - ; Nao Cursada
 7 ; Tecnicas de Modelamento Numerico I ; - ; Nao Cursada
 
-8 ; Geologia do Petroleo ; - ; Em Curso
-8 ; Controle Ambiental na Industria do Petroleo ; - ; Em Curso
+8 ; Geologia do Petroleo ; 61.0 ; Aprovada
+8 ; Controle Ambiental na Industria do Petroleo ; 60.7 ; Aprovada
 8 ; Perfilagem de Pocos I ; - ; Nao Cursada
 8 ; Elevacao e Escoamento ; - ; Nao Cursada
 8 ; Engenharia de Poco ; - ; Nao Cursada
@@ -90,6 +90,7 @@ CRA: 8.5
 # EXEMPLO: Mecanica dos Fluidos ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: 75.0(1),-(3) ; Provas: -(1)
 Disciplinas em Andamento:
 
+Geologia Fisica ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 
 
 
@@ -104,14 +105,40 @@ Disciplinas em Andamento:
 
 
 
-Introducao ao Projeto de Engenharia ; 0 ; Quarta:8h-10h,Segunda:8h-10h; Trabalhos: -(1) ; Provas: -(1)
-Geologia do Petroleo ; 0 ; Terca:10h-11h; Trabalhos: 33.0(1) ; Provas: 87.0(1)
-Fisica-Matematica I ; 0 ; Terca:8h-10h; Trabalhos: 99.0(2),-(1) ; Provas: -(1)
-Controle Ambiental na Industria do Petroleo ; 0 ; Quinta:8h-12h; Trabalhos: 60.0(1),-(1) ; Provas: 70.0(1)
-Resistencia dos Materiais ; 0 ; Domingo:8h-9h; Trabalhos: 90.0(1) ; Provas: -(1),-(1)
+
+
+
+
+
+
+
+
+
 
 
 # Formato: Nome da Atividade ; Dias e Horários
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Estudo Individual ; Quinta:14h-16h, Terca:14h-16h
-Estágio ; Quarta:10h-12h, Segunda:10h-12h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>992</width>
+    <width>1321</width>
     <height>879</height>
    </rect>
   </property>
@@ -578,9 +578,9 @@ max-height: 12px;
    <widget class="QProgressBar" name="progressBarFaltas">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>630</y>
-      <width>731</width>
+      <x>820</x>
+      <y>400</y>
+      <width>371</width>
       <height>31</height>
      </rect>
     </property>
@@ -597,8 +597,8 @@ max-height: 12px;
    <widget class="QLabel" name="labelFaltas">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>640</y>
+      <x>960</x>
+      <y>350</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -616,13 +616,39 @@ max-height: 12px;
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="botaoFinalizarDisc">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>600</y>
+      <width>131</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #a6a6a6; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Finalizar</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>992</width>
+     <width>1321</width>
      <height>22</height>
     </rect>
    </property>

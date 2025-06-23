@@ -48,7 +48,8 @@ template <> constexpr inline auto AcompanhamentoDisciplina::qt_create_metaobject
         "adicionarProva",
         "removerProva",
         "salvarAlteracoes",
-        "atualizarMedia"
+        "atualizarMedia",
+        "aoClicarFinalizarDisc"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -68,6 +69,8 @@ template <> constexpr inline auto AcompanhamentoDisciplina::qt_create_metaobject
         QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'atualizarMedia'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'aoClicarFinalizarDisc'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -99,6 +102,7 @@ void AcompanhamentoDisciplina::qt_static_metacall(QObject *_o, QMetaObject::Call
         case 5: _t->removerProva(); break;
         case 6: _t->salvarAlteracoes(); break;
         case 7: _t->atualizarMedia(); break;
+        case 8: _t->aoClicarFinalizarDisc(); break;
         default: ;
         }
     }
@@ -124,14 +128,14 @@ int AcompanhamentoDisciplina::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

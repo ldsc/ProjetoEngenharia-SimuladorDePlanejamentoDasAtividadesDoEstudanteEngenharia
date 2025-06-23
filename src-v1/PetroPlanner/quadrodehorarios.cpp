@@ -37,15 +37,15 @@ QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
 
 
     // Mostrar aviso com disciplinas e atividades
-    QString aviso = "Disciplinas em curso detectadas:\n";
-    for (const auto& d : aluno->disciplinasEmCurso)
-        aviso += "- " + QString::fromStdString(d.nome) + "\n";
+    //QString aviso = "Disciplinas em curso detectadas:\n";
+    //for (const auto& d : aluno->disciplinasEmCurso)
+    //    aviso += "- " + QString::fromStdString(d.nome) + "\n";
 
-    aviso += "\nAtividades extras detectadas:\n";
-    for (const auto& a : aluno->atividadesExtras)
-        aviso += "- " + a + "\n";
+    //aviso += "\nAtividades extras detectadas:\n";
+    //for (const auto& a : aluno->atividadesExtras)
+    //    aviso += "- " + a + "\n";
 
-    QMessageBox::information(this, "Resumo Inicial", aviso);
+    //QMessageBox::information(this, "Resumo Inicial", aviso);
 
 }
 
@@ -570,4 +570,3 @@ void QuadroDeHorarios::aoClicarExcluir()
     }
 
 }
-

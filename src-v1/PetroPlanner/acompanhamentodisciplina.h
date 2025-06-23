@@ -59,6 +59,8 @@ private slots:
     void removerProva();
     void salvarAlteracoes();
     void atualizarMedia();
+    void aoClicarFinalizarDisc();
+
 
 
 

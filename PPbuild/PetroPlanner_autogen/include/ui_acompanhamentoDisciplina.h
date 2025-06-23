@@ -56,6 +56,7 @@ public:
     QLabel *labelMedia_4;
     QProgressBar *progressBarFaltas;
     QLabel *labelFaltas;
+    QPushButton *botaoFinalizarDisc;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,7 +64,7 @@ public:
     {
         if (AcompanhamentoDisciplina->objectName().isEmpty())
             AcompanhamentoDisciplina->setObjectName("AcompanhamentoDisciplina");
-        AcompanhamentoDisciplina->resize(992, 879);
+        AcompanhamentoDisciplina->resize(1321, 879);
         AcompanhamentoDisciplina->setStyleSheet(QString::fromUtf8("background-color: blue; "));
         centralwidget = new QWidget(AcompanhamentoDisciplina);
         centralwidget->setObjectName("centralwidget");
@@ -241,19 +242,25 @@ public:
         labelMedia_4->setStyleSheet(QString::fromUtf8("color: black"));
         progressBarFaltas = new QProgressBar(centralwidget);
         progressBarFaltas->setObjectName("progressBarFaltas");
-        progressBarFaltas->setGeometry(QRect(10, 630, 731, 31));
+        progressBarFaltas->setGeometry(QRect(820, 400, 371, 31));
         progressBarFaltas->setStyleSheet(QString::fromUtf8("QProgressBar {color: white;    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
         progressBarFaltas->setMinimum(6);
         progressBarFaltas->setValue(80);
         labelFaltas = new QLabel(centralwidget);
         labelFaltas->setObjectName("labelFaltas");
-        labelFaltas->setGeometry(QRect(760, 640, 201, 16));
+        labelFaltas->setGeometry(QRect(960, 350, 201, 16));
         labelFaltas->setFont(font1);
         labelFaltas->setStyleSheet(QString::fromUtf8("color: white"));
+        botaoFinalizarDisc = new QPushButton(centralwidget);
+        botaoFinalizarDisc->setObjectName("botaoFinalizarDisc");
+        botaoFinalizarDisc->setGeometry(QRect(580, 600, 131, 61));
+        botaoFinalizarDisc->setFont(font5);
+        botaoFinalizarDisc->setToolTipDuration(-4);
+        botaoFinalizarDisc->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
         AcompanhamentoDisciplina->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AcompanhamentoDisciplina);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 992, 22));
+        menubar->setGeometry(QRect(0, 0, 1321, 22));
         AcompanhamentoDisciplina->setMenuBar(menubar);
         statusbar = new QStatusBar(AcompanhamentoDisciplina);
         statusbar->setObjectName("statusbar");
@@ -291,6 +298,7 @@ public:
         labelMedia_3->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Provas:", nullptr));
         labelMedia_4->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Trabalhos:", nullptr));
         labelFaltas->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "TextLabel", nullptr));
+        botaoFinalizarDisc->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Finalizar", nullptr));
     } // retranslateUi
 
 };

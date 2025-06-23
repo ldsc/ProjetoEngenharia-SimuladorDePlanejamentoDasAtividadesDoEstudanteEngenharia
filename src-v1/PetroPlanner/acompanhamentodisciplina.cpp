@@ -1,16 +1,18 @@
 #include "acompanhamentoDisciplina.h"
 #include "ui_acompanhamentoDisciplina.h"
+#include "telainicial.h"
 #include <QFile>
 #include <QTextStream>
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QCheckBox>
+#include <QApplication>
+
 
 AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina, QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::AcompanhamentoDisciplina)
-{
+    , ui(new Ui::AcompanhamentoDisciplina)   {
     ui->setupUi(this);
     ui->label_NomeDisc->setText(nomeDisciplina);
     nomeAtualDisciplina = nomeDisciplina.trimmed();
@@ -21,6 +23,8 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     ui->botaoRemTrab->setEnabled(false);
     ui->botaoRemProva->setEnabled(false);
     ui->botaoSalvar->setEnabled(false);
+    ui->botaoFinalizarDisc->setEnabled(false);
+
 
     connect(ui->botaoEditar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarSalvar);
@@ -28,6 +32,8 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     connect(ui->botaoRemTrab, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerTrabalho);
     connect(ui->botaoAdcProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarProva);
     connect(ui->botaoRemProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerProva);
+    connect(ui->botaoFinalizarDisc, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarFinalizarDisc);
+
 
     QFile arquivo("InformacoesAluno.txt");
     bool encontrado = false;
@@ -153,8 +159,7 @@ void AcompanhamentoDisciplina::preencherAmbosLayouts(const QString& trabs, const
     atualizarMedia();
 }
 
-void AcompanhamentoDisciplina::aoClicarEditar()
-{
+void AcompanhamentoDisciplina::aoClicarEditar() {
     modoEdicaoAtivo = true;
 
     ui->botaoEditar->setStyleSheet("background-color: #a6a6a6; color: white;");
@@ -163,12 +168,15 @@ void AcompanhamentoDisciplina::aoClicarEditar()
     ui->botaoAdcTrab->setStyleSheet("background-color: #ffa308; color: white;");
     ui->botaoRemProva->setStyleSheet("background-color: #ffa308; color: white;");
     ui->botaoRemTrab->setStyleSheet("background-color: #ffa308; color: white;");
+    ui->botaoFinalizarDisc->setStyleSheet("background-color: #ffa308; color: white; border-radius: 30px;");
+
 
     ui->botaoSalvar->setEnabled(true);
     ui->botaoAdcProva->setEnabled(true);
     ui->botaoAdcTrab->setEnabled(true);
     ui->botaoRemProva->setEnabled(true);
     ui->botaoRemTrab->setEnabled(true);
+    ui->botaoFinalizarDisc->setEnabled(true);
 
     for (auto& e : entradasTrabalhos) {
         e.editNota->setReadOnly(false);
@@ -182,8 +190,7 @@ void AcompanhamentoDisciplina::aoClicarEditar()
     }
 }
 
-void AcompanhamentoDisciplina::aoClicarSalvar()
-{
+void AcompanhamentoDisciplina::aoClicarSalvar(){
     if (!modoEdicaoAtivo) return;
     modoEdicaoAtivo = false;
 
@@ -204,12 +211,14 @@ void AcompanhamentoDisciplina::aoClicarSalvar()
     ui->botaoAdcTrab->setStyleSheet("background-color: #a6a6a6; color: white;");
     ui->botaoRemProva->setStyleSheet("background-color: #a6a6a6; color: white;");
     ui->botaoRemTrab->setStyleSheet("background-color: #a6a6a6; color: white;");
+    ui->botaoFinalizarDisc->setStyleSheet("background-color: #a6a6a6; color: white; border-radius: 30px;");
 
     ui->botaoSalvar->setEnabled(false);
     ui->botaoAdcProva->setEnabled(false);
     ui->botaoAdcTrab->setEnabled(false);
     ui->botaoRemProva->setEnabled(false);
     ui->botaoRemTrab->setEnabled(false);
+    ui->botaoFinalizarDisc->setEnabled(false);
 
     salvarAlteracoes();
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
@@ -358,4 +367,55 @@ void AcompanhamentoDisciplina::removerProva() {
     if (!novaListaProvas.isEmpty())
         novaListaProvas.removeLast();
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+}
+
+void AcompanhamentoDisciplina::aoClicarFinalizarDisc()     {
+    QString mediaStr = ui->labelMedia->text().trimmed();
+    bool ok = false;
+    double media = mediaStr.toDouble(&ok);
+    if (!ok) return;
+
+    QString situacao = (media >= 60.0) ? "Aprovada" : "Reprovada";
+
+    QFile file("InformacoesAluno.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+    QStringList novasLinhas;
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString linha = in.readLine();
+        QString linhaTrim = linha.trimmed();
+
+        if (linhaTrim.contains(";") && linhaTrim.contains("Em Curso")) {
+            QString nome = linhaTrim.section(";", 1, 1).trimmed();
+            if (nome == nomeAtualDisciplina) {
+                QStringList partes = linhaTrim.split(";", Qt::KeepEmptyParts);
+                for (QString& parte : partes)
+                    parte = parte.trimmed();
+
+                int idx = partes.size();
+                if (idx >= 2 && partes[idx - 2] == "-" && partes[idx - 1] == "Em Curso") {
+                    partes[idx - 2] = QString::number(media, 'f', 1);
+                    partes[idx - 1] = situacao;
+                }
+
+                novasLinhas << partes.join(" ; ");
+                continue;
+            }
+        }
+
+        novasLinhas << linha;
+    }
+    file.close();
+
+    // Reescreve o arquivo
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        QTextStream out(&file);
+        for (const QString& l : novasLinhas)
+            out << l.trimmed() << "\n";
+        file.close();
+    }
+
+    // Reinicia a aplicação (volta pra tela inicial e fecha todas as janelas anteriores)
+    qApp->exit(42);
 }
