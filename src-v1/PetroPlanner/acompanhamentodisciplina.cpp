@@ -75,8 +75,13 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
             novaListaTrabalhos = {"-(1)"};
             novaListaProvas = {"-(1)"};
             preencherAmbosLayouts("-(1)", "-(1)");
+            atualizarFaltas();
+
+
         }
     }
+
+    atualizarFaltas();
 }
 
 AcompanhamentoDisciplina::~AcompanhamentoDisciplina() { delete ui; }
@@ -419,3 +424,77 @@ void AcompanhamentoDisciplina::aoClicarFinalizarDisc()     {
     // Reinicia a aplicação (volta pra tela inicial e fecha todas as janelas anteriores)
     qApp->exit(42);
 }
+
+
+
+void AcompanhamentoDisciplina::atualizarFaltas() {
+    int faltasRegistradas = 0;
+    int chSemanal = 0;
+
+    // 1. Ler faltas da disciplina do aluno no InformacoesAluno.txt
+    QFile file("InformacoesAluno.txt");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        while (!in.atEnd()) {
+            QString linha = in.readLine().trimmed();
+            if (linha.startsWith(nomeAtualDisciplina + " ;")) {
+                QString faltasStr = linha.section(";", 1, 1).trimmed();
+                faltasRegistradas = faltasStr.toInt();
+                break;
+            }
+        }
+        file.close();
+    }
+
+    // 2. Procurar carga horária semanal da disciplina
+    std::vector<CDisciplinas> todas = getDisciplinasCurso();
+    for (const auto& disc : todas) {
+        QString nomeCurso = QString::fromStdString(disc.getNome()).trimmed();
+        if (QString::compare(nomeCurso, nomeAtualDisciplina, Qt::CaseInsensitive) == 0) {
+            chSemanal = disc.getHoras();
+            break;
+        }
+    }
+
+    if (chSemanal <= 0) return;
+
+    // 3. Cálculo das faltas possíveis
+    int faltasPossiveis = static_cast<int>(0.25 * chSemanal * 4 * 4);
+    int faltasRestantes = faltasPossiveis - faltasRegistradas;
+
+    // 4. Atualizar label
+    ui->labelFaltas->setText(QString("Faltas: %1 / %2").arg(faltasRegistradas).arg(faltasPossiveis));
+
+    // 5. Atualizar progress bar para mostrar faltas restantes
+    ui->progressBarFaltas->setRange(0, faltasPossiveis);
+    ui->progressBarFaltas->setValue(faltasRestantes);
+    ui->progressBarFaltas->setFormat(QString("%1").arg(faltasRestantes));
+
+    // 6. Definir cor com base nas faltas restantes
+    QString cor;
+    if (faltasRestantes == faltasPossiveis)
+        cor = "#90ee90"; // verde claro
+    else if (faltasRestantes > 1)
+        cor = "orange";
+    else if (faltasRestantes == 1)
+        cor = "orangered";
+    else
+        cor = "red";
+
+    // 7. Aplicar estilo visual
+    ui->progressBarFaltas->setStyleSheet(QString(
+                                             "QProgressBar {"
+                                             "  border: 3px solid white;"
+                                             "  border-radius: 8px;"
+                                             "  background-color: white;"
+                                             "  text-align: center;"
+                                             "  color: black;"
+                                             "}"
+                                             "QProgressBar::chunk {"
+                                             "  background-color: %1;"
+                                             "  border-radius: 6px;"
+                                             "}").arg(cor));
+}
+
+
+

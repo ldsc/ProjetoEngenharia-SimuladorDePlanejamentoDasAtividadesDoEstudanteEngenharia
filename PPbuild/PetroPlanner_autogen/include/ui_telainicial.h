@@ -135,8 +135,8 @@ public:
         progressBarHoras->setObjectName("progressBarHoras");
         progressBarHoras->setGeometry(QRect(150, 220, 118, 23));
         progressBarHoras->setStyleSheet(QString::fromUtf8("QProgressBar {    border: 2px solid blue;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
-        progressBarHoras->setMinimum(6);
-        progressBarHoras->setValue(80);
+        progressBarHoras->setMinimum(0);
+        progressBarHoras->setValue(0);
         labelHorasEmCurso2 = new QLabel(groupBoxDiscAnd);
         labelHorasEmCurso2->setObjectName("labelHorasEmCurso2");
         labelHorasEmCurso2->setGeometry(QRect(280, 220, 181, 16));

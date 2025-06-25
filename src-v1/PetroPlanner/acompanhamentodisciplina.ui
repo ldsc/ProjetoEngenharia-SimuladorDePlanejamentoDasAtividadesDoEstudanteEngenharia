@@ -585,20 +585,20 @@ max-height: 12px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QProgressBar {color: white;    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}</string>
+     <string notr="true">QProgressBar {    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}</string>
     </property>
     <property name="minimum">
-     <number>6</number>
+     <number>0</number>
     </property>
     <property name="value">
-     <number>80</number>
+     <number>0</number>
     </property>
    </widget>
    <widget class="QLabel" name="labelFaltas">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>350</y>
+      <x>830</x>
+      <y>450</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -640,6 +640,29 @@ max-height: 12px;
     </property>
     <property name="text">
      <string>Finalizar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelDiscAnd_2">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>360</y>
+      <width>421</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white</string>
+    </property>
+    <property name="text">
+     <string>Faltas Disponíveis:</string>
     </property>
    </widget>
   </widget>

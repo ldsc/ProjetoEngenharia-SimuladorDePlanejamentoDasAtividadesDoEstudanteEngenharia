@@ -60,9 +60,7 @@ private slots:
     void salvarAlteracoes();
     void atualizarMedia();
     void aoClicarFinalizarDisc();
-
-
-
+    void atualizarFaltas();
 
 
 

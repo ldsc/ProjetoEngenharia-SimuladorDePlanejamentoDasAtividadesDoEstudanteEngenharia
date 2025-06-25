@@ -57,6 +57,7 @@ public:
     QProgressBar *progressBarFaltas;
     QLabel *labelFaltas;
     QPushButton *botaoFinalizarDisc;
+    QLabel *labelDiscAnd_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -243,12 +244,12 @@ public:
         progressBarFaltas = new QProgressBar(centralwidget);
         progressBarFaltas->setObjectName("progressBarFaltas");
         progressBarFaltas->setGeometry(QRect(820, 400, 371, 31));
-        progressBarFaltas->setStyleSheet(QString::fromUtf8("QProgressBar {color: white;    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
-        progressBarFaltas->setMinimum(6);
-        progressBarFaltas->setValue(80);
+        progressBarFaltas->setStyleSheet(QString::fromUtf8("QProgressBar {    border: 2px solid white;    border-radius: 8px;  text-align: center;} QProgressBar::chunk {background-color: #82b4cf; border-radius: 6px;}"));
+        progressBarFaltas->setMinimum(0);
+        progressBarFaltas->setValue(0);
         labelFaltas = new QLabel(centralwidget);
         labelFaltas->setObjectName("labelFaltas");
-        labelFaltas->setGeometry(QRect(960, 350, 201, 16));
+        labelFaltas->setGeometry(QRect(830, 450, 201, 16));
         labelFaltas->setFont(font1);
         labelFaltas->setStyleSheet(QString::fromUtf8("color: white"));
         botaoFinalizarDisc = new QPushButton(centralwidget);
@@ -257,6 +258,11 @@ public:
         botaoFinalizarDisc->setFont(font5);
         botaoFinalizarDisc->setToolTipDuration(-4);
         botaoFinalizarDisc->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
+        labelDiscAnd_2 = new QLabel(centralwidget);
+        labelDiscAnd_2->setObjectName("labelDiscAnd_2");
+        labelDiscAnd_2->setGeometry(QRect(880, 360, 421, 21));
+        labelDiscAnd_2->setFont(font4);
+        labelDiscAnd_2->setStyleSheet(QString::fromUtf8("color: white"));
         AcompanhamentoDisciplina->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AcompanhamentoDisciplina);
         menubar->setObjectName("menubar");
@@ -299,6 +305,7 @@ public:
         labelMedia_4->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Trabalhos:", nullptr));
         labelFaltas->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "TextLabel", nullptr));
         botaoFinalizarDisc->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Finalizar", nullptr));
+        labelDiscAnd_2->setText(QCoreApplication::translate("AcompanhamentoDisciplina", "Faltas Dispon\303\255veis", nullptr));
     } // retranslateUi
 
 };
