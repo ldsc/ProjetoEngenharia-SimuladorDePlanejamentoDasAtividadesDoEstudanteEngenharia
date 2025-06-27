@@ -14,14 +14,17 @@
 QuadroDeHorarios::QuadroDeHorarios(CAluno* aluno, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::QuadroDeHorarios)
-    , aluno(aluno)
-{
+    , aluno(aluno)                  {
     ui->setupUi(this);
 
     connect(ui->botaoEditar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarEditar);
     connect(ui->botaoSalvar, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarSalvar);
     connect(ui->tableWidgetQuadroHor, &QTableWidget::cellClicked, this, &QuadroDeHorarios::aoClicarSimplesCelula);
     connect(ui->botaoExcluir, &QPushButton::clicked, this, &QuadroDeHorarios::aoClicarExcluir);
+    connect(ui->botaoBaixar, &QPushButton::clicked, this, &QuadroDeHorarios::salvarQuadroComoImagem);
+
+    ui->botaoBaixar->setStyleSheet("background-color: #ffa308; color: white; border-radius: 30px;");
+
 
 
 
@@ -261,8 +264,7 @@ void QuadroDeHorarios::aoClicarSalvar() {
 
 
 
-void QuadroDeHorarios::preencherQuadro()
-{
+void QuadroDeHorarios::preencherQuadro() {
     ui->tableWidgetQuadroHor->clearContents();
 
     // Preencher com disciplinas em curso
@@ -570,3 +572,41 @@ void QuadroDeHorarios::aoClicarExcluir()
     }
 
 }
+
+
+
+
+void QuadroDeHorarios::salvarQuadroComoImagem() {
+    QTableWidget* tabela = ui->tableWidgetQuadroHor;
+
+    // Calcula o tamanho total (incluindo cabeçalhos)
+    int larguraTotal = tabela->verticalHeader()->width();
+    for (int col = 0; col < tabela->columnCount(); ++col)
+        larguraTotal += tabela->columnWidth(col);
+
+    int alturaTotal = tabela->horizontalHeader()->height();
+    for (int row = 0; row < tabela->rowCount(); ++row)
+        alturaTotal += tabela->rowHeight(row);
+
+    // Cria uma imagem do tamanho total calculado
+    QPixmap imagem(larguraTotal, alturaTotal);
+    imagem.fill(Qt::white);
+
+    // Renderiza a tabela inteira (com cabeçalhos)
+    tabela->render(&imagem, QPoint(0, 0));
+
+    // Gera o nome do arquivo
+    QString nomeArquivo = "Quadro de Horários.png";
+    int contador = 1;
+    while (QFile::exists(nomeArquivo)) {
+        nomeArquivo = QString("Quadro de Horários_%1.png").arg(contador++);
+    }
+
+    if (imagem.save(nomeArquivo)) {
+        QMessageBox::information(this, "Sucesso", "Imagem salva como " + nomeArquivo);
+    } else {
+        QMessageBox::warning(this, "Erro", "Falha ao salvar a imagem.");
+    }
+}
+
+

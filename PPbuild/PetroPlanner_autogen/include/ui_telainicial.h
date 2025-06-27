@@ -44,6 +44,11 @@ public:
     QLabel *labelDiscAnd;
     QPushButton *botaoSimulacao;
     QPushButton *botaoQuadrodeHorarios;
+    QGroupBox *groupBoxFaltas;
+    QScrollArea *scrollAreaWidgetContentsFaltas;
+    QWidget *wi_2;
+    QLabel *labelDiscAnd_2;
+    QPushButton *botaoRefresh;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,7 +56,7 @@ public:
     {
         if (TelaInicial->objectName().isEmpty())
             TelaInicial->setObjectName("TelaInicial");
-        TelaInicial->resize(1308, 728);
+        TelaInicial->resize(1324, 766);
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         font.setBold(true);
@@ -63,7 +68,7 @@ public:
         centralwidget->setStyleSheet(QString::fromUtf8("w"));
         botaoVerGradeCompleta = new QPushButton(centralwidget);
         botaoVerGradeCompleta->setObjectName("botaoVerGradeCompleta");
-        botaoVerGradeCompleta->setGeometry(QRect(50, 290, 251, 81));
+        botaoVerGradeCompleta->setGeometry(QRect(220, 300, 251, 81));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font1.setPointSize(12);
@@ -109,7 +114,7 @@ public:
         labelCRA->setFont(font3);
         labelTitulo = new QLabel(centralwidget);
         labelTitulo->setObjectName("labelTitulo");
-        labelTitulo->setGeometry(QRect(480, 30, 421, 41));
+        labelTitulo->setGeometry(QRect(480, 20, 421, 41));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font4.setPointSize(40);
@@ -118,7 +123,7 @@ public:
         labelTitulo->setStyleSheet(QString::fromUtf8("color:white"));
         groupBoxDiscAnd = new QGroupBox(centralwidget);
         groupBoxDiscAnd->setObjectName("groupBoxDiscAnd");
-        groupBoxDiscAnd->setGeometry(QRect(690, 120, 601, 261));
+        groupBoxDiscAnd->setGeometry(QRect(690, 110, 601, 261));
         groupBoxDiscAnd->setFont(font2);
         groupBoxDiscAnd->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         groupBoxDiscAnd->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: none; border-radius: 30px;"));
@@ -150,7 +155,7 @@ public:
         scrollAreaDiscAnd->setWidget(wi);
         labelDiscAnd = new QLabel(centralwidget);
         labelDiscAnd->setObjectName("labelDiscAnd");
-        labelDiscAnd->setGeometry(QRect(780, 90, 341, 21));
+        labelDiscAnd->setGeometry(QRect(820, 80, 341, 21));
         QFont font6;
         font6.setFamilies({QString::fromUtf8("Bookman Old Style")});
         font6.setPointSize(18);
@@ -159,20 +164,45 @@ public:
         labelDiscAnd->setStyleSheet(QString::fromUtf8("color: white"));
         botaoSimulacao = new QPushButton(centralwidget);
         botaoSimulacao->setObjectName("botaoSimulacao");
-        botaoSimulacao->setGeometry(QRect(340, 290, 331, 81));
+        botaoSimulacao->setGeometry(QRect(190, 560, 331, 81));
         botaoSimulacao->setFont(font1);
         botaoSimulacao->setToolTipDuration(-4);
         botaoSimulacao->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         botaoQuadrodeHorarios = new QPushButton(centralwidget);
         botaoQuadrodeHorarios->setObjectName("botaoQuadrodeHorarios");
-        botaoQuadrodeHorarios->setGeometry(QRect(50, 420, 251, 81));
+        botaoQuadrodeHorarios->setGeometry(QRect(220, 430, 251, 81));
         botaoQuadrodeHorarios->setFont(font1);
         botaoQuadrodeHorarios->setToolTipDuration(-4);
         botaoQuadrodeHorarios->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
+        groupBoxFaltas = new QGroupBox(centralwidget);
+        groupBoxFaltas->setObjectName("groupBoxFaltas");
+        groupBoxFaltas->setGeometry(QRect(690, 420, 601, 221));
+        groupBoxFaltas->setFont(font2);
+        groupBoxFaltas->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        groupBoxFaltas->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: none; border-radius: 30px;"));
+        scrollAreaWidgetContentsFaltas = new QScrollArea(groupBoxFaltas);
+        scrollAreaWidgetContentsFaltas->setObjectName("scrollAreaWidgetContentsFaltas");
+        scrollAreaWidgetContentsFaltas->setGeometry(QRect(20, 20, 561, 191));
+        scrollAreaWidgetContentsFaltas->setWidgetResizable(true);
+        wi_2 = new QWidget();
+        wi_2->setObjectName("wi_2");
+        wi_2->setGeometry(QRect(0, 0, 561, 191));
+        scrollAreaWidgetContentsFaltas->setWidget(wi_2);
+        labelDiscAnd_2 = new QLabel(centralwidget);
+        labelDiscAnd_2->setObjectName("labelDiscAnd_2");
+        labelDiscAnd_2->setGeometry(QRect(810, 390, 351, 21));
+        labelDiscAnd_2->setFont(font6);
+        labelDiscAnd_2->setStyleSheet(QString::fromUtf8("color: white"));
+        botaoRefresh = new QPushButton(centralwidget);
+        botaoRefresh->setObjectName("botaoRefresh");
+        botaoRefresh->setGeometry(QRect(1120, 650, 161, 31));
+        botaoRefresh->setFont(font1);
+        botaoRefresh->setToolTipDuration(-4);
+        botaoRefresh->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         TelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaInicial);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1308, 22));
+        menubar->setGeometry(QRect(0, 0, 1324, 22));
         TelaInicial->setMenuBar(menubar);
         statusbar = new QStatusBar(TelaInicial);
         statusbar->setObjectName("statusbar");
@@ -200,6 +230,9 @@ public:
         labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
         botaoSimulacao->setText(QCoreApplication::translate("TelaInicial", "Simular Planejamentos Semestrais", nullptr));
         botaoQuadrodeHorarios->setText(QCoreApplication::translate("TelaInicial", "Quadro de Hor\303\241rios", nullptr));
+        groupBoxFaltas->setTitle(QString());
+        labelDiscAnd_2->setText(QCoreApplication::translate("TelaInicial", "Acompanhamento de Faltas", nullptr));
+        botaoRefresh->setText(QCoreApplication::translate("TelaInicial", "Atualizar Faltas", nullptr));
     } // retranslateUi
 
 };

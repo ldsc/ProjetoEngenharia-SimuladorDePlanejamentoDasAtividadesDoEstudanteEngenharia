@@ -22,6 +22,8 @@ private slots:
     void aoClicarSimplesCelula(int row, int column);
     void aoSelecionarDisciplina(const QString& nomeSelecionado);
     void aoClicarExcluir();
+    void salvarQuadroComoImagem();
+
 
 private:
     Ui::QuadroDeHorarios *ui;

@@ -43,7 +43,7 @@ CRA: 8.5
 4 ; Calculo Numerico ; 8.0 ; Aprovada
 
 5 ; Geologia Fisica ; - ; Em Curso
-5 ; Introducao a Analise e Processamento de Sinais ; 8.0 ; Aprovada
+5 ; Introducao a Analise e Processamento de Sinais ; - ; Em Curso
 5 ; Resistencia dos Materiais ; 67.7 ; Aprovada
 5 ; Mecanica dos Fluidos ; - ; Em Curso
 5 ; Fisica-Matematica I ; 60.0 ; Aprovada
@@ -109,14 +109,42 @@ Disciplinas em Andamento:
 
 
 
+Introducao a Analise e Processamento de Sinais ; 0 ; Sabado:7h-9h; Trabalhos: -(1) ; Provas: -(1),-(1)
 
 
 
 
-Mecanica dos Fluidos ; 4 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 
 
-Geologia Fisica ; 2 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 100.0(3),-(3),-(1) ; Provas: 93.0(3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mecanica dos Fluidos ; 1 ; Quarta:10h-12h ; Trabalhos: -(1) ; Provas: 33.0(1),90.0(2)
+
+
+Geologia Fisica ; 0 ; Quinta:7h-9h; Trabalhos: 100.0(3),-(3),5.3(1) ; Provas: 93.0(3),-(1)
 
 
 
@@ -144,53 +172,8 @@ Geologia Fisica ; 2 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 100.0(
 
 # Formato: Nome da Atividade ; Dias e Horários
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
-Estudo Individual ; Quinta:14h-16h, Terca:14h-16h
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Academia ; Sexta:11h-12h
+Estudo Individual ; Terca:14h-16h
 
 
 

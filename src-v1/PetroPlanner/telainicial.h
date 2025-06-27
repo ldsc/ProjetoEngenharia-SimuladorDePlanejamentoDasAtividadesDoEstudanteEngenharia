@@ -25,6 +25,7 @@ public:
 
 private slots:
     void on_botaoVerGradeCompleta_clicked();
+    void on_botaoRefresh_clicked();
 
 private:
     Ui::TelaInicial *ui;
@@ -38,7 +39,7 @@ private:
     void abrirJanelaDisciplina(const std::string& nomeDisciplina);
     void abrirTelaSimulacao();
     void abrirQuadroDeHorarios();
-
+    void preencherFaltasEmGrupoBox(CAluno* aluno);
 
 
 

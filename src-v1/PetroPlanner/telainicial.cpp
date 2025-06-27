@@ -3,12 +3,13 @@
 #include "CAluno.h"
 #include <QMessageBox>
 #include <QScreen>
+#include <QFile>
+#include <QTextStream>
 
 TelaInicial::TelaInicial(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TelaInicial)
-    , gradeCompleta(nullptr)
-{
+    , gradeCompleta(nullptr){
     ui->setupUi(this);
 
     connect(ui->botaoSimulacao, &QPushButton::clicked, this, &TelaInicial::abrirTelaSimulacao);
@@ -26,6 +27,14 @@ TelaInicial::TelaInicial(QWidget *parent)
     this->setStyleSheet("background-color: #004AAD;");
 
     carregarInformacoesAluno();
+
+    QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContentsFaltas);
+    ui->scrollAreaWidgetContentsFaltas->setLayout(layout);
+
+    // Preenche a lista de faltas
+    preencherFaltasEmGrupoBox(&aluno);
+
+
 }
 
 TelaInicial::~TelaInicial()
@@ -147,4 +156,106 @@ void TelaInicial::abrirQuadroDeHorarios() {
     QuadroDeHorarios* quadro = new QuadroDeHorarios(&aluno, this);
     quadro->show();
 }
+
+
+void TelaInicial::preencherFaltasEmGrupoBox(CAluno* aluno) {
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->scrollAreaWidgetContentsFaltas->layout());
+    if (!layout) return;
+
+    // Limpa o conteúdo anterior
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    std::vector<CDisciplinas> todas = getDisciplinasCurso();
+
+    for (const CDisciplinas& disc : todas) {
+        QString nome = QString::fromStdString(disc.getNome()).trimmed();
+        int chSemanal = disc.getHoras();
+        if (chSemanal <= 0) continue;
+
+        // Verifica se é disciplina em andamento do aluno
+        auto it = std::find_if(aluno->disciplinasEmCurso.begin(), aluno->disciplinasEmCurso.end(),
+                               [&](const CDisciplinas& d) {
+                                   return QString::fromStdString(d.nome).trimmed() == nome;
+                               });
+        if (it == aluno->disciplinasEmCurso.end()) continue;
+
+        // Procura número de faltas no InformacoesAluno.txt
+        int faltasRegistradas = 0;
+        QFile file("InformacoesAluno.txt");
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+            while (!in.atEnd()) {
+                QString linha = in.readLine().trimmed();
+                if (linha.startsWith(nome + " ;")) {
+                    QString faltasStr = linha.section(";", 1, 1).trimmed();
+                    faltasRegistradas = faltasStr.toInt();
+                    break;
+                }
+            }
+            file.close();
+        }
+
+        int faltasPossiveis = static_cast<int>(0.25 * chSemanal * 4 * 4);
+        int faltasRestantes = faltasPossiveis - faltasRegistradas;
+
+        // Cria QLabel e QProgressBar
+        QLabel* label = new QLabel(nome);
+        QProgressBar* barra = new QProgressBar;
+        barra->setRange(0, faltasPossiveis);
+        barra->setValue(faltasRestantes);
+        barra->setFormat(QString("%1").arg(faltasRestantes));
+
+        QString cor;
+        if (faltasRestantes == faltasPossiveis)
+            cor = "#90ee90";
+        else if (faltasRestantes > 2)
+            cor = "orange";
+        else if (faltasRestantes == 1)
+            cor = "orangered";
+        else
+            cor = "red";
+
+
+
+        barra->setStyleSheet(
+            "QProgressBar {"
+            "  border: 2px solid blue;"
+            "  border-radius: 8px;"
+            "  text-align: center;"
+            "}"
+            "QProgressBar::chunk {"
+            "  background-color: #82b4cf;"
+            "  border-radius: 6px;"
+            "}"
+            );
+
+
+
+
+        // Adiciona horizontalmente
+        QHBoxLayout* linha = new QHBoxLayout;
+        linha->addWidget(label);
+        linha->addWidget(barra);
+
+        QWidget* container = new QWidget;
+        container->setLayout(linha);
+
+        layout->addWidget(container);
+    }
+
+    layout->addItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
+}
+
+
+
+void TelaInicial::on_botaoRefresh_clicked()
+{
+    aluno.lerDoArquivo("InformacoesAluno.txt"); // Atualiza os dados
+    preencherFaltasEmGrupoBox(&aluno);          // Atualiza o conteúdo das faltas
+}
+
 

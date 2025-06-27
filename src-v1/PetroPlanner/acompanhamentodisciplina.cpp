@@ -241,6 +241,9 @@ void AcompanhamentoDisciplina::aoClicarSalvar(){
 
     salvarAlteracoes();
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
+
+
+
 }
 
 

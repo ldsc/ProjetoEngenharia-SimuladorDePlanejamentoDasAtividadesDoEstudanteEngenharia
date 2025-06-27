@@ -31,6 +31,7 @@ public:
     QPushButton *botaoEditar;
     QPushButton *botaoSalvar;
     QPushButton *botaoExcluir;
+    QPushButton *botaoBaixar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -135,6 +136,12 @@ public:
         botaoExcluir->setFont(font1);
         botaoExcluir->setToolTipDuration(-4);
         botaoExcluir->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
+        botaoBaixar = new QPushButton(centralwidget);
+        botaoBaixar->setObjectName("botaoBaixar");
+        botaoBaixar->setGeometry(QRect(1050, 520, 131, 61));
+        botaoBaixar->setFont(font1);
+        botaoBaixar->setToolTipDuration(-4);
+        botaoBaixar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         QuadroDeHorarios->setCentralWidget(centralwidget);
         menubar = new QMenuBar(QuadroDeHorarios);
         menubar->setObjectName("menubar");
@@ -213,6 +220,7 @@ public:
         botaoEditar->setText(QCoreApplication::translate("QuadroDeHorarios", "Editar", nullptr));
         botaoSalvar->setText(QCoreApplication::translate("QuadroDeHorarios", "Salvar", nullptr));
         botaoExcluir->setText(QCoreApplication::translate("QuadroDeHorarios", "Excluir", nullptr));
+        botaoBaixar->setText(QCoreApplication::translate("QuadroDeHorarios", "Baixar", nullptr));
     } // retranslateUi
 
 };

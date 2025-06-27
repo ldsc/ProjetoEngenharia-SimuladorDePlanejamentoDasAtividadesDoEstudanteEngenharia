@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1308</width>
-    <height>728</height>
+    <width>1324</width>
+    <height>766</height>
    </rect>
   </property>
   <property name="font">
@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="botaoVerGradeCompleta">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>290</y>
+      <x>220</x>
+      <y>300</y>
       <width>251</width>
       <height>81</height>
      </rect>
@@ -187,7 +187,7 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>30</y>
+      <y>20</y>
       <width>421</width>
       <height>41</height>
      </rect>
@@ -210,7 +210,7 @@
     <property name="geometry">
      <rect>
       <x>690</x>
-      <y>120</y>
+      <y>110</y>
       <width>601</width>
       <height>261</height>
      </rect>
@@ -314,8 +314,8 @@
    <widget class="QLabel" name="labelDiscAnd">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>90</y>
+      <x>820</x>
+      <y>80</y>
       <width>341</width>
       <height>21</height>
      </rect>
@@ -337,8 +337,8 @@
    <widget class="QPushButton" name="botaoSimulacao">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>290</y>
+      <x>190</x>
+      <y>560</y>
       <width>331</width>
       <height>81</height>
      </rect>
@@ -363,8 +363,8 @@
    <widget class="QPushButton" name="botaoQuadrodeHorarios">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>420</y>
+      <x>220</x>
+      <y>430</y>
       <width>251</width>
       <height>81</height>
      </rect>
@@ -386,13 +386,112 @@
      <string>Quadro de Horários</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBoxFaltas">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>420</y>
+      <width>601</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Book Antiqua</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white; color: black; border: none; border-radius: 30px;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QScrollArea" name="scrollAreaWidgetContentsFaltas">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>561</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="wi_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>561</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelDiscAnd_2">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>390</y>
+      <width>351</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white</string>
+    </property>
+    <property name="text">
+     <string>Acompanhamento de Faltas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoRefresh">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>650</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Atualizar Faltas</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1308</width>
+     <width>1324</width>
      <height>22</height>
     </rect>
    </property>

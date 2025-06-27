@@ -47,7 +47,8 @@ template <> constexpr inline auto QuadroDeHorarios::qt_create_metaobjectdata<qt_
         "column",
         "aoSelecionarDisciplina",
         "nomeSelecionado",
-        "aoClicarExcluir"
+        "aoClicarExcluir",
+        "salvarQuadroComoImagem"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -65,6 +66,8 @@ template <> constexpr inline auto QuadroDeHorarios::qt_create_metaobjectdata<qt_
         }}),
         // Slot 'aoClicarExcluir'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'salvarQuadroComoImagem'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -93,6 +96,7 @@ void QuadroDeHorarios::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 2: _t->aoClicarSimplesCelula((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
         case 3: _t->aoSelecionarDisciplina((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 4: _t->aoClicarExcluir(); break;
+        case 5: _t->salvarQuadroComoImagem(); break;
         default: ;
         }
     }
@@ -117,14 +121,14 @@ int QuadroDeHorarios::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
