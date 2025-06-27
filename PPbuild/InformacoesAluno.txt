@@ -105,10 +105,18 @@ Disciplinas em Andamento:
 
 
 
-Mecanica dos Fluidos ; 3 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 
 
-Geologia Fisica ; 12 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 100.0(3),-(3),-(1) ; Provas: 93.0(3)
+
+
+
+
+
+
+Mecanica dos Fluidos ; 4 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
+
+
+Geologia Fisica ; 2 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 100.0(3),-(3),-(1) ; Provas: 93.0(3)
 
 
 
@@ -137,6 +145,14 @@ Geologia Fisica ; 12 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 100.0
 # Formato: Nome da Atividade ; Dias e Horários
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Estudo Individual ; Quinta:14h-16h, Terca:14h-16h
+
+
+
+
+
+
+
+
 
 
 

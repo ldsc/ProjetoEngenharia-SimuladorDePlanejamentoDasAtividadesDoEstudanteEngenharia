@@ -579,7 +579,7 @@ max-height: 12px;
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>400</y>
+      <y>340</y>
       <width>371</width>
       <height>31</height>
      </rect>
@@ -598,7 +598,7 @@ max-height: 12px;
     <property name="geometry">
      <rect>
       <x>830</x>
-      <y>450</y>
+      <y>390</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -646,7 +646,7 @@ max-height: 12px;
     <property name="geometry">
      <rect>
       <x>880</x>
-      <y>360</y>
+      <y>300</y>
       <width>421</width>
       <height>21</height>
      </rect>
@@ -663,6 +663,58 @@ max-height: 12px;
     </property>
     <property name="text">
      <string>Faltas Disponíveis:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoAdcFalta">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>430</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #a6a6a6; color: white; border-radius: 35px;</string>
+    </property>
+    <property name="text">
+     <string>+ Falta</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoRemFalta">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>430</y>
+      <width>70</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #a6a6a6; color: white; border-radius: 35px;</string>
+    </property>
+    <property name="text">
+     <string>- Falta</string>
     </property>
    </widget>
   </widget>

@@ -24,6 +24,8 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     ui->botaoRemProva->setEnabled(false);
     ui->botaoSalvar->setEnabled(false);
     ui->botaoFinalizarDisc->setEnabled(false);
+    ui->botaoAdcFalta->setEnabled(false);
+    ui->botaoRemFalta->setEnabled(false);
 
 
     connect(ui->botaoEditar, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarEditar);
@@ -33,6 +35,9 @@ AcompanhamentoDisciplina::AcompanhamentoDisciplina(const QString& nomeDisciplina
     connect(ui->botaoAdcProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarProva);
     connect(ui->botaoRemProva, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerProva);
     connect(ui->botaoFinalizarDisc, &QPushButton::clicked, this, &AcompanhamentoDisciplina::aoClicarFinalizarDisc);
+    connect(ui->botaoAdcFalta, &QPushButton::clicked, this, &AcompanhamentoDisciplina::adicionarFalta);
+    connect(ui->botaoRemFalta, &QPushButton::clicked, this, &AcompanhamentoDisciplina::removerFalta);
+
 
 
     QFile arquivo("InformacoesAluno.txt");
@@ -174,7 +179,8 @@ void AcompanhamentoDisciplina::aoClicarEditar() {
     ui->botaoRemProva->setStyleSheet("background-color: #ffa308; color: white;");
     ui->botaoRemTrab->setStyleSheet("background-color: #ffa308; color: white;");
     ui->botaoFinalizarDisc->setStyleSheet("background-color: #ffa308; color: white; border-radius: 30px;");
-
+    ui->botaoAdcFalta->setStyleSheet("background-color: #ffa308; color: white;");
+    ui->botaoRemFalta->setStyleSheet("background-color: #ffa308; color: white;");
 
     ui->botaoSalvar->setEnabled(true);
     ui->botaoAdcProva->setEnabled(true);
@@ -182,6 +188,9 @@ void AcompanhamentoDisciplina::aoClicarEditar() {
     ui->botaoRemProva->setEnabled(true);
     ui->botaoRemTrab->setEnabled(true);
     ui->botaoFinalizarDisc->setEnabled(true);
+    ui->botaoAdcFalta->setEnabled(true);
+    ui->botaoRemFalta->setEnabled(true);
+
 
     for (auto& e : entradasTrabalhos) {
         e.editNota->setReadOnly(false);
@@ -217,6 +226,8 @@ void AcompanhamentoDisciplina::aoClicarSalvar(){
     ui->botaoRemProva->setStyleSheet("background-color: #a6a6a6; color: white;");
     ui->botaoRemTrab->setStyleSheet("background-color: #a6a6a6; color: white;");
     ui->botaoFinalizarDisc->setStyleSheet("background-color: #a6a6a6; color: white; border-radius: 30px;");
+    ui->botaoAdcFalta->setStyleSheet("background-color: #a6a6a6; color: white; border-radius: 35px;");
+    ui->botaoRemFalta->setStyleSheet("background-color: #a6a6a6; color: white; border-radius: 35px;");
 
     ui->botaoSalvar->setEnabled(false);
     ui->botaoAdcProva->setEnabled(false);
@@ -224,6 +235,9 @@ void AcompanhamentoDisciplina::aoClicarSalvar(){
     ui->botaoRemProva->setEnabled(false);
     ui->botaoRemTrab->setEnabled(false);
     ui->botaoFinalizarDisc->setEnabled(false);
+    ui->botaoAdcFalta->setEnabled(false);
+    ui->botaoRemFalta->setEnabled(false);
+
 
     salvarAlteracoes();
     preencherAmbosLayouts(novaListaTrabalhos.join(","), novaListaProvas.join(","));
@@ -262,7 +276,7 @@ void AcompanhamentoDisciplina::salvarAlteracoes() {
             QStringList partes = linha.split(";");
             if (partes.size() >= 5) {
                 // Mantém faltas e dias/horários
-                QString faltas = partes[1].trimmed();
+                QString faltas = QString::number(faltasRegistradasTemp);
                 QString diasHorarios = partes[2].trimmed();
                 QString novaLinha = nomeAtualDisciplina + " ; " + faltas + " ; " + diasHorarios +
                                     " ; Trabalhos: " + novaListaTrabalhos.join(",") +
@@ -444,6 +458,9 @@ void AcompanhamentoDisciplina::atualizarFaltas() {
             }
         }
         file.close();
+
+
+
     }
 
     // 2. Procurar carga horária semanal da disciplina
@@ -462,6 +479,9 @@ void AcompanhamentoDisciplina::atualizarFaltas() {
     int faltasPossiveis = static_cast<int>(0.25 * chSemanal * 4 * 4);
     int faltasRestantes = faltasPossiveis - faltasRegistradas;
 
+    faltasRegistradasTemp = faltasRegistradas;
+    faltasPossiveisTemp = faltasPossiveis;
+
     // 4. Atualizar label
     ui->labelFaltas->setText(QString("Faltas: %1 / %2").arg(faltasRegistradas).arg(faltasPossiveis));
 
@@ -474,14 +494,66 @@ void AcompanhamentoDisciplina::atualizarFaltas() {
     QString cor;
     if (faltasRestantes == faltasPossiveis)
         cor = "#90ee90"; // verde claro
-    else if (faltasRestantes > 1)
+    else if (faltasRestantes > 2)
+        cor = "orange";
+    else if (faltasRestantes == 1)
+        cor = "orangered";
+    else if (faltasRestantes < 1)
+        cor = "red";
+
+    // 7. Aplicar estilo visual
+    ui->progressBarFaltas->setStyleSheet(QString(
+                                             "QProgressBar {"
+                                             "  border: 3px solid white;"
+                                             "  border-radius: 8px;"
+                                             "  background-color: white;"
+                                             "  text-align: center;"
+                                             "  color: black;"
+                                             "}"
+                                             "QProgressBar::chunk {"
+                                             "  background-color: %1;"
+                                             "  border-radius: 6px;"
+                                             "}").arg(cor));
+}
+
+
+
+void AcompanhamentoDisciplina::adicionarFalta() {
+    if (!modoEdicaoAtivo) return;
+
+    faltasRegistradasTemp++;
+    atualizarFaltasTemp(); // atualiza a barra e o label com o valor temporário
+}
+
+void AcompanhamentoDisciplina::removerFalta() {
+    if (!modoEdicaoAtivo) return;
+
+    if (faltasRegistradasTemp > 0)
+        faltasRegistradasTemp--;
+
+    atualizarFaltasTemp();
+}
+
+
+
+void AcompanhamentoDisciplina::atualizarFaltasTemp() {
+    int faltasRestantes = faltasPossiveisTemp - faltasRegistradasTemp;
+
+    ui->labelFaltas->setText(QString("Faltas: %1 / %2").arg(faltasRegistradasTemp).arg(faltasPossiveisTemp));
+    ui->progressBarFaltas->setRange(0, faltasPossiveisTemp);
+    ui->progressBarFaltas->setValue(faltasRestantes);
+    ui->progressBarFaltas->setFormat(QString("%1").arg(faltasRestantes));
+
+    QString cor;
+    if (faltasRestantes == faltasPossiveisTemp)
+        cor = "#90ee90";
+    else if (faltasRestantes > 2)
         cor = "orange";
     else if (faltasRestantes == 1)
         cor = "orangered";
     else
         cor = "red";
 
-    // 7. Aplicar estilo visual
     ui->progressBarFaltas->setStyleSheet(QString(
                                              "QProgressBar {"
                                              "  border: 3px solid white;"

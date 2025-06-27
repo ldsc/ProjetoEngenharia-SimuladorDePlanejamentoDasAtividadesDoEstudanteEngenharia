@@ -46,8 +46,10 @@ private:
 
     QSet<QLineEdit*> camposSimulados;
 
+    int faltasRegistradasTemp = 0;
+    int faltasPossiveisTemp = 0;
 
-
+    void atualizarFaltasTemp();
 
 
 private slots:
@@ -60,7 +62,10 @@ private slots:
     void salvarAlteracoes();
     void atualizarMedia();
     void aoClicarFinalizarDisc();
+    void adicionarFalta();
+    void removerFalta();
     void atualizarFaltas();
+
 
 
 
