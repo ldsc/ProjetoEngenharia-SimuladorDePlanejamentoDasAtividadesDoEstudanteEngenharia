@@ -28,11 +28,20 @@ TelaInicial::TelaInicial(QWidget *parent)
 
     carregarInformacoesAluno();
 
-    QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContentsFaltas);
-    ui->scrollAreaWidgetContentsFaltas->setLayout(layout);
+     if (!ui->scrollAreaWidgetContentsFaltas->layout()) {
+        QVBoxLayout* layout = new QVBoxLayout();
+        ui->scrollAreaWidgetContentsFaltas->setLayout(layout);
+    }
 
     // Preenche a lista de faltas
     preencherFaltasEmGrupoBox(&aluno);
+
+
+    ui->scrollAreaFaltas->setWidget(ui->scrollAreaWidgetContentsFaltas);
+    ui->scrollAreaFaltas->setWidgetResizable(true);
+    ui->scrollAreaWidgetContentsFaltas->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+    //ui->scrollAreaWidgetContentsFaltas->setMinimumHeight(600);
+
 
 
 }

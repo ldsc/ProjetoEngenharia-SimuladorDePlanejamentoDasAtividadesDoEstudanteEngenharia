@@ -138,7 +138,7 @@ public:
         botaoExcluir->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
         botaoBaixar = new QPushButton(centralwidget);
         botaoBaixar->setObjectName("botaoBaixar");
-        botaoBaixar->setGeometry(QRect(1050, 520, 131, 61));
+        botaoBaixar->setGeometry(QRect(1190, 610, 131, 61));
         botaoBaixar->setFont(font1);
         botaoBaixar->setToolTipDuration(-4);
         botaoBaixar->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));

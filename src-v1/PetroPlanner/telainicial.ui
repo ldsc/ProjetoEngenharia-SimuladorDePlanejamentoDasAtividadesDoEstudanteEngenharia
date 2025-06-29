@@ -412,27 +412,37 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QScrollArea" name="scrollAreaWidgetContentsFaltas">
+    <widget class="QScrollArea" name="scrollAreaFaltas">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
-       <width>561</width>
-       <height>191</height>
+       <y>19</y>
+       <width>551</width>
+       <height>181</height>
       </rect>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="wi_2">
+     <widget class="QWidget" name="scrollAreaWidgetContentsFaltas">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>561</width>
-        <height>191</height>
+        <width>551</width>
+        <height>181</height>
        </rect>
       </property>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>551</width>
+         <height>181</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

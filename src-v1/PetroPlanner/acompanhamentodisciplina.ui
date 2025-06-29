@@ -619,7 +619,7 @@ max-height: 12px;
    <widget class="QPushButton" name="botaoFinalizarDisc">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>1170</x>
       <y>600</y>
       <width>131</width>
       <height>61</height>

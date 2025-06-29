@@ -256,7 +256,7 @@ public:
         labelFaltas->setStyleSheet(QString::fromUtf8("color: white"));
         botaoFinalizarDisc = new QPushButton(centralwidget);
         botaoFinalizarDisc->setObjectName("botaoFinalizarDisc");
-        botaoFinalizarDisc->setGeometry(QRect(580, 600, 131, 61));
+        botaoFinalizarDisc->setGeometry(QRect(1170, 600, 131, 61));
         botaoFinalizarDisc->setFont(font5);
         botaoFinalizarDisc->setToolTipDuration(-4);
         botaoFinalizarDisc->setStyleSheet(QString::fromUtf8("background-color: #a6a6a6; color: white; border-radius: 30px;"));
