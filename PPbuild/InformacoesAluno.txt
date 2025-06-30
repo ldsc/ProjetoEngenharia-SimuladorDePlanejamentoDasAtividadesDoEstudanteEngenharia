@@ -36,7 +36,7 @@ CRA: 8.5
 3 ; Introducao a Probabilidade e Estatistica ; 8.0 ; Aprovada
 
 4 ; Quimica Organica ; 8.0 ; Aprovada
-4 ; Optativa do CCH ; 8.0 ; Aprovada
+4 ; Optativa do CCH ; 8.0 ; Nao Cursada
 4 ; Fisica III ; 8.0 ; Aprovada
 4 ; Fisica Experimental III ; 8.0 ; Aprovada
 4 ; Termodinamica para Engenharia ; 8.0 ; Aprovada
@@ -59,8 +59,8 @@ CRA: 8.5
 7 ; Geoquimica do Petroleo ; 8.0 ; Aprovada
 7 ; Estratigrafia e Sedimentacao ; 8.0 ; Aprovada
 7 ; Analise de Dados Experimentais ; 8.0 ; Aprovada
-7 ; Petrofisica Experimental ; - ; Em Curso
-7 ; Engenharia de Reservatorios II ; - ; Em Curso
+7 ; Petrofisica Experimental ; - ; Nao Cursada
+7 ; Engenharia de Reservatorios II ; - ; Nao Cursada
 7 ; Tecnicas de Modelamento Numerico I ; - ; Em Curso
 
 8 ; Geologia do Petroleo ; 61.0 ; Aprovada
@@ -70,7 +70,7 @@ CRA: 8.5
 8 ; Engenharia de Poco ; - ; Nao Cursada
 8 ; Projeto de Software Aplicado a Engenharia ; - ; Nao Cursada
 
-9 ; Perfilagem de Pocos II ; - ; Não Cursada
+9 ; Perfilagem de Pocos II ; - ; Nao Cursada
 9 ; Seminarios em Engenharia de Petroleo ; - ; Nao Cursada
 9 ; Optativa 1; - ; Nao Cursada
 9 ; Optativa 2 ; - ; Nao Cursada
@@ -90,7 +90,33 @@ CRA: 8.5
 # EXEMPLO: Mecanica dos Fluidos ; 0 ; Segunda:8h-10h, Quarta:8h-10h ; Trabalhos: 75.0(1),-(3) ; Provas: -(1)
 Disciplinas em Andamento:
 
-Petrofisica Experimental ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
+
+
+Fisica-Matematica I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
+
+
+Geologia Fisica ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,12 +129,10 @@ Petrofisica Experimental ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalho
 
 
 Tecnicas de Modelamento Numerico I ; 3 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
-Engenharia de Reservatorios II ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 
 
 
 Introducao ao Projeto de Engenharia ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
-Fisica-Matematica I ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 Resistencia dos Materiais ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: -(1) ; Provas: -(1)
 
 
@@ -166,7 +190,6 @@ Introducao a Analise e Processamento de Sinais ; 0 ; Sabado:7h-9h; Trabalhos: -(
 Mecanica dos Fluidos ; 1 ; Quarta:10h-12h ; Trabalhos: -(1) ; Provas: 33.0(1),90.0(2)
 
 
-Geologia Fisica ; 0 ; Quinta:7h-9h; Trabalhos: 100.0(3),-(3),5.3(1) ; Provas: 93.0(3),-(1)
 
 
 
@@ -196,6 +219,33 @@ Geologia Fisica ; 0 ; Quinta:7h-9h; Trabalhos: 100.0(3),-(3),5.3(1) ; Provas: 93
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Academia ; Sexta:11h-12h
 Estudo Individual ; Terca:14h-16h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

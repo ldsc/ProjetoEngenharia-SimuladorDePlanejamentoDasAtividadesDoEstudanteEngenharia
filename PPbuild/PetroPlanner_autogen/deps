@@ -163,6 +163,7 @@ PetroPlanner_autogen/timestamp: \
 	C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QCheckBox \
+	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QDialog \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QGridLayout \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QHBoxLayout \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/QLabel \
@@ -175,6 +176,7 @@ PetroPlanner_autogen/timestamp: \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qboxlayout.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qcheckbox.h \
+	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qdialog.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qframe.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qgridlayout.h \
 	C:/Qt/6.10.0/msvc2022_64/include/QtWidgets/qlabel.h \
@@ -454,6 +456,8 @@ PetroPlanner_autogen/timestamp: \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/CMakeLists.txt \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/acompanhamentodisciplina.cpp \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/acompanhamentodisciplina.h \
+	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/editardisciplinasemcurso.cpp \
+	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/editardisciplinasemcurso.h \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/main.cpp \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.cpp \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.h \
@@ -464,6 +468,7 @@ PetroPlanner_autogen/timestamp: \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/telainicial.cpp \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/telainicial.h \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/acompanhamentodisciplina.ui \
+	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/editardisciplinasemcurso.ui \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/modulogradecompleta.ui \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/quadrodehorarios.ui \
 	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/src-v1/PetroPlanner/simulacaoplanejamentosem.ui \

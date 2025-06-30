@@ -33,6 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         acompanhamentodisciplina.h acompanhamentodisciplina.cpp acompanhamentodisciplina.ui
         simulacaoplanejamentosem.h simulacaoplanejamentosem.cpp simulacaoplanejamentosem.ui
         quadrodehorarios.h quadrodehorarios.cpp quadrodehorarios.ui
+        editardisciplinasemcurso.h editardisciplinasemcurso.cpp editardisciplinasemcurso.ui
 
     )
 # Define target properties for Android with Qt 6 as:

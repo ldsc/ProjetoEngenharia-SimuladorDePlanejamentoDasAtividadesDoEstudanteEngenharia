@@ -40,6 +40,7 @@ private:
     void abrirTelaSimulacao();
     void abrirQuadroDeHorarios();
     void preencherFaltasEmGrupoBox(CAluno* aluno);
+    void abrirEditorDeDisciplinas();
 
 
 

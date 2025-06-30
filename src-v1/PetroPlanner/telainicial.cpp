@@ -1,5 +1,6 @@
 #include "telainicial.h"
 #include "ui_telainicial.h"
+#include "EditarDisciplinasEmCurso.h"
 #include "CAluno.h"
 #include <QMessageBox>
 #include <QScreen>
@@ -14,6 +15,7 @@ TelaInicial::TelaInicial(QWidget *parent)
 
     connect(ui->botaoSimulacao, &QPushButton::clicked, this, &TelaInicial::abrirTelaSimulacao);
     connect(ui->botaoQuadrodeHorarios, &QPushButton::clicked, this, &TelaInicial::abrirQuadroDeHorarios);
+    connect(ui->botaoEditarDisc, &QPushButton::clicked, this, &TelaInicial::abrirEditorDeDisciplinas);
 
 
 
@@ -66,8 +68,7 @@ void TelaInicial::on_botaoVerGradeCompleta_clicked()
 
 
 
-void TelaInicial::carregarInformacoesAluno()
-{
+void TelaInicial::carregarInformacoesAluno() {
 
     if (!this->aluno.lerDoArquivo("InformacoesAluno.txt")) {
         QMessageBox::warning(this, "Erro", "Não foi possível carregar o arquivo InformacoesAluno.txt");
@@ -268,3 +269,14 @@ void TelaInicial::on_botaoRefresh_clicked()
 }
 
 
+
+
+void TelaInicial::abrirEditorDeDisciplinas()
+{
+    EditarDisciplinasEmCurso* editor = new EditarDisciplinasEmCurso(&aluno, this);
+    if (editor->exec() == QDialog::Accepted) {
+        this->close();
+        TelaInicial* novaTela = new TelaInicial;
+        novaTela->show();
+    }
+}

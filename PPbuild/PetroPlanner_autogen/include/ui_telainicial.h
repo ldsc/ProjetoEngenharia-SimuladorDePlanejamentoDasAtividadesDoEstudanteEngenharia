@@ -41,6 +41,7 @@ public:
     QLabel *labelHorasEmCurso2;
     QScrollArea *scrollAreaDiscAnd;
     QWidget *wi;
+    QPushButton *botaoEditarDisc;
     QLabel *labelDiscAnd;
     QPushButton *botaoSimulacao;
     QPushButton *botaoQuadrodeHorarios;
@@ -154,6 +155,12 @@ public:
         wi->setObjectName("wi");
         wi->setGeometry(QRect(0, 0, 561, 191));
         scrollAreaDiscAnd->setWidget(wi);
+        botaoEditarDisc = new QPushButton(groupBoxDiscAnd);
+        botaoEditarDisc->setObjectName("botaoEditarDisc");
+        botaoEditarDisc->setGeometry(QRect(400, 220, 161, 31));
+        botaoEditarDisc->setFont(font1);
+        botaoEditarDisc->setToolTipDuration(-4);
+        botaoEditarDisc->setStyleSheet(QString::fromUtf8("background-color: #ffa308; color: white; border-radius: 30px;"));
         labelDiscAnd = new QLabel(centralwidget);
         labelDiscAnd->setObjectName("labelDiscAnd");
         labelDiscAnd->setGeometry(QRect(820, 80, 341, 21));
@@ -231,6 +238,7 @@ public:
         groupBoxDiscAnd->setTitle(QString());
         labelHorasEmCurso->setText(QCoreApplication::translate("TelaInicial", "Horas em curso:", nullptr));
         labelHorasEmCurso2->setText(QCoreApplication::translate("TelaInicial", "TextLabel", nullptr));
+        botaoEditarDisc->setText(QCoreApplication::translate("TelaInicial", "Editar Disciplinas", nullptr));
         labelDiscAnd->setText(QCoreApplication::translate("TelaInicial", "Disciplinas em Andamento", nullptr));
         botaoSimulacao->setText(QCoreApplication::translate("TelaInicial", "Simular Planejamentos Semestrais", nullptr));
         botaoQuadrodeHorarios->setText(QCoreApplication::translate("TelaInicial", "Quadro de Hor\303\241rios", nullptr));
