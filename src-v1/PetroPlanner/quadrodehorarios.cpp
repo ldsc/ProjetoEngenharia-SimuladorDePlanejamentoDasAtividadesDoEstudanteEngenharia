@@ -440,9 +440,48 @@ void QuadroDeHorarios::aoClicarSimplesCelula(int row, int column) {
             // Se for "Adicionar outra...", abre input para digitar
             if (nomeSelecionado == "Adicionar outra...") {
                 bool ok;
-                QString novaAtividade = QInputDialog::getText(this, "Nova Atividade",
-                                                              "Digite o nome da atividade:", QLineEdit::Normal,
-                                                              "", &ok);
+                QInputDialog inputDialog(this);
+                inputDialog.setWindowTitle("Nova Atividade");
+                inputDialog.setLabelText("Digite o nome da atividade:");
+                inputDialog.setStyleSheet(R"(
+    QInputDialog {
+        background-color: white;
+        color: black;
+    }
+
+    QLabel, QLineEdit {
+        color: black;
+        background-color: white;
+    }
+
+    QPushButton {
+        background-color: #ffa308;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    QPushButton:hover {
+        background-color: #e69500;
+    }
+)");
+
+                QString novaAtividade;
+
+                if (inputDialog.exec() == QDialog::Accepted) {
+                    QString novaAtividade = inputDialog.textValue().trimmed();
+                    if (!novaAtividade.isEmpty()) {
+                        nomeSelecionado = novaAtividade;
+                    } else {
+                        ui->tableWidgetQuadroHor->removeCellWidget(row, column);
+                        return;
+                    }
+                } else {
+                    ui->tableWidgetQuadroHor->removeCellWidget(row, column);
+                    return;
+                }
+
+
                 if (ok && !novaAtividade.trimmed().isEmpty()) {
                     nomeSelecionado = novaAtividade.trimmed();
                 } else {
@@ -579,7 +618,6 @@ void QuadroDeHorarios::aoClicarExcluir()
 void QuadroDeHorarios::salvarQuadroComoImagem() {
     QTableWidget* tabela = ui->tableWidgetQuadroHor;
 
-    // Calcula o tamanho total (incluindo cabeçalhos)
     int larguraTotal = tabela->verticalHeader()->width();
     for (int col = 0; col < tabela->columnCount(); ++col)
         larguraTotal += tabela->columnWidth(col);
@@ -588,14 +626,10 @@ void QuadroDeHorarios::salvarQuadroComoImagem() {
     for (int row = 0; row < tabela->rowCount(); ++row)
         alturaTotal += tabela->rowHeight(row);
 
-    // Cria uma imagem do tamanho total calculado
     QPixmap imagem(larguraTotal, alturaTotal);
     imagem.fill(Qt::white);
-
-    // Renderiza a tabela inteira (com cabeçalhos)
     tabela->render(&imagem, QPoint(0, 0));
 
-    // Gera o nome do arquivo
     QString nomeArquivo = "Quadro de Horários.png";
     int contador = 1;
     while (QFile::exists(nomeArquivo)) {
@@ -603,10 +637,36 @@ void QuadroDeHorarios::salvarQuadroComoImagem() {
     }
 
     if (imagem.save(nomeArquivo)) {
-        QMessageBox::information(this, "Sucesso", "Imagem salva como " + nomeArquivo);
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Sucesso");
+        msgBox.setText("Imagem salva como " + nomeArquivo);
+        msgBox.setStyleSheet(R"(
+            QMessageBox {
+                background-color: white;
+                color: black;
+            }
+
+            QLabel {
+                color: black;
+                background-color: white;
+            }
+
+            QPushButton {
+                background-color: #ffa308;
+                color: white;
+                border-radius: 5px;
+                padding: 5px;
+            }
+
+            QPushButton:hover {
+                background-color: #e69500;
+            }
+        )");
+        msgBox.exec();
     } else {
         QMessageBox::warning(this, "Erro", "Falha ao salvar a imagem.");
     }
 }
+
 
 

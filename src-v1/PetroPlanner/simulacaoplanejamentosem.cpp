@@ -191,8 +191,32 @@ void SimulacaoPlanejamentoSEM::salvarComoImagem() {
             chk->show();
 
     if (imagem.save(nomeArquivo)) {
-        QMessageBox::information(this, "Sucesso", "Imagem salva como " + nomeArquivo);
+
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Sucesso");
+        msgBox.setText("Imagem salva como " + nomeArquivo);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setStyleSheet(
+            "QLabel { color: black; font-size: 14px; }"
+            "QPushButton { background-color: #82b4cf; color: black; padding: 6px 12px; border-radius: 10px; font-weight: bold; }"
+            "QPushButton:hover { background-color: #7ab2d6; }"
+            );
+        msgBox.exec();
+
+
     } else {
-        QMessageBox::warning(this, "Erro", "Falha ao salvar a imagem.");
+
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Erro");
+        msgBox.setText("Falha ao salvar a imagem.");
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setStyleSheet(
+            "QLabel { color: black; font-size: 14px; }"
+            "QPushButton { background-color: #f28b82; color: black; padding: 6px 12px; border-radius: 10px; font-weight: bold; }"
+            "QPushButton:hover { background-color: #e57373; }"
+            );
+        msgBox.exec();
+
+
     }
 }
