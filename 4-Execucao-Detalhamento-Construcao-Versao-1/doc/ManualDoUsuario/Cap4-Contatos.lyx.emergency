@@ -127,183 +127,78 @@
 
 \begin_body
 
-\begin_layout Part
-Manual do Usuário 
-\begin_inset Newline newline
-\end_inset
-
-PetroPlanner
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Manual do Usuário
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Manual-do-Usuário"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
-Instalação
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Instalação
-\end_layout
-
-\end_inset
-
-
+Contatos
 \end_layout
 
 \begin_layout Standard
-A seguir instruções para instalação do software.
-\end_layout
-
-\begin_layout Section
-Baixando o software
+O presente projeto de engenharia foi desenvolvido por alunos do curso de engenharia de petróleo da UENF sob coordenação do Professor André Duarte Bueno.
 \end_layout
 
 \begin_layout Standard
-O software foi disponibilizado no site 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/ldsc/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia.git"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o link correto para o seu projeto no site https://github.com/ldsc/nomeProjetoEspecifico
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Lá você encontra instruções atualizadas para baixar e instalar.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-coloque as instruções:
-\end_layout
-
-\begin_layout Plain Layout
-git clone https://github.com/ldsc/nomeProjetoEspecifico
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Dependências
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Dependências
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para compilar o software é necessário atender as seguintes dependências:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicione aqui todas as dependências para instalação do software
-\end_layout
-
-\end_inset
-
-
+Para maiores informações entre em contato com os desenvolvedores:
 \end_layout
 
 \begin_layout Itemize
-Instalar o compilador g++ da GNU disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-name "http://gcc.gnu.org"
-target "http://gcc.gnu.org"
-literal "false"
-
-\end_inset
-
-.
+Autor 1:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Para instalar no GNU/Linux use o comando 
-\family typewriter
-dnf install gcc
-\family default
-.
+Abigail Ribeiro Pinto Silva Guimarães
+\end_layout
+
+\begin_layout Itemize
+<abigailribeiro777@gmail.com>
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Instalar a biblioteca Qt disponível em 
+Autor 2:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maria Luiza Cornelio Ramos
+\end_layout
+
+\begin_layout Itemize
+<mariacorneliocr@gmail.com>
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Coordenador:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prof.
+ André Duarte Bueno
+\end_layout
+
+\begin_layout Itemize
+<bueno@lenep.uenf.br>
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Referências
+\end_layout
+
+\begin_layout Standard
+O projeto foi desenvolvido tomando como base o modelo disponibilizado no site:
+\end_layout
+
+\begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
-target "https://www.qt.io/download"
+target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica"
+literal "false"
 
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-apague se não usa Qt;
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Note que você deve testar a instalação seguindo exatamente o que colocou nesta seção
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body

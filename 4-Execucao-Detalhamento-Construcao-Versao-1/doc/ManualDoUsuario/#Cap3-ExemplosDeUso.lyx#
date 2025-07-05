@@ -144,7 +144,7 @@ thechapter - Teste}
 \end_layout
 
 \begin_layout Standard
-Nesta parte do projeto apresentamos alguns exemplos de uso do software.
+Nesta 
 \end_layout
 
 \begin_layout Section
@@ -260,26 +260,7 @@ Atualizar Faltas
 ,
  visto que também conseguem ser visualizadas através da sessão de Acompanhamento de Faltas.
  Por fim,
- ao o aluno finalizar a disciplina,
- ele clica em 
-\begin_inset Quotes eld
-\end_inset
-
-Finalizar
-\begin_inset Quotes erd
-\end_inset
-
- para que o status da disciplina mude para aprovado ou reprovado,
- imagem 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AcompanhamentoDiscTeste_Finalizar"
-nolink "false"
-
-\end_inset
-
-,
- e a disciplina deixe de aparecer na tela inicial.
+ o aluno finaliza 
 \end_layout
 
 \begin_layout Standard
@@ -294,7 +275,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/ClicarDiscAnd.png
-	lyxscale 70
+	lyxscale 40
 	scale 10
 
 \end_inset
@@ -588,6 +569,17 @@ name "fig:AcompanhamentoDiscTeste_AdcFaltas"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AcompanhamentoDiscTeste_Finalizar"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
