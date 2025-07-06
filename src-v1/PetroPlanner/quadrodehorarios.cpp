@@ -113,6 +113,7 @@ void QuadroDeHorarios::aoClicarSalvar() {
 
     for (CDisciplinas& disc : aluno->disciplinasEmCurso) {
         QString nome = QString::fromStdString(disc.nome).trimmed();
+
         if (horariosPorDisciplina.contains(nome)) {
             QStringList blocosOriginais = horariosPorDisciplina[nome];
             QMap<QString, QList<QPair<int, int>>> blocosPorDia;
@@ -146,8 +147,12 @@ void QuadroDeHorarios::aoClicarSalvar() {
             }
 
             disc.diasHorarios = blocosUnidos.join(",");
+        } else {
+            // Essa disciplina foi removida completamente do quadro -> atualizar como "vazia"
+            disc.diasHorarios = "InserirDiaDeAula,InserirHorariosDaAula";
         }
     }
+
 
     // Processa atividades extras
     QStringList novasAtividadesExtras;
