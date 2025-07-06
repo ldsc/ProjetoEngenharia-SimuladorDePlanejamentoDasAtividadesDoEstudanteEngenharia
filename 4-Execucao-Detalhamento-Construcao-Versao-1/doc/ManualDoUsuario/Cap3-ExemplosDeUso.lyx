@@ -643,48 +643,190 @@ name "sec: Exemplo-2"
 \end_inset
 
 :
- Descrição
+ Realizar Planejamento Semestral
 \end_layout
 
 \begin_layout Standard
-Explique,
- passo a passo,
- e de forma detalhada o que irá fazer.
-\end_layout
+Como forma de ajudar os estudantes de Engenharia de Petróleo a planejarem quais disciplinas vão pegar até finalizar o curso sem que realizem escolhas que comprometam seu tempo de graduação,
+ este software possui um Módulo de Simulação de Planejamento Semestral.
+ Para acessar,
+ basta clicar em 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Itemize
-Importante falar aonda o usuário deve clicar,
- o que deve informar,
- quais as entradas e saídas;
-\end_layout
+Simular Planejamento Semestral
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Itemize
-Coloque figuras ilustrativas;
-\end_layout
-
-\begin_layout Itemize
-A ideia é fazer com que o usuário realize uma determinada atividade usando o software e compreendendo claramente o que esta fazendo.
-\end_layout
-
-\begin_layout Itemize
-Como sugestão monte estes exemplos tomando como base os testes realizados no manual de desenvolvimento.
-\end_layout
-
-\begin_layout Standard
-Veja Figura 
+ na Tela Inicial,
+ conforme indicado em 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-1"
+reference "fig:PlanejSemTeste_TelaInicial"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
 .
-\begin_inset Note Note
+ Para este teste,
+ estamos considerando um aluno que cursou as disciplinas em verde e está cursando atualmente as disciplinas em amarelo da imagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_Grade"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ O PetroPlanner analisa as disciplinas já realizadas pelo aluno e detecta em que semestre o aluno está,
+ assim mostrará apenas as opções de disciplinas disponíveis no semestre em questão (pares ou ímpares),
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ De mesma forma,
+ o programa só apresenta como opção disciplinas que o aluno pode cursar,
+ considerando o cumprimento de pré-requisitos.
+ O estudante deve então marcar as checkboxes das disciplinas que deseja cursar no próximo semestre e clicar em 
+\begin_inset Quotes eld
+\end_inset
+
+Avançar Semestre
+\begin_inset Quotes erd
+\end_inset
+
+ quando terminar,
+ como exemplo da imagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ No próximo semestre,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ considera-se que o aluno passará nas disciplinas do semestre seguinte e mostra,
+ então,
+ as próximas disciplinas disponíveis do período em questão que o aluno ainda não cursou.
+ O aluno deve seguir avançando semestre,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ até que todas as disciplinas acabem.
+ Por último,
+ ao clicar no botão 
+\begin_inset Quotes eld
+\end_inset
+
+Salvar PNG
+\begin_inset Quotes erd
+\end_inset
+
+,
+ conforme figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_5"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ o aluno terá sua simulação salva para futuras comparações.
+ O arquivo gerado nesta etapa de teste encontra-se na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Na Figura simulador desenvolvido pelo aluno Tiago Schauwer
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_TelaInicial.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Acesso ao Módulo de Simulção de Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_TelaInicial"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -703,8 +845,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-Simulador-Tiago.png
-	width 100text%
+	filename imagens/PlanejSemTeste_Grade.png
+	lyxscale 40
+	scale 10
 
 \end_inset
 
@@ -715,10 +858,259 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Grade atual do aluno para a Simulação do Planejamento Semestral.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-1"
+name "fig:PlanejSemTeste_Grade"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_1.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela Inicial do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_2.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Escolha das disciplinas a se cursar no próximo período na Simulação de Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_3.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Função 'Avançar Semestre' na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_4.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Próxima escolha das disciplinas na simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_6.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Função 'Salvar PNG' na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_7.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem salva na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_6"
 
 \end_inset
 
