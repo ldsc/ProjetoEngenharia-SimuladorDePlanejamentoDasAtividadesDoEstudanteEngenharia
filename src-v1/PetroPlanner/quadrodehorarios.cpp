@@ -344,7 +344,7 @@ void QuadroDeHorarios::carregarAtividadesExtras()
             QString horaIniStr = faixa.section("-", 0, 0).remove("h").trimmed();
             QString horaFimStr = faixa.section("-", 1, 1).remove("h").trimmed();
 
-            bool okIni, okFim;
+           bool okIni = false, okFim = false;
             int horaIni = horaIniStr.toInt(&okIni);
             int horaFim = horaFimStr.toInt(&okFim);
 
@@ -474,13 +474,20 @@ void QuadroDeHorarios::aoClicarSimplesCelula(int row, int column) {
                 QString novaAtividade;
 
                 if (inputDialog.exec() == QDialog::Accepted) {
-                    QString novaAtividade = inputDialog.textValue().trimmed();
+                    novaAtividade = inputDialog.textValue().trimmed();
                     if (!novaAtividade.isEmpty()) {
                         nomeSelecionado = novaAtividade;
                     } else {
                         ui->tableWidgetQuadroHor->removeCellWidget(row, column);
                         return;
                     }
+                } else {
+                    ui->tableWidgetQuadroHor->removeCellWidget(row, column);
+                    return;
+                }
+
+                if (!novaAtividade.trimmed().isEmpty()) {
+                    nomeSelecionado = novaAtividade.trimmed();
                 } else {
                     ui->tableWidgetQuadroHor->removeCellWidget(row, column);
                     return;

@@ -738,7 +738,56 @@ nolink "false"
  considera-se que o aluno passará nas disciplinas do semestre seguinte e mostra,
  então,
  as próximas disciplinas disponíveis do período em questão que o aluno ainda não cursou.
- O aluno deve seguir 
+ O aluno deve seguir avançando semestre,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ até que todas as disciplinas acabem.
+ Por último,
+ ao clicar no botão 
+\begin_inset Quotes eld
+\end_inset
+
+Salvar PNG
+\begin_inset Quotes erd
+\end_inset
+
+,
+ conforme figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_5"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ o aluno terá sua simulação salva para futuras comparações.
+ O arquivo gerado nesta etapa de teste encontra-se na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PlanejSemTeste_6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1087,7 +1136,7 @@ name "sec: Exemplo-3"
 \end_inset
 
 :
- Descrição
+ Montar Quadro de Horários
 \end_layout
 
 \begin_layout Standard
@@ -1115,18 +1164,6 @@ Como sugestão monte estes exemplos tomando como base os testes realizados no ma
 \end_layout
 
 \begin_layout Standard
-Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -1137,9 +1174,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-SimuladorTranscal-Nicholas.png
-	lyxscale 25
-	width 100text%
+	filename imagens/QuadroDeHorarios_Teste_TelaInicial.png
+	lyxscale 40
+	scale 10
 
 \end_inset
 
@@ -1150,10 +1187,420 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Acesso ao Módulo de Montagem do Quadro de Horários.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1"
+name "fig:QuadroDeHorarios_Teste_TelaInicial"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_Padrao.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Padrão do txt do Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_Padrao"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_DiscEmAnd.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo Disciplinas em Andamento ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_InserirDisc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_InserirDisc.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo uma disciplina ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_InserirDisc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_AdcAtivExtra.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo Atividades Extras ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_AdcAtivExtra"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_AdcEstagio.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo uma Atividade Extra ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_AdcEstagio"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_EstagioAdicionado.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atividade Extra inserida no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_EstagioAdicionado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_Baixarpng.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Função Baixar .
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_Baixarpng"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_7.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem salva na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_6-9"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_7.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem salva na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_6-10"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/PlanejSemTeste_7.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagem salva na Simulação do Planejamento Semestral.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PlanejSemTeste_6-11"
 
 \end_inset
 

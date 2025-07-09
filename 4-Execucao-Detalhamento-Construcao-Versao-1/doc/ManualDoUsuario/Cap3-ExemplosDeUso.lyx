@@ -1136,7 +1136,7 @@ name "sec: Exemplo-3"
 \end_inset
 
 :
- Descrição
+ Montar Quadro de Horários
 \end_layout
 
 \begin_layout Standard
@@ -1164,18 +1164,6 @@ Como sugestão monte estes exemplos tomando como base os testes realizados no ma
 \end_layout
 
 \begin_layout Standard
-Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -1186,9 +1174,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-SimuladorTranscal-Nicholas.png
-	lyxscale 25
-	width 100text%
+	filename imagens/QuadroDeHorarios_Teste_TelaInicial.png
+	lyxscale 40
+	scale 10
 
 \end_inset
 
@@ -1199,10 +1187,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Acesso ao Módulo de Montagem do Quadro de Horários.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1"
+name "fig:QuadroDeHorarios_Teste_TelaInicial"
 
 \end_inset
 
@@ -1217,22 +1205,416 @@ name "fig:Teste-TelaPrograma-Captura1-1"
 \end_inset
 
 
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_Padrao.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Padrão do txt do Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_Padrao"
+
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
 \end_inset
 
-Não perca de vista a visão do todo;
- explique para o usuário o que é e como funciona o software;
- lembre-se que ele não desenvolveu nada,
- apenas vai usar!
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_DiscEmAnd.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo Disciplinas em Andamento ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste_InserirDisc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_InserirDisc.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo uma disciplina ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_InserirDisc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_AdcDiscTXT.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resposta do txt à Adição de uma Disciplina no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_AdcDiscTXT"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_AdcAtivExtra.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo Atividades Extras ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_AdcAtivExtra"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_AdcEstagio.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inserindo uma Atividade Extra ao Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_AdcEstagio"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_EstagioAdicionado.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Atividade Extra inserida no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_EstagioAdicionado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_AtvExtra.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resposta do txt à Adição de uma Atividade Extra no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_AtvExtra"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_Baixarpng.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Baixando Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_Baixarpng"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_PNG.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quadro de Horários baixado.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroHorariosBaixado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

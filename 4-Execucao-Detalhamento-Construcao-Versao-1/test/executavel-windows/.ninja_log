@@ -1,0 +1,16 @@
+# ninja log v6
+47	3169	7738068078993345	PetroPlanner_autogen/timestamp	9db0ef3310fcf34b
+47	3169	7738068078993345	PetroPlanner_autogen/mocs_compilation.cpp	9db0ef3310fcf34b
+47	3169	7738068078993345	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/PetroPlanner_autogen/timestamp	9db0ef3310fcf34b
+47	3169	7738068078993345	C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/PetroPlanner_autogen/mocs_compilation.cpp	9db0ef3310fcf34b
+3200	9037	7738068080303364	CMakeFiles/PetroPlanner.dir/CDisciplinas.cpp.obj	4503c56c77c8a194
+3188	9310	7738068080183365	CMakeFiles/PetroPlanner.dir/main.cpp.obj	f14ba33d41a630ff
+3183	10112	7738068080143734	CMakeFiles/PetroPlanner.dir/PetroPlanner_autogen/mocs_compilation.cpp.obj	e81379d1733fb79b
+3206	10220	7738068080373348	CMakeFiles/PetroPlanner.dir/CAluno.cpp.obj	782bdf2bba58e146
+3194	10841	7738068080243387	CMakeFiles/PetroPlanner.dir/telainicial.cpp.obj	80afa041f41517a
+3212	10872	7738068080433354	CMakeFiles/PetroPlanner.dir/modulogradecompleta.cpp.obj	b08495d9d5cbb5ca
+3236	11409	7738068080663357	CMakeFiles/PetroPlanner.dir/editardisciplinasemcurso.cpp.obj	d562c7674e280aa8
+3218	12014	7738068080493360	CMakeFiles/PetroPlanner.dir/acompanhamentodisciplina.cpp.obj	ffba9f3703c1c089
+3224	12262	7738068080553355	CMakeFiles/PetroPlanner.dir/simulacaoplanejamentosem.cpp.obj	47dd908ff6334af0
+3230	14083	7738068080603354	CMakeFiles/PetroPlanner.dir/quadrodehorarios.cpp.obj	be779a6074b6b99
+14084	14326	7738068189145132	PetroPlanner.exe	46b8ce4f6a84b55c
