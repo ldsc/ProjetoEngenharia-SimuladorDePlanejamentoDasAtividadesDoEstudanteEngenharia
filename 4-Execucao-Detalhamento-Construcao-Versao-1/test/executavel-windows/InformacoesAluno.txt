@@ -94,10 +94,16 @@ Disciplinas em Andamento:
 
 
 
+<<<<<<< HEAD
 Optativa do CCH ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 60.0(1) ; Provas: -(1)
+=======
+
+
+Optativa do CCH ; 0 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: 60.0(1) ; Provas: -(1)
+>>>>>>> cb846d778b155c7f549cc246d7830b4ba0ec1390
 Fisica-Matematica I ; 1 ; Terca:7h-9h; Trabalhos: -(1) ; Provas: -(1)
 Introducao ao Projeto de Engenharia ; 0 ; Sexta:7h-8h; Trabalhos: -(1) ; Provas: -(1)
-Introducao a Analise e Processamento de Sinais ; 0 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: -(1),-(1)
+Introducao a Analise e Processamento de Sinais ; 0 ; Terca:9h-10h; Trabalhos: -(1) ; Provas: -(1),-(1)
 Mecanica dos Fluidos ; 1 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: 33.0(1),90.0(2)
 
 

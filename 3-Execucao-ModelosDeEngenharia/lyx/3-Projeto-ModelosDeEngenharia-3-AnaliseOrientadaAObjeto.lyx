@@ -165,45 +165,213 @@ name "sec:AOO"
 
 \begin_layout Standard
 A Análise Orientada a Objeto (AOO) corresponde à terceira etapa do desenvolvimento de um software,
- sendo aplicada após a etapa de levantamento de requisitos e definição dos módulos.
+ sendo aplicada após o levantamento de requisitos e definição dos módulos.
  No projeto PetroPlanner,
- essa análise permitiu identificar os principais objetos do domínio acadêmico de um estudante de Engenharia de Petróleo,
+ essa análise permitiu mapear os principais elementos do domínio acadêmico de um estudante de Engenharia de Petróleo,
  como disciplinas,
  aluno,
- telas de interação e funcionalidades associadas.
+ telas de interação e funcionalidades de apoio ao planejamento.
 \end_layout
 
 \begin_layout Standard
 A AOO tem como objetivo descrever o que deve ser feito pelo sistema,
- sem ainda se preocupar com a implementação final.
- Nessa fase,
+ abstraindo-se da forma como será implementado.
+ A partir dela,
  são definidos:
 \end_layout
 
 \begin_layout Itemize
-os objetos que representam conceitos do problema real;
+os objetos que representam conceitos reais do problema;
 \end_layout
 
 \begin_layout Itemize
-as classes correspondentes no modelo de software;
+as classes que traduzem esses objetos para o software;
 \end_layout
 
 \begin_layout Itemize
-os atributos e métodos que caracterizam esses objetos;
+os atributos e métodos que caracterizam cada classe;
 \end_layout
 
 \begin_layout Itemize
-os relacionamentos entre eles (associações,
- agregações e composições);
+os relacionamentos existentes entre as classes (como associação,
+ composição e dependência);
 \end_layout
 
 \begin_layout Itemize
-e as dependências entre módulos da aplicação.
+e as interações entre os módulos que compõem o sistema.
 \end_layout
 
 \begin_layout Standard
-O modelo gerado busca ser conciso e simplificado,
- servindo como ponte entre os requisitos e a futura etapa de implementação.
+
+\series bold
+3.1 Classes principais
+\end_layout
+
+\begin_layout Standard
+O sistema identifica como classes fundamentais:
+\end_layout
+
+\begin_layout Itemize
+CAluno:
+ representa o estudante,
+ com seus dados pessoais,
+ CRA,
+ período atual e disciplinas associadas.
+\end_layout
+
+\begin_layout Itemize
+CDisciplinas:
+ representa uma disciplina do curso,
+ com nome,
+ carga horária,
+ pré-requisitos e demais atributos acadêmicos.
+\end_layout
+
+\begin_layout Itemize
+TelaInicial:
+ classe que centraliza a navegação do sistema,
+ conectando o usuário às principais funcionalidades.
+\end_layout
+
+\begin_layout Itemize
+ModuloGradeCompleta:
+ exibe visualmente a grade curricular,
+ destacando disciplinas conforme seu status.
+\end_layout
+
+\begin_layout Itemize
+QuadroDeHorarios:
+ permite a organização visual da semana do aluno,
+ distribuindo aulas e atividades em uma tabela.
+\end_layout
+
+\begin_layout Itemize
+SimulacaoPlanejamentoSEM:
+ simula os próximos períodos letivos com base nas disciplinas ainda não cursadas.
+\end_layout
+
+\begin_layout Itemize
+EditarDisciplinasEmCurso:
+ interface para selecionar e ajustar as disciplinas que o aluno está cursando no momento.
+\end_layout
+
+\begin_layout Itemize
+AcompanhamentoDisciplina:
+ exibe os detalhes de uma disciplina específica,
+ como notas,
+ trabalhos,
+ horários e faltas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.2 Relacionamentos identificados
+\end_layout
+
+\begin_layout Standard
+A análise também evidenciou importantes relacionamentos entre as classes:
+\end_layout
+
+\begin_layout Itemize
+A classe TelaInicial possui e manipula uma instância de CAluno,
+ sendo o ponto central de consulta aos dados.
+\end_layout
+
+\begin_layout Itemize
+CAluno mantém vetores com instâncias de CDisciplinas,
+ classificando-as como em curso,
+ aprovadas ou não cursadas.
+\end_layout
+
+\begin_layout Itemize
+Módulos como ModuloGradeCompleta,
+ QuadroDeHorarios e SimulacaoPlanejamentoSEM dependem dos dados da classe CAluno para funcionar corretamente.
+\end_layout
+
+\begin_layout Itemize
+A interação entre classes de interface e dados é feita via composição ou agregação,
+ com ponteiros que mantêm a comunicação entre elas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.3 Papéis das classes
+\end_layout
+
+\begin_layout Standard
+Cada classe foi estruturada com responsabilidades bem definidas,
+ respeitando os princípios de coesão e baixo acoplamento:
+\end_layout
+
+\begin_layout Itemize
+Classes de domínio (CAluno,
+ CDisciplinas):
+ concentram os dados e regras do domínio acadêmico.
+\end_layout
+
+\begin_layout Itemize
+Classes de interface (UI):
+ promovem a interação com o usuário,
+ atualizando a visualização e recebendo entradas.
+\end_layout
+
+\begin_layout Itemize
+Classes de controle (como SimulacaoPlanejamentoSEM):
+ atuam na lógica intermediária,
+ processando dados e orquestrando funcionalidades.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.4 Diagramas gerados
+\end_layout
+
+\begin_layout Standard
+Como resultado da AOO,
+ foram elaborados os seguintes diagramas UML:
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Classes:
+ mostra as classes do sistema,
+ seus atributos,
+ métodos e relacionamentos.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Pacotes:
+ organiza os principais módulos e suas dependências.
+\end_layout
+
+\begin_layout Itemize
+Diagramas de Sequência:
+ ilustram cenários típicos de interação,
+ como simular um semestre ou salvar o quadro de horários.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Comunicação:
+ destaca os objetos envolvidos em uma operação e como trocam mensagens.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Estado:
+ modela o comportamento de uma disciplina ao longo do tempo (não cursada,
+ em curso,
+ aprovada).
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Atividades:
+ descreve o fluxo geral de ações desde o login do aluno até o uso das ferramentas.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Componentes e de Implantação:
+ representam a estrutura de arquivos do sistema e sua distribuição no ambiente computacional.
 \end_layout
 
 \begin_layout Section
@@ -218,16 +386,14 @@ name "sec:Diagramas-de-classes"
 \end_layout
 
 \begin_layout Standard
-O diagrama de classes é apresentado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-classes"
-nolink "false"
-
-\end_inset
-
-.
- 
+Este diagrama representa a estrutura estática do sistema,
+ mostrando as principais classes,
+ seus atributos e métodos,
+ além das relações entre elas.
+ Por exemplo,
+ a classe CAluno armazena os dados do estudante e interage com a classe CDisciplinas,
+ que representa cada disciplina da grade curricular.
+ As classes de interface como TelaInicial e SimulacaoPlanejamentoSEM utilizam essas informações para apresentar e manipular os dados na aplicação.
 \end_layout
 
 \begin_layout Standard
@@ -241,7 +407,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/{685F78C6-887B-45EA-A037-9134D302FBEA}.png
+	filename C:/Users/abiga/Downloads/2. Diagrama de Classes – Estrutura de classes.png
+	width 100text%
 
 \end_inset
 
@@ -283,8 +450,13 @@ name "subsec:Dicionário-de-classes"
 
 \end_layout
 
-\begin_layout Standard
-Classe CDisciplinas representa uma disciplina da grade curricular de Engenharia de Petróleo.
+\begin_layout Description
+Classe CDisciplinas
+\end_layout
+
+\begin_layout Description
+Descrição:
+ Representa uma disciplina da grade curricular do curso de Engenharia de Petróleo.
 \end_layout
 
 \begin_layout Standard
@@ -300,35 +472,55 @@ nome,
 \end_layout
 
 \begin_layout Itemize
-preRequisitos e coRequisitos:
- lista de dependências curriculares.
+preRequisitos,
+ coRequisitos:
+ listas com os nomes das disciplinas exigidas como pré ou co-requisitos.
 \end_layout
 
 \begin_layout Itemize
 eixoTematico,
  ciclo,
  nivelDificuldade:
- usados para classificação e organização.
+ classificações curriculares para organização acadêmica.
+\end_layout
+
+\begin_layout Itemize
+horaSemanalAula:
+ indica a carga horária semanal da disciplina.
+\end_layout
+
+\begin_layout Itemize
+diasHorarios:
+ horários da disciplina no formato string para exibição e manipulação.
 \end_layout
 
 \begin_layout Standard
-Métodos:
+Métodos principais:
 \end_layout
 
 \begin_layout Itemize
 getNome(),
- getCreditos(),
- getPeriodo():
- permitem acessar as informações da disciplina.
+ getHoras(),
+ getCH():
+ acessores para nome,
+ horas semanais e carga horária total.
 \end_layout
 
 \begin_layout Itemize
 exibirInformacoes():
- utilizado para apresentar os dados ao usuário.
+ imprime no console os dados completos da disciplina.
+\end_layout
+
+\begin_layout Description
+Classe CAluno
+\end_layout
+
+\begin_layout Description
+Descrição:
 \end_layout
 
 \begin_layout Standard
-Classe CAluno armazena as informações acadêmicas do aluno logado no sistema.
+Armazena todas as informações acadêmicas de um aluno.
 \end_layout
 
 \begin_layout Standard
@@ -341,73 +533,61 @@ nome,
  curso,
  periodo,
  cra:
- dados pessoais e acadêmicos.
+ dados pessoais e acadêmicos do aluno.
 \end_layout
 
 \begin_layout Itemize
-Três vetores de disciplinas:
+disciplinasEmCurso,
+ disciplinasAprovadas,
+ disciplinasNaoCursadas:
+ vetores que organizam as disciplinas de acordo com o status do aluno.
 \end_layout
 
 \begin_layout Itemize
-disciplinasEmCurso
-\end_layout
-
-\begin_layout Itemize
-disciplinasAprovadas
-\end_layout
-
-\begin_layout Itemize
-disciplinasNaoCursadas
+atividadesExtras:
+ lista com atividades não obrigatórias inseridas pelo aluno (como monitorias ou estudos livres).
 \end_layout
 
 \begin_layout Standard
-Métodos:
+Métodos principais:
 \end_layout
 
 \begin_layout Itemize
 lerDoArquivo(caminho):
- importa os dados do aluno a partir de um arquivo.
+ carrega os dados do aluno a partir do arquivo InformacoesAluno.txt.
 \end_layout
 
 \begin_layout Itemize
-calcularCreditosEmCurso():
- soma os créditos das disciplinas em andamento.
+calcularHorasEmCurso():
+ soma as horas semanais das disciplinas em andamento.
+\end_layout
+
+\begin_layout Itemize
+calcularCHTotalCursada():
+ soma a carga horária total das disciplinas já aprovadas.
+\end_layout
+
+\begin_layout Description
+Classe TelaInicial
+\end_layout
+
+\begin_layout Description
+Descrição:
 \end_layout
 
 \begin_layout Standard
-Classe ModuloGradeCompleta é a interface que apresenta todas as disciplinas da grade do curso,
- destacando aquelas já concluídas,
- em curso e não cursadas.
-\end_layout
-
-\begin_layout Itemize
-Relação com CAluno:
- Possui um atributo do tipo CAluno,
- a partir do qual acessa as disciplinas do aluno.
+Interface principal da aplicação.
+ É o ponto de entrada para todas as funcionalidades oferecidas ao usuário.
 \end_layout
 
 \begin_layout Standard
-Métodos:
-\end_layout
-
-\begin_layout Itemize
-carregarDisciplinas():
- monta visualmente a grade a partir dos dados do aluno.
-\end_layout
-
-\begin_layout Standard
-Classe TelaInicial é a tela principal da aplicação,
- por onde o aluno inicia a navegação.
-\end_layout
-
-\begin_layout Itemize
 Atributos principais:
 \end_layout
 
 \begin_layout Itemize
 aluno:
  instância da classe CAluno,
- que armazena os dados do estudante.
+ contendo todos os dados do estudante logado.
 \end_layout
 
 \begin_layout Itemize
@@ -415,137 +595,274 @@ gradeCompleta:
  ponteiro para a janela ModuloGradeCompleta.
 \end_layout
 
+\begin_layout Itemize
+telaSimulacao:
+ ponteiro para a janela de simulação de planejamento (SimulacaoPlanejamentoSEM).
+\end_layout
+
 \begin_layout Standard
-Métodos:
+Métodos principais:
 \end_layout
 
 \begin_layout Itemize
 carregarInformacoesAluno():
- busca os dados do arquivo.
+ atualiza a interface com os dados extraídos do arquivo.
 \end_layout
 
 \begin_layout Itemize
-on_botaoVerGradeCompleta_clicked():
- evento acionado pelo botão para abrir a grade.
+PreencherDisciplinasEmCurso():
+ exibe botões com as disciplinas em andamento.
 \end_layout
 
 \begin_layout Itemize
 abrirJanelaDisciplina(nomeDisciplina):
- permite exibir detalhes de uma disciplina clicada.
+ abre a janela de acompanhamento daquela disciplina.
+\end_layout
+
+\begin_layout Itemize
+abrirTelaSimulacao(),
+ abrirQuadroDeHorarios(),
+ abrirEditorDeDisciplinas():
+ métodos de navegação entre módulos.
+\end_layout
+
+\begin_layout Description
+Classe ModuloGradeCompleta
+\end_layout
+
+\begin_layout Description
+Descrição:
 \end_layout
 
 \begin_layout Standard
-Classe AcompanhamentoDisciplina representa uma janela ou módulo que permite visualizar detalhes de uma disciplina selecionada pelo usuário.
+Interface visual responsável por exibir toda a grade curricular do curso,
+ destacando disciplinas aprovadas,
+ em curso e não cursadas.
 \end_layout
 
 \begin_layout Standard
-Atributos:
+Relação com CAluno:
+\end_layout
+
+\begin_layout Itemize
+Recebe um ponteiro ou instância de CAluno para montar a grade com base nos dados do estudante.
+\end_layout
+
+\begin_layout Standard
+Métodos principais:
+\end_layout
+
+\begin_layout Itemize
+carregarDisciplinas():
+ percorre o vetor de disciplinas e monta visualmente a grade,
+ utilizando cores ou estilos diferentes conforme o status da disciplina.
+\end_layout
+
+\begin_layout Description
+Classe EditarDisciplinasEmCurso
+\end_layout
+
+\begin_layout Description
+Descrição:
+\end_layout
+
+\begin_layout Standard
+Interface que permite ao usuário adicionar ou remover disciplinas que está cursando no momento.
+\end_layout
+
+\begin_layout Standard
+Atributos principais:
+\end_layout
+
+\begin_layout Itemize
+aluno:
+ ponteiro para o aluno atual.
+\end_layout
+
+\begin_layout Itemize
+checkboxes:
+ mapa entre o nome das disciplinas e os checkboxes que representam o estado de seleção.
+\end_layout
+
+\begin_layout Standard
+Métodos principais:
+\end_layout
+
+\begin_layout Itemize
+on_buttonBox_accepted():
+ salva as alterações feitas pelo usuário no arquivo InformacoesAluno.txt.
+\end_layout
+
+\begin_layout Itemize
+on_buttonBox_rejected():
+ descarta mudanças e fecha a interface.
+\end_layout
+
+\begin_layout Description
+Classe QuadroDeHorarios
+\end_layout
+
+\begin_layout Standard
+Descrição:
+\end_layout
+
+\begin_layout Itemize
+Tela que permite ao usuário visualizar,
+ editar e exportar seu quadro semanal de horários.
+\end_layout
+
+\begin_layout Standard
+Atributos principais:
+\end_layout
+
+\begin_layout Itemize
+aluno:
+ ponteiro para o aluno atual.
+\end_layout
+
+\begin_layout Itemize
+mapaCores:
+ mapeia disciplinas/atividades para cores fixas.
+\end_layout
+
+\begin_layout Itemize
+coresDisponiveis:
+ lista de cores pré-definidas.
+\end_layout
+
+\begin_layout Itemize
+modoEdicaoAtivo:
+ controla o modo de edição.
+\end_layout
+
+\begin_layout Standard
+Métodos principais:
+\end_layout
+
+\begin_layout Itemize
+preencherQuadro():
+ popula a grade visual com as disciplinas e atividades do aluno.
+\end_layout
+
+\begin_layout Itemize
+aoClicarSalvar():
+ atualiza o quadro e grava os novos horários no arquivo.
+\end_layout
+
+\begin_layout Itemize
+salvarQuadroComoImagem():
+ exporta o quadro como imagem .png.
+\end_layout
+
+\begin_layout Description
+Classe SimulacaoPlanejamentoSEM
+\end_layout
+
+\begin_layout Description
+Descrição:
+\end_layout
+
+\begin_layout Standard
+Interface que permite simular futuros períodos do curso,
+ testando combinações de disciplinas elegíveis.
+\end_layout
+
+\begin_layout Standard
+Atributos principais:
+\end_layout
+
+\begin_layout Itemize
+aluno:
+ ponteiro para o aluno atual.
+\end_layout
+
+\begin_layout Itemize
+semestres:
+ vetor com as simulações feitas.
+\end_layout
+
+\begin_layout Itemize
+disciplinasDisponiveis,
+ disciplinasAprovadas,
+ disciplinasEmCurso:
+ vetores que filtram as disciplinas segundo critérios acadêmicos.
+\end_layout
+
+\begin_layout Standard
+Métodos principais:
+\end_layout
+
+\begin_layout Itemize
+avancarSemestre():
+ cria um novo bloco visual com disciplinas possíveis para o próximo período.
+\end_layout
+
+\begin_layout Itemize
+salvarComoImagem():
+ exporta a simulação feita como imagem.
+\end_layout
+
+\begin_layout Itemize
+preRequisitosOk(disciplina):
+ verifica se os pré-requisitos de uma disciplina foram cumpridos.
+\end_layout
+
+\begin_layout Description
+Classe AcompanhamentoDisciplina
+\end_layout
+
+\begin_layout Description
+Descrição:
+\end_layout
+
+\begin_layout Standard
+Janela de detalhes que exibe o progresso em uma disciplina específica.
+\end_layout
+
+\begin_layout Standard
+Atributos principais:
 \end_layout
 
 \begin_layout Itemize
 ui:
- interface da janela.
-\end_layout
-
-\begin_layout Standard
-Métodos:
+ componente de interface gerado pelo Qt Designer.
 \end_layout
 
 \begin_layout Itemize
-Construtores e destrutores para gerenciar a interface.
+nomeDisciplina:
+ nome da disciplina selecionada.
+\end_layout
+
+\begin_layout Standard
+Métodos principais:
+\end_layout
+
+\begin_layout Itemize
+Construtor e destrutor para iniciar e liberar a interface corretamente.
+\end_layout
+
+\begin_layout Itemize
+Métodos de exibição (como atualização de nota,
+ faltas,
+ observações),
+ caso existam.
 \end_layout
 
 \begin_layout Section
-Diagrama de seqüência – eventos
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-Eventos
-\end_layout
-
-\end_inset
-
- e mensagens
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-Mensagens
-\end_layout
-
-\end_inset
-
-
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-Diagrama de sequência
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:diagrama de sequência"
-
-\end_inset
-
-
+Diagrama de Sequência – Eventos e mensagens gerais
 \end_layout
 
 \begin_layout Standard
 
 \shape italic
 \emph on
-O diagrama de seqüência enfatiza a troca de eventos e mensagens e sua ordem temporal.
- Contém informações sobre o fluxo de controle do software.
- Costuma ser montado a partir de um diagrama de caso de uso e estabelece o relacionamento dos atores (usuários e sistemas externos) com alguns objetos do sistema.
-\end_layout
-
-\begin_layout Subsection
-
-\shape italic
-\emph on
-Diagrama de sequência geral
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec: Diagrama de sequência geral"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Veja o 
-\shape italic
-\emph on
-diagrama de seqüência na
-\shape default
-\emph default
- Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-sequencia"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-[Aqui a ênfase é o entendimento da sequência com que as mensagens são trocadas,
- a ordem temporal.]
+Este diagrama representa o fluxo de execução típico do sistema durante a interação do usuário com a interface principal.
+ Ele descreve como os objetos trocam mensagens e em que ordem isso ocorre.
+ A sequência inicia com ações do usuário,
+ como clicar em botões,
+ e segue com chamadas a métodos das classes para carregar,
+ processar e exibir informações sobre disciplinas,
+ faltas e simulações.
 \end_layout
 
 \begin_layout Standard
@@ -559,7 +876,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeSequencia-Eventos.png
+	filename C:/Users/abiga/Downloads/3. Diagrama de Sequência – Eventos e mensagens gerais.png
 	lyxscale 50
 	width 100text%
 
@@ -572,7 +889,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de seqüência
+Diagrama de seqüência - eventos e mensagens 
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-sequencia"
@@ -590,123 +907,22 @@ name "cap:Diagrama-de-sequencia"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-deve mostrar uma sequência geral
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
 
 \shape italic
 \emph on
-Diagrama de sequência específico
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec: Diagrama de sequência específico"
-
-\end_inset
-
-
+Diagrama de Sequência Específico – Selecionar disciplina na simulação
 \end_layout
 
 \begin_layout Standard
-...
-\end_layout
-
-\begin_layout Itemize
-[deve mostrar uma sequência específica;
- NÃO É PARA REPETIR O GERAL COM 1-2 coisas diferentes!
-\end_layout
-
-\begin_layout Standard
-é um novo diagrama;
- detalhando algo!
- ]
-\end_layout
-
-\begin_layout Section
-Diagrama de comunicação
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-comunicação
-\end_layout
-
-\end_inset
-
- – colaboração
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-colaboração
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Diagrama-de-Comunicação"
-
-\end_inset
-
-
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-Diagrama de colaboração
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "par:Diagrama-de-colaboração:"
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-No diagrama de comunicação o foco é a interação e a troca de mensagens e dados entre os objetos.
- 
-\end_layout
-
-\begin_layout Itemize
-[Pode ser a repetição de um diagrama de sequência;
- mas note que o formato do gráfico é diferente,
- aqui a ênfase é o entendimento das mensagens que chegam e saem de cada objeto.]
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Diagrama-de-Comunicação"
-nolink "false"
-
-\end_inset
-
- o diagrama de comunicação mostrando a sequência de blablabla.
- Observe que ....
+Este diagrama representa um cenário específico de interação:
+ a seleção de disciplinas durante a simulação de planejamento.
+ Ele detalha como o sistema responde à ação do usuário ao escolher uma disciplina,
+ atualizando a lista de disciplinas simuladas,
+ criando botões visuais e verificando os pré-requisitos.
+ É útil para demonstrar a lógica de um caso de uso pontual e importante no sistema.
 \end_layout
 
 \begin_layout Standard
@@ -720,7 +936,72 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComunicacao.png
+	filename C:/Users/abiga/Downloads/4. Diagrama de Sequência Específico – Selecionar disciplina na simulação.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+\emph on
+Diagrama de sequência específico
+\shape default
+\emph default
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-sequencia-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de Comunicação – Colaboração entre classes 
+\end_layout
+
+\begin_layout Standard
+Este diagrama representa a interação entre os objetos durante a execução de funcionalidades,
+ com ênfase na troca de mensagens.
+ Ao contrário do diagrama de sequência,
+ que foca na ordem,
+ este mostra quem colabora com quem.
+ Ele evidencia,
+ por exemplo,
+ como a tela de simulação (SimulacaoPlanejamentoSEM) comunica-se com o objeto CAluno e como este acessa as informações das disciplinas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/abiga/Downloads/5. Diagrama de Comunicação – Colaboração entre classes.png
 	lyxscale 85
 	width 100text%
 
@@ -733,7 +1014,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de comunicação
+Diagrama de Comunicação – Colaboração entre classes 
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-comunicação"
@@ -754,72 +1035,16 @@ name "cap:Diagrama-de-comunicação"
 \end_layout
 
 \begin_layout Section
-Diagrama de estado
-\begin_inset Index idx
-range none
-pageformat default
-status collapsed
-
-\begin_layout Plain Layout
-estado
-\end_layout
-
-\end_inset
-
-
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Diagrama de estado
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:diagrama de estados"
-
-\end_inset
-
-
+Diagrama de Estados – Estados da disciplina na simulação
 \end_layout
 
 \begin_layout Standard
-Um diagrama de máquina de estado representa os diversos estados que o objeto assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo de um processo (histórico do objeto).
- É usado para modelar aspectos dinâmicos do objeto.
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-maquina-de-estado"
-nolink "false"
-
-\end_inset
-
- o diagrama de máquina de estado para o objeto XXX.
- Observe que....
-\end_layout
-
-\begin_layout Itemize
-Lembre-se,
- são os estados de um objeto específico e não uma sequência de cálculo;
- as sequência já foram mostrados nos diagramas de sequência e comunicação!!
-\end_layout
-
-\begin_layout Itemize
-Vou repetir;
- Não faça o diagrama de máquina de estado como sendo uma repetição dos diagramas de sequência!
- 
-\end_layout
-
-\begin_layout Itemize
-Este diagrama trata dos estados de um objeto único/específico!
+Este diagrama representa o ciclo de vida de uma disciplina dentro do sistema,
+ de acordo com a situação do aluno.
+ Uma disciplina pode estar nos estados “Não Cursada”,
+ “Em Curso” ou “Aprovada”,
+ e as transições entre esses estados ocorrem conforme os dados do aluno são atualizados ou modificados pelo usuário.
+ Esse diagrama é útil para representar regras de negócio relacionadas ao progresso acadêmico.
 \end_layout
 
 \begin_layout Standard
@@ -833,7 +1058,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeEstado-ClasseSimulador.png
+	filename C:/Users/abiga/Downloads/6. Diagrama de Estados – Estados da disciplina na simulação.png
 	lyxscale 50
 	width 100text%
 
@@ -867,51 +1092,15 @@ name "cap:Diagrama-de-maquina-de-estado"
 \end_layout
 
 \begin_layout Section
-Diagrama de atividades
-\begin_inset CommandInset label
-LatexCommand label
-name "sec: Diagrama de atividades"
-
-\end_inset
-
-
+Diagrama de Atividades – Fluxo da tela de simulação
 \end_layout
 
 \begin_layout Standard
-.....
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-atividades"
-nolink "false"
-
-\end_inset
-
- o diagrama de atividades correspondente a uma atividade específica do diagrama de máguina de estado.
- Observe que....
-\end_layout
-
-\begin_layout Standard
-...descrever em detalhes uma atividade específica..não pode ser a sequência de uso geral,
- trata-se de um caso específico,
- detalhado do diagrama de máquina de estado.
-\end_layout
-
-\begin_layout Itemize
-Lembrar que o diagrama de sequência é a representação de um método de cálculo específico.
- 
-\end_layout
-
-\begin_layout Itemize
-Não é para fazer o diagrama de atividades do método de gerenciamento!!!
-\end_layout
-
-\begin_layout Itemize
-Coloque aqui um diagrama de atividades que mostra contas/cálculos!
- 
+Este diagrama representa o fluxo de atividades do usuário na tela de simulação de planejamento.
+ Ele mostra as decisões possíveis,
+ como selecionar disciplinas elegíveis,
+ avançar para o próximo semestre ou cancelar a ação.
+ Essa representação ajuda a visualizar o comportamento do sistema sob a perspectiva do usuário e garante que todas as possibilidades estão cobertas no design.
 \end_layout
 
 \begin_layout Standard
@@ -925,7 +1114,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeAtividade-1.png
+	filename C:/Users/abiga/Downloads/7. Diagrama de Atividades – Fluxo da tela de simulação.png
 	lyxscale 85
 	width 100text%
 
@@ -956,27 +1145,6 @@ name "cap:Diagrama-de-atividades"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

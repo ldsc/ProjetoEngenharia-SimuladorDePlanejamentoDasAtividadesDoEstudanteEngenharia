@@ -184,36 +184,84 @@ name "sec:Justificativas"
 \end_layout
 
 \begin_layout Standard
-A justificativa para o desenvolvimento do PetroPlanner está fundamentada na crescente necessidade dos estudantes de Engenharia de Petróleo de otimizarem sua jornada acadêmica diante de uma matriz curricular extensa,
- com múltiplos pré-requisitos,
- exigências de atividades complementares e práticas profissionais obrigatórias.
+O PetroPlanner foi idealizado para responder à crescente demanda de apoio inteligente ao planejamento acadêmico por parte de estudantes de Engenharia de Petróleo,
+ uma área caracterizada por uma matriz curricular extensa e interdependente,
+ com forte carga horária e diversas exigências extracurriculares (como extensão,
+ IC,
+ estágios e TCC).
 \end_layout
 
 \begin_layout Standard
-O projeto visa preencher uma lacuna observada na ausência de ferramentas personalizadas para o planejamento acadêmico no contexto da engenharia.
- Atualmente,
- os estudantes utilizam planilhas,
- anotações manuais ou ferramentas genéricas que não consideram a complexidade e as interdependências da matriz curricular do curso.
+Atualmente,
+ muitos alunos utilizam métodos manuais (planilhas,
+ cadernos,
+ blocos de notas) ou aplicativos genéricos,
+ que não contemplam a complexidade de pré-requisitos,
+ a distribuição semanal de carga horária,
+ nem a dinâmica de progressão acadêmica exigida pela formação em engenharia.
 \end_layout
 
 \begin_layout Standard
-O PetroPlanner propõe uma solução de engenharia de software que simula diferentes trajetórias acadêmicas,
- calcula carga horária semanal ideal,
- estima CR futuro e auxilia na tomada de decisões.
- A ferramenta incorpora conceitos de sistemas especialistas,
- simulação computacional e engenharia de requisitos,
- sendo aplicável tanto no contexto universitário quanto em processos internos de monitoramento e gestão acadêmica por coordenadores de curso.
+O PetroPlanner surge como uma solução de engenharia de software especializada,
+ integrando:
+\end_layout
+
+\begin_layout Itemize
+Simuladores de trajetória acadêmica,
+ considerando atrasos,
+ reprovações e cenários alternativos;
+\end_layout
+
+\begin_layout Itemize
+Cálculo de carga horária semanal;
+\end_layout
+
+\begin_layout Itemize
+Estimativa do CRA futuro,
+ com sugestões de notas-alvo;
+\end_layout
+
+\begin_layout Itemize
+Monitoramento de faltas e atividades complementares.
 \end_layout
 
 \begin_layout Standard
-Além do uso educacional,
- a abordagem metodológica empregada (modelagem matemática,
- programação orientada a objetos,
- simulação e banco de dados) é aplicável a diversos outros problemas de engenharia,
- como simulação de transferência de calor e massa em meios porosos,
- planejamento de sistemas de produção,
- otimização de recursos logísticos,
- entre outros.
+Além de ser didaticamente útil para estudantes,
+ o sistema tem aplicação potencial para coordenadores e núcleos pedagógicos de cursos de engenharia,
+ como ferramenta de visualização e acompanhamento.
+\end_layout
+
+\begin_layout Standard
+A metodologia utilizada combina:
+\end_layout
+
+\begin_layout Itemize
+Modelagem matemática e simulação computacional;
+\end_layout
+
+\begin_layout Itemize
+Programação orientada a objetos (C++ com Qt);
+\end_layout
+
+\begin_layout Itemize
+Engenharia de requisitos e arquitetura em camadas.
+\end_layout
+
+\begin_layout Standard
+Essa abordagem é transferível para diversas áreas da engenharia,
+ como:
+\end_layout
+
+\begin_layout Itemize
+Simulação de sistemas térmicos,
+\end_layout
+
+\begin_layout Itemize
+Planejamento de projetos logísticos,
+\end_layout
+
+\begin_layout Itemize
+Gerenciamento de recursos e produção.
 \end_layout
 
 \begin_layout Section
@@ -227,24 +275,37 @@ name "sec:Resultados-Esperados"
 
 \end_layout
 
-\begin_layout Itemize
-Um simulador de engenharia com interface amigável,
- desenvolvido em C++ com Qt,
- capaz de modelar e simular a trajetória acadêmica de estudantes de Engenharia de Petróleo.
+\begin_layout Standard
+O projeto espera entregar:
 \end_layout
 
 \begin_layout Itemize
-Manuais técnico-científicos explicando a lógica de funcionamento,
- os algoritmos utilizados e os testes realizados.
+Um simulador completo e funcional,
+ com interface gráfica desenvolvida em C++/Qt,
+ capaz de prever e planejar a trajetória acadêmica de alunos da Engenharia de Petróleo.
 \end_layout
 
 \begin_layout Itemize
-Um sistema validado em ambiente de testes,
- com usuários reais (estudantes) utilizando a ferramenta em situações práticas.
+Manuais de usuário e desenvolvedor,
+ com detalhamento técnico da arquitetura,
+ algoritmos implementados e fluxos de uso.
 \end_layout
 
 \begin_layout Itemize
-Publicação dos códigos-fonte e documentação em repositório aberto (GitHub) e apresentação oral do projeto para a comunidade acadêmica.
+Sistema testado com dados reais,
+ por meio da utilização prática de alunos voluntários e análise de resultados em situações reais e simuladas.
+\end_layout
+
+\begin_layout Itemize
+Código-fonte documentado e publicado em repositório GitHub,
+ com guia de instalação,
+ execução e compilação.
+\end_layout
+
+\begin_layout Itemize
+Apresentação pública do projeto,
+ demonstrando a interface,
+ os cálculos internos e os diferenciais em relação a ferramentas existentes.
 \end_layout
 
 \begin_layout Section
@@ -258,46 +319,154 @@ name "sec:Metodologia"
 
 \end_layout
 
-\begin_layout Itemize
-Modelagem matemática do problema:
- o planejamento acadêmico é tratado como um sistema sujeito a restrições (pré-requisitos,
- tempo,
- carga horária).
+\begin_layout Standard
+
+\series bold
+Modelagem Matemática
 \end_layout
 
 \begin_layout Itemize
-Construção de protótipos:
- será utilizado o modelo de desenvolvimento incremental,
- com entregas parciais (mínimos produtos viáveis – MVPs).
+O problema foi estruturado como um sistema sujeito a restrições,
+ como pré-requisitos,
+ carga mínima semanal e exigências complementares (extensão,
+ TCC,
+ estágio etc.).
 \end_layout
 
 \begin_layout Itemize
-Programação orientada a objetos,
- utilizando C++ com o framework Qt para interface gráfica,
- e SQLite como banco de dados local.
+Foram definidos parâmetros de entrada,
+ regras de validação e limitações operacionais.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Prototipagem e MVPs
 \end_layout
 
 \begin_layout Itemize
-Construção de diagramas UML (casos de uso,
- classes,
- pacotes) para organização da arquitetura do sistema.
+Cada versão liberada (v0.1,
+ v0.3,
+ v0.7...) corresponde a um produto mínimo viável (MVP),
+ permitindo entregas parciais e incrementais.
 \end_layout
 
 \begin_layout Itemize
-Simulação computacional:
- algoritmos serão aplicados para prever diferentes trajetórias possíveis e seus impactos sobre o desempenho acadêmico.
+A arquitetura do sistema foi pensada em módulos independentes:
+ grade curricular,
+ acompanhamento de disciplinas,
+ simulador de planejamento,
+ quadro de horários,
+ entre outros.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Programação Orientada a Objetos
 \end_layout
 
 \begin_layout Itemize
-Validação com usuários reais:
- estudantes testarão o sistema com base em seus históricos reais ou simulados.
+Implementada em C++ utilizando o framework Qt para interface gráfica.
 \end_layout
 
 \begin_layout Itemize
-Documentação:
- todas as fases do projeto serão documentadas,
- incluindo os testes,
- resultados e ajustes feitos ao longo do desenvolvimento.
+A estrutura modular utilizou classes como CAluno,
+ CDisciplinas,
+ TelaInicial,
+ ModuloGradeCompleta,
+ entre outras.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+UML e Engenharia de Requisitos
+\end_layout
+
+\begin_layout Standard
+Foram elaborados diagramas UML para suportar a estruturação e organização do software:
+\end_layout
+
+\begin_layout Itemize
+Casos de uso
+\end_layout
+
+\begin_layout Itemize
+Pacotes e camadas
+\end_layout
+
+\begin_layout Itemize
+Classes e relações
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Simulação Computacional
+\end_layout
+
+\begin_layout Standard
+Simulação de diferentes trajetórias acadêmicas com algoritmos que:
+\end_layout
+
+\begin_layout Itemize
+Avaliam impacto de adiamento de disciplinas,
+\end_layout
+
+\begin_layout Itemize
+Calculam CR projetado,
+\end_layout
+
+\begin_layout Itemize
+Sugerem combinações eficientes de matérias por semestre.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Validação com Usuários Reais
+\end_layout
+
+\begin_layout Itemize
+Foram realizados testes com estudantes reais utilizando seus próprios históricos acadêmicos ou perfis simulados.
+\end_layout
+
+\begin_layout Itemize
+Os resultados foram analisados qualitativamente,
+ com feedback direto dos usuários.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Documentação Técnica
+\end_layout
+
+\begin_layout Standard
+Toda a construção,
+ testes,
+ erros e melhorias foram documentados.
+\end_layout
+
+\begin_layout Standard
+Foram gerados:
+\end_layout
+
+\begin_layout Itemize
+Diagramas,
+\end_layout
+
+\begin_layout Itemize
+Prints de interface,
+\end_layout
+
+\begin_layout Itemize
+Manual técnico,
+\end_layout
+
+\begin_layout Itemize
+Manual do usuário.
 \end_layout
 
 \begin_layout Itemize
@@ -366,36 +535,145 @@ name "sec:Mecanismos-de-Acompanhamento"
 
 \end_layout
 
-\begin_layout Itemize
-Metodologia ágil SCRUM,
- com ciclos de desenvolvimento curtos (sprints de 2 a 4 semanas).
+\begin_layout Standard
+A execução do projeto PetroPlanner foi estruturada com base em práticas da metodologia ágil SCRUM,
+ adaptada ao contexto acadêmico e à carga horária dos integrantes da equipe.
+ A seguir,
+ detalham-se os mecanismos utilizados para monitorar o progresso,
+ garantir entregas parciais e promover melhoria contínua ao longo do ciclo de desenvolvimento:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ciclos de Desenvolvimento (Sprints)
 \end_layout
 
 \begin_layout Itemize
-Quadro de tarefas no GitHub Projects (ou Trello),
- com acompanhamento das funcionalidades em desenvolvimento,
- correções e backlog.
+O desenvolvimento foi organizado em sprints curtos de 2 a 4 semanas,
+ cada um com foco na implementação de um conjunto específico de funcionalidades (features).
 \end_layout
 
 \begin_layout Itemize
-Reuniões mensais com os “clientes” do sistema (estudantes voluntários,
- professores,
- orientador),
- para coleta de feedback e validações parciais.
+Cada sprint terminava com a liberação de um produto viável mínimo (MVP),
+ testado e revisado pela equipe e por usuários convidados.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Gestão de Tarefas e Backlog
+\end_layout
+
+\begin_layout Standard
+Foi utilizado um quadro de tarefas no GitHub Projects (ou Trello,
+ quando necessário) para:
 \end_layout
 
 \begin_layout Itemize
-Relatórios semanais,
- descrevendo as etapas concluídas,
- dificuldades encontradas e estratégias de superação.
+Organizar as atividades em andamento,
+ concluídas e pendentes;
 \end_layout
 
 \begin_layout Itemize
-Apresentação oral ao final do semestre letivo.
+Visualizar as prioridades;
+\end_layout
+
+\begin_layout Itemize
+Acompanhar bugs,
+ testes e documentação.
+\end_layout
+
+\begin_layout Itemize
+O backlog foi alimentado com sugestões dos próprios usuários e professores ao longo do projeto.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Reuniões e Feedback dos Usuários
+\end_layout
+
+\begin_layout Standard
+Foram realizadas reuniões mensais com os "clientes" do sistema:
+\end_layout
+
+\begin_layout Itemize
+Alunos reais da engenharia de petróleo (usuários finais);
+\end_layout
+
+\begin_layout Itemize
+Professores e orientadores que acompanharam o projeto.
+\end_layout
+
+\begin_layout Itemize
+Nessas sessões,
+ eram coletados feedbacks parciais,
+ validando o funcionamento das telas,
+ fluxos e utilidade prática das funcionalidades implementadas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Relatórios Semanais de Progresso
+\end_layout
+
+\begin_layout Standard
+A equipe produziu relatórios semanais curtos,
+ contendo:
+\end_layout
+
+\begin_layout Itemize
+Etapas concluídas;
+\end_layout
+
+\begin_layout Itemize
+Principais dificuldades enfrentadas;
+\end_layout
+
+\begin_layout Itemize
+Estratégias e decisões tomadas para contornar problemas técnicos ou de planejamento;
+\end_layout
+
+\begin_layout Itemize
+Tarefas previstas para a sprint seguinte.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Avaliação Final
+\end_layout
+
+\begin_layout Itemize
+Ao final do semestre letivo,
+ o sistema foi apresentado em uma sessão oral aberta,
+ com demonstração em tempo real e espaço para questionamentos e sugestões.
+\end_layout
+
+\begin_layout Standard
+A versão final do projeto incluiu:
+\end_layout
+
+\begin_layout Itemize
+Código-fonte documentado;
+\end_layout
+
+\begin_layout Itemize
+Interface funcional;
+\end_layout
+
+\begin_layout Itemize
+Testes com usuários reais;
+\end_layout
+
+\begin_layout Itemize
+Manual técnico e manual de uso.
 \end_layout
 
 \begin_layout Section
-Informações Adicionais Específicas
+Referências 
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Informações-Adicionais-Específicas"
@@ -403,16 +681,6 @@ name "sec:Informações-Adicionais-Específicas"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-Coloque aqui informações adicionais,
- importantes,
- relevantes e que não se encaixaram nos demais tópicos deste documento.
-\end_layout
-
-\begin_layout Standard
-Entre as referências utilizadas podemos citar:
 \end_layout
 
 \begin_layout Itemize

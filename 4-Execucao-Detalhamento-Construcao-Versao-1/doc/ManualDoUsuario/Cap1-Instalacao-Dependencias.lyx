@@ -188,16 +188,6 @@ literal "false"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o link correto para o seu projeto no site https://github.com/ldsc/nomeProjetoEspecifico
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -236,16 +226,6 @@ Dependências
 
 \begin_layout Standard
 Para compilar o software é necessário atender as seguintes dependências:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicione aqui todas as dependências para instalação do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -280,29 +260,9 @@ target "https://www.qt.io/download"
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-apague se não usa Qt;
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Note que você deve testar a instalação seguindo exatamente o que colocou nesta seção
-\end_layout
-
-\end_inset
-
 
 \end_layout
 

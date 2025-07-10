@@ -295,7 +295,7 @@ status open
 \begin_inset Graphics
 	filename imagens/ClicarDiscAnd.png
 	lyxscale 70
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -339,7 +339,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -383,7 +383,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_AdcProva.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -427,7 +427,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_AdcNotaAzulNaProva.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -471,7 +471,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_AdcNotaVermNaProva.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -515,7 +515,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_AdcTodasAsNotas.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -559,7 +559,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_AdcFaltas.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -603,7 +603,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDiscTeste_Finalizar.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -803,7 +803,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_TelaInicial.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -847,7 +847,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_Grade.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -891,7 +891,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_1.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -932,7 +932,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_2.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -973,7 +973,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_3.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -1014,7 +1014,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_4.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -1055,7 +1055,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_6.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -1096,7 +1096,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejSemTeste_7.png
 	lyxscale 40
-	scale 10
+	width 100text%
 
 \end_inset
 
@@ -1296,6 +1296,41 @@ nolink "false"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:QuadroDeHorarios_Teste_Txt_AtvExtra"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Por último o aluno pode salvar o quadro através do botão 
+\begin_inset Quotes eld
+\end_inset
+
+Baixar
+\begin_inset Quotes erd
+\end_inset
+
+,
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_Txt_Baixarpng"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ tendo assim acesso a ele através de uma figura PNG,
+ fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroHorariosBaixado"
 plural "false"
 caps "false"
 noprefix "false"

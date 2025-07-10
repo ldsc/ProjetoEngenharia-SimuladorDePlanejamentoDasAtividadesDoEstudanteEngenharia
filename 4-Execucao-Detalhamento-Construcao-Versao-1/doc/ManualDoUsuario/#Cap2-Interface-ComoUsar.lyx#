@@ -157,20 +157,6 @@ nolink "false"
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-na imagem simulador desenvolvido pelo aluno Nicholas
-\end_layout
-
-\begin_layout Plain Layout
-note que capturamos a imagem da tela do software e adicionamos na figura abaixo algumas informações de uso
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -186,6 +172,8 @@ status open
 \begin_inset Graphics
 	filename imagens/TelaInicial_PetroPlanner.png
 	lyxscale 30
+	width 100text%
+	height 100theight%
 	special height=0.85\textheight
 
 \end_inset
@@ -294,6 +282,7 @@ status open
 \begin_inset Graphics
 	filename imagens/LeituraDosDados.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -363,6 +352,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcessoAosModulos.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -457,6 +447,7 @@ status open
 \begin_inset Graphics
 	filename imagens/GradeCurricular_PorArea.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -544,6 +535,7 @@ status open
 \begin_inset Graphics
 	filename imagens/GradeCurricular_PorSemestre.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -616,6 +608,7 @@ status open
 \begin_inset Graphics
 	filename imagens/GradeCurricular_PorDificuldade.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -732,6 +725,7 @@ status open
 \begin_inset Graphics
 	filename imagens/QuadroDeHorarios.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -776,6 +770,7 @@ status open
 \begin_inset Graphics
 	filename imagens/QuadroDeHorarios_FuncaoEditar.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -820,6 +815,7 @@ status open
 \begin_inset Graphics
 	filename imagens/QuadroDeHorarios_FuncaoBaixar.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -916,6 +912,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejamentoSemestral.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -960,6 +957,7 @@ status open
 \begin_inset Graphics
 	filename imagens/PlanejamentoSemestral_FunçãoBaixar.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -1029,6 +1027,7 @@ status open
 \begin_inset Graphics
 	filename imagens/DisciplinasEmAndamento_TelaInicial.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
@@ -1114,7 +1113,7 @@ Reprovada
 \begin_inset Quotes erd
 \end_inset
 
-
+ no txt.
 \end_layout
 
 \begin_layout Standard
@@ -1130,6 +1129,7 @@ status open
 \begin_inset Graphics
 	filename imagens/AcompanhamentoDisciplina.png
 	lyxscale 30
+	width 100text%
 	special height=0.85\textheight
 
 \end_inset
