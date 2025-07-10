@@ -118,30 +118,15 @@
 \align center
 
 \size large
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
 UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
 \begin_inset Newline newline
 \end_inset
 
 LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
+\begin_inset Newline newline
+\end_inset
+
+CENTRO DE CIÊNCIA E TECNOLOGIA
 \end_layout
 
 \begin_layout Standard
@@ -163,7 +148,7 @@ O título deve ser o mais claro possível,
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -182,18 +167,11 @@ DESENVOLVIMENTO DO SOFTWARE
 \end_inset
 
 
-\size default
-PetroPlanner
-\size large
-
-\begin_inset Newline newline
+\begin_inset Quotes eld
 \end_inset
 
-TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
+PetroPlanner
+\begin_inset Quotes erd
 \end_inset
 
 
@@ -203,23 +181,37 @@ TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
 \align center
 
 \size large
-Abigail Ribeiro Pinto Silva Guimarães
+DISCIPLINA LEP - 01348:
+ Introdução ao Projeto de Engenharia
 \begin_inset Newline newline
 \end_inset
 
-Maria Luiza Cornelio Ramos:
-\begin_inset Newline newline
+Setor de Modelagem Matemática Computacional
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
 \end_inset
 
-AUTORES
-\begin_inset Newline newline
-\end_inset
 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
 Versão 2:
 \begin_inset Newline newline
 \end_inset
 
-AUTORES
+Abigail Ribeiro Pinto Silva Guimarães
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Maria Luiza Cornélio Ramos 
 \begin_inset Newline newline
 \end_inset
 
@@ -253,7 +245,19 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Janeiro - 2023
+Abril - 2025
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\size large
+Corrigir a data
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -143,16 +143,6 @@ thechapter - Projeto}
 
 \end_layout
 
-\begin_layout Standard
-Neste capítulo do projeto de engenharia veremos questões associadas ao projeto do sistema,
- incluindo protocolos,
- recursos,
- plataformas suportadas,
- implicações nos diagramas feitos anteriormente,
- diagramas de componentes e implantação.
- Na segunda parte revisamos os diagramas levando em conta as decisões do projeto do sistema.
-\end_layout
-
 \begin_layout Section
 Projeto do Sistema
 \begin_inset Index idx
@@ -177,39 +167,9 @@ name "sec:Projeto-do-sistema"
 \end_layout
 
 \begin_layout Standard
-Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
- qual envolve etapas como a definição dos protocolos,
- da interface API,
- o uso de recursos,
- a subdivisão do sistema em subsistemas,
- a alocação dos subsistemas ao hardware e a seleção das estruturas de controle,
- a seleção das plataformas do sistema,
- das bibliotecas externas,
- dos padrões de projeto,
- além da tomada de decisões conceituais e políticas que formam a infraestrutura do projeto.
-\end_layout
-
-\begin_layout Standard
-Deve-se definir padrões de documentação,
- padrões para o nome das classes,
- padrões de retorno e de parâmetros em métodos,
- características da interface do usuário e características de desempenho.
- 
-\end_layout
-
-\begin_layout Standard
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-UML-Rumbaugh,prog-UML-blaha"
-literal "true"
-
-\end_inset
-
-,
- o projeto do sistema é a estratégia de alto nível para resolver o problema e elaborar uma solução.
- Você deve se preocupar com itens como:
- 
+O projeto do sistema PetroPlanner foi estruturado com base na análise orientada a objeto e nas necessidades práticas dos estudantes de Engenharia de Petróleo.
+ O sistema foi concebido como uma aplicação desktop autônoma,
+ utilizando C++ com o framework Qt para a interface gráfica e manipulação de dados.
 \end_layout
 
 \begin_layout Enumerate
@@ -234,103 +194,31 @@ Protocolos
 
 \begin_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos externos 
-\begin_inset Newline newline
-\end_inset
-
-(como dispositivos).
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+Entre elementos externos:
+ A aplicação não depende de comunicação com dispositivos externos ou APIs.
+ O foco está na interação direta com o usuário por meio da interface gráfica.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-O PetroPlanner é projetado como uma aplicação standalone (autônoma) para desktop.
- Atualmente,
- não há comunicação direta com elementos externos como dispositivos ou nós de cluster.
- A interação principal se dá através da interface gráfica do usuário.
- Caso haja alguma integração futura com sistemas acadêmicos (para puxar dados de disciplinas ou notas),
- isso seria um ponto a ser desenvolvido e os protocolos (ex:
- HTTP/HTTPS para APIs RESTful,
- ou formatos de arquivo específicos para importação/exportação) seriam definidos aqui.
+Entre elementos internos:
+ Os módulos se comunicam por meio de chamadas de métodos diretas,
+ utilizando objetos e ponteiros.
+ O sistema de sinais e slots do Qt também é amplamente utilizado para eventos da interface.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos internos 
-\begin_inset Newline newline
-\end_inset
-
-(como objetos).
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+Interface das classes:
+ As APIs internas são definidas pelos arquivos de cabeçalho C++ (.h),
+ que especificam os métodos públicos de cada classe.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-A comunicação entre os diversos objetos e módulos internos do PetroPlanner é realizada através de chamadas de métodos diretas e passagem de parâmetros.
- Sendo desenvolvido em C++,
- as classes interagem por meio de interfaces bem definidas e padrões de design (se aplicáveis) para garantir a coesão e o baixo acoplamento.
- A biblioteca Qt,
- utilizada para a interface gráfica,
- facilita a comunicação entre os componentes visuais e lógicos através de seu mecanismo de sinais e slots.
+Formato de arquivos:
+ As informações do aluno são salvas em arquivos .txt,
+ com estrutura delimitada por ponto e vírgula (;),
+ facilitando leitura e edição.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Definição da interface API de suas bibliotecas e sistemas.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-O PetroPlanner,
- por ser um software monolítico e não uma biblioteca para ser utilizada por outros sistemas,
- não expõe uma API externa para outros softwares consumirem.
- Internamente,
- as interfaces (APIs) das classes e módulos são definidas pelos cabeçalhos C++,
- que especificam os métodos públicos para interação entre os componentes.
- As bibliotecas Qt e STL (Standard Template Library) são utilizadas extensivamente,
- e suas APIs são seguidas para a construção do sistema.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Definição do formato dos arquivos gerados pelo software.
- Por exemplo:
- prefira formatos abertos,
- como arquivos txt e xml.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-O PetroPlanner armazenará dados do aluno,
- disciplinas,
- notas e histórico.
- Para garantir a portabilidade e a facilidade de acesso,
- os dados podem ser armazenados em formatos abertos.
- Uma opção é utilizar arquivos CSV (Comma Separated Values) para dados tabulares,
- como listas de disciplinas e notas,
- ou arquivos JSON/XML para estruturas de dados mais complexas,
- como o histórico completo do aluno e configurações personalizadas.
- Isso permite que os dados sejam facilmente lidos e manipulados por outras ferramentas ou sistemas.
- 
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Recursos
@@ -354,107 +242,25 @@ Recursos
 
 \begin_deeper
 \begin_layout Itemize
-Identificação e alocação dos recursos globais,
- como os recursos do sistema serão alocados,
- utilizados,
- compartilhados e liberados.
- Implicam modificações no diagrama de componentes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Os recursos globais do PetroPlanner incluem a memória RAM,
- recursos de CPU para processamento de cálculos (CR,
- simulações) e armazenamento em disco para persistência dos dados do usuário.
- A alocação de memória é gerenciada automaticamente pelo C++ (com uso de new/delete quando necessário para objetos complexos e smart pointers para evitar vazamento de memória) e pela biblioteca Qt,
- que possui um sistema de gerenciamento de objetos parent-child.
- A liberação de recursos é crucial para a eficiência.
- O uso de classes e objetos seguirá o princípio RAII (Resource Acquisition Is Initialization) do C++ para garantir a liberação automática de recursos quando os objetos saem de escopo.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade do uso de banco de dados.
- Implicam em modificações nos diagramas de atividades e de componentes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Sim,
- há uma clara necessidade de um sistema de persistência de dados.
- Embora formatos de arquivo simples (CSV,
- JSON) possam ser usados para dados básicos,
- um banco de dados seria mais robusto para gerenciar informações complexas como:
+Uso de memória:
+ O gerenciamento é feito pelo Qt,
+ que possui hierarquia de objetos parent-child,
+ e pelo uso consciente de new/delete e containers da STL.
 \end_layout
 
 \begin_layout Itemize
-Dados do aluno (nome,
- matrícula,
- CRA)
+Banco de dados:
+ Não foi usado um banco de dados tradicional.
+ Os dados são persistidos em arquivos de texto,
+ mas a estrutura pode ser adaptada futuramente para uso de SQLite.
 \end_layout
 
 \begin_layout Itemize
-Catálogo de disciplinas (código,
- nome,
- créditos,
- carga horária,
- pré-requisitos,
- dificuldade)
+Armazenamento:
+ Todo o conteúdo é armazenado localmente no computador do usuário.
+ A portabilidade é garantida pelos arquivos simples e leves.
 \end_layout
 
-\begin_layout Itemize
-Histórico do aluno (disciplinas cursadas,
- notas,
- faltas,
- status)
-\end_layout
-
-\begin_layout Itemize
-Simulações e planos de estudo personalizados.
- Um banco de dados SQLite seria uma excelente escolha,
- pois é um banco de dados embarcado,
- leve e sem servidor,
- ideal para aplicações desktop.
- Isso simplificaria a gestão de relacionamentos entre as entidades e o acesso eficiente aos dados,
- impactando os diagramas de atividade (operações de leitura/escrita) e de componentes (introdução de um componente de persistência de dados).
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade de sistemas de armazenamento de massa.
- Por exemplo:
- um 
-\emph on
-storage
-\emph default
- em um sistema de cluster ou sistemas de backup.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Para o PetroPlanner,
- o armazenamento de massa primário será o disco rígido local do computador do usuário,
- onde o executável e o arquivo do banco de dados (se SQLite) ou os arquivos de dados (se CSV/JSON) serão armazenados.
- Não há necessidade de um sistema de storage em cluster ou sistemas de backup complexos,
- pois a aplicação é de uso individual.
- No entanto,
- é importante considerar a portabilidade dos dados,
- incentivando o usuário a fazer backups do seu perfil de estudante (o arquivo de banco de dados ou os arquivos de dados gerados) se desejar transferir para outra máquina.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Controle
@@ -478,145 +284,32 @@ Controle
 
 \begin_deeper
 \begin_layout Itemize
-Identificação e seleção da implementação de controle,
- seqüencial ou concorrente,
- baseado em procedimentos ou eventos.
- Implicam modificações no diagrama de execução.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-O controle principal do PetroPlanner será baseado em eventos (event-driven),
- como é comum em aplicações com interface gráfica de usuário (GUI).
- As interações do usuário (cliques de botão,
- digitação em campos de texto,
- seleção de itens) geram eventos que são processados pelo sistema.
- A biblioteca Qt é intrinsecamente baseada em eventos (via sinais e slots).
+Baseado em eventos:
+ O sistema responde a eventos do usuário (cliques,
+ seleções),
+ utilizando o sistema de event loop do Qt.
 \end_layout
 
 \begin_layout Itemize
-Para operações que podem levar tempo (como cálculos complexos de simulação ou leitura/escrita de grandes volumes de dados),
- será considerada a implementação de processamento concorrente (utilizando threads) para evitar que a interface do usuário congele,
- mantendo a responsividade do sistema.
- Isso implicará em modificações nos diagramas de execução para mostrar os fluxos paralelos.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação das condições extremas e de prioridades.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Condições Extremas:
- Incluem a inserção de dados inválidos pelo usuário (e.g.,
- notas fora da faixa,
- número de faltas excedente),
- tentativa de registrar disciplinas sem pré-requisitos,
- ou falha no acesso aos arquivos de dados/banco de dados.
- O sistema deve ter validações de entrada e tratamento de exceções robustos para lidar com essas situações,
- fornecendo feedback claro ao usuário.
+Condições extremas:
+ São tratadas por meio de verificações de entrada (como número de faltas,
+ notas fora do padrão) e mensagens de alerta.
 \end_layout
 
 \begin_layout Itemize
-Prioridades:
- A prioridade máxima é a integridade dos dados do aluno e a usabilidade da interface.
- Cálculos de CR e simulações são de alta prioridade para o feedback imediato ao usuário.
- A performance de cálculo é importante,
- mas a precisão dos dados e a experiência do usuário são cruciais.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade de otimização.
- Por exemplo:
- prefira sistemas com grande capacidade de memória;
- prefira vários hds pequenos a um grande.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A otimização será focada na eficiência dos algoritmos de cálculo (para CR e simulações de grade) e na resposta da interface do usuário.
- Para cálculos intensivos,
- a utilização de algoritmos eficientes e,
- se necessário,
- a execução em threads separadas para não bloquear a GUI,
- serão consideradas.
- A otimização de memória será importante para garantir que o aplicativo seja leve e funcione bem em máquinas com recursos limitados,
- apesar de ser um desktop moderno.
- A escolha de um banco de dados leve como SQLite também contribui para isso.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação e definição de 
-\emph on
-loops
-\emph default
- de controle e das escalas de tempo.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-O principal loop de controle é o loop de eventos da GUI (gerenciado pelo Qt),
- que aguarda e despacha eventos do usuário.
- As escalas de tempo são as interações em tempo real do usuário,
- onde o feedback deve ser instantâneo,
- e o tempo de execução de simulações,
- que deve ser rápido o suficiente para não prejudicar a experiência.
- Para persistência,
- a gravação de dados pode ser imediata após alterações ou ocorrer em intervalos definidos,
- dependendo da estratégia de salvamento.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação de concorrências – quais algoritmos podem ser implementados usando processamento paralelo.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Algoritmos que podem se beneficiar de processamento paralelo incluem:
+Concorrência:
+ Como o sistema é leve e voltado para tarefas rápidas,
+ a concorrência ainda não foi necessária,
+ mas o Qt oferece suporte a QThread para futuras otimizações.
 \end_layout
 
 \begin_layout Itemize
-Simulação de múltiplas grades curriculares:
- Se o sistema precisar avaliar rapidamente várias combinações de disciplinas para otimização.
+Escalas de tempo:
+ As interações são imediatas.
+ Alterações em dados são salvas logo após ações do usuário (ex:
+ clicar em “Salvar”).
 \end_layout
 
-\begin_layout Itemize
-Cálculo de CR para diferentes cenários:
- Embora o cálculo de um único CR seja rápido,
- simulações complexas envolvendo muitas notas e cenários podem ser beneficiadas.
-\end_layout
-
-\begin_layout Itemize
-Carga e salvamento de dados extensos:
- Para evitar o bloqueio da GUI durante operações de I/O em arquivos ou banco de dados grandes.
- A biblioteca Qt oferece módulos para threading (QThread,
- QtConcurrent) que podem ser utilizados para implementar essas concorrências.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Plataformas
@@ -640,231 +333,81 @@ Plataformas
 
 \begin_deeper
 \begin_layout Itemize
-Identificação das estruturas arquitetônicas comuns.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A arquitetura do PetroPlanner seguirá o padrão Model-View-Controller (MVC) ou Model-View-ViewModel (MVVM),
- que são comuns em aplicações GUI.
- Isso separa a lógica de negócios (Model),
- da apresentação dos dados (View) e da interação do usuário/controle (Controller/ViewModel),
- promovendo modularidade e facilitando a manutenção e testes.
- Haverá também uma camada de persistência para gerenciar o armazenamento dos dados.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação de subsistemas relacionados à plataforma selecionada.
- Podem implicar em modificações no diagrama de pacotes e no diagrama de componentes.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Os principais subsistemas relacionados à plataforma Qt e C++ incluem:
+Arquitetura:
+ O projeto adota uma estrutura próxima ao padrão MVC:
+ dados (modelos),
+ telas (views) e funções de controle (slots e métodos).
 \end_layout
 
 \begin_layout Itemize
-Subsistema de Interface Gráfica (GUI):
- Gerenciado pela biblioteca Qt,
- responsável por todos os elementos visuais e interações do usuário.
+Plataformas suportadas:
+ Qt permite compatibilidade com Windows,
+ Linux e macOS.
 \end_layout
 
 \begin_layout Itemize
-Subsistema de Lógica de Negócios:
- Contém as classes que implementam as funcionalidades principais (cálculo de CR,
- validação de pré-requisitos,
- simulação de faltas,
+Bibliotecas utilizadas:
+\end_layout
+
+\begin_layout Itemize
+Qt:
+ Interface gráfica,
+ gerenciamento de eventos,
+ arquivos.
+\end_layout
+
+\begin_layout Itemize
+STL:
+ Containers (vector,
+ map,
  etc.).
 \end_layout
 
 \begin_layout Itemize
-Subsistema de Persistência de Dados:
- Responsável por interagir com o sistema de armazenamento (seja banco de dados SQLite ou arquivos) para salvar e carregar as informações do usuário.
+IDE:
+ Qt Creator,
+ voltado para projetos em C++/Qt.
 \end_layout
 
-\begin_layout Itemize
-Subsistema de Cálculo/Simulação:
- Módulos específicos para realizar os cálculos complexos e simulações.
- Esses subsistemas serão representados nos diagramas de pacotes e componentes.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação e definição das plataformas a serem suportadas:
- hardware,
- sistema operacional e linguagem de software.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Hardware:
- O PetroPlanner será projetado para rodar em computadores pessoais (desktops e notebooks) com configurações padrão,
- sem requisitos de hardware específicos ou avançados.
-\end_layout
-
-\begin_layout Itemize
-Sistema Operacional:
- Devido ao uso do Qt,
- que é cross-platform,
- o sistema terá compatibilidade com os principais sistemas operacionais:
- Windows,
- macOS e Linux.
- Isso será um diferencial,
- permitindo que a maioria dos alunos utilize o software.
-\end_layout
-
-\begin_layout Itemize
-Linguagem de Software:
- C++.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção das bibliotecas externas a serem utilizadas.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Qt Framework:
- Essencial para o desenvolvimento da interface gráfica do usuário (GUI),
- gerenciamento de eventos,
- funcionalidades de rede (se implementadas) e outras utilidades.
-\end_layout
-
-\begin_layout Itemize
-Standard Template Library (STL):
- Parte da biblioteca padrão do C++,
- utilizada para estruturas de dados (vetores,
- listas,
- mapas) e algoritmos eficientes.
-\end_layout
-
-\begin_layout Itemize
-SQLite (ou biblioteca para acesso a SQLite):
- Se for escolhido um banco de dados,
- uma biblioteca como Qt SQL (parte do Qt) ou uma wrapper C++ para SQLite será utilizada.
-\end_layout
-
-\begin_layout Itemize
-Bibliotecas para geração de PDF (opcional):
- Caso haja necessidade de exportar relatórios em PDF,
- uma biblioteca como Qt Print Support ou outra específica para PDF seria considerada.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-A biblioteca selecionada para montar a interface gráfica do software é o Qt Framework.
- O Qt fornece uma abstração sobre as APIs gráficas nativas do sistema operacional (como GDI no Windows,
- Core Graphics no macOS,
- Xlib/Wayland no Linux),
- garantindo a portabilidade e uma aparência nativa em cada plataforma.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-O ambiente de desenvolvimento integrado (IDE) selecionado para o projeto é o Qt Creator.
- Ele é a IDE oficial do Qt,
- otimizado para o desenvolvimento de aplicações Qt e C++,
- oferecendo ferramentas de design de UI,
- depuração,
- integração com Git e gerenciamento de projetos.
- Adicionalmente,
- pode-se mencionar que o Embarcadero C++Builder (se for o caso) também pode ser usado,
- embora o Qt Creator seja a escolha mais comum para projetos Qt.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Padrões de projeto
-\begin_inset Separator latexpar
-\end_inset
+\end_layout
 
+\begin_layout Standard
+Foram seguidos princípios básicos de projeto orientado a objeto:
+\end_layout
 
+\begin_layout Itemize
+Modularidade:
+ cada classe tem uma responsabilidade bem definida.
+\end_layout
+
+\begin_layout Itemize
+Baixo acoplamento e alta coesão:
+ a comunicação entre os módulos se dá por meio de interfaces diretas ou sinais.
+\end_layout
+
+\begin_layout Itemize
+Padrões usados:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Embora o PetroPlanner seja um projeto acadêmico e não haja uma "biblioteca de padrões da empresa",
- serão aplicados padrões de projeto de software reconhecidos para promover a modularidade,
- flexibilidade e manutenibilidade do código.
- Alguns padrões a serem considerados incluem:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-MVC/MVVM:
- Para a arquitetura geral da aplicação,
- como mencionado anteriormente.
+MVC:
+ organização entre interface,
+ lógica e dados.
 \end_layout
 
 \begin_layout Itemize
-Singleton:
- Para classes que devem ter apenas uma instância (ex:
- um gerenciador de configurações ou de banco de dados).
+Observer (via sinais e slots):
+ resposta a eventos na interface.
 \end_layout
 
 \begin_layout Itemize
-Observer (ou o padrão de Sinais e Slots do Qt):
- Para comunicação entre componentes sem acoplamento direto,
- como a atualização da interface quando dados são alterados.
+Singleton (implícito para classes que representam o aluno ativo).
 \end_layout
 
-\begin_layout Itemize
-Strategy:
- Para algoritmos de cálculo de CR ou simulação que possam ter diferentes abordagens.
-\end_layout
-
-\begin_layout Itemize
-Factory Method:
- Para a criação de objetos complexos ou diferentes tipos de objetos.
- A aplicação desses padrões será documentada e discutida nas seções pertinentes do projeto.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-se um item não for pertinente;
- pode ser retirado;
- ,mas somente na versão final;
- isto facilita o trabalho de revisão do trabalho!!
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Section
 Projeto Orientado a Objeto – POO
@@ -902,35 +445,9 @@ name "sec:Projeto-orientado-a-objeto"
 \end_layout
 
 \begin_layout Standard
-O projeto orientado a objeto é a etapa posterior ao projeto do sistema.
- Baseia-se na análise,
- mas considera as decisões do projeto do sistema.
- Acrescenta a análise desenvolvida e as características da plataforma escolhida (hardware,
- sistema operacional e linguagem de softwareção).
- Passa pelo maior detalhamento do funcionamento do software,
- acrescentando atributos e métodos que envolvem a solução de problemas específicos não identificados durante a análise.
-\end_layout
-
-\begin_layout Standard
-Envolve a otimização da estrutura de dados e dos algoritmos,
- a minimização do tempo de execução,
- de memória e de custos.
- Existe um desvio de ênfase para os conceitos da plataforma selecionada.
- 
-\end_layout
-
-\begin_layout Standard
-Exemplo:
- na análise você define que existe um método para salvar um arquivo em disco,
- define um atributo nomeDoArquivo,
- mas não se preocupa com detalhes específicos da linguagem.
- Já no projeto,
- você inclui as bibliotecas necessárias para acesso ao disco,
- cria um objeto específico para acessar o disco,
- podendo,
- portanto,
- acrescentar novas classes àquelas desenvolvidas na análise.
- 
+O projeto orientado a objeto levou em consideração os recursos da linguagem C++ e do framework Qt.
+ As classes definidas na análise foram detalhadas com os métodos,
+ atributos e estruturas necessárias para implementação real.
 \end_layout
 
 \begin_layout Subsubsection
@@ -957,57 +474,14 @@ name "subsec:Efeito-do-projeto-no-modelo-estrutural"
 \end_layout
 
 \begin_layout Itemize
-Nos diagramas de pacotes,
- serão adicionados pacotes representando as bibliotecas externas (como Qt,
- STL,
- SQLite) e os subsistemas internos identificados (e.g.,
- PetroPlanner.GUI,
- PetroPlanner.BusinessLogic,
- PetroPlanner.DataPersistence,
- PetroPlanner.Calculations).
- As dependências entre esses pacotes serão claramente indicadas.
+Diagramas de pacotes foram atualizados para incluir subsistemas como GUI,
+ lógica,
+ e persistência.
 \end_layout
 
 \begin_layout Itemize
-O modelo de classes será expandido para incluir classes específicas da implementação que não estavam presentes na fase de análise puramente conceitual.
- Por exemplo:
-\end_layout
-
-\begin_layout Itemize
-Classes do Qt como QMainWindow,
- QPushButton,
- QTableView,
- QSqlDatabase,
- QSqlQuery (ou similares,
- se usar outro ORM/biblioteca de acesso a dados).
-\end_layout
-
-\begin_layout Itemize
-Classes wrapper para acesso ao banco de dados ou arquivos.
-\end_layout
-
-\begin_layout Itemize
-Classes auxiliares para manipulação de dados ou cálculos,
- como StudentProfileManager,
- CourseCatalogManager,
- GradeSimulator.
- As associações entre essas novas classes e as classes do domínio (Aluno,
- Disciplina,
- Nota) serão definidas,
- detalhando como elas interagem.
-\end_layout
-
-\begin_layout Itemize
-As dependências e restrições estarão ligadas principalmente ao uso do Qt Framework e do C++.
- Isso significa que o código deve aderir aos padrões de codificação do Qt (ex:
- sistema de objetos QObject,
- moc para sinais/slots) e às características da linguagem C++ (gerenciamento de memória,
- templates,
- etc.).
- A portabilidade entre os sistemas operacionais (Windows,
- macOS,
- Linux) impõe restrições de não usar APIs específicas de cada SO diretamente,
- mas sim as abstrações fornecidas pelo Qt.
+Diagramas de classes foram refinados com atributos como QPushButton*,
+ QVBoxLayout* e métodos como on_botaoVerGradeCompleta_clicked().
 \end_layout
 
 \begin_layout Subsubsection
@@ -1034,34 +508,19 @@ name "subsec:Efeito-do-projeto-no-modelo-dinamico"
 \end_layout
 
 \begin_layout Itemize
-Os diagramas de sequência e de comunicação serão revisados para incorporar os detalhes de implementação.
- Por exemplo,
- em vez de apenas "salvar dados",
- o diagrama mostrará chamadas a métodos específicos de classes de persistência de dados (e.g.,
- dataManager.saveStudentData(student)),
- ou a interação entre um botão na GUI (QPushButton) e um método de slot em um controlador para processar um evento.
- A interação com o banco de dados (abertura de conexão,
- execução de queries) também será detalhada.
+Diagramas de sequência e comunicação foram atualizados para refletir chamadas de métodos reais entre objetos da interface (ex:
+ botão de salvar → método que grava arquivo).
 \end_layout
 
 \begin_layout Itemize
-Diagramas de Atividade:
- Serão revisados e ampliados para incluir as etapas de validação de entrada de dados,
- tratamento de erros,
- persistência de dados e as diferentes ramificações nas simulações (e.g.,
- cálculo de CR baseado em notas parciais ou finais).
+Diagrama de atividades agora inclui verificações de dados,
+ simulações e salvamento.
 \end_layout
 
 \begin_layout Itemize
-Diagramas de Máquina de Estado:
- Podem ser adicionados para modelar estados mais complexos da interface do usuário (ex:
- modo de edição de disciplina,
- modo de simulação,
- modo de visualização),
- ou o ciclo de vida de objetos importantes como o perfil do aluno (e.g.,
- carregado,
- modificado,
- salvo).
+Máquinas de estado modelam,
+ por exemplo,
+ o ciclo de vida de uma disciplina (não cursada → em curso → aprovada).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1088,33 +547,9 @@ name "subsec:Efeito-do-projeto-nos-atributos"
 \end_layout
 
 \begin_layout Itemize
-Durante o projeto,
- atributos adicionais que são específicos da implementação serão incorporados.
- Por exemplo:
-\end_layout
-
-\begin_layout Itemize
-Em classes de GUI:
- ponteiros para widgets filhos (QLabel*,
- QLineEdit*,
- QPushButton*).
-\end_layout
-
-\begin_layout Itemize
-Em classes de persistência:
- um objeto QSqlDatabase para gerenciar a conexão com o banco de dados,
- ou um path para o arquivo de dados.
-\end_layout
-
-\begin_layout Itemize
-Atributos para flags de estado interno (bool isModified,
- bool isValidated).
-\end_layout
-
-\begin_layout Itemize
-Constantes para caminhos de arquivo,
- nomes de tabelas de banco de dados,
- ou valores padrão.
+Novos atributos:
+ ponteiros para elementos da interface (ex:
+ QLabel* labelCRA) e flags internos (bool modoEdicaoAtivo).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1146,57 +581,10 @@ Efeitos do projeto nos métodos
 \end_layout
 
 \begin_layout Itemize
-Os métodos serão refinados para utilizar as APIs específicas do Qt e C++.
- Métodos de acesso a dados (leitura/escrita de arquivos ou banco de dados) serão implementados usando as classes do Qt (QFile,
- QTextStream,
- QSqlDatabase,
- QSqlQuery) ou a API do SQLite.
- Métodos da interface do usuário serão conectados a slots do Qt para responder a eventos.
- Por exemplo,
- um método salvarDados() da fase de análise se transformará em DataManager::saveStudentProfile(Student&) que internamente usa QSqlQuery para inserir/atualizar dados no banco.
-\end_layout
-
-\begin_layout Itemize
-Métodos de Decisão/Controle:
- Serão,
- por exemplo,
- os métodos de controladores que orquestram a lógica da aplicação,
- como GradeSimulator::simulate(Student&,
- CoursePlan&) ou AbsenceTracker::checkAbsenceStatus(Discipline&) que podem decidir sobre a aprovação ou sugerir ações.
- Eles serão projetados para serem claros,
- flexíveis e podem usar polimorfismo (ex:
- diferentes estratégias de simulação).
-\end_layout
-
-\begin_layout Itemize
-Métodos de Processamento:
- Incluirão algoritmos de cálculo (ex:
- calculateCR(),
- predictFinalGrade()) ou de manipulação de dados (ex:
- parseCourseDataFromFile()).
- Estes serão o foco de otimização de desempenho,
- e o polimorfismo pode ser usado se houver necessidade de diferentes implementações para o mesmo processamento.
-\end_layout
-
-\begin_layout Itemize
-Algoritmos complexos como a simulação de múltiplos cenários de grade curricular ou a busca por combinações ideais de optativas serão subdivididos em funções menores e mais gerenciáveis.
- A STL (Standard Template Library) será amplamente utilizada para coleções de dados (std::vector,
- std::map,
- std::list) e algoritmos (std::sort,
- std::find) para garantir eficiência e robustez.
-\end_layout
-
-\begin_layout Itemize
-Durante a fase de projeto,
- será realizada uma revisão rigorosa para assegurar que cada método de uma classe está alinhado com as responsabilidades e o escopo daquela classe,
- seguindo o Princípio da Responsabilidade Única (SRP).
- Isso evita que classes se tornem "Deus-objeto" (God Object) e garante um design mais limpo e modular.
-\end_layout
-
-\begin_layout Itemize
-Após a definição detalhada dos métodos e atributos,
- os diagramas de classes,
- de sequência e de máquina de estado serão atualizados para refletir todas as decisões de projeto e os detalhes de implementação.
+Novos métodos:
+ slots de eventos do Qt (ex:
+ void aoClicarSalvar()),
+ métodos de controle da interface e salvamento de dados em arquivos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1240,32 +628,9 @@ Heranças
 \end_layout
 
 \begin_layout Itemize
-A herança será utilizada com parcimônia e apenas quando houver uma clara relação "É-UM".
- Se houver uma necessidade de funcionalidade comum entre classes sem uma relação de herança forte,
- será preferível a composição ou o uso de interfaces/classes abstratas.
- O polimorfismo será empregado para métodos que precisam de implementações diferentes em classes derivadas.
-\end_layout
-
-\begin_layout Itemize
-Será buscada a abstração de comportamentos comuns.
- Por exemplo,
- se houver diferentes tipos de "avaliações" (prova,
- trabalho,
- lista),
- uma superclasse Avaliacao pode ser criada,
- com subclasses que implementam comportamentos específicos.
-\end_layout
-
-\begin_layout Itemize
-A delegação será preferida em vez de herança quando a relação entre as classes for de "TEM-UM" em vez de "É-UM".
- Isso é crucial para evitar heranças problemáticas que levam a hierarquias de classes rígidas e difíceis de manter.
- Por exemplo,
- uma classe Aluno "tem" um HistoricoAcademico,
- em vez de "ser" um HistoricoAcademico.
-\end_layout
-
-\begin_layout Itemize
-As hierarquias de herança no diagrama de classes serão revisadas para garantir que reflitam o design apropriado e que sigam os princípios de herança.
+Herança:
+ usada com Qt,
+ onde classes como TelaInicial herdam de QMainWindow.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1297,31 +662,8 @@ Associações
 \end_layout
 
 \begin_layout Itemize
-As associações serão implementadas usando ponteiros (std::shared_ptr,
- std::weak_ptr para evitar ciclos de referência e gerenciamento de memória),
- referências ou coleções da STL (e.g.,
- std::vector<Disciplina*>,
- std::map<QString,
- Student*> para acesso rápido).
- O uso de QList,
- QVector,
- QMap do Qt também será considerado,
- conforme a necessidade de integração com o framework.
-\end_layout
-
-\begin_layout Itemize
-Para relações de "muitos",
- especialmente quando o acesso a objetos específicos é frequente por uma chave (como código de disciplina ou matrícula de aluno),
- será utilizado std::map ou QMap (no caso do Qt) para implementar eficientemente essas associações.
- Por exemplo,
- um CourseCatalogManager pode ter um QMap<QString,
- Discipline*> para mapear códigos de disciplina a objetos Disciplina.
-\end_layout
-
-\begin_layout Itemize
-Será aplicado o "Princípio do Mínimo Conhecimento" (Lei de Demeter) para evitar o acoplamento excessivo.
- Se o acesso a dados de classes distantes se tornar um problema de performance ou complexidade,
- associações diretas ou métodos de conveniência serão considerados para encapsular o acesso.
+Associações:
+ implementadas via ponteiros e containers como QVector<CDisciplinas>.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1341,50 +683,20 @@ otimizações
 \end_layout
 
 \begin_layout Itemize
-Uma análise inicial de otimização será realizada,
- identificando as áreas mais críticas para o desempenho (ex:
- cálculos de simulação,
- carregamento de dados).
- Embora seja um projeto acadêmico,
- o foco será em boas práticas que naturalmente levam a um código mais eficiente,
- como o uso de algoritmos da STL e estruturas de dados apropriadas.
- A otimização prematura será evitada.
+Desempenho:
+ as telas foram desenhadas para responder rapidamente,
+ mesmo com muitos dados.
 \end_layout
 
 \begin_layout Itemize
-Conforme mencionado na seção de "Controle",
- a simulação de múltiplos cenários de grade,
- cálculos complexos e operações de I/O intensivas serão os principais candidatos para otimização com processos concorrentes (threads),
- utilizando as funcionalidades do Qt para threading.
+Organização:
+ classes auxiliares foram criadas para manter o código limpo.
 \end_layout
 
 \begin_layout Itemize
-As bibliotecas já selecionadas (Qt,
- STL) são otimizadas.
- Se surgir a necessidade de cálculos numéricos mais intensos ou manipulação de dados específicos,
- bibliotecas C++ de alto desempenho para esses domínios serão consideradas.
-\end_layout
-
-\begin_layout Itemize
-Serão avaliados os caminhos de acesso aos dados.
- Se um caminho longo (student->history->courseEnrollment->grades.getFinalGrade()) for comum e impactar a legibilidade ou performance,
- associações diretas (student->getFinalGradeForCourse(courseCode)) ou métodos helper serão adicionados para simplificar o acesso.
-\end_layout
-
-\begin_layout Itemize
-Atributos auxiliares (e.g.,
- cache de resultados de cálculos,
- flags de estado para otimização de renderização da GUI) serão introduzidos se a análise de desempenho indicar um gargalo significativo.
-\end_layout
-
-\begin_layout Itemize
-A ordem de execução de operações que não dependem umas das outras será revisada para permitir paralelismo ou otimização,
- especialmente em carregamento e salvamento de dados,
- e em cálculos complexos.
-\end_layout
-
-\begin_layout Itemize
-As associações nos diagramas de classes serão continuamente revisadas para refletir as decisões de otimização e a forma como os objetos se relacionam para um desempenho eficiente.
+Escalabilidade:
+ estrutura preparada para expansão futura (ex:
+ suporte a banco de dados ou exportação de relatórios).
 \end_layout
 
 \begin_layout Section
@@ -1411,85 +723,11 @@ name "sec:Diagrama-de-componentes"
 \end_layout
 
 \begin_layout Standard
-O diagrama de componentes mostra a forma como os componentes do software se relacionam,
- suas dependências.
- Inclui itens como:
- componentes,
- subsistemas,
- executáveis,
- nós,
- associações,
- dependências,
- generalizações,
- restrições e notas.
- Exemplos de componentes são bibliotecas estáticas,
- bibliotecas dinâmicas,
- dlls,
- componentes Java,
- executáveis,
- arquivos de disco,
- código-fonte.
- 
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-componentes"
-nolink "false"
-
-\end_inset
-
- um exemplo de diagrama de componentes.
- Observe que este inclui muitas dependências,
- ilustrando as relações entre os arquivos.
- Por exemplo:
- o subsistema biblioteca inclui os arquivos das classes A e B,
- e a geração dos objetos A.obj e B.obj depende dos arquivos A.h,
- A.cpp,
- B.h e B.cpp.
- A geração da biblioteca depende dos arquivos A.obj e B.obj.
- O subsistema biblioteca Qt,
- um subsistema exerno,
- inclui os arquivos de código da biblioteca Qt e a biblioteca em si.
- O subsistema banco de dados representa o banco de dados utilizado pelo sistema e tem uma interface de acesso que é utilizada pelo software para acesso aos dados armazenados no banco de dados.
- O software executável a ser gerado depende da biblioteca gerada,
- dos arquivos da biblioteca Qt,
- do módulo de arquivos MinhaJanela e do banco de dados.
-\end_layout
-
-\begin_layout Standard
-Algumas observações úteis para o diagrama de componentes:
-\end_layout
-
-\begin_layout Itemize
-De posse do diagrama de componentes,
- temos a lista de todos os arquivos necessários para compilar e rodar o software.
-\end_layout
-
-\begin_layout Itemize
-Observe que um assunto/pacote pode se transformar em uma biblioteca e será incluído no diagrama de componentes.
-\end_layout
-
-\begin_layout Itemize
-A ligação entre componentes pode incluir um estereótipo indicando o tipo de relacionamento ou algum protocolo utilizado.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Na versão final apagar este texto copiado do livro;
- e colocado aqui para lhe auxiliar;
- deixar somente o que é pertinente ao trabalho
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Neste projeto blablabla
+Este diagrama representa os módulos físicos do sistema e suas dependências.
+ Cada componente encapsula uma parte funcional,
+ como o módulo de leitura de arquivos,
+ o módulo de simulação ou o acompanhamento de disciplinas.
+ Ele é importante para entender como o sistema é dividido em unidades reutilizáveis e independentes.
 \end_layout
 
 \begin_layout Standard
@@ -1503,7 +741,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Assuntos-Pacotes.png
+	filename C:/Users/abiga/Downloads/8. Diagrama de Componentes – Arquitetura geral.png
 	lyxscale 40
 	width 100text%
 
@@ -1572,49 +810,11 @@ name "sec:Diagrama-de-execução"
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação é um diagrama de alto nível que inclui relações entre o sistema e o hardware e que se preocupa com os aspectos da arquitetura computacional escolhida.
- Seu enfoque é o hardware,
- a configuração dos nós em tempo de execução.
- 
-\end_layout
-
-\begin_layout Standard
-O diagrama de implantação deve incluir os elementos necessários para que o sistema seja colocado em funcionamento:
- computador,
- periféricos,
- processadores,
- dispositivos,
- nós,
- relacionamentos de dependência,
- associação,
- componentes,
- subsistemas,
- restrições e notas.
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-implantação."
-nolink "false"
-
-\end_inset
-
- um exemplo de diagrama de implantação de um cluster.
- Observe a presença de um servidor conectado a um switch.
- Os nós do cluster (ou clientes) também estão conectados ao switch.
- Os resultados das simulações são armazenados em um servidor de arquivos (
-\emph on
-storage
-\emph default
-).
-\end_layout
-
-\begin_layout Standard
-Pode-se utilizar uma anotação de localização para identificar onde determinado componente está residente,
- por exemplo {localização:
- sala 3}.
+Este diagrama representa a arquitetura física de execução do sistema.
+ Mostra onde os componentes do sistema estão implantados,
+ como no ambiente local (computador pessoal),
+ com o uso de Qt para a interface gráfica e o arquivo InformacoesAluno.txt como banco de dados local.
+ Ele ajuda a visualizar como o sistema será utilizado no mundo real.
 \end_layout
 
 \begin_layout Standard
@@ -1628,7 +828,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeExecucao.png
+	filename C:/Users/abiga/Downloads/9. Diagrama de Implantação – Execução no sistema.png
 	lyxscale 50
 	width 100text%
 
@@ -1659,27 +859,6 @@ name "cap:Diagrama-de-implantação."
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

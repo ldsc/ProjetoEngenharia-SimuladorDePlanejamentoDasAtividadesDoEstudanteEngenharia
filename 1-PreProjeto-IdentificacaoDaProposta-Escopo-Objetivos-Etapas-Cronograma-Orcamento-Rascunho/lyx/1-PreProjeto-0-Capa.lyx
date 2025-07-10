@@ -245,44 +245,10 @@ Prof.
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\align center
-
-\size large
-Versão 2:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES:
- Abigail Ribeiro Pinto Silva Guimarães
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset VSpace 5cm
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o valor de 4cm pode ser alterado,
- para que a distribuição fique mais uniforme
-\end_layout
-
 \end_inset
 
 
@@ -297,18 +263,6 @@ MACAÉ - RJ
 \end_inset
 
 Março - 2025
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\size large
-Corrigir a data
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body

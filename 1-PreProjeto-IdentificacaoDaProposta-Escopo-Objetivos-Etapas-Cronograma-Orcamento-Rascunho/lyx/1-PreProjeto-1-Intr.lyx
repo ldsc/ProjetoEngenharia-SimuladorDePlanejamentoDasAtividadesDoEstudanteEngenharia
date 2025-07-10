@@ -145,16 +145,6 @@ space - Introdução}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-mantenha esta seção como esta,
- não modifique
-\end_layout
-
-\end_inset
-
 Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver um projeto de engenharia;
  Neste trabalho,
  apresenta-se a pré-proposta de um projeto em engenharia de software aplicado a solução de um problema específico da engenharia de petróleo.
@@ -246,16 +236,6 @@ PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão 1
 
 \begin_layout Subsubsection
 Coordenador:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Gestão das partes relacionadas às disciplinas e apoio em dúvidas de programação.
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Itemize
@@ -265,31 +245,6 @@ André Duarte Bueno
 \begin_layout Subsubsection
 Gerência técnica:
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nota:
- caso o projeto tenha algum tipo de vínculo com empresa ou instituição externa (como um projeto de extensão),
- coloque aqui o nome da empresa e do engenheiro que irá acompanhar o projeto.
- Caso o acompanhamento venha a ser feito por outro professor da UENF coloque aqui o nome do professor e seu laboratório/setor.
-\end_layout
-
-\begin_layout Plain Layout
-Nota:
- A gerência técnica é responsável pelo apoio técnico,
- responsável pela parte de equações e modelos da área em que o software será desenvolvido.
- 
-\end_layout
-
-\begin_layout Plain Layout
-Por exemplo,
- se o software é da área de reservatório a gerência técnica será de um professor de reservatório ou gerente de empresa que atua na área e tem o conhecimento técnico para auxiliar no esclarecimento de dúvidas.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -298,46 +253,17 @@ Nome Empresa/Instituição:
 \end_layout
 
 \begin_layout Itemize
-Nome Gerente
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-pode ser um professor(a)
-\end_layout
-
-\end_inset
-
-:
+Nome Gerente:
  André Duarte Bueno
 \end_layout
 
 \begin_layout Itemize
 E-mail:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o email da empresa;
- institucional
-\end_layout
-
-\end_inset
-
  bueno@lenep.uenf.br
 \end_layout
 
 \begin_layout Itemize
 Telefone:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-celular
-\end_layout
-
-\end_inset
-
  22-999542635
 \end_layout
 
@@ -347,32 +273,10 @@ Equipe:
 
 \begin_layout Itemize
 Abigail Ribeiro Pinto Silva Guimarães [abigailsilva@lenep.uenf.br/22-997886502]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o gerente da equipe é o aluno que faz a comunicação da equipe com a gerência técnica e coordenação.
- Todos se comunicam,
- mas o projeto deve ter um canal principal de comunicação.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
 Maria Luiza Cornelio Ramos [mariaramos@lenep.uenf.br/22-988356947] 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-membros da equipe (até 3 pessoas)
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -394,16 +298,6 @@ DEPARTAMENTO DE ENGENHARIA DE PETRÓLEO - LENEP
 
 \begin_layout Itemize
 SETOR DE MODELAGEM MATEMÁTICA E COMPUTACIONAL
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ADICIONE O Nome dos demais setores envolvidos
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -412,17 +306,7 @@ Duração:
 \end_layout
 
 \begin_layout Itemize
-06-12 mês(es) 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Considere 3 semestres(5/6/7) ou 4 semestres.
-\end_layout
-
-\end_inset
-
-
+04 meses
 \end_layout
 
 \begin_layout Subsubsection
@@ -431,7 +315,7 @@ Data de submissão:
 \end_layout
 
 \begin_layout Itemize
-27/03/2025
+17/03/2025
 \end_layout
 
 \begin_layout Subsubsection
@@ -441,16 +325,6 @@ Número da proposta:
 
 \begin_layout Itemize
 LDSC-2025-1-P61
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-repositório 61
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -472,18 +346,7 @@ Tipo de instrumento contratual:
 \end_layout
 
 \begin_layout Itemize
-Trabalho de disciplina
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ex:
- Termo de Cooperação / Convênio
-\end_layout
-
-\end_inset
-
-:
+Trabalho de disciplina:
  
 \begin_inset CommandInset href
 LatexCommand href
@@ -593,12 +456,50 @@ name "sec:Escopo-do-Problema"
 
 \end_layout
 
+\begin_layout Standard
+O PetroPlanner é um software acadêmico projetado para auxiliar estudantes de Engenharia de Petróleo na organização eficiente da sua trajetória universitária.
+ O sistema visa reduzir a insegurança na escolha de disciplinas,
+ prevenir sobrecargas e melhorar a tomada de decisão com base em dados personalizados do aluno.
+\end_layout
+
+\begin_layout Standard
+Diferentemente de sistemas genéricos de gestão acadêmica,
+ o PetroPlanner oferece funcionalidades direcionadas à realidade de cursos de engenharia,
+ como:
+\end_layout
+
 \begin_layout Itemize
-O projeto foca na criação de um software que auxilie estudantes no planejamento acadêmico,
- reduzindo indecisões e ajudando na formação.
- O sistema se diferencia de outras soluções por sintetizar funcionalidades específicas para estudantes de engenharias no geral,
- mas principalmente a engenharia de exploração e produção de petróleo,
- como simulção de impacto do adiamento de disciplinas e sugestão de combinações estratégicas de disciplinas.
+Simulação de planejamento semestral com checagem automática de pré-requisitos;
+\end_layout
+
+\begin_layout Itemize
+Estimativa de notas necessárias para aprovação com base em pesos e avaliações;
+\end_layout
+
+\begin_layout Itemize
+Visualização de impacto do adiamento de disciplinas na grade curricular;
+\end_layout
+
+\begin_layout Itemize
+Análise de carga horária semanal,
+ considerando aulas e atividades extracurriculares;
+\end_layout
+
+\begin_layout Itemize
+Distribuição equilibrada de disciplinas por dificuldade para evitar períodos sobrecarregados;
+\end_layout
+
+\begin_layout Itemize
+Controle visual de faltas e acompanhamento de progresso acadêmico.
+\end_layout
+
+\begin_layout Standard
+O escopo do sistema abrange,
+ portanto,
+ o planejamento,
+ a simulação,
+ o acompanhamento e a visualização do progresso curricular,
+ oferecendo ao aluno autonomia e clareza em cada etapa de sua formação.
 \end_layout
 
 \begin_layout Section
@@ -626,8 +527,10 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um software de apoio acadêmico para estudantes de engenharia de petróleo,
- aprimorando o planejamento curricular e a tomada de decisão.
+Desenvolver um software interativo de apoio acadêmico para estudantes de Engenharia de Petróleo,
+ com foco em planejamento de disciplinas,
+ análise de desempenho e organização da trajetória curricular de forma eficiente,
+ visual e personalizada.
 \end_layout
 
 \end_deeper
@@ -641,42 +544,50 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar matematicamente as regras e restrições acadêmicas do curso.
+Representar matematicamente as regras e restrições curriculares do curso (pré-requisitos,
+ carga horária,
+ CR mínimo,
+ etc.);
 \end_layout
 
 \begin_layout Itemize
-Criar diagramas de casos de uso,
- diagramas de pacotes e diagramas de classes para estruturar o software.
+Desenvolver diagrama de casos de uso,
+ diagrama de pacotes e diagrama de classes para estruturar o sistema em camadas lógicas;
 \end_layout
 
 \begin_layout Itemize
-Desenvolver a modelagem dinâmica do software,
- incluindo algoritmos para simulação de CR e fluxo de processamento das escolhas acadêmicas.
+Implementar algoritmos para:
+ Simulação de CR final com base em notas parciais;
+ Cálculo da nota mínima necessária para aprovação e Análise de impacto do adiamento de disciplinas;
 \end_layout
 
 \begin_layout Itemize
-Calcular a carga horária semanal para garantir o cumprimento do mínimo exigido.
+Criar um módulo de planejamento que:
+ Filtra automaticamente disciplinas elegíveis com base nos pré-requisitos e Auxilia na escolha estratégica de disciplinas para equilíbrio entre dificuldade e carga horária;
 \end_layout
 
 \begin_layout Itemize
-Calcular o impacto do adiamento de disciplinas na progressão acadêmica.
+Desenvolver um módulo para controle de faltas,
+ exibindo o número de faltas registradas e limite permitido;
 \end_layout
 
 \begin_layout Itemize
-Simular diferentes cenários para coeficiente de rendimento (CR) e sugerir notas necessárias para alcançar metas acadêmicas.
- 
+Construir um quadro de horários dinâmico,
+ baseado nas disciplinas em andamento e atividades extras;
 \end_layout
 
 \begin_layout Itemize
-Implementar manual simplificado de uso do software.
+Garantir o cálculo da carga horária semanal,
+ alertando o aluno caso esteja abaixo do mínimo exigido (16h/semana);
 \end_layout
 
 \begin_layout Itemize
-Implementar um módulo para controle e monitoramento de faltas.
+Criar interface gráfica intuitiva e responsiva utilizando Qt Framework;
 \end_layout
 
 \begin_layout Itemize
-Desenvolver um simulador de equilíbrio de disciplinas para evitar sobrecarga em um único período.
+Documentar e estruturar um manual simplificado de uso do software,
+ com foco didático.
 \end_layout
 
 \end_deeper
@@ -762,189 +673,136 @@ Requisitos Funcionais
 \end_layout
 
 \begin_layout Itemize
-Organização da Grade Curricular:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Importar e exibir a grade curricular completa.
- 
+RF01 – O sistema deve ler os dados do aluno a partir de um arquivo texto (InformacoesAluno.txt) contendo nome,
+ matrícula,
+ curso,
+ período,
+ CRA e histórico de disciplinas.
 \end_layout
 
 \begin_layout Itemize
-Visualizar disciplinas por semestre,
- carga horária e pré-requisitos.
- 
+RF02 – O sistema deve classificar as disciplinas em três categorias:
+ Aprovadas,
+ Em Curso e Não Cursadas.
 \end_layout
 
 \begin_layout Itemize
-Marcar disciplinas cursadas,
- reprovações e notas.
- 
+RF03 – O sistema deve permitir a visualização de uma grade curricular completa,
+ destacando as disciplinas já cursadas ou em andamento.
 \end_layout
 
 \begin_layout Itemize
-Painel de progresso com carga horária total e atividades complementares.
- 
+RF04 – O sistema deve possibilitar o planejamento de semestres futuros,
+ respeitando os pré-requisitos entre disciplinas.
 \end_layout
 
 \begin_layout Itemize
-Cálculo da taxa de aprovação e média por área de conhecimento.
- 
+RF05 – O sistema deve exibir um quadro de horários interativo,
+ onde o aluno possa organizar suas disciplinas em andamento e atividades extracurriculares.
 \end_layout
 
 \begin_layout Itemize
-Identificação do nível de dificuldade por tipo de disciplina (teórica/experimental).
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Planejamento Semestral:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Analisar histórico,
- taxa de aprovação e nível de dificuldade para sugerir disciplinas.
- 
+RF06 – O sistema deve permitir o acompanhamento individual de disciplinas,
+ exibindo faltas,
+ dias e horários,
+ trabalhos e provas.
 \end_layout
 
 \begin_layout Itemize
-Considerar disponibilidade de tempo (estágio,
- vida pessoal).
- 
+RF07 – O sistema deve alertar visualmente sobre o limite de faltas permitido em cada disciplina.
 \end_layout
 
 \begin_layout Itemize
-Criação de cenários e cálculo da carga horária semestral.
- 
+RF08 – O sistema deve permitir que o aluno edite as disciplinas em curso,
+ marcando quais está cursando no momento.
 \end_layout
 
-\begin_layout Itemize
-Ajuste automático do número de disciplinas com base em problemas pessoais.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Planejamento de Estudos:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Quadro de horários semanal com aulas,
- estudos,
- exercícios e lazer.
- 
-\end_layout
-
-\begin_layout Itemize
-Personalização e alertas de conflitos.
- 
-\end_layout
-
-\begin_layout Itemize
-Ajuste dinâmico do tempo de estudo por disciplina.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Acompanhamento de Atividades Complementares:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Registro e progresso de atividades de extensão (10%) e acadêmicas (60h).
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Gerenciamento de Estágios:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Registro de estágios obrigatórios e não obrigatórios.
- 
-\end_layout
-
-\begin_layout Itemize
-Verificação de requisitos para estágio obrigatório.
- 
-\end_layout
-
-\begin_layout Itemize
-Consideração do impacto do estágio no tempo disponível.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Trabalho de Conclusão de Curso (TCC):
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Registro e acompanhamento de TCC I e TCC II.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Gerenciamento de Vida Pessoal:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Registro de problemas financeiros ou familiares (simples/complexos).
- 
-\end_layout
-
-\begin_layout Itemize
-Ajuste automático do número de disciplinas com base nos problemas.
- 
-\end_layout
-
-\begin_layout Itemize
-Opção de desativar o ajuste automático.
- 
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Requisitos Não Funcionais
 \end_layout
 
 \begin_layout Itemize
-Interface gráfica intuitiva.
- 
+RNF01 – Usabilidade
 \end_layout
 
 \begin_layout Itemize
-Desempenho rápido e baixo consumo de recursos.
- 
+O sistema deve possuir uma interface gráfica intuitiva,
+ amigável e acessível a usuários com conhecimentos básicos de informática,
+ utilizando botões autoexplicativos,
+ cores diferenciadas e organização clara por seções.
 \end_layout
 
 \begin_layout Itemize
-Portabilidade (Windows,
- macOS,
- Linux).
- 
+RNF02 – Portabilidade
 \end_layout
 
 \begin_layout Itemize
-Código organizado e documentado.
- 
+O sistema deve ser compatível com sistemas operacionais que suportem aplicações Qt5 ou Qt6,
+ como Windows e distribuições Linux.
+\end_layout
+
+\begin_layout Itemize
+RNF03 – Persistência de dados
+\end_layout
+
+\begin_layout Itemize
+Todas as informações acadêmicas do aluno (disciplinas cursadas,
+ em andamento,
+ atividades,
+ faltas,
+ horários) devem ser armazenadas e lidas a partir de um arquivo externo (InformacoesAluno.txt),
+ garantindo persistência entre diferentes execuções do programa.
+\end_layout
+
+\begin_layout Itemize
+RNF04 – Performance
+\end_layout
+
+\begin_layout Itemize
+O sistema deve realizar a leitura do arquivo de entrada e o carregamento da interface principal em menos de 2 segundos,
+ mesmo com uma grade curricular extensa.
+\end_layout
+
+\begin_layout Itemize
+RNF05 – Manutenibilidade
+\end_layout
+
+\begin_layout Itemize
+A estrutura do código-fonte deve estar organizada em módulos e classes (ex:
+ CAluno,
+ CDisciplinas,
+ TelaInicial),
+ facilitando a manutenção,
+ testes e futura expansão do sistema.
+\end_layout
+
+\begin_layout Itemize
+RNF06 – Visualização clara
+\end_layout
+
+\begin_layout Itemize
+Os dados devem ser apresentados de forma visualmente compreensível,
+ com destaque para disciplinas em andamento,
+ alertas de faltas e agrupamento por período letivo ou por tipo de atividade.
+\end_layout
+
+\begin_layout Itemize
+RNF07 – Confiabilidade
+\end_layout
+
+\begin_layout Itemize
+O sistema deve garantir que informações críticas como pré-requisitos,
+ horários e número de faltas não sejam perdidas ou corrompidas durante o uso,
+ mesmo após alterações múltiplas feitas pelo usuário.
+\end_layout
+
+\begin_layout Itemize
+RNF08 – Responsividade visual
+\end_layout
+
+\begin_layout Itemize
+A interface deve se ajustar a diferentes tamanhos de tela,
+ permitindo boa experiência de uso em monitores com diferentes resoluções.
 \end_layout
 
 \begin_layout Section
@@ -966,7 +824,7 @@ Linguagem de Programação:
 Interface Gráfica:
 
 \series default
- Qt 6.6 (ou superior) 
+ Qt 6.10.0
 \end_layout
 
 \begin_layout Itemize
@@ -1044,62 +902,63 @@ Módulo de Vida Pessoal
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-
-\series bold
-Bibliotecas Utilitárias:
-
-\series default
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-QCustomPlot (gráficos) 
-\end_layout
-
-\begin_layout Itemize
-Biblioteca de agenda mensal (a ser definida) 
-\end_layout
-
-\begin_layout Itemize
-Biblioteca de estatística (a ser definida) 
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Design da Interface Gráfica
 \end_layout
 
+\begin_layout Standard
+O sistema PetroPlanner foi desenvolvido com uma interface gráfica organizada em módulos interativos que buscam facilitar a experiência do usuário,
+ organizando as informações acadêmicas de forma intuitiva e funcional.
+ O layout foi construído usando Qt Framework,
+ priorizando simplicidade,
+ clareza e acessibilidade.
+\end_layout
+
+\begin_layout Standard
+A seguir,
+ são descritos os principais componentes da interface:
+\end_layout
+
 \begin_layout Itemize
+
+\series bold
 Tela Inicial:
  
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Informações gerais do estudante (nome,
+Exibe as informações gerais do aluno:
+ nome,
  matrícula,
- CRA até o momento,semestre em que se encontra,
- horas gastas semanais com estágio,
- IC e extensão,
- etc).
- 
+ curso,
+ período atual e CRA.
 \end_layout
 
 \begin_layout Itemize
-Menu principal com acesso aos módulos.
- 
+Mostra a barra de progresso de carga horária semanal,
+ com destaque para o cumprimento do mínimo exigido (16 horas).
 \end_layout
 
 \begin_layout Itemize
-Disciplinas em andamento com o indicativo de horas cursadas no semestre.
- 
+Lista as disciplinas em andamento,
+ organizadas em botões clicáveis.
 \end_layout
 
 \begin_layout Itemize
-Indicativos de faltas das disciplinas do semestre.
- 
+Apresenta o menu principal com acesso aos demais módulos:
+ Grade Curricular,
+ Quadro de Horários,
+ Simulador de Períodos e Acompanhamento de Disciplinas.
+\end_layout
+
+\begin_layout Itemize
+Ao lado de cada disciplina,
+ mostra indicativos de faltas.
+\end_layout
+
+\begin_layout Itemize
+O fundo azul foi escolhido para facilitar a leitura e dar identidade ao sistema.
 \end_layout
 
 \begin_layout Itemize
@@ -1117,8 +976,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/Screenshot 2025-04-04 143149.png
-	width 3in
+	filename C:/PetroPlanner/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoUsuario/imagens/QuadroDeHorarios_Teste_TelaInicial.png
+	width 100text%
 
 \end_inset
 
@@ -1141,44 +1000,47 @@ Tela inicial da interface gráfica.
 
 \end_deeper
 \begin_layout Itemize
-Módulo de Grade Curricular:
+
+\series bold
+Módulo de Horários:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Tabela com disciplinas (nome,
- código,
- carga horária,
- pré-requisitos,
- nível de dificuldade baseado no formulário respondido pelos estudantes que já cursaram a disciplina).
- 
+Exibe todas as disciplinas do curso,
+ organizadas por período.
 \end_layout
 
 \begin_layout Itemize
-Filtros:
- semestre,
- área de conhecimento,
- tipo (teórica/experimental).
- 
+Cada botão representa uma disciplina,
+ com cor que indica a área temática (eixo curricular).
 \end_layout
 
 \begin_layout Itemize
-Opções:
- marcar disciplinas cursadas,
- reprovações,
- notas.
- 
+O sistema apresenta três abas principais:
 \end_layout
 
 \begin_layout Itemize
-Gráficos:
- taxa de aprovação por área (QCustomPlot).
- 
+Grade Geral:
+ mostra todas as disciplinas previstas no curso.
 \end_layout
 
 \begin_layout Itemize
-Porcentagem de disciplinas realizadas.
- 
+Progresso:
+ usa cores para indicar o status da disciplina (verde = aprovada,
+ amarelo = em curso,
+ vermelho = reprovada,
+ cinza = não cursada).
+\end_layout
+
+\begin_layout Itemize
+Dificuldade:
+ usa um gradiente de cores para indicar o nível de dificuldade da disciplina,
+ conforme informado em formulário por estudantes.
+\end_layout
+
+\begin_layout Itemize
+Uma barra de progresso inferior mostra o percentual de carga horária cursada em relação ao total do curso.
 \end_layout
 
 \begin_layout Itemize
@@ -1192,8 +1054,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/Screenshot 2025-04-04 145509.png
-	width 3.5in
+	filename C:/PetroPlanner/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoUsuario/imagens/QuadroDeHorarios_FuncaoBaixar.png
+	width 100text%
 
 \end_inset
 
@@ -1220,24 +1082,43 @@ Módulo de grade curricular.
 
 \end_deeper
 \begin_layout Itemize
-Módulo de Planejamento Semestral:
- 
+
+\series bold
+Módulo de Acompanhamento de Disciplinas:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Painel de sugestões de disciplinas (considerando histórico e dificuldades).
- 
+Permite abrir uma janela específica para cada disciplina.
 \end_layout
 
 \begin_layout Itemize
-Criação de cenários de planejamento de disciplina até o fim do curso.
- 
+Nela,
+ o aluno pode:
 \end_layout
 
 \begin_layout Itemize
-Salvar cenários para o estudante escolher o melhor para si.
- 
+Inserir notas e pesos de trabalhos e provas.
+\end_layout
+
+\begin_layout Itemize
+Marcar avaliações como simuladas,
+ e o sistema calcula automaticamente a nota necessária para aprovação.
+\end_layout
+
+\begin_layout Itemize
+Visualizar a média final estimada,
+ com coloração automática (verde = ≥ 60,
+ vermelho = < 60,
+ cinza = simulado).
+\end_layout
+
+\begin_layout Itemize
+Alternar entre modo de edição e modo de visualização.
+\end_layout
+
+\begin_layout Itemize
+As alterações são salvas automaticamente no arquivo de dados do aluno.
 \end_layout
 
 \begin_layout Itemize
@@ -1251,8 +1132,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/Screenshot 2025-04-04 150141.png
-	width 3.5in
+	filename C:/PetroPlanner/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoUsuario/imagens/AcompanhamentoDiscTeste.png
+	width 100text%
 
 \end_inset
 
@@ -1279,19 +1160,31 @@ Módulo de planejamento semestral.
 
 \end_deeper
 \begin_layout Itemize
-Criação de cenários (arrastar e soltar disciplinas).
- 
+
+\series bold
+Módulo de Simulação de Planejamento Semestral
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Cálculo da carga horária semestral e alertas de sobrecarga.
- 
+Simula o avanço do aluno nos próximos períodos.
 \end_layout
 
 \begin_layout Itemize
-Ajuste automático de disciplinas (problemas pessoais).
- 
+Lista as disciplinas elegíveis para o próximo semestre,
+ de acordo com os pré-requisitos já cumpridos.
+\end_layout
+
+\begin_layout Itemize
+Permite ao aluno selecionar as disciplinas desejadas e visualizar sua distribuição por semestre.
+\end_layout
+
+\begin_layout Itemize
+Exibe os nomes das disciplinas escolhidas organizadas por período simulado.
+\end_layout
+
+\begin_layout Itemize
+Cada nova simulação é adicionada como um novo "bloco visual" no layout.
 \end_layout
 
 \begin_layout Itemize
@@ -1309,8 +1202,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/Screenshot 2025-04-04 150407.png
-	width 3.5in
+	filename C:/PetroPlanner/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoUsuario/imagens/PlanejSemTeste_5.png
+	width 100text%
 
 \end_inset
 
@@ -1332,286 +1225,407 @@ Criação de cenários.
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-Módulo de Planejamento de Estudos:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Quadro de horários semanal interativo (arrastar e soltar atividades).
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Horários das disciplinas em curso serem adicionados automaticamente,
- restando apenas os horários livres para melhor visualização de tempos livres para encaixar estudos.
- 
-\end_layout
-
-\begin_layout Itemize
-Opções:
- adicionar/remover atividades,
- personalizar horários.
- 
-\end_layout
-
-\begin_layout Itemize
-Alertas de conflitos e tempo de estudo ajustado.
- 
-\end_layout
-
-\begin_layout Itemize
-Agenda mensal de atividades.
- 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename C:/Users/abiga/OneDrive/Imagens/Capturas de tela/Screenshot 2025-04-04 160702.png
-	width 3.5in
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Módulo de planejamento de estudos.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Módulo de Atividades Complementares:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Formulário para registrar atividades de extensão e acadêmicas.
- 
-\end_layout
-
-\begin_layout Itemize
-Painel de progresso com gráficos e porcentagens.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Módulo de Estágios:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Formulário para registrar estágios obrigatórios e não obrigatórios.
- 
-\end_layout
-
-\begin_layout Itemize
-Verificação de requisitos e alertas.
- 
-\end_layout
-
-\begin_layout Itemize
-Visualização do impacto no tempo disponível.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Módulo de TCC:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Formulário para registrar etapas do TCC I e TCC II.
- 
-\end_layout
-
-\begin_layout Itemize
-Acompanhamento do progresso e alertas de prazos.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Módulo de Vida Pessoal:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Formulário para registrar problemas pessoais (nível de gravidade).
- 
-\end_layout
-
-\begin_layout Itemize
-Opção de ativar/desativar ajuste automático de disciplinas.
- 
-\end_layout
-
-\end_deeper
-\end_deeper
 \begin_layout Section
 Cálculos e Algoritmos
 \end_layout
 
-\begin_layout Itemize
-Taxa de Aprovação por Área:
- 
+\begin_layout Standard
+O sistema PetroPlanner integra diversos algoritmos e cálculos automatizados para apoiar o aluno na organização da sua jornada acadêmica.
+ Essas funcionalidades foram projetadas para oferecer não apenas dados,
+ mas informações processadas e relevantes,
+ facilitando a tomada de decisão baseada em evidências.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Porcentagem de aprovação em cada área (química,
- cálculo,
- física,
- etc.).
- 
+\begin_layout Standard
+A seguir,
+ são descritos os principais cálculos utilizados no sistema:
 \end_layout
 
-\begin_layout Itemize
-Gráficos e tabelas comparativas (QCustomPlot).
- 
-\end_layout
+\begin_layout Standard
 
-\end_deeper
-\begin_layout Itemize
-Nível de Dificuldade por Disciplina:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Análise de notas,
- reprovações e tipo de disciplina.
- 
+\series bold
+Taxa de Aprovação por Área
 \end_layout
 
 \begin_layout Itemize
-Classificação:
- fácil,
- médio,
- difícil (ícones ou cores).
- 
+O sistema organiza as disciplinas por área temática (como Química,
+ Física,
+ Cálculo,
+ Computação,
+ etc.) com base no atributo eixoTematico.
 \end_layout
 
 \begin_layout Itemize
-Cálculos estatísticos para determinar a dificuldade.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Ajuste Automático de Disciplinas:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Número base de disciplinas,
- redução por gravidade dos problemas.
- 
+É possível,
+ futuramente,
+ calcular a porcentagem de aprovação em cada área,
+ com base nos dados históricos do aluno e da turma.
 \end_layout
 
 \begin_layout Itemize
-Priorização por pré-requisitos e dificuldade.
- 
+A visualização pode ser feita por meio de gráficos comparativos,
+ gerados com a biblioteca QCustomPlot (biblioteca gráfica compatível com Qt,
+ utilizada para visualizações estatísticas).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nível de Dificuldade por Disciplina
 \end_layout
 
 \begin_layout Itemize
-Algoritmo de otimização para seleção de disciplinas.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Ajuste Dinâmico do Tempo de Estudo:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Carga efetiva,
- dificuldade e tempo de estudo ideal.
- 
+Cada disciplina possui um nível de dificuldade definido numericamente (de 1 a 5),
+ com base em uma pesquisa feita com alunos.
 \end_layout
 
 \begin_layout Itemize
-Ajuste no quadro de horários.
- 
+Esse nível é representado visualmente por cores no módulo "Grade por Dificuldade",
+ auxiliando o aluno a equilibrar sua carga de disciplinas por semestre.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Geração de Gráficos:
- 
+O algoritmo realiza uma classificação qualitativa:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Utilização da biblioteca QCustomPlot para geração de gráficos informativos.
- 
+Nível 1–2:
+ Fácil (Verde)
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+Nível 3:
+ Médio (Amarelo)
+\end_layout
+
+\begin_layout Itemize
+Nível 4–5:
+ Difícil (Laranja a Vermelho)
+\end_layout
+
+\begin_layout Itemize
+Os valores também podem ser atualizados com base em estatísticas de:
+\end_layout
+
+\begin_layout Itemize
+Notas médias dos alunos
+\end_layout
+
+\begin_layout Itemize
+Taxa de reprovação
+\end_layout
+
+\begin_layout Itemize
+Carga horária semanal
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ajuste Automático de Disciplinas
+\end_layout
+
+\begin_layout Itemize
+O módulo de simulação de planejamento semestral realiza a verificação de pré-requisitos automaticamente.
+\end_layout
+
+\begin_layout Itemize
+O algoritmo filtra e exibe apenas as disciplinas que podem ser cursadas,
+ de acordo com o histórico do aluno.
+\end_layout
+
+\begin_layout Itemize
+É possível selecionar disciplinas para cada semestre futuro,
+ priorizando:
+\end_layout
+
+\begin_layout Itemize
+Disciplinas com pré-requisitos já cumpridos
+\end_layout
+
+\begin_layout Itemize
+Disciplinas obrigatórias
+\end_layout
+
+\begin_layout Itemize
+Distribuição equilibrada entre fáceis e difíceis
+\end_layout
+
+\begin_layout Itemize
+Esse algoritmo funciona de forma reativa:
+ ao remover uma disciplina,
+ os semestres seguintes são reatualizados automaticamente.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ajuste Dinâmico do Tempo de Estudo
+\end_layout
+
+\begin_layout Itemize
+O sistema permite o cálculo da carga horária semanal real (disciplinas + atividades extracurriculares).
+\end_layout
+
+\begin_layout Itemize
+O quadro de horários é preenchido automaticamente com base em:
+\end_layout
+
+\begin_layout Itemize
+Horários das disciplinas em andamento
+\end_layout
+
+\begin_layout Itemize
+Atividades extras cadastradas (iniciação científica,
+ estágio,
+ estudos,
+ etc.)
+\end_layout
+
+\begin_layout Itemize
+Com base na quantidade de disciplinas difíceis e no tempo disponível,
+ o aluno pode reorganizar melhor seus blocos de estudo.
+\end_layout
+
+\begin_layout Itemize
+Essa visualização evita sobrecarga ou sobreposição de horários.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Geração de Gráficos Interativos
+\end_layout
+
+\begin_layout Itemize
+Para futura integração,
+ o sistema pode utilizar a biblioteca QCustomPlot para:
+\end_layout
+
+\begin_layout Itemize
+Mostrar gráficos de CR por semestre
+\end_layout
+
+\begin_layout Itemize
+Apresentar a evolução da carga horária
+\end_layout
+
+\begin_layout Itemize
+Comparar áreas temáticas com maior reprovação
+\end_layout
+
+\begin_layout Itemize
+Essa funcionalidade será útil em uma versão avançada para análise mais visual dos dados.
+\end_layout
+
 \begin_layout Section
 Casos de Uso
 \end_layout
 
-\begin_layout Itemize
-Planejar semestre com problemas pessoais (registro,
- sugestões,
- cenários).
- 
+\begin_layout Standard
+O sistema PetroPlanner foi projetado para atender situações acadêmicas reais enfrentadas por estudantes de Engenharia de Petróleo.
+ A seguir,
+ estão descritos alguns casos de uso representativos,
+ que demonstram como o sistema pode ser utilizado para apoiar o aluno em decisões importantes ao longo da graduação.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Planejar o Semestre com Restrições Pessoais
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cenário:
+
+\series default
+ Um aluno com restrições de tempo (ex:
+ estágio,
+ IC,
+ extensão ou questões pessoais) deseja montar uma grade sem se sobrecarregar.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fluxo:
 \end_layout
 
 \begin_layout Itemize
-Criar quadro de horários com tempo de estudo ajustado (aulas,
- atividades,
- alertas).
- 
+O aluno acessa o módulo de simulação de planejamento semestral.
 \end_layout
 
 \begin_layout Itemize
-Acompanhar taxa de aprovação (gráficos e tabelas).
- 
+O sistema exibe apenas as disciplinas elegíveis,
+ verificando automaticamente os pré-requisitos cumpridos.
 \end_layout
 
 \begin_layout Itemize
-Visualizar agenda mensal de atividades.
+O aluno seleciona as disciplinas desejadas e visualiza quais seriam cursadas em cada período futuro.
+\end_layout
+
+\begin_layout Itemize
+O sistema sinaliza sobrecargas com base em carga horária total e dificuldade.
+\end_layout
+
+\begin_layout Itemize
+O aluno pode testar diferentes combinações até encontrar um cenário equilibrado.
+\end_layout
+
+\begin_layout Standard
+Resultado:
+ Planejamento personalizado e estratégico,
+ com visualização antecipada do impacto de cada decisão.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Criar Quadro de Horários com Tempo de Estudo Ajustado
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cenário:
  
+\series default
+O aluno quer organizar suas semanas considerando aulas,
+ estudos e atividades extracurriculares.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fluxo:
+\end_layout
+
+\begin_layout Itemize
+O sistema carrega automaticamente as disciplinas em andamento e suas respectivas faixas de horário.
+\end_layout
+
+\begin_layout Itemize
+O aluno pode adicionar atividades extras como IC,
+ estágio ou horário de estudos.
+\end_layout
+
+\begin_layout Itemize
+O sistema gera um quadro de horários completo,
+ com cores distintas para cada atividade.
+\end_layout
+
+\begin_layout Itemize
+O aluno pode editar os horários manualmente e salvar as alterações.
+\end_layout
+
+\begin_layout Itemize
+O sistema exibe alertas visuais em caso de conflito de horários ou carga horária insuficiente.
+\end_layout
+
+\begin_layout Standard
+Resultado:
+ Organização visual da rotina semanal,
+ otimizando o tempo de estudo.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Acompanhar Taxa de Aprovação e Desempenho Acadêmico
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cenário:
+ 
+\series default
+O aluno quer acompanhar seu desempenho,
+ CR,
+ notas e médias por disciplina ao longo do curso.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fluxo:
+\end_layout
+
+\begin_layout Itemize
+O aluno acessa o módulo de acompanhamento de disciplinas.
+\end_layout
+
+\begin_layout Itemize
+Ao clicar em uma disciplina,
+ uma janela se abre com campos para inserir notas de provas e trabalhos,
+ com pesos.
+\end_layout
+
+\begin_layout Itemize
+O sistema calcula automaticamente a média final estimada e indica a nota mínima necessária para aprovação.
+\end_layout
+
+\begin_layout Itemize
+A média é destacada com cores (verde,
+ vermelho ou cinza) para facilitar a leitura.
+\end_layout
+
+\begin_layout Itemize
+Futuramente,
+ o sistema pode apresentar gráficos da evolução do CR ou desempenho por área.
+\end_layout
+
+\begin_layout Standard
+Resultado:
+ Monitoramento preciso do progresso acadêmico,
+ com base em simulações e previsões.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Visualizar Agenda Semanal de Atividades
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cenário:
+
+\series default
+ O aluno quer ter uma visão clara de todos os seus compromissos acadêmicos semanais.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fluxo:
+\end_layout
+
+\begin_layout Itemize
+O aluno acessa o módulo de quadro de horários.
+\end_layout
+
+\begin_layout Itemize
+Todas as aulas,
+ trabalhos e atividades extras são organizadas automaticamente por dia e hora.
+\end_layout
+
+\begin_layout Itemize
+As células do calendário são preenchidas com os nomes das atividades,
+ usando cores distintas.
+\end_layout
+
+\begin_layout Itemize
+O aluno pode alternar entre modo de visualização e modo de edição.
+\end_layout
+
+\begin_layout Standard
+Resultado:
+ Agenda semanal organizada,
+ com destaque para horários ocupados e espaços livres.
 \end_layout
 
 \begin_layout Section
@@ -1623,7 +1637,7 @@ C++23
 \end_layout
 
 \begin_layout Itemize
-Qt 6.6 (ou superior) 
+Qt 6.10.0
 \end_layout
 
 \begin_layout Itemize
@@ -1638,24 +1652,8 @@ Git/GitHub
 CMake 
 \end_layout
 
-\begin_layout Itemize
-QCustomPlot 
-\end_layout
-
-\begin_layout Itemize
-Biblioteca de agenda mensal (a ser definida) 
-\end_layout
-
-\begin_layout Itemize
-Biblioteca de estatística (a ser definida) 
-\end_layout
-
 \begin_layout Section
 Referências
-\end_layout
-
-\begin_layout Standard
-Entre as referências utilizadas podemos em sala de aula podemos citar:
 \end_layout
 
 \begin_layout Itemize

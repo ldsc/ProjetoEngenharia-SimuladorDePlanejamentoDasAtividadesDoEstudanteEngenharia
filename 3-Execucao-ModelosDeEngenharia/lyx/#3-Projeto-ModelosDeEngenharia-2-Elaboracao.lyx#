@@ -158,23 +158,6 @@ name "sec:Elaboração"
 
 \end_layout
 
-\begin_layout Standard
-Após a definição dos objetivos,
- da especificação do software e da montagem dos primeiros diagramas de caso de uso,
- a equipe de desenvolvimento do projeto de engenharia passou para o processo de elaboração,
- que envolveu o estudo de conceitos relacionados ao sistema,
- a análise do domínio de aplicação e a organização em pacotes funcionais.
-\end_layout
-
-\begin_layout Standard
-Essa etapa visa refinar os requisitos,
- eliminar inconsistências e preparar uma base sólida para o desenvolvimento técnico.
- O sistema começa a ser pensado com maior profundidade,
- considerando limitações técnicas,
- prazos,
- reusabilidade de componentes e possibilidades de expansão futura.
-\end_layout
-
 \begin_layout Section
 Análise de domínio
 \begin_inset CommandInset label
@@ -280,67 +263,127 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Standard
-Com base na análise de domínio realizada,
- começamos a pensar nas estruturas e lógicas que poderiam viabilizar o funcionamento do PetroPlanner.
- Nosso objetivo foi encontrar uma forma de representar as disciplinas,
- suas características e suas relações (como pré e co-requisitos) de maneira estruturada,
- que facilitasse tanto a implementação quanto a visualização por parte do usuário.
+O desenvolvimento do sistema PetroPlanner é fundamentado em conceitos clássicos da engenharia de software,
+ da programação orientada a objetos (POO),
+ e da modelagem de sistemas com UML (Unified Modeling Language).
+ Estes elementos foram essenciais para garantir organização,
+ modularidade,
+ manutenibilidade e facilidade de uso da aplicação proposta.
 \end_layout
 
 \begin_layout Standard
-Para isso,
- decidimos utilizar uma abordagem baseada em programação orientada a objetos,
- onde cada disciplina seria representada como um objeto com atributos próprios —
- como nome,
- código,
- período recomendado,
- carga horária,
- tipo (obrigatória,
- eletiva),
- eixo temático,
- além de listas de pré-requisitos e co-requisitos.
+
+\series bold
+Programação Orientada a Objetos (POO)
+\end_layout
+
+\begin_layout Standard
+A estrutura do PetroPlanner foi desenvolvida utilizando a linguagem C++,
+ aplicando os princípios da Programação Orientada a Objetos.
+ Entre os conceitos utilizados,
+ destacam-se:
+\end_layout
+
+\begin_layout Itemize
+Encapsulamento:
+ cada classe encapsula seus próprios dados e comportamentos,
+ como as classes CAluno,
+ CDisciplinas,
+ QuadroDeHorarios,
+ entre outras.
+\end_layout
+
+\begin_layout Itemize
+Abstração:
+ as classes representam abstrações reais do contexto acadêmico,
+ como uma disciplina ou um aluno.
+\end_layout
+
+\begin_layout Itemize
+Modularidade:
+ cada módulo da aplicação é independente e interage por meio de interfaces bem definidas,
+ facilitando a manutenção.
+\end_layout
+
+\begin_layout Itemize
+Associação e Composição:
+ A classe CAluno compõe vetores de objetos do tipo CDisciplinas,
+ evidenciando a relação de composição entre aluno e suas disciplinas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Modelagem UML
+\end_layout
+
+\begin_layout Standard
+Para a modelagem do sistema,
+ foram elaborados diversos diagramas UML,
+ que permitiram a visualização estruturada dos componentes do projeto.
+ Dentre os diagramas utilizados:
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Casos de Uso:
+ identifica os principais atores e funcionalidades oferecidas pelo sistema.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Classes:
+ define a estrutura do sistema,
+ seus atributos e métodos,
+ bem como os relacionamentos entre classes.
+\end_layout
+
+\begin_layout Itemize
+Diagramas de Sequência e Comunicação:
+ ilustram o fluxo de mensagens entre os componentes do sistema ao longo da execução.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Atividades:
+ representa o fluxo de trabalho do usuário na interação com o sistema.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Estado:
+ mostra os estados possíveis das disciplinas (em curso,
+ aprovadas,
+ não cursadas).
+\end_layout
+
+\begin_layout Itemize
+Diagramas de Componentes e Implantação:
+ descrevem a organização física e lógica dos arquivos e estruturas que compõem o sistema.
+\end_layout
+
+\begin_layout Standard
+Esses diagramas foram fundamentais para guiar a implementação e validar os requisitos levantados na fase de concepção.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Engenharia de Software
+\end_layout
+
+\begin_layout Standard
+Durante a elaboração do sistema,
+ foram considerados os princípios do ciclo de vida de software baseado em modelagem,
+ implementação,
+ validação e evolução.
+ A modelagem dos dados,
+ aliada à definição clara de requisitos funcionais e não funcionais,
+ permitiu o desenvolvimento de uma aplicação funcional,
+ coerente com as necessidades do público-alvo.
 \end_layout
 
 \begin_layout Standard
 Além disso,
- para representar as dependências entre as disciplinas,
- usamos o conceito de grafos direcionados acíclicos (DAGs).
- Cada disciplina é um "nó" no grafo,
- e as conexões entre elas (arestas) indicam relações de pré-requisito ou co-requisito.
- Isso nos permite montar uma estrutura lógica que ajuda a verificar se um planejamento acadêmico é viável,
- ou se o aluno está tentando cursar uma disciplina sem ter cumprido as exigências anteriores.
-\end_layout
-
-\begin_layout Standard
-Também consideramos algumas regras básicas,
- como:
-\end_layout
-
-\begin_layout Itemize
-O aluno só pode adicionar uma disciplina ao período se todos os seus pré-requisitos já tiverem sido cursados anteriormente;
-\end_layout
-
-\begin_layout Itemize
-Os co-requisitos precisam estar sendo cursados no mesmo período ou já terem sido concluídos;
-\end_layout
-
-\begin_layout Itemize
-A carga horária total por período pode ser limitada por uma regra definida pelo curso (como um teto de 30 ou 32 horas semanais,
- por exemplo).
-\end_layout
-
-\begin_layout Itemize
-Além dessas regras,
- o sistema poderá incluir funções para calcular a carga horária total de cada período com base nas disciplinas selecionadas.
- A fórmula usada para isso é simples:
-\end_layout
-
-\begin_layout Standard
-CH total= n∑i=1 CH i
-\end_layout
-
-\begin_layout Standard
-
+ boas práticas de versionamento (como uso de Git),
+ modularização,
+ e documentação do código foram adotadas para garantir maior qualidade e escalabilidade ao projeto.
 \end_layout
 
 \begin_layout Section
@@ -387,21 +430,13 @@ name "sec: Diagrama de pacotes – assuntos"
 \end_layout
 
 \begin_layout Standard
-...aqui...
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes,
- referencie a figura.
- Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Diagrama-de-Pacotes"
-nolink "false"
-
-\end_inset
-
-.
+Este diagrama representa a organização modular do sistema PetroPlanner,
+ separando os componentes principais em pacotes lógicos.
+ Os pacotes incluem a interface gráfica,
+ as classes de modelo (como CAluno e CDisciplinas),
+ os controladores responsáveis pela lógica de negócio e o módulo de persistência de dados.
+ Essa separação facilita a manutenção,
+ a reutilização de código e o entendimento da estrutura geral do sistema.
 \end_layout
 
 \begin_layout Standard
@@ -415,7 +450,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Assuntos-Pacotes.png
+	filename C:/Users/abiga/Downloads/1. Diagrama de Pacotes – Assuntos Componentes principais.png
 	lyxscale 50
 	width 100text%
 
@@ -446,27 +481,6 @@ name "fig:Diagrama-de-Pacotes"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

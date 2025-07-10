@@ -130,32 +130,22 @@ name "chap:Lista-das-Características"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo apresenta-se a lista de funcionalidades (features) do sistema PetroPlanner,
- resultantes da fase de análise orientada a objeto.
- Cada item foi projetado para ser implementado em ciclos de desenvolvimento curtos,
- priorizando a entrega contínua de valor e o formato didático do projeto.
+Neste capítulo apresenta-se a lista de funcionalidades (features) implementadas no sistema PetroPlanner,
+ estruturadas com base na abordagem de análise e desenvolvimento orientado a objetos,
+ com entregas incrementais.
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-A organização foi feita em versões (v0.1,
+As funcionalidades foram organizadas em versões correspondentes aos ciclos de desenvolvimento (v0.1,
  v0.3,
  v0.7),
- de acordo com a maturação do software e a progressiva implementação dos componentes planejados.
- As versões refletem a evolução incremental das funcionalidades,
- considerando o tempo estimado de desenvolvimento e a capacidade da equipe.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Lista-de-características"
-nolink "false"
+ refletindo a maturação gradual do sistema e o avanço da equipe na construção dos módulos planejados.
+\end_layout
 
-\end_inset
-
-).
- 
+\begin_layout Standard
+Cada feature foi pensada para ser desenvolvida em um único ciclo,
+ permitindo progresso contínuo,
+ revisões constantes e validação prática em cada etapa.
 \end_layout
 
 \begin_layout Section
@@ -170,164 +160,163 @@ name "sec:Lista-de-características"
 \end_layout
 
 \begin_layout Standard
-.
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
-nota importante,
- o número de versões irá depender do tamanho do ciclo,
- ou seja,
- número de dias de cada ciclo e capacidade da equipe.
-\end_layout
-
-\end_inset
-
-v0.1
+\series bold
+Versão v0.1 – Núcleo de Dados e Estrutura Inicial
 \end_layout
 
 \begin_layout Standard
-Nesta versão,
- o foco está na estruturação do núcleo de dados e na leitura das informações do aluno.
- São implementadas funcionalidades básicas e classes fundamentais para o funcionamento inicial do sistema.
+Nesta fase,
+ o foco esteve na definição das classes centrais,
+ na estrutura de dados e na leitura automatizada das informações do aluno.
+ Essas funcionalidades representam a base de todo o sistema.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Features v0.1:
 \end_layout
 
 \begin_layout Itemize
-O sistema deve ser capaz de ler arquivos contendo os dados do aluno.
+Leitura de arquivos .txt contendo os dados do aluno.
 \end_layout
 
 \begin_layout Itemize
-O sistema deve armazenar e organizar disciplinas aprovadas,
- cursando e não cursadas.
+Armazenamento organizado das disciplinas aprovadas,
+ em curso e não cursadas.
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe CAluno.
+Implementação da classe CAluno,
+ responsável por representar o aluno no sistema.
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe CDisciplinas.
+Implementação da classe CDisciplinas,
+ representando a estrutura de uma disciplina.
 \end_layout
 
 \begin_layout Itemize
-Implementação do método lerDoArquivo() para carregar informações do aluno.
+Implementação do método lerDoArquivo(),
+ que interpreta e estrutura os dados salvos.
 \end_layout
 
 \begin_layout Itemize
-Implementação do método calcularCreditosEmCurso().
+Cálculo automático da carga horária cursada via calcularHorasEmCurso() e calcularCHTotalCursada().
 \end_layout
 
 \begin_layout Standard
-v0.3
+
+\series bold
+Versão v0.3 – Interface Gráfica Inicial e Integração com Backend
 \end_layout
 
 \begin_layout Standard
-A versão 0.3 amplia a funcionalidade com a adição da interface gráfica básica,
- permitindo visualizar os dados previamente organizados.
- A primeira interação entre os módulos do frontend e os dados do backend ocorre aqui.
+Nesta fase,
+ iniciou-se a construção da interface gráfica utilizando Qt,
+ conectando os dados organizados no backend com elementos visuais,
+ permitindo ao usuário interagir com suas informações acadêmicas.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Features v0.3:
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe TelaInicial.
+Implementação da TelaInicial com exibição das informações do aluno.
 \end_layout
 
 \begin_layout Itemize
-Implementação da janela ModuloGradeCompleta.
+Conexão entre CAluno/CDisciplinas e a interface gráfica.
 \end_layout
 
 \begin_layout Itemize
-Conexão entre os dados do aluno (CAluno) e a interface.
+Implementação da ModuloGradeCompleta,
+ exibindo a grade curricular completa do curso.
 \end_layout
 
 \begin_layout Itemize
-O sistema deve exibir a grade curricular com as disciplinas separadas por status (aprovadas,
+Uso de cores distintas para indicar status das disciplinas:
+ aprovadas,
  em curso,
- não cursadas).
+ reprovadas,
+ não cursadas.
 \end_layout
 
 \begin_layout Itemize
-Implementação do método carregarInformacoesAluno() para preparar os dados na interface.
+Criação da progress bar de carga horária semanal (limite de 16h).
 \end_layout
 
 \begin_layout Itemize
-Testes básicos de interface com navegação simples e abertura de janelas.
+Implementação do método carregarInformacoesAluno() para exibir dados da grade.
 \end_layout
 
 \begin_layout Itemize
-Implementação inicial do método carregarDisciplinas().
+Testes básicos de navegação entre telas com botões funcionais.
+\end_layout
+
+\begin_layout Itemize
+Leitura e exibição dinâmica da grade a partir das disciplinas do curso.
 \end_layout
 
 \begin_layout Standard
-v0.7
+
+\series bold
+Versão v0.7 – Interatividade Avançada e Módulos Auxiliares
 \end_layout
 
 \begin_layout Standard
-Na versão 0.7 o sistema já está próximo da finalização,
- com recursos interativos adicionais,
- como exibir detalhes de uma disciplina clicada,
- e janelas auxiliares para acompanhamento.
+Na fase final,
+ o sistema recebeu melhorias significativas em usabilidade e inteligência de simulação,
+ com janelas específicas para acompanhar desempenho,
+ planejar semestres e visualizar o quadro de horários semanal.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Features v0.7:
 \end_layout
 
 \begin_layout Itemize
-Implementação da classe AcompanhamentoDisciplina.
+Implementação da janela AcompanhamentoDisciplina,
+ com simulação de notas e cálculo de média final.
 \end_layout
 
 \begin_layout Itemize
-O sistema deve permitir abrir uma nova janela com os detalhes de cada disciplina ao clicar nela.
+Cálculo do que o aluno precisa tirar nas próximas avaliações para ser aprovado.
 \end_layout
 
 \begin_layout Itemize
-Implementação do método abrirJanelaDisciplina(nomeDisciplina) na TelaInicial.
+Implementação do método abrirJanelaDisciplina() na TelaInicial,
+ com ligação entre as disciplinas da grade e suas janelas detalhadas.
 \end_layout
 
 \begin_layout Itemize
-Adição de validações e testes de integração entre as janelas.
+Implementação do módulo SimulacaoPlanejamentoSEM,
+ simulando planejamento de semestres futuros.
 \end_layout
 
 \begin_layout Itemize
-Testes com diferentes perfis de aluno (diferentes arquivos de entrada).
+Checagem automática de pré-requisitos ao simular disciplinas elegíveis.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-1.
- Uma feature deve,
- sempre que possível,
- poder ser implementada dentro de um ciclo.
- Se o ciclo é definido como sendo mensal,
- a feature deve poder ser concluída em um mês.
+\begin_layout Itemize
+Implementação do QuadroDeHorarios,
+ preenchido com base nas disciplinas em andamento e atividades extras.
 \end_layout
 
-\begin_layout Plain Layout
-2.
- Tente associar as features a componentes a serem implementados.
- Por exemplo,
- uma feature pode ser uma classe.
+\begin_layout Itemize
+Armazenamento e leitura automatizada dos horários no arquivo InformacoesAluno.txt.
 \end_layout
 
-\begin_layout Plain Layout
-3.
- 
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+Testes com diferentes arquivos de entrada simulando perfis variados de alunos (CRA,
+ disciplinas,
+ horários).
 \end_layout
 
 \end_body
