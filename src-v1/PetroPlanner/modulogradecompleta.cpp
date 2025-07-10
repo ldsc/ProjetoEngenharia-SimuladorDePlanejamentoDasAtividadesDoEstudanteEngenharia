@@ -108,34 +108,26 @@ void ModuloGradeCompleta::carregarDisciplinas() {
                     QTextStream in(&file);
                     while (!in.atEnd()) {
                         QString linha = in.readLine();
+
+                        // Ignora comentários e linhas vazias
+                        if (linha.trimmed().startsWith("#") || linha.trimmed().isEmpty())
+                            continue;
+
                         if (linha.contains(QString::fromStdString(disc.nome), Qt::CaseInsensitive)) {
-                            QString ultimaSituacao;
-                            QStringList partes = linha.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
+                            QStringList partes = linha.split(";", Qt::SkipEmptyParts);
+                            QString situacao = partes.last().trimmed();
 
-                            for (int i = partes.size() - 1; i >= 0; --i) {
-                                QString valor = partes[i];
-                                if (valor == "Aprovada" || valor == "Reprovada") {
-                                    ultimaSituacao = valor;
-                                    break;
-                                } else if (valor == "Curso" && i > 0 && partes[i - 1] == "Em") {
-                                    ultimaSituacao = "Em Curso";
-                                    break;
-                                } else if (valor == "Cursada" && i > 0 && partes[i - 1] == "Nao") {
-                                    ultimaSituacao = "Nao Cursada";
-                                    break;
-                                }
-                            }
-
-                            if (ultimaSituacao == "Aprovada") cor = "background-color: lightgreen";
-                            else if (ultimaSituacao == "Reprovada") cor = "background-color: red";
-                            else if (ultimaSituacao == "Em Curso") cor = "background-color: yellow";
-                            else if (ultimaSituacao == "Nao Cursada") cor = "background-color: lightgray";
+                            if (situacao == "Aprovada") cor = "background-color: lightgreen";
+                            else if (situacao == "Reprovada") cor = "background-color: red";
+                            else if (situacao == "Em Curso") cor = "background-color: yellow";
+                            else if (situacao == "Nao Cursada") cor = "background-color: lightgray";
 
                             break;
                         }
                     }
                     file.close();
                 }
+
             }
 
             botao->setStyleSheet(cor + "; padding: 4px; border-radius: 8px;");

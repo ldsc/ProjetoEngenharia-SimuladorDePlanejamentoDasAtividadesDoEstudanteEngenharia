@@ -63,8 +63,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-qin439"
-      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-qin439"
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-aphpsa"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-aphpsa"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -74,11 +74,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-qin439'
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-aphpsa'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_00341
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_00341.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_00341.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_00341.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_00341.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_00341.exe /implib:cmTC_00341.lib /pdb:cmTC_00341.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_5030d
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_5030d.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_5030d.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_5030d.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5030d.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_5030d.exe /implib:cmTC_5030d.lib /pdb:cmTC_5030d.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -124,8 +124,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-frsfht"
-      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-frsfht"
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-htxyzl"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-htxyzl"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -135,13 +135,13 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-frsfht'
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-htxyzl'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_e8983
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_e8983.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_e8983.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-frsfht\\src.cxx
-        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_e8983.dir/src.cxx.obj 
-        C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_e8983.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_e8983.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-frsfht\\src.cxx
-        C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-frsfht\\src.cxx(1): fatal error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_2a65b
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_2a65b.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_2a65b.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-htxyzl\\src.cxx
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_2a65b.dir/src.cxx.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_2a65b.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_2a65b.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-htxyzl\\src.cxx
+        C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-htxyzl\\src.cxx(1): fatal error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -159,8 +159,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-1p2mea"
-      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-1p2mea"
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-twrjvu"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-twrjvu"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -170,14 +170,14 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-1p2mea'
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-twrjvu'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_1a649
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_1a649.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_1a649.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-1p2mea\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_1a649.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1a649.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_1a649.exe /implib:cmTC_1a649.lib /pdb:cmTC_1a649.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        \x1b[31mFAILED: \x1b[0mcmTC_1a649.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_1a649.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1a649.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_1a649.exe /implib:cmTC_1a649.lib /pdb:cmTC_1a649.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1a649.dir\\CheckFunctionExists.cxx.obj /out:cmTC_1a649.exe /implib:cmTC_1a649.lib /pdb:cmTC_1a649.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_1a649.dir/intermediate.manifest CMakeFiles\\cmTC_1a649.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_d518c
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_d518c.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_d518c.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-twrjvu\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_d518c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d518c.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d518c.exe /implib:cmTC_d518c.lib /pdb:cmTC_d518c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_d518c.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_d518c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d518c.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d518c.exe /implib:cmTC_d518c.lib /pdb:cmTC_d518c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d518c.dir\\CheckFunctionExists.cxx.obj /out:cmTC_d518c.exe /implib:cmTC_d518c.lib /pdb:cmTC_d518c.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_d518c.dir/intermediate.manifest CMakeFiles\\cmTC_d518c.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthreads.lib'\x0d
         ninja: build stopped: subcommand failed.
         
@@ -196,8 +196,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-3yj2xr"
-      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-3yj2xr"
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-2x1jqd"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-2x1jqd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -207,14 +207,14 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-3yj2xr'
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-2x1jqd'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_d9228
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_d9228.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_d9228.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-3yj2xr\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_d9228.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d9228.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d9228.exe /implib:cmTC_d9228.lib /pdb:cmTC_d9228.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        \x1b[31mFAILED: \x1b[0mcmTC_d9228.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_d9228.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d9228.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d9228.exe /implib:cmTC_d9228.lib /pdb:cmTC_d9228.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d9228.dir\\CheckFunctionExists.cxx.obj /out:cmTC_d9228.exe /implib:cmTC_d9228.lib /pdb:cmTC_d9228.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_d9228.dir/intermediate.manifest CMakeFiles\\cmTC_d9228.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_02dec
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_02dec.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_02dec.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-2x1jqd\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_02dec.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_02dec.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_02dec.exe /implib:cmTC_02dec.lib /pdb:cmTC_02dec.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_02dec.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_02dec.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_02dec.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_02dec.exe /implib:cmTC_02dec.lib /pdb:cmTC_02dec.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_02dec.dir\\CheckFunctionExists.cxx.obj /out:cmTC_02dec.exe /implib:cmTC_02dec.lib /pdb:cmTC_02dec.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_02dec.dir/intermediate.manifest CMakeFiles\\cmTC_02dec.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthread.lib'\x0d
         ninja: build stopped: subcommand failed.
         
@@ -238,8 +238,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-hdrm25"
-      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-hdrm25"
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-ymaayd"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-ymaayd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -249,11 +249,11 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-hdrm25'
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/PPbuild-release/CMakeFiles/CMakeScratch/TryCompile-ymaayd'
         
-        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_c59ad
-        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_c59ad.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_c59ad.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-hdrm25\\src.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_c59ad.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_c59ad.dir\\src.cxx.obj  /out:cmTC_c59ad.exe /implib:cmTC_c59ad.lib /pdb:cmTC_c59ad.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_45966
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_45966.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_45966.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\PPbuild-release\\CMakeFiles\\CMakeScratch\\TryCompile-ymaayd\\src.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_45966.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_45966.dir\\src.cxx.obj  /out:cmTC_45966.exe /implib:cmTC_45966.lib /pdb:cmTC_45966.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
 ...

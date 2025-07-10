@@ -91,42 +91,7 @@ CRA: 8.5
 Disciplinas em Andamento:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Optativa do CCH ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 60.0(1) ; Provas: -(1)
-
-
-
 Fisica-Matematica I ; 1 ; Terca:7h-9h; Trabalhos: -(1) ; Provas: -(1)
 Introducao ao Projeto de Engenharia ; 0 ; Sexta:7h-8h; Trabalhos: -(1) ; Provas: -(1)
 Introducao a Analise e Processamento de Sinais ; 0 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: -(1),-(1)
@@ -137,16 +102,3 @@ Mecanica dos Fluidos ; 1 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Estágio ; Quinta:11h-12h
 Academia ; Quarta:12h-13h
-
-
-
-
-
-
-
-
-
-
-
-
-

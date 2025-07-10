@@ -257,3 +257,119 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/cl.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) C/C++ Optimizing Compiler Versão 19.43.34809 para x64
+      Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+      
+      CMakeCXXCompilerId.cpp
+      Microsoft (R) Incremental Linker Version 14.43.34809.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+      
+      /out:CMakeCXXCompilerId.exe 
+      CMakeCXXCompilerId.obj 
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:1243 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:250 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Detecting CXX compiler /showIncludes prefix:
+        main.c
+        Observação: incluindo arquivo: C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\4-Execucao-Detalhamento-Construcao-Versao-1\\test\\executavel-windows\\CMakeFiles\\ShowIncludes\\foo.h
+        
+      Found prefix "Observação: incluindo arquivo: "
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-jap6da"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-jap6da"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-jap6da'
+        
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_ba9ba
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_ba9ba.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_ba9ba.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_ba9ba.dir/CMakeCXXCompilerABI.cpp.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_ba9ba.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_ba9ba.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
+        C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp : fatal error C1083: Não é possível abrir arquivo gerado pelo compilador: '': Invalid argument
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/cl.exe"
+    directories:
+      source: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-h43bbm"
+      binary: "C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-h43bbm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/test/executavel-windows/CMakeFiles/CMakeScratch/TryCompile-h43bbm'
+        
+        Run Build Command(s): C:/PROGRA~1/MICROS~4/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_2aa52
+        [1/2] C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_2aa52.dir\\testCXXCompiler.cxx.obj /FdCMakeFiles\\cmTC_2aa52.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\4-Execucao-Detalhamento-Construcao-Versao-1\\test\\executavel-windows\\CMakeFiles\\CMakeScratch\\TryCompile-h43bbm\\testCXXCompiler.cxx
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_2aa52.dir/testCXXCompiler.cxx.obj 
+        C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_2aa52.dir\\testCXXCompiler.cxx.obj /FdCMakeFiles\\cmTC_2aa52.dir\\ /FS -c C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\4-Execucao-Detalhamento-Construcao-Versao-1\\test\\executavel-windows\\CMakeFiles\\CMakeScratch\\TryCompile-h43bbm\\testCXXCompiler.cxx
+        C:\\Users\\DELL\\Documents\\GitHub\\ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia\\4-Execucao-Detalhamento-Construcao-Versao-1\\test\\executavel-windows\\CMakeFiles\\CMakeScratch\\TryCompile-h43bbm\\testCXXCompiler.cxx : fatal error C1083: Não é possível abrir arquivo gerado pelo compilador: '': Invalid argument
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...

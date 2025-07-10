@@ -27,13 +27,13 @@ CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 CMAKE_CXX_COMPILER:STRING=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/cl.exe
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc
+CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /GR /EHsc
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=/Zi /Ob0 /Od /RTC1
 
 //No help, variable specified on the command line.
-CMAKE_CXX_FLAGS_INIT:STRING=-DQT_QML_DEBUG
+CMAKE_CXX_FLAGS_INIT:STRING=
 
 //Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=/O1 /Ob1 /DNDEBUG

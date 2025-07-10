@@ -37,6 +37,7 @@ set(PROJECT_SOURCES
     simulacaoplanejamentosem.cpp
     CAluno.cpp
     CDisciplinas.cpp
+    main.cpp
 
 
 )
