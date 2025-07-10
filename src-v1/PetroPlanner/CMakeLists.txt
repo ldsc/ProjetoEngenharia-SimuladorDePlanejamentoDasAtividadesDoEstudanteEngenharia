@@ -13,14 +13,30 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        telainicial.cpp
-        telainicial.h
-        telainicial.ui
-        CDisciplinas.h
-        CDisciplinas.cpp
-        CAluno.h
-        CAluno.cpp
+    telainicial.ui
+    acompanhamentodisciplina.ui
+    editardisciplinasemcurso.ui
+    modulogradecompleta.ui
+    quadrodehorarios.ui
+    simulacaoplanejamentosem.ui
+
+    telainicial.h
+    acompanhamentodisciplina.h
+    editardisciplinasemcurso.h
+    modulogradecompleta.h
+    quadrodehorarios.h
+    simulacaoplanejamentosem.h
+    CAluno.h
+    CDisciplinas.h
+
+    telainicial.cpp
+    acompanhamentodisciplina.cpp
+    editardisciplinasemcurso.cpp
+    modulogradecompleta.cpp
+    quadrodehorarios.cpp
+    simulacaoplanejamentosem.cpp
+    CAluno.cpp
+    CDisciplinas.cpp
 
 
 )

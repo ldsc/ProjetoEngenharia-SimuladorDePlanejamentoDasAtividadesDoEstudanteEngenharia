@@ -1140,27 +1140,170 @@ name "sec: Exemplo-3"
 \end_layout
 
 \begin_layout Standard
-Explique,
- passo a passo,
- e de forma detalhada o que irá fazer.
-\end_layout
+O Módulo de Quadro de Horários permite ao aluno montar e planejar seus horários no semestre atual,
+ podendo ser acessado a partir da Tela Inicial,
+ conforme figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_TelaInicial"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_layout Itemize
-Importante falar aonda o usuário deve clicar,
- o que deve informar,
- quais as entradas e saídas;
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-Coloque figuras ilustrativas;
-\end_layout
+.
+ O horários das disciplinas em curso e atividades extras podem ser editados através do documento 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Itemize
-A ideia é fazer com que o usuário realize uma determinada atividade usando o software e compreendendo claramente o que esta fazendo.
-\end_layout
+InformacoesAluno.txt
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Itemize
-Como sugestão monte estes exemplos tomando como base os testes realizados no manual de desenvolvimento.
+ ou da própria interface gráfica.
+ No txt,
+ o aluno pode inserir os horários através da sessão 
+\begin_inset Quotes eld
+\end_inset
+
+Disciplinas em Andamento
+\begin_inset Quotes erd
+\end_inset
+
+ e as atividades extras na última sessão.
+ Por padrão,
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_Txt_Padrao"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ se no txt há 
+\begin_inset Quotes eld
+\end_inset
+
+InserirDiaDeAula,InserirHorariosDaAula
+\begin_inset Quotes erd
+\end_inset
+
+,
+ a disciplina ainda não está no quadro de horários.
+ Ao acessar o módulo através da interface,
+ o aluno poderá editar o quadro através do botão 
+\begin_inset Quotes eld
+\end_inset
+
+Editar
+\begin_inset Quotes erd
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste_InserirDisc"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Ao clicar na célula desejada,
+ há como opções as Disciplinas em Andamento no semestre atual,
+ além de uma última opção 
+\begin_inset Quotes eld
+\end_inset
+
+Adicionar Atividade Extras
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_InserirDisc"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ há um exemplo da inserção de uma disciplina em curso ao quadro de horários e na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_AdcDiscTXT"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ a resposta do txt à essa ação.
+ Para adicionar uma atividade extra,
+ o aluno deve clicar na última opção disponível da célula,
+ conforme figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_AdcAtivExtra"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ e exemplo demonstrado nas figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_AdcEstagio"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_EstagioAdicionado"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ A resposta do txt à essa ação está na imagem
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QuadroDeHorarios_Teste_Txt_AtvExtra"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1338,6 +1481,47 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_AdcDiscTXT.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resposta do txt à Adição de uma Disciplina no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_AdcDiscTXT"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
 	filename imagens/QuadroDeHorarios_Teste_AdcAtivExtra.png
 	lyxscale 40
 	scale 10
@@ -1461,6 +1645,47 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
+	filename imagens/QuadroDeHorarios_Teste_Txt_AtvExtra.png
+	lyxscale 40
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resposta do txt à Adição de uma Atividade Extra no Quadro de Horários.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QuadroDeHorarios_Teste_Txt_AtvExtra"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
 	filename imagens/QuadroDeHorarios_Teste_Txt_Baixarpng.png
 	lyxscale 40
 	scale 10
@@ -1474,7 +1699,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Função Baixar .
+Baixando Quadro de Horários.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:QuadroDeHorarios_Teste_Txt_Baixarpng"
@@ -1502,7 +1727,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/PlanejSemTeste_7.png
+	filename imagens/QuadroDeHorarios_Teste_PNG.png
 	lyxscale 40
 	scale 10
 
@@ -1515,10 +1740,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Imagem salva na Simulação do Planejamento Semestral.
+Quadro de Horários baixado.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:PlanejSemTeste_6-9"
+name "fig:QuadroHorariosBaixado"
 
 \end_inset
 
@@ -1533,104 +1758,6 @@ name "fig:PlanejSemTeste_6-9"
 \end_inset
 
 
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/PlanejSemTeste_7.png
-	lyxscale 40
-	scale 10
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Imagem salva na Simulação do Planejamento Semestral.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:PlanejSemTeste_6-10"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/PlanejSemTeste_7.png
-	lyxscale 40
-	scale 10
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Imagem salva na Simulação do Planejamento Semestral.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:PlanejSemTeste_6-11"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- explique para o usuário o que é e como funciona o software;
- lembre-se que ele não desenvolveu nada,
- apenas vai usar!
 \end_layout
 
 \end_body
