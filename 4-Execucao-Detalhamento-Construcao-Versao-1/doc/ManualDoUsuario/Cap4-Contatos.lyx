@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,11 +28,11 @@
 \options normaltoc, sumarioincompleto
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
 \inputencoding utf8
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -40,7 +40,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -66,7 +68,7 @@
 \pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -87,7 +89,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -109,11 +113,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -123,9 +132,7 @@ Contatos
 \end_layout
 
 \begin_layout Standard
-O presente projeto de engenharia foi desenvolvido por alunos do curso de
- engenharia de petróleo da UENF sob coordenação do Professor André Duarte
- Bueno.
+O presente projeto de engenharia foi desenvolvido por alunos do curso de engenharia de petróleo da UENF sob coordenação do Professor André Duarte Bueno.
 \end_layout
 
 \begin_layout Standard
@@ -138,11 +145,11 @@ Autor 1:
 
 \begin_deeper
 \begin_layout Itemize
-SeuNome
+Abigail Ribeiro Pinto Silva Guimarães
 \end_layout
 
 \begin_layout Itemize
-Seuemail
+<abigailribeiro777@gmail.com>
 \end_layout
 
 \end_deeper
@@ -152,11 +159,11 @@ Autor 2:
 
 \begin_deeper
 \begin_layout Itemize
-SeuNome
+Maria Luiza Cornelio Ramos
 \end_layout
 
 \begin_layout Itemize
-Seuemail
+<mariacorneliocr@gmail.com>
 \end_layout
 
 \end_deeper
@@ -180,29 +187,13 @@ Referências
 \end_layout
 
 \begin_layout Standard
-O projeto foi desenvolvido tomando como base o modelo disponibilizado no
- site:
+O projeto foi desenvolvido tomando como base o modelo disponibilizado no site:
 \end_layout
 
 \begin_layout Itemize
 \begin_inset CommandInset href
 LatexCommand href
 target "https://github.com/ldsc/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Foram utilizadas informações de vários livros, incluindo:
-\end_layout
-
-\begin_layout Itemize
-\begin_inset CommandInset citation
-LatexCommand cite
-key "adb-prog-livroCpp,adb-prog-livroCpp3"
 literal "false"
 
 \end_inset

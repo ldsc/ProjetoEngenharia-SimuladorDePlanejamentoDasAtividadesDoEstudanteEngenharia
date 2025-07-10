@@ -174,10 +174,10 @@
 
 \begin_layout Chapter
 Etapas,
- Cronograma e Orçamento
+ Cronograma e Orçamento 
 \begin_inset CommandInset label
 LatexCommand label
-name "cha: Etapas, Cronograma e Orçamento"
+name "cha: Etapas, Cronograma e Orçamento  Preliminar"
 
 \end_inset
 
@@ -185,39 +185,16 @@ name "cha: Etapas, Cronograma e Orçamento"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Atividades,
- Cronograma e Orçamento}
-\backslash
-pagenumbering{arabic}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Neste capítulo,
- apresento a lista das etapas,
- atividades e o cronograma previstos para o desenvolvimento do projeto.
+Este capítulo apresenta as etapas,
+ o cronograma de execução e uma previsão de orçamento preliminar para o desenvolvimento do sistema PetroPlanner,
+ um software de apoio acadêmico para estudantes de engenharia.
 \end_layout
 
 \begin_layout Section
-Etapas
+Etapas 
 \begin_inset CommandInset label
 LatexCommand label
-name "sec: Etapas"
+name "sec: Etapas "
 
 \end_inset
 
@@ -225,198 +202,162 @@ name "sec: Etapas"
 \end_layout
 
 \begin_layout Standard
-Esta proposta,
- caso aprovada,
- será desenvolvida seguindo as etapas abaixo descritas.
- Um detalhamento das etapas esta disponível 
-\begin_inset CommandInset href
-LatexCommand href
-name "aqui"
-target "https://github.com/ldsc/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas-ModeloProfessorBueno"
-literal "false"
-
-\end_inset
-
-:
+Etapa 0 – Definição do desafio tecnológico
 \end_layout
 
 \begin_layout Itemize
-
-\series bold
-Etapa 0 - Definição do desafio tecnológico
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Identificação do problema,
- descrição do desafio tecnológico,
- objetivo geral e solução esperada (TRL/CRL).
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Etapa 1 - Elaboração do pré-projeto
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Elaboração da primeira versão do projeto,
- rascunho inicial.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Etapa 2 - Elaboração do projeto - detalhamento e contrato (este documento)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Após a aprovação do pré-projeto,
- será realizada a sua complementação e detalhamento,
- resultando no projeto definitivo.
+Identificação do problema enfrentado por estudantes na organização de suas disciplinas,
+ faltas,
+ tempo de estudo e planejamento semestral.
 \end_layout
 
 \begin_layout Itemize
-Nessa etapa,
- as etapas e atividades associadas serão claramente definidas.
- O cronograma simplificado apresentará as etapas e prazos de maneira realista.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Etapa 3 - Modelagem de engenharia:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Concepção;
- Elaboração;
- Análise Orientada a Objeto;
- Projeto do Sistema;
- Projeto Orientado a Objeto.
+Definição da solução esperada:
+ um software com simulações e ferramentas visuais que facilitassem a tomada de decisões acadêmicas.
 \end_layout
 
 \begin_layout Itemize
-Realização de testes lógicos;
- Documentação (geração dos documentos de modelagem e diagramas associados).
-\end_layout
-
-\begin_layout Itemize
-Você encontra diagramas associados a esta etapa nos apêndices e 
-\begin_inset CommandInset href
-LatexCommand href
-name "no site da disciplina (etapa modelagem)"
-target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia?authuser=0#h.jzh3wtardi2q"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Etapa 4 - Ciclos de planejamento,
- detalhamento e construção/implementação:
+Estimativa do grau de maturidade tecnológica (TRL):
+ TRL 2 ao iniciar o projeto (conceito formulado).
 \end_layout
 
 \begin_layout Standard
-O desenvolvimento do projeto ocorrerá de forma cíclica,
- dividido em etapas de:
+Etapa 1 – Elaboração do pré-projeto
 \end_layout
 
 \begin_layout Itemize
-Planejamento:
- definição das funcionalidades a serem desenvolvidas em cada ciclo (por exemplo,
- dividir 12 funcionalidades em 3 ciclos de 4 funcionalidades).
-\end_layout
-
-\begin_layout Itemize
-Construção/Implementação:
- codificação,
- testes e documentação das funcionalidades.
-\end_layout
-
-\begin_layout Itemize
-Reuniões:
- Reuniões semanais com o orientador para acompanhamento geral do projeto,
- ajustes e validações.
-\end_layout
-
-\begin_layout Itemize
-Reuniões diárias entre os membros da equipe:
- breves encontros para discussão do que foi feito no dia anterior,
- planejamento das atividades do dia e alinhamento de tarefas.
-\end_layout
-
-\begin_layout Itemize
-Balanço semanal às sextas-feiras.
-\end_layout
-
-\begin_layout Standard
-No final de cada ciclo,
- será realizada uma entrega parcial funcional do produto desenvolvido.
- O último ciclo será destinado ao fechamento do projeto,
- incluindo:
-\end_layout
-
-\begin_layout Itemize
-Testes de integração do sistema completo.
-\end_layout
-
-\begin_layout Itemize
-Elaboração dos manuais do desenvolvedor e do usuário,
- contendo a descrição dos testes realizados e instruções para operação e verificação do sistema.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Etapa 5 - Entrega do produto:
-
-\series default
- 
-\end_layout
-
-\begin_layout Itemize
-A entrega final do projeto incluirá:
-\end_layout
-
-\begin_layout Itemize
-Verificação completa da documentação e dos testes realizados.
-\end_layout
-
-\begin_layout Itemize
-Apresentação formal do produto desenvolvido.
-\end_layout
-
-\begin_layout Itemize
-Entrega da versão final do software,
+Produção de uma versão inicial do documento,
  contendo:
 \end_layout
 
 \begin_layout Itemize
-Todos os códigos-fonte.
+Definição do escopo
 \end_layout
 
 \begin_layout Itemize
-Manuais de uso e de desenvolvimento.
+Levantamento de requisitos
 \end_layout
 
 \begin_layout Itemize
-Testes realizados.
+Estudo de viabilidade técnica
 \end_layout
 
 \begin_layout Itemize
-Relatórios em formato PDF.
+Modelos iniciais e estrutura básica da interface.
+\end_layout
+
+\begin_layout Standard
+Etapa 2 – Elaboração do projeto (detalhamento e contrato)
+\end_layout
+
+\begin_layout Itemize
+Expansão do pré-projeto com:
+\end_layout
+
+\begin_layout Itemize
+Definição das funcionalidades completas
+\end_layout
+
+\begin_layout Itemize
+Detalhamento das classes (ex:
+ CAluno,
+ CDisciplinas,
+ ModuloGradeCompleta)
+\end_layout
+
+\begin_layout Itemize
+Estrutura de dados e lógica de simulação de CR,
+ faltas e tempo de estudo.
+\end_layout
+
+\begin_layout Itemize
+Contrato informal entre os membros da equipe,
+ dividindo responsabilidades de backend,
+ frontend e documentação.
+\end_layout
+
+\begin_layout Standard
+Etapa 3 – Modelagem de engenharia
+\end_layout
+
+\begin_layout Itemize
+Modelagem orientada a objeto com os seguintes diagramas:
+\end_layout
+
+\begin_layout Itemize
+Casos de uso
+\end_layout
+
+\begin_layout Itemize
+Diagrama de pacotes
+\end_layout
+
+\begin_layout Itemize
+Diagrama de classes
+\end_layout
+
+\begin_layout Itemize
+Criação da estrutura modular do software com separação em camadas de lógica,
+ dados e interface.
+\end_layout
+
+\begin_layout Itemize
+Validação dos diagramas por meio de testes unitários em código.
+\end_layout
+
+\begin_layout Standard
+Etapa 4 – Ciclos de desenvolvimento e testes
+\end_layout
+
+\begin_layout Itemize
+O projeto foi dividido em ciclos incrementais:
+\end_layout
+
+\begin_layout Itemize
+v0.1 – Núcleo de dados e leitura de arquivos do aluno
+\end_layout
+
+\begin_layout Itemize
+v0.3 – Integração com interface gráfica inicial (Qt)
+\end_layout
+
+\begin_layout Itemize
+v0.7 – Simulador de planejamento,
+ acompanhamento de disciplinas,
+ quadro de horários.
+\end_layout
+
+\begin_layout Itemize
+A cada versão,
+ foram realizados:
+\end_layout
+
+\begin_layout Itemize
+Testes unitários
+\end_layout
+
+\begin_layout Itemize
+Testes manuais da interface
+\end_layout
+
+\begin_layout Itemize
+Validação entre módulos (integração)
+\end_layout
+
+\begin_layout Standard
+Etapa 5 – Entrega final
+\end_layout
+
+\begin_layout Itemize
+Testes finais de uso com diferentes perfis de aluno.
+\end_layout
+
+\begin_layout Itemize
+Geração dos manuais de uso.
+\end_layout
+
+\begin_layout Itemize
+Entrega do executável e dos arquivos-fonte com instruções de compilação no GitHub.okk
 \end_layout
 
 \begin_layout Section
@@ -431,33 +372,9 @@ name "sec:Cronograma"
 \end_layout
 
 \begin_layout Standard
-O cronograma de execução do projeto está planejado para um período de 4 a 6 meses,
- seguindo a divisão em etapas e ciclos descritos anteriormente.
-\end_layout
-
-\begin_layout Standard
-Cada ciclo mensal contemplará planejamento,
- desenvolvimento,
- testes parciais e entrega de subprodutos funcionais.
-\end_layout
-
-\begin_layout Standard
-Apresenta-se a seguir o cronograma de execução do projeto.
-\end_layout
-
-\begin_layout Itemize
-Exemplo considerando produto desenvolvido em 4-6 meses:
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="7">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -470,47 +387,85 @@ Mês
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
+Atividades
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+Mês 1
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+Definição do desafio,
+ levantamento de requisitos,
+ protótipos de interface
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+Mês 2
 \end_layout
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementação das classes e leitura de arquivos;
+ testes de leitura e escrita
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mês 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Desenvolvimento da interface gráfica e integração entre módulos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+Mês 4
 \end_layout
 
 \end_inset
@@ -519,398 +474,8 @@ Mês
 \begin_inset Text
 
 \begin_layout Plain Layout
-6
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 0 - Definição do desafio tecnológico
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 1 - Elaboração do pré-projeto
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 2 - Elaboração do projeto - detalhamento e contrato
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 3 - Modelagem de engenharia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-X
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 4 - Ciclos de planejamento,
- detalhamento e construção/implementação
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-c1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-c2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-c3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-F
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Etapa 5 - Entrega do produto (defesa)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-D
+Implementação dos simuladores,
+ testes finais e entrega
 \end_layout
 
 \end_inset
@@ -924,56 +489,137 @@ D
 \end_layout
 
 \begin_layout Section
-Orçamento
+Orçamento 
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Orçamento"
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-Este projeto não prevê custos financeiros para sua execução,
- uma vez que:
-\end_layout
-
-\begin_layout Itemize
-Toda a infraestrutura necessária para o desenvolvimento (como computadores e acesso à internet) já está disponível para os integrantes da equipe.
-\end_layout
-
-\begin_layout Itemize
-Estão sendo utilizados softwares livres e de código aberto,
- como a linguagem de programação C++,
- bibliotecas públicas,
- o ambiente de desenvolvimento Qt Creator,
- e ferramentas de versionamento como o GitHub.
-\end_layout
-
-\begin_layout Itemize
-Não será necessária a aquisição de licenças,
- hardwares ou serviços externos pagos.
-\end_layout
-
-\begin_layout Standard
-Assim,
- o orçamento estimado para o projeto é de R$ 0,00 (zero reais).
-\end_layout
-
-\begin_layout Section
-Informações Extras Mecanismos Gestão
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:  Informações Extras Mecanismos Gestão"
+name "sec:Orçamento Preliminar"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
-Coloque aqui informações extras pertinentes.
+\begin_layout Standard
+O projeto foi desenvolvido utilizando ferramentas gratuitas e de código aberto,
+ com baixo custo financeiro direto,
+ porém com alta demanda de horas de trabalho da equipe.
+ A seguir,
+ apresenta-se uma estimativa simplificada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Custo Estimado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ferramentas (Qt,
+ PlantUML,
+ GitHub)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gratuito
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Computadores e ambiente de desenvolvimento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Próprio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Horas de desenvolvimento (voluntárias)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Não monetizadas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estimativa de esforço total
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+~200 horas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_body
