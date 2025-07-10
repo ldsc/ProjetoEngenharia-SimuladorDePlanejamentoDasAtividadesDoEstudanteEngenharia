@@ -1,28 +1,32 @@
 #+TITLE: ProjetoEngenharia-Titulo
 
 * Nome do Software (ou Biblioteca):
-- 
+- PetroPlanner
 
 * Resumo e/ou informação extra: 
-- 
+- Durante a graduação em Engenharia de Petróleo, muitos estudantes enfrentam dificuldades para organizar sua trajetória acadêmica de forma eficiente. Entre desafios como a escolha de disciplinas, carga horária semanal, estágio, atividades complementares e Trabalho de Conclusão de Curso (TCC), a falta de um planejamento estruturado pode impactar diretamente no desempenho acadêmico.
+
+Diante dessa necessidade, este projeto propõe o desenvolvimento do PetroPlanner, um software interativo que auxilia estudantes no planejamento de sua grade curricular e na gestão do tempo dedicado aos estudos. A ferramenta permitirá a simulação de diferentes cenários acadêmicos, considerando fatores como taxa de aprovação das disciplinas, impacto do adiamento de matérias e carga horária semanal recomendada. Além disso, o software incluirá funcionalidades para acompanhamento de estágios, atividades complementares e progressão do coeficiente de rendimento (CR), oferecendo uma visão mais clara da jornada acadêmica do estudante.
+
+O PetroPlanner será desenvolvido em C++23 com a interface gráfica baseada no Qt 6.6 (ou superior), utilizando SQLite para armazenamento de dados e bibliotecas específicas para gráficos e estatísticas. O diferencial desse projeto está na personalização do planejamento acadêmico para estudantes de engenharia, levando em conta a complexidade e carga horária das disciplinas, o impacto de reprovações e a necessidade de conciliar estudos com a vida pessoal e profissional. Com isso, espera-se que o PetroPlanner se torne uma ferramenta essencial para ajudar universitários a tomar decisões estratégicas ao longo do curso, reduzindo incertezas e contribuindo para uma trajetória acadêmica mais organizada e eficiente.
 
 * Versão: 
 - 1.0.
 
 * Data:
-- 2024/2 - segundo semestre.
+- 2025/1 - primeiro semestre.
   
 * Autor de Contato:
-- André Duarte Bueno <andreduartebueno@gmail.com>
+- Abigail Ribeiro Pinto <abigailribeiro777@gmail.com>
+- Maria Luiza Cornelio Ramos <mariacorneliocr@gmail.com>
 
 * Lista dos Autores:
-- ...
+- Abigail Ribeiro Pinto <abigailribeiro777@gmail.com>
 - André Duarte Bueno <andreduartebueno@gmail.com>
+- Maria Luiza Cornelio Ramos <mariacorneliocr@gmail.com>
 
 * Áreas de pesquisa vinculadas: 
 - Modelagem Matemática Computacional
-- Engenharia de Reservatório
-- ...
 
 * Vinculo com: 
 - [[https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado][Trabalho da disciplina Projeto de Software Aplicado à Engenharia]].
@@ -33,20 +37,20 @@
 - POO - Programação Orientada a Objeto (códigos em C++)
 
 * Tipo de Interface: 
-- Terminal e gráfica (gnuplot).
-- Qt? [opcional]
+- Terminal.
+- Qt 6.10.0
 
 * Plataformas Suportadas: 
-- Windows e GNU/Linux e Mac OS X (não testada).
+- Windows e GNU/Linux e Mac OS X.
 
 * Linguagens Utilizadas: 
 - C++.
 
 * Bibliotecas Utilizadas (dependências):
-- CGnuplot - https://github.com/ldsc/CGnuplot
+-
 
 * Softwares utilizados (dependências)
-- gnuplot http://www.gnuplot.info/
+- qt https://doc.qt.io/qtcreator/
 
 * Tipo de Licença:
 - GPL

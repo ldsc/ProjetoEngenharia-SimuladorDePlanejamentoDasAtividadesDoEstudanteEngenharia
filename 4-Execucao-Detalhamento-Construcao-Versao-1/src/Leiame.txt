@@ -1,5 +1,0 @@
-Coloque aqui os arquivos fonte de seu programa, arquivos .h e .cpp.
-
-Não coloque aqui arquivos de teste; os arquivos para testar o programa devem estar no diretório test.
-
-Não adicione nos arquivos do git os diretórios html e/ou latex gerados pelo Doxygen;
