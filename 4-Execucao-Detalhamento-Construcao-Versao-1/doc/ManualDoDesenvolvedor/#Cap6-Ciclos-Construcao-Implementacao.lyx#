@@ -313,43 +313,9 @@ Implementação
 \begin_layout Standard
 Apresenta-se a seguir um conjunto de classes (arquivos .h e .cpp) além do programa 
 \family typewriter
-main.
-\end_layout
-
-\begin_layout Standard
-O main.cpp encontra-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{main.cpp}
-\end_layout
-
-\end_inset
-
+main
+\family default
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo main},
- label={main.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/main.cpp}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -469,7 +435,7 @@ status open
 
 
 \backslash
-ref{CAluno.h}
+ref{CAluno.h }
 \end_layout
 
 \end_inset
@@ -485,7 +451,7 @@ status open
 
 
 \backslash
-ref{CDisciplinas.h}
+ref{CDisciplinas.h,}
 \end_layout
 
 \end_inset
@@ -580,7 +546,7 @@ status open
 lstset{style=C++} 
 \backslash
 lstinputlisting[ caption={Arquivo de cabeçalho da classe quadrodehorarios},
- label={quadrodehorarios.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/quadrodehorarios.h}
+ label={quadrodehorarios.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
@@ -598,8 +564,8 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe simulacaoplanejamentosem},
- label={simulacaoplanejamentosem.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/simulacaoplanejamentosem.h}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
@@ -617,8 +583,8 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe CAluno},
- label={CAluno.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/CAluno.h}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
@@ -636,8 +602,8 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe CDisciplinas},
- label={CDisciplinas.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/CDisciplinas.h}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
@@ -646,19 +612,7 @@ lstinputlisting[ caption={Arquivo de cabeçalho da classe CDisciplinas},
 \end_layout
 
 \begin_layout Standard
-Os arquivos de implementação utilizados para realização do software são:
- telainicial.cpp,
- acompanhamentodisciplina.cpp,
- editardisciplinasemcurso.cpp,
- modulogradecompleta.cpp,
- quadrodehorarios.cpp,
- simulacaoplanejamentosem.cpp,
- CAluno.cpp e CDisciplinas.cpp,
- encontrados nas listagens a seguir,
- respectivamente:
-\end_layout
-
-\begin_layout Itemize
+Apresenta-se nas listagem 
 \begin_inset ERT
 status open
 
@@ -666,124 +620,12 @@ status open
 
 
 \backslash
-ref{telainicial.cpp}
+ref{main.cpp}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{acompanhamentodisciplina.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{editardisciplinasemcurso.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{modulogradecompleta.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{quadrodehorarios.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{simulacaoplanejamentosem.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CAluno.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CDisciplinas.cpp}
-\end_layout
-
-\end_inset
-
-
+ o arquivo com código da classe main.cpp.
 \end_layout
 
 \begin_layout Standard
@@ -796,13 +638,30 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe telainicial},
- label={telainicial.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/telainicial.cpp}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{acompanhamentodisciplina.h}
+\end_layout
+
+\end_inset
+
+ o arquivo com código da classe acompanhamentodisciplina.h.
 \end_layout
 
 \begin_layout Standard
@@ -815,13 +674,30 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe acompanhamentodisciplina},
- label={acompanhamentodisciplina.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.cpp}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{acompanhamentodisciplina.h}
+\end_layout
+
+\end_inset
+
+ o arquivo com código da classe acompanhamentodisciplina.h.
 \end_layout
 
 \begin_layout Standard
@@ -834,103 +710,8 @@ status open
 \backslash
 lstset{style=C++} 
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe editardisciplinasemcurso},
- label={editardisciplinasemcurso.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/editardisciplinasemcurso.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe modulogradecompleta},
- label={modulogradecompleta.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/modulogradecompleta.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe quadrodehorarios},
- label={quadrodehorarios.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/quadrodehorarios.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe simulacaoplanejamentosem},
- label={simulacaoplanejamentosem.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/simulacaoplanejamentosem.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CAluno},
- label={CAluno.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/CAluno.cpp}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CDisciplinas},
- label={CDisciplinas.cpp}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/CDisciplinas.cpp}
+lstinputlisting[ caption={Arquivo de cabeçalho da classe acompanhamentodisciplina},
+ label={acompanhamentodisciplina.h}] {C:/Users/DELL/Documents/GitHub/ProjetoEngenharia-SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia/4-Execucao-Detalhamento-Construcao-Versao-1/doc/ManualDoDesenvolvedor/codigos_ansi/acompanhamentodisciplina.h}
 \end_layout
 
 \end_inset
