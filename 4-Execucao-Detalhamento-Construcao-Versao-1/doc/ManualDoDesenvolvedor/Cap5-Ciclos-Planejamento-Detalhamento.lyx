@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -53,7 +55,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +76,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +100,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -108,6 +117,8 @@
 \begin_layout Chapter
 Ciclos de Planejamento/Detalhamento
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -127,8 +138,7 @@ name "chap: Ciclos de Planejamento/Detalhamento"
 \end_layout
 
 \begin_layout Standard
-Apresenta-se neste capítulo os ciclos de planejamento/detalhamento para
- as diferentes versões desenvolvidas.
+Apresenta-se neste capítulo os ciclos de planejamento/detalhamento para as diferentes versões desenvolvidas.
 \end_layout
 
 \begin_layout Section
@@ -139,44 +149,175 @@ name "sec:Versão-0.1"
 
 \end_inset
 
- - xxx
+ - 
+\series bold
+Núcleo de Dados e Estrutura Inicial
 \end_layout
 
 \begin_layout Standard
-Na primeira versão foi 
-\shape italic
-...
+
+\series bold
+Versão v0.1 – Núcleo de Dados e Estrutura Inicial
 \end_layout
 
 \begin_layout Standard
-Note que é um 
-\shape italic
-software
-\shape default
- simples, .
- Veja Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Versão-0.1 - simples"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-na figura a interface de simulador desenvolvido pelo aluno Guilherme
+Nesta fase,
+ o foco esteve na definição das classes centrais,
+ na estrutura de dados e na leitura automatizada das informações do aluno.
+ Essas funcionalidades representam a base de todo o sistema.
 \end_layout
 
-\end_inset
+\begin_layout Standard
 
+\series bold
+Features v0.1:
+\end_layout
 
+\begin_layout Itemize
+Leitura de arquivos .txt contendo os dados do aluno.
+\end_layout
+
+\begin_layout Itemize
+Armazenamento organizado das disciplinas aprovadas,
+ em curso e não cursadas.
+\end_layout
+
+\begin_layout Itemize
+Implementação da classe CAluno,
+ responsável por representar o aluno no sistema.
+\end_layout
+
+\begin_layout Itemize
+Implementação da classe CDisciplinas,
+ representando a estrutura de uma disciplina.
+\end_layout
+
+\begin_layout Itemize
+Implementação do método lerDoArquivo(),
+ que interpreta e estrutura os dados salvos.
+\end_layout
+
+\begin_layout Itemize
+Cálculo automático da carga horária cursada via calcularHorasEmCurso() e calcularCHTotalCursada().
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Versão v0.2 – Integração dos Dados com a Interface Gráfica
+\end_layout
+
+\begin_layout Standard
+Nesta fase,
+ iniciou-se a construção da interface gráfica utilizando Qt,
+ conectando os dados do aluno e das disciplinas com os elementos visuais do sistema.
+ Com isso,
+ o usuário passou a interagir diretamente com suas informações acadêmicas organizadas.
+\end_layout
+
+\begin_layout Standard
+Funcionalidades v0.2:
+\end_layout
+
+\begin_layout Itemize
+Implementação da TelaInicial com exibição de informações do aluno (nome,
+ matrícula,
+ CRA etc.).
+\end_layout
+
+\begin_layout Itemize
+Conexão entre as estruturas de dados do aluno e disciplinas e a interface gráfica.
+\end_layout
+
+\begin_layout Itemize
+Implementação da janela ModuloGradeCompleta,
+ exibindo a grade curricular completa do curso.
+\end_layout
+
+\begin_layout Itemize
+Uso de cores distintas para indicar o status das disciplinas (aprovadas,
+ em curso,
+ reprovadas,
+ não cursadas).
+\end_layout
+
+\begin_layout Itemize
+Criação da barra de progresso de carga horária semanal (limite de 16h).
+\end_layout
+
+\begin_layout Itemize
+Implementação do método carregarInformacoesAluno() para exibir os dados do aluno na interface.
+\end_layout
+
+\begin_layout Itemize
+Testes básicos de navegação entre telas com botões funcionais.
+\end_layout
+
+\begin_layout Itemize
+Leitura e exibição dinâmica da grade curricular a partir dos dados das disciplinas do curso.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Versão v0.3 – Interatividade Avançada e Módulos Auxiliares
+\end_layout
+
+\begin_layout Standard
+Na fase final,
+ o sistema recebeu melhorias significativas em usabilidade e inteligência de simulação,
+ com janelas específicas para acompanhar desempenho,
+ planejar semestres e visualizar o quadro de horários semanal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Features v0.3:
+\end_layout
+
+\begin_layout Itemize
+Implementação da janela AcompanhamentoDisciplina,
+ com simulação de notas e cálculo de média final.
+\end_layout
+
+\begin_layout Itemize
+Cálculo do que o aluno precisa tirar nas próximas avaliações para ser aprovado.
+\end_layout
+
+\begin_layout Itemize
+Implementação do método abrirJanelaDisciplina() na TelaInicial,
+ com ligação entre as disciplinas da grade e suas janelas detalhadas.
+\end_layout
+
+\begin_layout Itemize
+Implementação do módulo SimulacaoPlanejamentoSEM,
+ simulando planejamento de semestres futuros.
+\end_layout
+
+\begin_layout Itemize
+Checagem automática de pré-requisitos ao simular disciplinas elegíveis.
+\end_layout
+
+\begin_layout Itemize
+Implementação do QuadroDeHorarios,
+ preenchido com base nas disciplinas em andamento e atividades extras.
+\end_layout
+
+\begin_layout Itemize
+Armazenamento e leitura automatizada dos horários no arquivo InformacoesAluno.txt.
+\end_layout
+
+\begin_layout Itemize
+Testes com diferentes arquivos de entrada simulando perfis variados de alunos (CRA,
+ disciplinas,
+ horários).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -197,7 +338,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.1, 
+Versão 0.1,
+ 
 \shape italic
 \emph on
 imagem do programa rodando
@@ -230,16 +372,71 @@ name "sec:Versão-0.2"
 
 \end_inset
 
- - xxx
+ - 
+\series bold
+Integração dos Dados com a Interface Gráfica
 \end_layout
 
 \begin_layout Standard
-Nesta segunda versão ...
+
+\series bold
+Versão v0.2 – Integração dos Dados com a Interface Gráfica
+\end_layout
+
+\begin_layout Standard
+Nesta fase,
+ iniciou-se a construção da interface gráfica utilizando Qt,
+ conectando os dados do aluno e das disciplinas com os elementos visuais do sistema.
+ Com isso,
+ o usuário passou a interagir diretamente com suas informações acadêmicas organizadas.
+\end_layout
+
+\begin_layout Standard
+Funcionalidades v0.2:
+\end_layout
+
+\begin_layout Itemize
+Implementação da TelaInicial com exibição de informações do aluno (nome,
+ matrícula,
+ CRA etc.).
+\end_layout
+
+\begin_layout Itemize
+Conexão entre as estruturas de dados do aluno e disciplinas e a interface gráfica.
+\end_layout
+
+\begin_layout Itemize
+Implementação da janela ModuloGradeCompleta,
+ exibindo a grade curricular completa do curso.
+\end_layout
+
+\begin_layout Itemize
+Uso de cores distintas para indicar o status das disciplinas (aprovadas,
+ em curso,
+ reprovadas,
+ não cursadas).
+\end_layout
+
+\begin_layout Itemize
+Criação da barra de progresso de carga horária semanal (limite de 16h).
+\end_layout
+
+\begin_layout Itemize
+Implementação do método carregarInformacoesAluno() para exibir os dados do aluno na interface.
+\end_layout
+
+\begin_layout Itemize
+Testes básicos de navegação entre telas com botões funcionais.
+\end_layout
+
+\begin_layout Itemize
+Leitura e exibição dinâmica da grade curricular a partir dos dados das disciplinas do curso.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -260,7 +457,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Versão 0.2, 
+Versão 0.2,
+ 
 \shape italic
 \emph on
 imagem do programa rodando
@@ -283,6 +481,76 @@ name "fig:Versão-0.1 - simples-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Versão 0.3
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.2-1"
+
+\end_inset
+
+ -
+\series bold
+ Interatividade Avançada e Módulos Auxiliares
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Versão v0.3 – Interatividade Avançada e Módulos Auxiliares
+\end_layout
+
+\begin_layout Standard
+Na fase final,
+ o sistema recebeu melhorias significativas em usabilidade e inteligência de simulação,
+ com janelas específicas para acompanhar desempenho,
+ planejar semestres e visualizar o quadro de horários semanal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Features v0.3:
+\end_layout
+
+\begin_layout Itemize
+Implementação da janela AcompanhamentoDisciplina,
+ com simulação de notas e cálculo de média final.
+\end_layout
+
+\begin_layout Itemize
+Cálculo do que o aluno precisa tirar nas próximas avaliações para ser aprovado.
+\end_layout
+
+\begin_layout Itemize
+Implementação do método abrirJanelaDisciplina() na TelaInicial,
+ com ligação entre as disciplinas da grade e suas janelas detalhadas.
+\end_layout
+
+\begin_layout Itemize
+Implementação do módulo SimulacaoPlanejamentoSEM,
+ simulando planejamento de semestres futuros.
+\end_layout
+
+\begin_layout Itemize
+Checagem automática de pré-requisitos ao simular disciplinas elegíveis.
+\end_layout
+
+\begin_layout Itemize
+Implementação do QuadroDeHorarios,
+ preenchido com base nas disciplinas em andamento e atividades extras.
+\end_layout
+
+\begin_layout Itemize
+Armazenamento e leitura automatizada dos horários no arquivo InformacoesAluno.txt.
+\end_layout
+
+\begin_layout Itemize
+Testes com diferentes arquivos de entrada simulando perfis variados de alunos (CRA,
+ disciplinas,
+ horários).
 \end_layout
 
 \end_body

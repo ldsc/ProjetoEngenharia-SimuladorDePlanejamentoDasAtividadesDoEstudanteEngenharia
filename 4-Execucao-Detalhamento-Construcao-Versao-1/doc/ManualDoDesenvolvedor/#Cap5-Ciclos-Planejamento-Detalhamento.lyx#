@@ -115,14 +115,22 @@
 \begin_body
 
 \begin_layout Chapter
-Lista das Características/
-\emph on
-Features
-\emph default
+Ciclos de Planejamento/Detalhamento
+\begin_inset Index idx
+range none
+pageformat default
+status open
 
+\begin_layout Plain Layout
+Ciclos de Planejamento/Detalhamento
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Lista-das-Características"
+name "chap: Ciclos de Planejamento/Detalhamento"
 
 \end_inset
 
@@ -130,33 +138,20 @@ name "chap:Lista-das-Características"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo apresenta-se a lista de funcionalidades (features) implementadas no sistema PetroPlanner,
- estruturadas com base na abordagem de análise e desenvolvimento orientado a objetos,
- com entregas incrementais.
-\end_layout
-
-\begin_layout Standard
-As funcionalidades foram organizadas em versões correspondentes aos ciclos de desenvolvimento (v0.1,
- v0.3,
- v0.7),
- refletindo a maturação gradual do sistema e o avanço da equipe na construção dos módulos planejados.
-\end_layout
-
-\begin_layout Standard
-Cada feature foi pensada para ser desenvolvida em um único ciclo,
- permitindo progresso contínuo,
- revisões constantes e validação prática em cada etapa.
+Apresenta-se neste capítulo os ciclos de planejamento/detalhamento para as diferentes versões desenvolvidas.
 \end_layout
 
 \begin_layout Section
-Lista de características <<features>>
+Versão 0.1
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Lista-de-características"
+name "sec:Versão-0.1"
 
 \end_inset
 
-
+ - 
+\series bold
+Núcleo de Dados e Estrutura Inicial
 \end_layout
 
 \begin_layout Standard
@@ -209,7 +204,7 @@ Cálculo automático da carga horária cursada via calcularHorasEmCurso() e calc
 \begin_layout Standard
 
 \series bold
-Versão v0.2 – Integração dos Dados com a Interface Gráfica
+Versão v0.2 – Interface Gráfica Inicial e Integração com Backend
 \end_layout
 
 \begin_layout Standard
@@ -224,42 +219,46 @@ Nesta fase,
 Funcionalidades v0.2:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Implementação da TelaInicial com exibição de informações do aluno (nome,
  matrícula,
  CRA etc.).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Conexão entre as estruturas de dados do aluno e disciplinas e a interface gráfica.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Implementação da janela ModuloGradeCompleta,
  exibindo a grade curricular completa do curso.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Uso de cores distintas para indicar o status das disciplinas (aprovadas,
  em curso,
  reprovadas,
  não cursadas).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Criação da barra de progresso de carga horária semanal (limite de 16h).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Implementação do método carregarInformacoesAluno() para exibir os dados do aluno na interface.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Testes básicos de navegação entre telas com botões funcionais.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Leitura e exibição dinâmica da grade curricular a partir dos dados das disciplinas do curso.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -317,6 +316,121 @@ Armazenamento e leitura automatizada dos horários no arquivo InformacoesAluno.t
 Testes com diferentes arquivos de entrada simulando perfis variados de alunos (CRA,
  disciplinas,
  horários).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Interface-Simulador-Transcal-Guilherme1.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 0.1,
+ 
+\shape italic
+\emph on
+imagem do programa rodando
+\emph default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-0.1 - simples"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Versão 0.2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.2"
+
+\end_inset
+
+ - xxx
+\end_layout
+
+\begin_layout Standard
+Nesta segunda versão ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Interface-Simulador-Transcal-Guilherme2.png
+	lyxscale 60
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Versão 0.2,
+ 
+\shape italic
+\emph on
+imagem do programa rodando
+\emph default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Versão-0.1 - simples-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
