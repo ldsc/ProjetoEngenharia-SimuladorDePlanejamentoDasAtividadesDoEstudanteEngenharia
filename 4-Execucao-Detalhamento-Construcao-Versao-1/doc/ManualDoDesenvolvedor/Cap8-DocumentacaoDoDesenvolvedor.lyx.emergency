@@ -26,7 +26,7 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\master /home2/andreduartebueno/workdir/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica/doc/manualDesenvolvedor-lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -69,7 +69,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -98,7 +98,7 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle fancy
 \tablestyle default
 \tracking_changes false
@@ -114,156 +114,56 @@
 
 \begin_body
 
-\begin_layout Standard
-\align center
-
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\begin_inset Newline newline
-\end_inset
-
-CENTRO DE CIÊNCIA E TECNOLOGIA
+\begin_layout Chapter
+Documentação para o Desenvolvedor
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\size large
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O título deve ser o mais claro possível,
- não deixando dúvidas sobre o assunto em questão.
- O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-PRÉ-PROJETO DE ENGENHARIA
-\begin_inset Newline newline
-\end_inset
-
-DESENVOLVIMENTO DO SOFTWARE 
-\begin_inset Newline newline
-\end_inset
-
-
-\size default
-
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-"
+
+\backslash
+lhead{
+\backslash
+thechapter - Documentação} 
 \end_layout
 
-\end_inset
-
-PetroPlanner
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-"
-\end_layout
-
-\end_inset
-
-
-\size large
-
-\begin_inset Newline newline
-\end_inset
-
-
-\size default
-Github:
- SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia
-\size large
-
-\begin_inset Newline newline
-\end_inset
-
-DISCIPLINA LEP - LEP01348 :
- Introdução ao Projeto de Engenharia
-\begin_inset Newline newline
-\end_inset
-
-Setor de Modelagem Matemática e Computacional
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\align center
+Nesta parte do projeto apresentamos alguns exemplos de uso do software.
+\end_layout
 
-\size large
-Versão 1:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES
-\begin_inset Newline newline
-\end_inset
-
-Abigail Ribeiro Pinto Silva Guimarães
-\begin_inset Newline newline
-\end_inset
-
-Maria Luiza Cornelio Ramos
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Section
+Dependências para compilar o software
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
+Para compilar o software é necessário atender as seguintes dependências:
 \end_layout
 
-\begin_layout Standard
-\align center
+\begin_layout Itemize
+Instalar o compilador g++ da GNU disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+literal "false"
 
-\size large
-MACAÉ - RJ
-\begin_inset Newline newline
 \end_inset
 
-Março - 2025
+.
+ Para instalar no GNU/Linux use o comando 
+\family typewriter
+yum install gcc
+\family default
+.
 \end_layout
 
 \end_body
