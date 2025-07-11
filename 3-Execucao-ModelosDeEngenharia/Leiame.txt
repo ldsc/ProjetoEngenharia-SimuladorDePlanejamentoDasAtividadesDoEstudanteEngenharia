@@ -1,5 +1,0 @@
-Neste diretório irá encontar os arquivos da versão, incluindo os subdiretórios:
-doc - documentação
-src - códigos
-test- testes dos códigos com arquivos de entrada e saída
-uml - diagramas uml

@@ -1,6 +1,0 @@
-
-Colocar aqui códigos desenvolvidos, arquivos .hy .cpp.
-
-Aqui não entram arquivos usados em testes;
-Arquivos usados para testar o funcionamento do programa ficam no diretório test.
-
