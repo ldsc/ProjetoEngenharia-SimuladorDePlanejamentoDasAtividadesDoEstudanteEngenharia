@@ -7,7 +7,7 @@
 #include "CAluno.h"
 
 namespace Ui {
-class editardisciplinasaprovadas;
+class EditarDisciplinasEmCurso;
 }
 
 class EditarDisciplinasEmCurso : public QDialog
@@ -23,7 +23,7 @@ private slots:
     void on_buttonBox_rejected(); // Para Cancel
 
 private:
-    Ui::editardisciplinasaprovadas *ui;
+    Ui::EditarDisciplinasEmCurso *ui;
     CAluno* aluno;
     QMap<QString, QCheckBox*> checkboxes;
 };

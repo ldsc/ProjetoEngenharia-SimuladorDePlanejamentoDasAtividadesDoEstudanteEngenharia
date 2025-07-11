@@ -15,32 +15,32 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
     telainicial.ui
     acompanhamentodisciplina.ui
-    editardisciplinasemcurso.ui
+    EditarDisciplinasEmCurso.ui
     modulogradecompleta.ui
     quadrodehorarios.ui
     simulacaoplanejamentosem.ui
-    editardisciplinasaprovadas.ui
+    EditarDisciplinasAprovadas.ui
 
     telainicial.h
     acompanhamentodisciplina.h
-    editardisciplinasemcurso.h
+    EditarDisciplinasEmCurso.h
     modulogradecompleta.h
     quadrodehorarios.h
     simulacaoplanejamentosem.h
     CAluno.h
     CDisciplinas.h
-    editardisciplinasaprovadas.h
+    EditarDisciplinasAprovadas.h
 
     telainicial.cpp
     acompanhamentodisciplina.cpp
-    editardisciplinasemcurso.cpp
+    EditarDisciplinasEmCurso.cpp
     modulogradecompleta.cpp
     quadrodehorarios.cpp
     simulacaoplanejamentosem.cpp
     CAluno.cpp
     CDisciplinas.cpp
     main.cpp
-    editardisciplinasaprovadas.cpp
+    EditarDisciplinasAprovadas.cpp
 
 )
 
@@ -52,8 +52,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         acompanhamentodisciplina.h acompanhamentodisciplina.cpp acompanhamentodisciplina.ui
         simulacaoplanejamentosem.h simulacaoplanejamentosem.cpp simulacaoplanejamentosem.ui
         quadrodehorarios.h quadrodehorarios.cpp quadrodehorarios.ui
-        editardisciplinasemcurso.h editardisciplinasemcurso.cpp editardisciplinasemcurso.ui
-        editardisciplinasaprovadas.h editardisciplinasaprovadas.cpp editardisciplinasaprovadas.ui
+        EditarDisciplinasEmCurso.h EditarDisciplinasEmCurso.cpp EditarDisciplinasEmCurso.ui
+        EditarDisciplinasAprovadas.h EditarDisciplinasAprovadas.cpp EditarDisciplinasAprovadas.ui
 
     )
 # Define target properties for Android with Qt 6 as:

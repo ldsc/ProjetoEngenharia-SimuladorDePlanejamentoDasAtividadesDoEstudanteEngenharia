@@ -6,7 +6,7 @@
 #include "acompanhamentoDisciplina.h"
 #include "simulacaoplanejamentosem.h"
 #include "quadrodehorarios.h"
-#include "editardisciplinasaprovadas.h"
+#include "EditarDisciplinasAprovadas.h"
 
 
 QT_BEGIN_NAMESPACE

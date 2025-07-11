@@ -1,7 +1,7 @@
 #include "telainicial.h"
 #include "ui_telainicial.h"
 #include "EditarDisciplinasEmCurso.h"
-#include "editardisciplinasaprovadas.h"
+#include "EditarDisciplinasAprovadas.h"
 #include "CAluno.h"
 #include <QMessageBox>
 #include <QScreen>
