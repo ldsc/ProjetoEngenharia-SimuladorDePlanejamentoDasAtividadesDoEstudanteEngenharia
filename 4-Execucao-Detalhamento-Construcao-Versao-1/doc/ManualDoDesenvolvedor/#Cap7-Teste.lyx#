@@ -324,58 +324,35 @@ name "fig:Teste-TelaPrograma-Captura1"
 \end_layout
 
 \begin_layout Section
-Teste 2 – Exibição da Grade Curricular
+Teste 2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-2"
+
+\end_inset
+
+:
+ Descrição
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-O que está sendo testado?
+No início apresente texto explicativo do teste:
 \end_layout
 
-\begin_layout Standard
-A exibição completa da grade curricular com cores representando o status das disciplinas.
+\begin_layout Itemize
+O que esta sendo testado?
 \end_layout
 
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Como o teste vai ser realizado?
 \end_layout
 
-\begin_layout Standard
-Após carregar os dados do aluno,
- será acessada a tela "Grade Curricular".
- O programa deverá agrupar corretamente as disciplinas por período e status.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Como o programa será validado?
 \end_layout
 
-\begin_layout Standard
-Cada disciplina deverá estar na sua linha de período e com a cor correspondente (verde:
- aprovada,
- amarelo:
- em curso,
- vermelho:
- reprovada,
- cinza:
- não cursada).
-\end_layout
-
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Resultados e análises
-\end_layout
-
-\begin_layout Standard
-O programa exibiu todas as disciplinas conforme esperado,
- com as cores corretas.
- A barra de progresso refletiu a carga horária total já cursada.
 \end_layout
 
 \begin_layout Subsection
@@ -504,53 +481,35 @@ name "fig:Teste-TelaPrograma-1"
 \end_layout
 
 \begin_layout Section
-Teste 3 – Simulação de Planejamento Acadêmico
+Teste 3
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-3"
+
+\end_inset
+
+:
+ Descrição
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-O que está sendo testado?
+No início apresente texto explicativo do teste:
 \end_layout
 
-\begin_layout Standard
-O funcionamento do módulo de simulação de planejamento acadêmico.
+\begin_layout Itemize
+O que esta sendo testado?
 \end_layout
 
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Como o teste vai ser realizado?
 \end_layout
 
-\begin_layout Standard
-Será acessada a funcionalidade de "Simular Planejamento",
- onde o aluno seleciona disciplinas para os próximos semestres e o sistema valida pré-requisitos e sugere combinações.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Como o programa será validado?
 \end_layout
 
-\begin_layout Standard
-Ao marcar uma disciplina que não atende aos pré-requisitos,
- ela não deve aparecer como disponível.
- Ao simular vários semestres,
- as seleções devem ser mantidas corretamente.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
+\begin_layout Itemize
 Resultados e análises
-\end_layout
-
-\begin_layout Standard
-A simulação avançou corretamente até o 5º semestre planejado,
- com consistência entre as disciplinas escolhidas.
- O botão "Avançar Semestre" e a exibição dos blocos funcionaram como esperado.
 \end_layout
 
 \begin_layout Subsection
@@ -662,6 +621,37 @@ name "fig:Teste-TelaPrograma-Captura1-1"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Nota:
+ 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Não perca de vista a visão do todo;
+ do projeto de engenharia como um todo.
+ Cada capítulo,
+ cada seção,
+ cada parágrafo deve se encaixar.
+ Este é um diferencial fundamental do engenheiro em relação ao técnico,
+ a capacidade de desenvolver projetos,
+ de ver o todo e suas diferentes partes,
+ de modelar processos/sistemas/produtos de engenharia.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+apague!
 \end_layout
 
 \end_inset

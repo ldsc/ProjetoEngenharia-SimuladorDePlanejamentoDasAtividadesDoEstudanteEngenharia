@@ -6,7 +6,6 @@
 \origin unavailable
 \textclass extbook
 \begin_preamble
-% Pacotes que você já estava usando
 \usepackage {graphicx}
 \usepackage {longtable}
 \usepackage {indentfirst}
@@ -20,33 +19,11 @@
 %\renewcommand {\familydefault}{\sfdefault}
 
 % Para uso de listagens de código
-%\usepackage[utf8]{inputenc} % Permite acentos em UTF-8
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
-\usepackage{xcolor}
-\definecolor{azulclaro}{rgb}{0.6,1,1}
-
-\lstdefinestyle{C++}{
-  language=C++,
-  basicstyle=\ttfamily\footnotesize,
-  keywordstyle=\color{blue},
-  commentstyle=\color{gray},
-  stringstyle=\color{red},
-  numbers=left,
-  numberstyle=\tiny,
-  stepnumber=1,
-  numbersep=5pt,
-  showstringspaces=false,
-  tabsize=2,
-  breaklines=true,
-  breakatwhitespace=false,
-  frame=single
-}
-
-\lstdefinestyle{out}{
-  backgroundcolor=\color{azulclaro},
-  basicstyle=\ttfamily\footnotesize,
-  frame=single
-}
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx

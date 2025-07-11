@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \use_default_options false
 \master /home2/andreduartebueno/workdir/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica/doc/manualDesenvolvedor-lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -53,7 +55,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +76,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +100,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -129,15 +138,10 @@ thechapter - Documentação}
 
 \begin_layout Standard
 Todo projeto de engenharia precisa ser bem documentado.
- Neste sentido, apresenta-se neste capítulo documentações extras para o
- desenvolvedor.
- Ou seja, instruções para pessoas que venham a dar continuidade a este projeto
- de engenharia.
-\end_layout
-
-\begin_layout Description
-Nota: O manual do usuário é apresentado em um documento separado.
- Veja diretório "doc/ManualDoUsuario".
+ Neste sentido,
+ apresenta-se neste capítulo a documentação destinada ao desenvolvedor.
+ Ou seja,
+ são fornecidas instruções para pessoas que venham a dar continuidade ou realizar manutenções evolutivas no projeto PetroPlanner.
 \end_layout
 
 \begin_layout Section
@@ -167,8 +171,8 @@ yum install gcc
 \end_layout
 
 \begin_layout Itemize
-Biblioteca CGnuplot; os arquivos para acesso a biblioteca CGnuplot devem
- estar no diretório com os códigos do software;
+Biblioteca CGnuplot;
+ os arquivos para acesso a biblioteca CGnuplot devem estar no diretório com os códigos do software;
 \end_layout
 
 \begin_layout Itemize
@@ -176,7 +180,8 @@ O software
 \family typewriter
 gnuplot
 \family default
-, disponível no endereço 
+,
+ disponível no endereço 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.gnuplot.info/"
@@ -184,7 +189,8 @@ literal "false"
 
 \end_inset
 
-, deve estar instalado.
+,
+ deve estar instalado.
  É possível que haja necessidade de setar o caminho para execução do 
 \family typewriter
 gnuplot
@@ -225,8 +231,10 @@ Como gerar a documentação usando doxygen
 
 \begin_layout Standard
 A documentação do código do software deve ser feita usando o padrão JAVADOC,
- conforme apresentada no Capítulo - Documentação, do livro texto da disciplina.
- Depois de documentar o código, use o software 
+ conforme apresentada no Capítulo - Documentação,
+ do livro texto da disciplina.
+ Depois de documentar o código,
+ use o software 
 \family typewriter
 doxygen 
 \family default
@@ -235,8 +243,7 @@ para gerar a documentação do desenvolvedor no formato html.
 \family typewriter
 doxygen
 \family default
- lê os arquivos com os códigos (*.h e *.cpp) e gera uma documentação muito
- útil e de fácil navegação no formato html.
+ lê os arquivos com os códigos (*.h e *.cpp) e gera uma documentação muito útil e de fácil navegação no formato html.
  
 \end_layout
 
@@ -296,8 +303,8 @@ doxygen
 
 \begin_layout Itemize
 Documente o código usando o formato JAVADOC.
- Um bom exemplo de código documentado é apresentado nos arquivos da biblioteca
- CGnuplot, abra os arquivos 
+ Um bom exemplo de código documentado é apresentado nos arquivos da biblioteca CGnuplot,
+ abra os arquivos 
 \family typewriter
 CGnuplot.h
 \family default
@@ -333,20 +340,17 @@ Peça para o
 \family typewriter
 doxygen
 \family default
- gerar o arquivo de definições (arquivo que diz para o doxygem como deve
- ser a documentação).
+ gerar o arquivo de definições (arquivo que diz para o doxygem como deve ser a documentação).
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-O software doxywizard é uma interface gráfica que permite a configuração
- do arquivo de definições (gerado pelo comando doxygen -g).
+O software doxywizard é uma interface gráfica que permite a configuração do arquivo de definições (gerado pelo comando doxygen -g).
  
 \end_layout
 
 \begin_layout Plain Layout
-No GNU/Linux o doxywizard pode ser instaldo com o comando yum install doxygen-do
-xywizard.
+No GNU/Linux o doxywizard pode ser instaldo com o comando yum install doxygen-doxywizard.
 \end_layout
 
 \end_inset
@@ -409,8 +413,7 @@ chrome html/index.html
 
 \end_deeper
 \begin_layout Standard
-Apresenta-se a seguir algumas imagens com as telas das saídas geradas pelo
- software 
+Apresenta-se a seguir algumas imagens com as telas das saídas geradas pelo software 
 \family typewriter
 doxygen
 \family default
@@ -418,7 +421,8 @@ doxygen
 \end_layout
 
 \begin_layout Description
-Nota: 
+Nota:
+ 
 \begin_inset space ~
 \end_inset
 
@@ -426,10 +430,14 @@ Nota:
 \begin_inset Newline newline
 \end_inset
 
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
+Não perca de vista a visão do todo;
+ do projeto de engenharia como um todo.
+ Cada capítulo,
+ cada seção,
+ cada parágrafo deve se encaixar.
  Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
+ a capacidade de desenvolver projetos,
+ de ver o todo e suas diferentes partes,
  de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
