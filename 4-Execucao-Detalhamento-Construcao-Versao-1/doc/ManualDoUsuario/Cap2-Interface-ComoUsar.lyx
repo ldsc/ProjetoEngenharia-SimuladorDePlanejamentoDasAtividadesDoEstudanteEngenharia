@@ -173,7 +173,6 @@ status open
 	filename imagens/TelaInicial_PetroPlanner.png
 	lyxscale 30
 	width 100text%
-	height 100theight%
 	special height=0.85\textheight
 
 \end_inset

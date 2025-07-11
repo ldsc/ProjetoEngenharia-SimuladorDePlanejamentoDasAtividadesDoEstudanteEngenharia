@@ -165,45 +165,213 @@ name "sec:AOO"
 
 \begin_layout Standard
 A Análise Orientada a Objeto (AOO) corresponde à terceira etapa do desenvolvimento de um software,
- sendo aplicada após a etapa de levantamento de requisitos e definição dos módulos.
+ sendo aplicada após o levantamento de requisitos e definição dos módulos.
  No projeto PetroPlanner,
- essa análise permitiu identificar os principais objetos do domínio acadêmico de um estudante de Engenharia de Petróleo,
+ essa análise permitiu mapear os principais elementos do domínio acadêmico de um estudante de Engenharia de Petróleo,
  como disciplinas,
  aluno,
- telas de interação e funcionalidades associadas.
+ telas de interação e funcionalidades de apoio ao planejamento.
 \end_layout
 
 \begin_layout Standard
 A AOO tem como objetivo descrever o que deve ser feito pelo sistema,
- sem ainda se preocupar com a implementação final.
- Nessa fase,
+ abstraindo-se da forma como será implementado.
+ A partir dela,
  são definidos:
 \end_layout
 
 \begin_layout Itemize
-os objetos que representam conceitos do problema real;
+os objetos que representam conceitos reais do problema;
 \end_layout
 
 \begin_layout Itemize
-as classes correspondentes no modelo de software;
+as classes que traduzem esses objetos para o software;
 \end_layout
 
 \begin_layout Itemize
-os atributos e métodos que caracterizam esses objetos;
+os atributos e métodos que caracterizam cada classe;
 \end_layout
 
 \begin_layout Itemize
-os relacionamentos entre eles (associações,
- agregações e composições);
+os relacionamentos existentes entre as classes (como associação,
+ composição e dependência);
 \end_layout
 
 \begin_layout Itemize
-e as dependências entre módulos da aplicação.
+e as interações entre os módulos que compõem o sistema.
 \end_layout
 
 \begin_layout Standard
-O modelo gerado busca ser conciso e simplificado,
- servindo como ponte entre os requisitos e a futura etapa de implementação.
+
+\series bold
+3.1 Classes principais
+\end_layout
+
+\begin_layout Standard
+O sistema identifica como classes fundamentais:
+\end_layout
+
+\begin_layout Itemize
+CAluno:
+ representa o estudante,
+ com seus dados pessoais,
+ CRA,
+ período atual e disciplinas associadas.
+\end_layout
+
+\begin_layout Itemize
+CDisciplinas:
+ representa uma disciplina do curso,
+ com nome,
+ carga horária,
+ pré-requisitos e demais atributos acadêmicos.
+\end_layout
+
+\begin_layout Itemize
+TelaInicial:
+ classe que centraliza a navegação do sistema,
+ conectando o usuário às principais funcionalidades.
+\end_layout
+
+\begin_layout Itemize
+ModuloGradeCompleta:
+ exibe visualmente a grade curricular,
+ destacando disciplinas conforme seu status.
+\end_layout
+
+\begin_layout Itemize
+QuadroDeHorarios:
+ permite a organização visual da semana do aluno,
+ distribuindo aulas e atividades em uma tabela.
+\end_layout
+
+\begin_layout Itemize
+SimulacaoPlanejamentoSEM:
+ simula os próximos períodos letivos com base nas disciplinas ainda não cursadas.
+\end_layout
+
+\begin_layout Itemize
+EditarDisciplinasEmCurso:
+ interface para selecionar e ajustar as disciplinas que o aluno está cursando no momento.
+\end_layout
+
+\begin_layout Itemize
+AcompanhamentoDisciplina:
+ exibe os detalhes de uma disciplina específica,
+ como notas,
+ trabalhos,
+ horários e faltas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.2 Relacionamentos identificados
+\end_layout
+
+\begin_layout Standard
+A análise também evidenciou importantes relacionamentos entre as classes:
+\end_layout
+
+\begin_layout Itemize
+A classe TelaInicial possui e manipula uma instância de CAluno,
+ sendo o ponto central de consulta aos dados.
+\end_layout
+
+\begin_layout Itemize
+CAluno mantém vetores com instâncias de CDisciplinas,
+ classificando-as como em curso,
+ aprovadas ou não cursadas.
+\end_layout
+
+\begin_layout Itemize
+Módulos como ModuloGradeCompleta,
+ QuadroDeHorarios e SimulacaoPlanejamentoSEM dependem dos dados da classe CAluno para funcionar corretamente.
+\end_layout
+
+\begin_layout Itemize
+A interação entre classes de interface e dados é feita via composição ou agregação,
+ com ponteiros que mantêm a comunicação entre elas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.3 Papéis das classes
+\end_layout
+
+\begin_layout Standard
+Cada classe foi estruturada com responsabilidades bem definidas,
+ respeitando os princípios de coesão e baixo acoplamento:
+\end_layout
+
+\begin_layout Itemize
+Classes de domínio (CAluno,
+ CDisciplinas):
+ concentram os dados e regras do domínio acadêmico.
+\end_layout
+
+\begin_layout Itemize
+Classes de interface (UI):
+ promovem a interação com o usuário,
+ atualizando a visualização e recebendo entradas.
+\end_layout
+
+\begin_layout Itemize
+Classes de controle (como SimulacaoPlanejamentoSEM):
+ atuam na lógica intermediária,
+ processando dados e orquestrando funcionalidades.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3.4 Diagramas gerados
+\end_layout
+
+\begin_layout Standard
+Como resultado da AOO,
+ foram elaborados os seguintes diagramas UML:
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Classes:
+ mostra as classes do sistema,
+ seus atributos,
+ métodos e relacionamentos.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Pacotes:
+ organiza os principais módulos e suas dependências.
+\end_layout
+
+\begin_layout Itemize
+Diagramas de Sequência:
+ ilustram cenários típicos de interação,
+ como simular um semestre ou salvar o quadro de horários.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Comunicação:
+ destaca os objetos envolvidos em uma operação e como trocam mensagens.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Estado:
+ modela o comportamento de uma disciplina ao longo do tempo (não cursada,
+ em curso,
+ aprovada).
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Atividades:
+ descreve o fluxo geral de ações desde o login do aluno até o uso das ferramentas.
+\end_layout
+
+\begin_layout Itemize
+Diagrama de Componentes e de Implantação:
+ representam a estrutura de arquivos do sistema e sua distribuição no ambiente computacional.
 \end_layout
 
 \begin_layout Section
@@ -239,7 +407,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/Downloads/2. Diagrama de Classes – Estrutura de classes.png
+	filename C:/Users/abiga/Downloads/DIAGRAMA DE CLASSES.png
 	width 100text%
 
 \end_inset
@@ -893,6 +1061,7 @@ status open
 	filename C:/Users/abiga/Downloads/6. Diagrama de Estados – Estados da disciplina na simulação.png
 	lyxscale 50
 	width 100text%
+	height 70theight%
 
 \end_inset
 

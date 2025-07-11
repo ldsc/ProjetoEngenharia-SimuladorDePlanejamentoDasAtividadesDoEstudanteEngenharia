@@ -959,9 +959,6 @@ Ao lado de cada disciplina,
 
 \begin_layout Itemize
 O fundo azul foi escolhido para facilitar a leitura e dar identidade ao sistema.
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Float figure
 placement document
 alignment document
@@ -1041,9 +1038,6 @@ Dificuldade:
 
 \begin_layout Itemize
 Uma barra de progresso inferior mostra o percentual de carga horária cursada em relação ao total do curso.
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Float figure
 placement document
 alignment document
@@ -1119,9 +1113,6 @@ Alternar entre modo de edição e modo de visualização.
 
 \begin_layout Itemize
 As alterações são salvas automaticamente no arquivo de dados do aluno.
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Float figure
 placement document
 alignment document
@@ -1185,9 +1176,6 @@ Exibe os nomes das disciplinas escolhidas organizadas por período simulado.
 
 \begin_layout Itemize
 Cada nova simulação é adicionada como um novo "bloco visual" no layout.
-\end_layout
-
-\begin_layout Itemize
 \begin_inset Float figure
 placement document
 alignment document

@@ -198,7 +198,7 @@ status open
 
 
 \backslash
-lfoot{NomeEquipeAqui} 
+lfoot{Abigail e Maria Luiza} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -208,28 +208,6 @@ lfoot{NomeEquipeAqui}
 rfoot{
 \backslash
 today}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Substitua "NomeEquipeAqui" pelo nome da equipe
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
 \end_layout
 
 \end_inset
