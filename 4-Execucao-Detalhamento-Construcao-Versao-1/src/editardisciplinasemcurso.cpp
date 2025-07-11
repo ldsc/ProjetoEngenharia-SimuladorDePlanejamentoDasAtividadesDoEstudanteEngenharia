@@ -7,7 +7,7 @@
 
 EditarDisciplinasEmCurso::EditarDisciplinasEmCurso(CAluno* aluno, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::EditarDisciplinasEmCurso),
+    ui(new Ui::editardisciplinasaprovadas),
     aluno(aluno)
 {
     ui->setupUi(this);

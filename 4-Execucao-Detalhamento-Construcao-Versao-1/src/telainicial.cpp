@@ -1,6 +1,7 @@
 #include "telainicial.h"
 #include "ui_telainicial.h"
 #include "EditarDisciplinasEmCurso.h"
+#include "editardisciplinasaprovadas.h"
 #include "CAluno.h"
 #include <QMessageBox>
 #include <QScreen>
@@ -16,6 +17,7 @@ TelaInicial::TelaInicial(QWidget *parent)
     connect(ui->botaoSimulacao, &QPushButton::clicked, this, &TelaInicial::abrirTelaSimulacao);
     connect(ui->botaoQuadrodeHorarios, &QPushButton::clicked, this, &TelaInicial::abrirQuadroDeHorarios);
     connect(ui->botaoEditarDisc, &QPushButton::clicked, this, &TelaInicial::abrirEditorDeDisciplinas);
+    connect(ui->botaoDiscAprov, &QPushButton::clicked, this, &TelaInicial::abrirEditorDeDiscAprov);
 
 
 
@@ -278,5 +280,16 @@ void TelaInicial::abrirEditorDeDisciplinas()
         this->close();
         TelaInicial* novaTela = new TelaInicial;
         novaTela->show();
+    }
+}
+
+
+void TelaInicial::abrirEditorDeDiscAprov()
+{
+    EditarDisciplinasAprovadas* editor = new EditarDisciplinasAprovadas(&aluno, this);
+    if (editor->exec() == QDialog::Accepted) {
+        this->close(); // Fecha a tela antiga
+        TelaInicial* novaTela = new TelaInicial;
+        novaTela->show(); // Reabre a tela atualizada
     }
 }

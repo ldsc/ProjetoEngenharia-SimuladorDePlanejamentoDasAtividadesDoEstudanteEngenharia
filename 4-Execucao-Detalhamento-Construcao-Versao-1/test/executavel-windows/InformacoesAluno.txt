@@ -8,7 +8,7 @@ CRA: 8.5
 # Periodo ; Nome da Disciplina ; Nota1 ; Situacao1 ; Nota2 ; Situacao2 ; ... (max 4 reprovacoes + aprovacao)
 # EXEMPLO1: 1 ; Fundamentos da Ciencia da Computacao ; 2.5 ; Reprovada ; 3.0 ; Reprovada ; 4.0 ; Reprovada ; 7.5 ; Aprovada
 # EXEMPLO2: 1 ; Quimica Geral I ; 8.0 ; Aprovada
-# EXEMPLO3: 2 ; Optativa do CCH ; - ; Em Curso
+# EXEMPLO3: 2 ; Optativa do CCH ; 64.0 ; Aprovada
 # EXEMPLO4: 5 ; Resistencia dos Materiais ; 60.0 ; Aprovada
 
 1 ; Quimica Geral I ; 8.0 ; Aprovada
@@ -20,7 +20,7 @@ CRA: 8.5
 
 2 ; Quimica Geral II ; 8.0 ; Aprovada
 2 ; Portugues Instrumental II ; 8.0 ; Aprovada
-2 ; Optativa do CCH ; - ; Em Curso
+2 ; Optativa do CCH ; 64.0 ; Aprovada
 2 ; Fisica I ; 9.0 ; 8.0 ; Aprovada
 2 ; Fisica Experimental I ; 8.0 ; Aprovada
 2 ; Calculo Diferencial e Integral II ; 8.0 ; Aprovada
@@ -45,12 +45,12 @@ CRA: 8.5
 5 ; Geologia Fisica ; 60.0 ; Aprovada
 5 ; Introducao a Analise e Processamento de Sinais ; - ; Em Curso
 5 ; Resistencia dos Materiais ; 60.0 ; Aprovada
-5 ; Mecanica dos Fluidos ; - ; Em Curso
+5 ; Mecanica dos Fluidos ; 60.0 ; Aprovada
 5 ; Fisica-Matematica I ; - ; Em Curso
 5 ; Introducao ao Projeto de Engenharia ; - ; Em Curso
 
 6 ; Mineralogia e Petrologia de Rochas Reservatorio ; 8.0 ; Aprovada
-6 ; Metodos Geofisicos de Exploracao ; - ; Nao Cursada
+6 ; Metodos Geofisicos de Exploracao ; - ; Em Curso
 6 ; Propriedades Fisicas de Minerais e Rochas ; 8.0 ; Aprovada
 6 ; Engenharia de Reservatorios I ; - ; Nao Cursada
 6 ; Fisica-Matematica II ; 8.0 ; Aprovada
@@ -103,28 +103,39 @@ Disciplinas em Andamento:
 
 
 
+Metodos Geofisicos de Exploracao ; 1 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: -(1)
 
-Optativa do CCH ; 0 ; InserirDiaDeAula,InserirHorariosDaAula ; Trabalhos: 60.0(1) ; Provas: -(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Optativa do CCH ; 0 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: 60.0(1) ; Provas: 50.0(1),70(3)
 
 
 Fisica-Matematica I ; 1 ; Terca:7h-9h; Trabalhos: -(1) ; Provas: -(1)
-Introducao ao Projeto de Engenharia ; 0 ; Sexta:7h-8h; Trabalhos: -(1) ; Provas: -(1)
-Introducao a Analise e Processamento de Sinais ; 0 ; Terca:9h-10h; Trabalhos: -(1) ; Provas: -(1),-(1)
-Mecanica dos Fluidos ; 1 ; InserirDiaDeAula,InserirHorariosDaAula; Trabalhos: -(1) ; Provas: 33.0(1),90.0(2)
+Introducao ao Projeto de Engenharia ; 0 ; Sexta:7h-8h,Terca:10h-12h; Trabalhos: -(1) ; Provas: -(1)
+Introducao a Analise e Processamento de Sinais ; 0 ; Sexta:8h-9h,Terca:9h-10h; Trabalhos: -(1) ; Provas: -(1),-(1)
 
 
 # Formato: Nome da Atividade ; Dias e Horários
 # Exemplo: Estudo Individual ; Terça:14h-16h, Quinta:14h-16h
 Academia ; Quarta:12h-13h
+correr ; Sexta:11h-12h
 Estágio ; Quinta:11h-12h
-
-
-
-
-
-
-
-
 
 
 

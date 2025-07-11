@@ -32,8 +32,8 @@
    <widget class="QPushButton" name="botaoVerGradeCompleta">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>300</y>
+      <x>390</x>
+      <y>340</y>
       <width>251</width>
       <height>81</height>
      </rect>
@@ -364,8 +364,8 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>560</y>
-      <width>331</width>
+      <y>600</y>
+      <width>311</width>
       <height>81</height>
      </rect>
     </property>
@@ -389,8 +389,8 @@
    <widget class="QPushButton" name="botaoQuadrodeHorarios">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>430</y>
+      <x>390</x>
+      <y>470</y>
       <width>251</width>
       <height>81</height>
      </rect>
@@ -519,6 +519,58 @@
     </property>
     <property name="text">
      <string>Atualizar Faltas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoDiscAprov">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>470</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Editar Disciplinas Aprovadas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoEditarInfosGerais">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>340</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bookman Old Style</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-4</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffa308; color: white; border-radius: 30px;</string>
+    </property>
+    <property name="text">
+     <string>Editar Informações Gerais</string>
     </property>
    </widget>
   </widget>

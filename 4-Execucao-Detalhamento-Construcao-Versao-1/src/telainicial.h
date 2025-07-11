@@ -6,6 +6,7 @@
 #include "acompanhamentoDisciplina.h"
 #include "simulacaoplanejamentosem.h"
 #include "quadrodehorarios.h"
+#include "editardisciplinasaprovadas.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -41,6 +42,8 @@ private:
     void abrirQuadroDeHorarios();
     void preencherFaltasEmGrupoBox(CAluno* aluno);
     void abrirEditorDeDisciplinas();
+    void abrirEditorDeDiscAprov();
+
 
 
 

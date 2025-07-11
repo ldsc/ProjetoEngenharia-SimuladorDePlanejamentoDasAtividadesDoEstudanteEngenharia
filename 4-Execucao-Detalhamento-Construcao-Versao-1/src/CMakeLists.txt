@@ -19,6 +19,7 @@ set(PROJECT_SOURCES
     modulogradecompleta.ui
     quadrodehorarios.ui
     simulacaoplanejamentosem.ui
+    editardisciplinasaprovadas.ui
 
     telainicial.h
     acompanhamentodisciplina.h
@@ -28,6 +29,7 @@ set(PROJECT_SOURCES
     simulacaoplanejamentosem.h
     CAluno.h
     CDisciplinas.h
+    editardisciplinasaprovadas.h
 
     telainicial.cpp
     acompanhamentodisciplina.cpp
@@ -38,7 +40,7 @@ set(PROJECT_SOURCES
     CAluno.cpp
     CDisciplinas.cpp
     main.cpp
-
+    editardisciplinasaprovadas.cpp
 
 )
 
@@ -51,6 +53,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         simulacaoplanejamentosem.h simulacaoplanejamentosem.cpp simulacaoplanejamentosem.ui
         quadrodehorarios.h quadrodehorarios.cpp quadrodehorarios.ui
         editardisciplinasemcurso.h editardisciplinasemcurso.cpp editardisciplinasemcurso.ui
+        editardisciplinasaprovadas.h editardisciplinasaprovadas.cpp editardisciplinasaprovadas.ui
 
     )
 # Define target properties for Android with Qt 6 as:
