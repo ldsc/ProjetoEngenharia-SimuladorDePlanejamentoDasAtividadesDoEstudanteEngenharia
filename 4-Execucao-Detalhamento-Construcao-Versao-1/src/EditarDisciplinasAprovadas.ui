@@ -35,7 +35,7 @@
   <widget class="QLabel" name="labelTitulo">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>10</y>
      <width>641</width>
      <height>51</height>
@@ -52,7 +52,7 @@
     <string notr="true">color: white</string>
    </property>
    <property name="text">
-    <string>Marque as Disciplinas em Aprovadas</string>
+    <string>Marque as Disciplinas Aprovadas</string>
    </property>
   </widget>
   <widget class="QScrollArea" name="scrollArea">

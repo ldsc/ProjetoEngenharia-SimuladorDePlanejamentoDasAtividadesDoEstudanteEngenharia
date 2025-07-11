@@ -32,7 +32,7 @@ TelaInicial::TelaInicial(QWidget *parent)
 
     carregarInformacoesAluno();
 
-     if (!ui->scrollAreaWidgetContentsFaltas->layout()) {
+    if (!ui->scrollAreaWidgetContentsFaltas->layout()) {
         QVBoxLayout* layout = new QVBoxLayout();
         ui->scrollAreaWidgetContentsFaltas->setLayout(layout);
     }
