@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,11 +28,11 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -40,7 +40,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -54,7 +56,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -75,7 +77,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -97,11 +101,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -136,6 +145,8 @@ name "chap:Concepção"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -148,108 +159,85 @@ Concepção
 \end_layout
 
 \begin_layout Standard
-Apresenta-se neste capítulo do projeto de engenharia a concepção, a especificaçã
-o do sistema a ser modelado e desenvolvido.
+O presente projeto de engenharia tem como objetivo o desenvolvimento do PetroPlanner,
+ um sistema computacional voltado para o planejamento acadêmico de estudantes de Engenharia de Petróleo.
+ A ideia surgiu da necessidade recorrente de organizar a trajetória universitária,
+ visualizar disciplinas cursadas e pendentes,
+ acompanhar faltas,
+ simular futuros períodos letivos e organizar horários semanais de forma visual,
+ prática e intuitiva.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-#O que é especificação?
+Durante a graduação,
+ é comum que os alunos utilizem diversos métodos paralelos —
+ como planilhas,
+ anotações em papel ou ferramentas genéricas —
+ para acompanhar seu progresso acadêmico.
+ Tais métodos,
+ embora úteis,
+ são muitas vezes descentralizados,
+ manuais e sujeitos a erros.
+ O PetroPlanner busca resolver esses problemas através de uma aplicação personalizada,
+ pensada especificamente para a grade curricular da Universidade Estadual do Norte Fluminense Darcy Ribeiro (UENF),
+ mais precisamente da graduação oferecida no Laboratório de Engenharia e Exploração de Petróleo (LENEP).
 \end_layout
 
-\begin_layout Description
-Nota: os textos que explicam o que é especificação; diagrama caso uso; etc....;
- foram colocados apenas para que você se lembre do assunto; na versão final
- do seu trabalho estes texto explicativos feitos pelo professor devem ser
- retirados/apagados.
+\begin_layout Standard
+A concepção do sistema levou em consideração os seguintes aspectos:
 \end_layout
 
-\begin_layout Plain Layout
-A primeira etapa do desenvolvimento de um sistema é a concepção, a definição
- de requisitos a serem satisfeitos e a especificação do sistema (descrição
- do objetivo e o que se espera do sistema a ser desenvolvido, o contexto
- da aplicação).
+\begin_layout Itemize
+Centralização das informações do aluno (nome,
+ matrícula,
+ curso,
+ CRA,
+ disciplinas);
 \end_layout
 
-\begin_layout Plain Layout
-Na concepção ocorre a primeira reunião da equipe de desenvolvimento com
- os clientes, quando é feita a especificação do software.
- O cliente por meio das especificações e das entrevistas, passa para o analista
- idéias gerais de uso do sistema.
- Neste caso, o cliente é o professor da disciplina e os alunos os analistas/dese
-nvolvedores.
+\begin_layout Itemize
+Classificação automática das disciplinas em andamento,
+ aprovadas e pendentes,
+ com base em um arquivo padrão .txt;
 \end_layout
 
-\begin_layout Plain Layout
-O resultado da etapa de especificação é um conjunto formal de documentos
- e requisitos organizados pelo analista do sistema com apoio dos usuários.
- 
+\begin_layout Itemize
+Simulação de planejamento de semestres futuros,
+ respeitando os pré-requisitos do curso;
 \end_layout
 
-\begin_layout Plain Layout
-As 
-\shape italic
-especificações
-\shape default
- definem as características gerais do sistema, aquilo que ele deve realizar
- e não a forma como irá fazê-lo.
- Definem as necessidades a serem satisfeitas.
- Envolvem a seleção do tipo de interface, a forma de interação com o usuário;
- se vai ter uma ou múltiplas janelas; se o software vai imprimir seus resultados
-, o formato dos arquivos de disco; se vai existir um help e seu formato.
- Podem ser especificadas características de desempenho.
- O cliente define o que deve obrigatoriamente ser satisfeito e o que é opcional
- – isto é, tudo o que o sistema/software deve ser.
- 
+\begin_layout Itemize
+Visualização gráfica do quadro de horários,
+ com possibilidade de adicionar atividades extracurriculares;
 \end_layout
 
-\begin_layout Description
-Dica: a comunicação com o cliente pode ser melhorada com o uso de metáforas,
- como, por exemplo, a metáfora da "lixeira".
- 
+\begin_layout Itemize
+Acompanhamento contínuo de faltas e notas,
+ com alertas visuais sobre risco de reprovação;
 \end_layout
 
-\begin_layout Description
-NOTA
-\begin_inset space ~
-\end_inset
-
-IMPORTANTE:
-\begin_inset Separator latexpar
-\end_inset
-
-
+\begin_layout Itemize
+Interface amigável e acessível,
+ construída com Qt,
+ que visa facilitar o uso mesmo por alunos sem familiaridade com tecnologia.
 \end_layout
 
-\begin_deeper
-\begin_layout Plain Layout
-Como requisitos mínimos o software deve:
+\begin_layout Standard
+A especificação do sistema inclui funcionalidades integradas que dialogam com arquivos externos e respondem a interações do usuário em tempo real.
+ A modelagem foi feita com o auxílio de diagramas UML (casos de uso,
+ classes,
+ pacotes,
+ sequência,
+ estados,
+ atividades),
+ e a implementação utilizou C++ com Qt,
+ respeitando os princípios da programação orientada a objetos.
 \end_layout
 
-\begin_layout Plain Layout
-Solicitar dados ao usuário via terminal (teclado/tela);
-\end_layout
-
-\begin_layout Plain Layout
-Mostrar resultados na tela;
-\end_layout
-
-\begin_layout Plain Layout
-Ler dados de entrada e gerar dados de saída em arquivos de disco;
-\end_layout
-
-\begin_layout Plain Layout
-Plotar gráficos usando biblioteca externa CGnuplot (tem livro do gnuplot
- na biblioteca );
-\end_layout
-
-\end_deeper
-\end_inset
-
-
+\begin_layout Standard
+O projeto é modular,
+ expansível e pode futuramente ser adaptado para outras engenharias ou instituições,
+ bastando alterar a estrutura curricular cadastrada.
 \end_layout
 
 \begin_layout Section
@@ -285,7 +273,7 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+PetroPlanner
 \end_layout
 
 \end_inset
@@ -307,7 +295,14 @@ Componentes principais
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Menu lateral com ícones,
+ telas de cadastro,
+ campos de texto,
+ caixas de seleção,
+ tabelas interativas,
+ botões de ação (Salvar,
+ Editar,
+ Cancelar).
 \end_layout
 
 \end_inset
@@ -329,7 +324,9 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Auxiliar estudantes de Engenharia de Petróleo no planejamento acadêmico,
+ permitindo visualizar,
+ organizar e simular sua trajetória universitária.
 \end_layout
 
 \end_inset
@@ -352,6 +349,8 @@ name "sec:Especificação"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -362,6 +361,8 @@ Especificação
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -374,22 +375,90 @@ especificação
 \end_layout
 
 \begin_layout Standard
-Apresenta-se a seguir a especificação do software.
+O software PetroPlanner é uma ferramenta interativa desenvolvida para auxiliar estudantes de Engenharia de Petróleo no planejamento e acompanhamento de sua trajetória acadêmica,
+ com base na matriz curricular da UENF/LENEP.
 \end_layout
 
 \begin_layout Standard
-....coloque aqui a especificação...
+O sistema permite ao aluno visualizar a grade curricular completa,
+ classificada em disciplinas já cursadas,
+ em andamento e a serem cursadas.
+ A leitura dos dados é realizada a partir de um arquivo externo de texto,
+ que contém as principais informações acadêmicas do estudante,
+ como nome,
+ matrícula,
+ curso,
+ CRA,
+ período atual e histórico das disciplinas.
 \end_layout
 
 \begin_layout Standard
-...eventualmente coloque imagem ilustrativa geral, mostrando o que se pretente
- (primeira ideia) do software; normalmente esta figura já será mais detalhada
- que aquela apresentada no escopo...
+A interface permite que o aluno edite as disciplinas que está cursando,
+ organize seus horários semanalmente (disciplinas e atividades extras) por meio de um quadro de horários interativo,
+ e visualize alertas referentes ao número de faltas restantes em cada disciplina,
+ com base na carga horária semanal.
+\end_layout
+
+\begin_layout Standard
+O sistema também inclui um simulador de planejamento de semestres,
+ no qual o estudante pode montar cenários futuros respeitando os pré-requisitos entre disciplinas e agrupando visualmente os componentes curriculares por semestre.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ é possível acompanhar individualmente cada disciplina,
+ com detalhes como dias e horários de aula,
+ trabalhos,
+ provas e nível de dificuldade estimado.
+ Toda a navegação é realizada por meio de uma interface gráfica simples e intuitiva,
+ desenvolvida com a biblioteca Qt em C++.
+\end_layout
+
+\begin_layout Standard
+As principais funcionalidades são distribuídas entre os seguintes módulos:
+\end_layout
+
+\begin_layout Itemize
+Tela Inicial:
+ ponto de entrada e resumo geral do aluno.
+\end_layout
+
+\begin_layout Itemize
+Grade Curricular Completa:
+ mostra todas as disciplinas do curso com status visual.
+\end_layout
+
+\begin_layout Itemize
+Editor de Disciplinas em Curso:
+ permite o aluno selecionar manualmente o que está cursando.
+\end_layout
+
+\begin_layout Itemize
+Quadro de Horários:
+ ferramenta de organização semanal com disciplinas e atividades.
+\end_layout
+
+\begin_layout Itemize
+Acompanhamento de Disciplinas:
+ visualização de detalhes e controle de faltas.
+\end_layout
+
+\begin_layout Itemize
+Simulação de Planejamento:
+ ambiente para montar semestres futuros conforme pré-requisitos.
+\end_layout
+
+\begin_layout Standard
+O comportamento esperado do sistema é manter o histórico do aluno consistente com as alterações feitas na interface,
+ garantindo que todas as informações estejam devidamente salvas no arquivo de entrada/saída (InformacoesAluno.txt),
+ permitindo sua reutilização em futuras execuções.
 \end_layout
 
 \begin_layout Section
 Requisitos
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -408,13 +477,11 @@ name "sec:Requisitos"
  
 \end_layout
 
-\begin_layout Standard
-Apresenta-se nesta seção os requisitos funcionais e não funcionais.
-\end_layout
-
 \begin_layout Subsection
 Requisitos funcionais
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -435,16 +502,6 @@ name "subsec:Requisitos-funcionais"
 
 \begin_layout Standard
 Apresenta-se a seguir os requisitos funcionais
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque aqueles que fazem sentido para seu sistema
-\end_layout
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -469,8 +526,11 @@ RF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve conter uma base de dados xxx.
- O usuário deve ser capaz de xxx.
+O sistema deve ler os dados do aluno a partir de um arquivo texto (InformacoesAluno.txt) contendo nome,
+ matrícula,
+ curso,
+ período,
+ CRA e histórico de disciplinas.
 \end_layout
 
 \end_inset
@@ -509,7 +569,9 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário deverá ter liberdade para xxxx.
+O sistema deve classificar as disciplinas em três categorias:
+ Aprovadas,
+ Em Curso e Não Cursadas.
 \end_layout
 
 \end_inset
@@ -548,7 +610,8 @@ RF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-Deve permitir o carregamento de arquivos criados pelo software.
+O sistema deve permitir a visualização de uma grade curricular completa,
+ destacando as disciplinas já cursadas ou em andamento.
 \end_layout
 
 \end_inset
@@ -566,9 +629,6 @@ Deve permitir o carregamento de arquivos criados pelo software.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -590,7 +650,8 @@ RF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-Deve permitir a escolha da equação xxx.
+O sistema deve possibilitar o planejamento de semestres futuros,
+ respeitando os pré-requisitos entre disciplinas.
 \end_layout
 
 \end_inset
@@ -608,9 +669,6 @@ Deve permitir a escolha da equação xxx.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -632,7 +690,8 @@ RF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário deve ter tal liberdade para escolher xxx.
+O sistema deve exibir um quadro de horários interativo,
+ onde o aluno possa organizar suas disciplinas em andamento e atividades extracurriculares.
 \end_layout
 
 \end_inset
@@ -671,9 +730,10 @@ RF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá plotar seus resultados em um gráfico.
- O gráfico poderá ser salvo como imagem ou ter seus dados exportados como
- texto.
+O sistema deve permitir o acompanhamento individual de disciplinas,
+ exibindo faltas,
+ dias e horários,
+ trabalhos e provas.
 \end_layout
 
 \end_inset
@@ -691,11 +751,89 @@ O usuário poderá plotar seus resultados em um gráfico.
 \end_inset
 
 
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve alertar visualmente sobre o limite de faltas permitido em cada disciplina.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve permitir que o aluno edite as disciplinas em curso,
+ marcando quais está cursando no momento.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Requisitos não funcionais
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -736,7 +874,10 @@ RNF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Os cálculos devem ser feitos utilizando-se xxxx.
+O sistema deve possuir uma interface gráfica intuitiva,
+ amigável e acessível a usuários com conhecimentos básicos de informática,
+ utilizando botões autoexplicativos,
+ cores diferenciadas e organização clara por seções.
 \end_layout
 
 \end_inset
@@ -778,19 +919,8 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O programa deverá ser multi-plataforma, podendo ser executado em 
-\emph on
-Windows
-\emph default
-, 
-\emph on
-GNU/Linux
-\emph default
- ou 
-\emph on
-Mac
-\emph default
-.
+O sistema deve ser compatível com sistemas operacionais que suportem aplicações Qt5 ou Qt6,
+ como Windows e distribuições Linux.
 \end_layout
 
 \end_inset
@@ -804,113 +934,46 @@ Mac
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-#O que são os casos de uso
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Casos de uso
-\end_layout
-
-\end_inset
-
- do sistema – cenários
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Casos-de-uso-do-programa"
-
-\end_inset
-
-
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-Cenário
-\end_layout
-
-\end_inset
-
-?
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Apague esta seção!
-\end_layout
-
+\begin_inset VSpace bigskip
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
 \begin_layout Plain Layout
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-UML-blaha"
-literal "true"
+
+\series bold
+RNF-03
+\end_layout
 
 \end_inset
-
-, "um 
-\shape italic
-cenário
-\shape default
- pode ser um registro histórico de execução de um sistema real ou um experimento
- de execução teórica de um sistema proposto"
-\emph on
-.
-\end_layout
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-Um 
-\shape italic
-caso de uso
-\shape default
- descreve um ou mais cenários de uso do software, exemplos de uso, como
- o sistema interage com usuários externos (atores).
- Ademais, ele deve representar uma seqüência típica de uso do software (a
- execução de determinadas tarefas-padrão).
- Também deve representar as exceções, casos em que o usuário comete algum
- erro, em que o sistema não consegue realizar as tarefas solicitadas.
- 
+Todas as informações acadêmicas do aluno (disciplinas cursadas,
+ em andamento,
+ atividades,
+ faltas,
+ horários) devem ser armazenadas e lidas a partir de um arquivo externo (InformacoesAluno.txt),
+ garantindo persistência entre diferentes execuções do programa.
 \end_layout
-
-\begin_layout Plain Layout
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-EngSof-Pressman"
-literal "true"
 
 \end_inset
-
-, o caso de uso deve "produzir uma descrição clara e não ambígua de como
- o usuário final e o sistema interagem um com o outro".
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-EngSof-Pressman"
-literal "true"
-
-\end_inset
-
- diz ainda que "uma vez definidos o ator e seu caso de uso, uma hierarquia
- de comandos é identificada"
-\emph on
-.
-\end_layout
-
-\begin_layout Plain Layout
-Devem ser montados diversos diagramas de caso de uso.
- Por exemplo: para cada cenário, crie diagramas de seqüência listando os
- objetos e os diversos eventos que partem de um objeto para outro.
-\end_layout
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -918,12 +981,220 @@ Devem ser montados diversos diagramas de caso de uso.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-As Figuras devem ficar GRANDES; bem legíveis!! se necessário dar zoom!!
+
+\series bold
+RNF-04
 \end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve realizar a leitura do arquivo de entrada e o carregamento da interface principal em menos de 2 segundos,
+ mesmo com uma grade curricular extensa.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A estrutura do código-fonte deve estar organizada em módulos e classes (ex:
+ CAluno,
+ CDisciplinas,
+ TelaInicial),
+ facilitando a manutenção,
+ testes e futura expansão do sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Os dados devem ser apresentados de forma visualmente compreensível,
+ com destaque para disciplinas em andamento,
+ alertas de faltas e agrupamento por período letivo ou por tipo de atividade.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve garantir que informações críticas como pré-requisitos,
+ horários e número de faltas não sejam perdidas ou corrompidas durante o uso,
+ mesmo após alterações múltiplas feitas pelo usuário.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle" tabularwidth="14cm">
+<column alignment="center" valignment="top">
+<column alignment="block" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A interface deve se ajustar a diferentes tamanhos de tela,
+ permitindo boa experiência de uso em monitores com diferentes resoluções.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -940,6 +1211,8 @@ name "sec:Casos-de-uso"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -949,16 +1222,6 @@ Casos de uso
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -966,6 +1229,7 @@ A Tabela
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
+nolink "false"
 
 \end_inset
 
@@ -975,6 +1239,7 @@ reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
 \begin_layout Standard
 \begin_inset Float table
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1026,7 +1291,7 @@ Nome do caso de uso:
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Acessar Módulo de Grade Curricular
 \end_layout
 
 \end_inset
@@ -1046,7 +1311,9 @@ Resumo/descrição:
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Permite ao aluno visualizar sua grade curricular,
+ disciplinas em andamento,
+ e histórico de aprovações.
 \end_layout
 
 \end_inset
@@ -1066,7 +1333,26 @@ Etapas:
 \begin_inset Text
 
 \begin_layout Plain Layout
+1.
+ O aluno seleciona "Grade Curricular" no menu.
+\end_layout
 
+\begin_layout Plain Layout
+2.
+ O sistema carrega as disciplinas (em andamento,
+ aprovadas,
+ pendentes).
+\end_layout
+
+\begin_layout Plain Layout
+3.
+ O aluno filtra por período ou ciclo (opcional).
+\end_layout
+
+\begin_layout Plain Layout
+4.
+ O sistema exibe a grade com cores indicativas (ex:
+ vermelho para disciplinas com pré-requisitos não atendidos).
 \end_layout
 
 \end_inset
@@ -1086,7 +1372,15 @@ Cenários alternativos:
 \begin_inset Text
 
 \begin_layout Plain Layout
+1.
+ Dados não carregados:
+ Sistema exibe mensagem de erro e sugere recarregar.
+\end_layout
 
+\begin_layout Plain Layout
+2.
+ Disciplinas conflitantes:
+ Sistema alerta sobre horários sobrepostos.
 \end_layout
 
 \end_inset
@@ -1105,7 +1399,8 @@ Cenários alternativos:
 \end_layout
 
 \begin_layout Subsection
-Diagrama de caso de uso geral
+Diagrama de Casos de Uso:
+ Simular Notas das Disciplinas em Andamento
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de caso de uso geral"
@@ -1113,64 +1408,41 @@ name "subsec: Diagrama de caso de uso geral"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-....coloque aqui caso de uso geral, descrição + figura(s)...
-\end_layout
-
-\begin_layout Standard
-exemplo...
-\end_layout
-
-\begin_layout Standard
-O diagrama de caso de uso geral da Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-caso-uso-geral"
-
-\end_inset
-
- mostra o usuário acessando os sistemas de ajuda do software, calculando
- a área de uma função ou analisando resultados.
- 
+Este diagrama ilustra como o Aluno interage com o Módulo de Acompanhamento de Disciplinas do sistema PetroPlanner.
+ Ele detalha as funcionalidades que permitem ao aluno visualizar suas disciplinas em andamento,
+ acessar os detalhes de notas e faltas de uma disciplina específica,
+ simular notas para projeções,
+ inserir notas reais quando recebidas,
+ acompanhar a média final da disciplina,
+ registrar e atualizar faltas,
+ e finalmente,
+ finalizar uma disciplina para que ela seja removida da lista de disciplinas em andamento.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeCasoUso-Geral.png
-	lyxscale 50
+	filename C:/Users/abiga/Downloads/10. Diagrama de casos de uso 1 Simular Notas das Disciplinas em Andamento.png
 	width 100text%
-	height 80theight%
-	keepAspectRatio
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso – Caso de uso geral
+Diagrama de Casos de Uso:
+ Simular Notas das Disciplinas em Andamento
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-caso-uso-geral"
@@ -1191,7 +1463,8 @@ name "cap:Diagrama-caso-uso-geral"
 \end_layout
 
 \begin_layout Subsection
-Diagrama de caso de uso específico
+Diagrama de Casos de Uso:
+ Realizar Planejamento Semestral
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de caso de uso específico"
@@ -1212,47 +1485,21 @@ do software
 \end_layout
 
 \begin_layout Standard
-....coloque aqui casos de uso específicos, descrição + figura(s)...
-\end_layout
-
-\begin_layout Standard
-exemplo...O caso de uso Calcular área função descrito na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-caso-uso-geral"
-
-\end_inset
-
- e na Tabela 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
-
-\end_inset
-
- é detalhado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
-
-\end_inset
-
-.
- O usuário criará um objeto função matemática, um objeto para sua integração;
- em seguida, definirá o intervalo de integração, calculará a área da função
- criada e,  por fim, analisará os resultados (eventualmente gerará gráficos
- com os resultados obtidos utilizando um sistema externo, como o software
- 
-\emph on
-gnuplot
-\emph default
-).
- Este diagrama de caso de uso ilustra as etapas a serem executadas pelo
- usuário ou sistema, a iteração do usuário com o sistema.
+Este diagrama descreve como o Aluno utiliza o Módulo de Simulação de Planejamento Semestral do sistema PetroPlanner.
+ Ele mostra como o aluno acessa este módulo,
+ visualiza as disciplinas que já cursou ou está cursando,
+ explora as disciplinas disponíveis para os próximos semestres (considerando pré-requisitos),
+ seleciona e marca as disciplinas que deseja cursar,
+ avança a simulação semestre a semestre,
+ e,
+ por fim,
+ salva o planejamento semestral simulado.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -1260,19 +1507,17 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeCasoDeUso-Especifico-AnaliseDosResultados.png
+	filename C:/Users/abiga/Downloads/11. Diagrama de Casos de Uso 2  Realizar Planejamento Semestral.png
 	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Título
+Diagrama de Casos de Uso:
+ Realizar Planejamento Semestral
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
@@ -1292,20 +1537,53 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 
 \end_layout
 
-\begin_layout Description
-Nota: 
-\begin_inset space ~
+\begin_layout Standard
+
+\series bold
+Diagrama de Casos de Uso:
+ Montar Quadro de Horários
+\end_layout
+
+\begin_layout Standard
+Este diagrama mostra todo o processo de como o aluno pode visualizar,
+ planejar,
+ e personalizar seu quadro de horários no semestre atual,
+ utilizando tanto a interface gráfica quanto,
+ opcionalmente,
+ um arquivo de texto para a entrada de dados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/abiga/Downloads/12. Diagrama de Casos de Uso 3 Montar Quadro de Horários.png
+	width 100text%
+
 \end_inset
 
 
-\begin_inset Newline newline
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Casos de Uso:
+ Montar Quadro de Horários
+\end_layout
+
 \end_inset
 
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

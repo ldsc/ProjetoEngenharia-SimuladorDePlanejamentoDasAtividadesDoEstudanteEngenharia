@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,11 +27,11 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -39,7 +39,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -53,7 +55,7 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +76,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +100,16 @@
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -117,84 +126,80 @@ name "cha:Introdução"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Introdução}
-\backslash
-pagenumbering{arabic}
-\end_layout
-
-\end_inset
-
-
+Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver um projeto de engenharia;
+ Neste trabalho,
+ apresenta-se a pré-proposta de um projeto em engenharia de software aplicado a solução de um problema específico da engenharia de petróleo.
+ 
 \end_layout
 
 \begin_layout Standard
+Apresenta-se aqui a proposta de desenvolvimento do software SimuladorDePlanejamentoDasAtividadesDoEstudanteEngenharia,
+ software 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
-
-\backslash
-lfoot{SeuNomeAqui} 
-\backslash
-rfoot{
-\backslash
-today}
+"
 \end_layout
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
+PetroPlanner
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
-Substitua "SeuNomeAqui" por seu nome e sobrenome
+
+"
 \end_layout
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-No presente projeto de engenharia desenvolve-se o software XXXX, um software
- aplicado a engenharia de petróleo e que utiliza o paradigma da orientação
- a objetos.
+.
+ 
 \end_layout
 
 \begin_layout Itemize
-O primeiro parágrafo da introdução pode ser um super resumo do trabalho.
- A ideia é fazer um resumo do resumo.
+Um software aplicado que visa auxiliar estudantes do curso de engenharia de petróleo na organização da sua grade curricular,levando em consideração o nível de dificuldade das disciplinas obrigatórias,horas gastas semanais para o estudo de cada uma delas,
+ baseado em pesquisas com ex-alunos,
+ optativas a serem feitas,
+ atividades complementares - AAC,
+ atividades de extensão,
+ estágio e TCC - Trabalho de Conclusão de Curso.
 \end_layout
 
 \begin_layout Itemize
-ESTE MODELO TEM TEXTOS EXPLICATVOS QUE DEVEM SER ELIMINADOS DA VERSÃO FINAL.
- O OBJETIVO DE COLOCAR AS EXPLICAÇÕES É FACILITAR O ENTENDIMENTO DO QUE
- DEVE ENTRAR EM CADA SEÇÃO.
+O 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+PetroPlanner
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ será um software de apoio ao estudante de Engenharia de Petróleo,
+ desenvolvido em C++23 com Qt 6.6 (ou superior),
+ utilizando Git/GitHub para controle de versão,
+ CMake para gerenciamento de compilação e bibliotecas utilitárias para gráficos,
+ agenda e estatística.
+ A metodologia de desenvolvimento será Scrum,
+ com dois ciclos:
+ ciclo 1 (funcionalidades principais sem interface gráfica) e ciclo 2 (implementação da interface gráfica).
 \end_layout
 
 \begin_layout Section
@@ -209,30 +214,49 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação
- de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver
- um projeto em engenharia; Neste trabalho, desenvolve-se um projeto em engenhari
-a de software aplicado a solução de um problema específico de engenharia
- de petróleo.
- Trabalhando-se com todo ciclo de um projeto, isto é, especificação, elaboração,
- análise, projeto, desenvolvimento, teste e documentação.
- 
+O PetroPlanner é um software acadêmico projetado para auxiliar estudantes de Engenharia de Petróleo na organização eficiente da sua trajetória universitária.
+ O sistema visa reduzir a insegurança na escolha de disciplinas,
+ prevenir sobrecargas e melhorar a tomada de decisão com base em dados personalizados do aluno.
+\end_layout
+
+\begin_layout Standard
+Diferentemente de sistemas genéricos de gestão acadêmica,
+ o PetroPlanner oferece funcionalidades direcionadas à realidade de cursos de engenharia,
+ como:
 \end_layout
 
 \begin_layout Itemize
-Definir o escopo do projeto de engenharia, a ideia geral do software, acentuar
- sua importância, usos e aplicações em engenharia [de petróleo].
+Simulação de planejamento semestral com checagem automática de pré-requisitos;
 \end_layout
 
 \begin_layout Itemize
-Delimitar o assunto.
- Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros softwares.
+Estimativa de notas necessárias para aprovação com base em pesos e avaliações;
 \end_layout
 
 \begin_layout Itemize
-Neste capítulo podem entrar figuras que ilustram a ideia geral, o detalhamento
- será feito depois, na elaboração.
+Visualização de impacto do adiamento de disciplinas na grade curricular;
+\end_layout
+
+\begin_layout Itemize
+Análise de carga horária semanal,
+ considerando aulas e atividades extracurriculares;
+\end_layout
+
+\begin_layout Itemize
+Distribuição equilibrada de disciplinas por dificuldade para evitar períodos sobrecarregados;
+\end_layout
+
+\begin_layout Itemize
+Controle visual de faltas e acompanhamento de progresso acadêmico.
+\end_layout
+
+\begin_layout Standard
+O escopo do sistema abrange,
+ portanto,
+ o planejamento,
+ a simulação,
+ o acompanhamento e a visualização do progresso curricular,
+ oferecendo ao aluno autonomia e clareza em cada etapa de sua formação.
 \end_layout
 
 \begin_layout Section
@@ -260,14 +284,10 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia, incluindo vínculos
- com engenharia de petróleo e com modelagem matemática computacional (ideia
- de lógica, algoritmos,...).
-\end_layout
-
-\begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma
- clara, direta, objetiva, o objetivo geral do software].
+Desenvolver um software interativo de apoio acadêmico para estudantes de Engenharia de Petróleo,
+ com foco em planejamento de disciplinas,
+ análise de desempenho e organização da trajetória curricular de forma eficiente,
+ visual e personalizada.
 \end_layout
 
 \end_deeper
@@ -281,35 +301,50 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema.
+Representar matematicamente as regras e restrições curriculares do curso (pré-requisitos,
+ carga horária,
+ CR mínimo,
+ etc.);
 \end_layout
 
 \begin_layout Itemize
-Modelagem estática do software (diagramas de caso de uso, de pacotes, de
- classes).
+Desenvolver diagrama de casos de uso,
+ diagrama de pacotes e diagrama de classes para estruturar o sistema em camadas lógicas;
 \end_layout
 
 \begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificand
-o os fluxos de processamento).
+Implementar algoritmos para:
+ Simulação de CR final com base em notas parciais;
+ Cálculo da nota mínima necessária para aprovação e Análise de impacto do adiamento de disciplinas;
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
+Criar um módulo de planejamento que:
+ Filtra automaticamente disciplinas elegíveis com base nos pré-requisitos e Auxilia na escolha estratégica de disciplinas para equilíbrio entre dificuldade e carga horária;
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara, direta, objetiva, cada objetivo específic
-o, cada parte do software].
+Desenvolver um módulo para controle de faltas,
+ exibindo o número de faltas registradas e limite permitido;
 \end_layout
 
 \begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
+Construir um quadro de horários dinâmico,
+ baseado nas disciplinas em andamento e atividades extras;
 \end_layout
 
 \begin_layout Itemize
-Implementar manual simplificado de uso do software.
+Garantir o cálculo da carga horária semanal,
+ alertando o aluno caso esteja abaixo do mínimo exigido (16h/semana);
+\end_layout
+
+\begin_layout Itemize
+Criar interface gráfica intuitiva e responsiva utilizando Qt Framework;
+\end_layout
+
+\begin_layout Itemize
+Documentar e estruturar um manual simplificado de uso do software,
+ com foco didático.
 \end_layout
 
 \end_deeper
@@ -323,6 +358,8 @@ name "sec:Metodologia-utilizada"
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -335,44 +372,159 @@ Metodologia utilizada
 \end_layout
 
 \begin_layout Standard
-O software a ser desenvolvido utiliza a metodologia de engenharia de software
- apresentada pelo Prof.
- André Bueno na disciplina de programação e ilustrado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Etapas para o desenvolvimento do software"
 
-\end_inset
+\series bold
+Modelagem Matemática
+\end_layout
 
-.
- Note que o 
-\begin_inset Quotes eld
-\end_inset
+\begin_layout Itemize
+O problema foi estruturado como um sistema sujeito a restrições,
+ como pré-requisitos,
+ carga mínima semanal e exigências complementares (extensão,
+ TCC,
+ estágio etc.).
+\end_layout
 
-Ciclo de Concepção e Análise
-\begin_inset Quotes erd
-\end_inset
-
- é composto por diversas partes representadas neste trabalho em diferentes
- capítulos.
- Os ciclos de planejamento/detalhamento tem seu próprio capítulo, assim
- como o ciclo de construção - implementação.
+\begin_layout Itemize
+Foram definidos parâmetros de entrada,
+ regras de validação e limitações operacionais.
 \end_layout
 
 \begin_layout Standard
-Esta metodologia é utilizada nas disciplinas:
+
+\series bold
+Prototipagem e MVPs
 \end_layout
 
 \begin_layout Itemize
-LEP01447 : Programação Orientada a Objeto em C++.
+Cada versão liberada (v0.1,
+ v0.3,
+ v0.7...) corresponde a um produto mínimo viável (MVP),
+ permitindo entregas parciais e incrementais.
 \end_layout
 
 \begin_layout Itemize
-LEP01446 : Programação Prática.
+A arquitetura do sistema foi pensada em módulos independentes:
+ grade curricular,
+ acompanhamento de disciplinas,
+ simulador de planejamento,
+ quadro de horários,
+ entre outros.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Programação Orientada a Objetos
+\end_layout
+
+\begin_layout Itemize
+Implementada em C++ utilizando o framework Qt para interface gráfica.
+\end_layout
+
+\begin_layout Itemize
+A estrutura modular utilizou classes como CAluno,
+ CDisciplinas,
+ TelaInicial,
+ ModuloGradeCompleta,
+ entre outras.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+UML e Engenharia de Requisitos
+\end_layout
+
+\begin_layout Standard
+Foram elaborados diagramas UML para suportar a estruturação e organização do software:
+\end_layout
+
+\begin_layout Itemize
+Casos de uso
+\end_layout
+
+\begin_layout Itemize
+Pacotes e camadas
+\end_layout
+
+\begin_layout Itemize
+Classes e relações
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Simulação Computacional
+\end_layout
+
+\begin_layout Standard
+Simulação de diferentes trajetórias acadêmicas com algoritmos que:
+\end_layout
+
+\begin_layout Itemize
+Avaliam impacto de adiamento de disciplinas,
+\end_layout
+
+\begin_layout Itemize
+Calculam CR projetado,
+\end_layout
+
+\begin_layout Itemize
+Sugerem combinações eficientes de matérias por semestre.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Validação com Usuários Reais
+\end_layout
+
+\begin_layout Itemize
+Foram realizados testes com estudantes reais utilizando seus próprios históricos acadêmicos ou perfis simulados.
+\end_layout
+
+\begin_layout Itemize
+Os resultados foram analisados qualitativamente,
+ com feedback direto dos usuários.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Documentação Técnica
+\end_layout
+
+\begin_layout Standard
+Toda a construção,
+ testes,
+ erros e melhorias foram documentados.
+\end_layout
+
+\begin_layout Standard
+Foram gerados:
+\end_layout
+
+\begin_layout Itemize
+Diagramas,
+\end_layout
+
+\begin_layout Itemize
+Prints de interface,
+\end_layout
+
+\begin_layout Itemize
+Manual técnico,
+\end_layout
+
+\begin_layout Itemize
+Manual do usuário.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -383,8 +535,8 @@ status open
 	filename imagens/EngenhariaSoftware-Geral.png
 	lyxscale 25
 	width 100text%
-	height 85theight%
 	keepAspectRatio
+	special height=0.85\textheight
 
 \end_inset
 

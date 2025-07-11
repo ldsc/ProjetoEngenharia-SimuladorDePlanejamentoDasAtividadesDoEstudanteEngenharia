@@ -233,7 +233,7 @@ Diante dessa necessidade,
 \end_layout
 
 \begin_layout Standard
-O PetroPlanner será desenvolvido em C++23 com a interface gráfica baseada no Qt 6.6 (ou superior),
+O PetroPlanner será desenvolvido em C++23 com a interface gráfica baseada no Qt 6.10.0,
  utilizando SQLite para armazenamento de dados e bibliotecas específicas para gráficos e estatísticas.
  O diferencial desse projeto está na personalização do planejamento acadêmico para estudantes de engenharia,
  levando em conta a complexidade e carga horária das disciplinas,
@@ -403,7 +403,7 @@ To address this issue,
 
 \begin_layout Standard
 The system will be developed in C++23,
- using a Qt 6.6 (or later) graphical interface,
+ using a Qt 6.6 graphical interface,
  SQLite for data storage,
  and specific libraries for charts and statistics.
  The project's main strength lies in its tailored approach to academic planning for engineering students,

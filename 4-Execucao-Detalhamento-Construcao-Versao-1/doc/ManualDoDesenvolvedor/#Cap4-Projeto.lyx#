@@ -2214,11 +2214,94 @@ Disciplinas correlacionadas
 \begin_inset Text
 
 \begin_layout Plain Layout
-[ ] estatística [X] cálculo numérico [X]
+[ ] estatística
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+[ ] Básica:
+ média,
+ desvio padrão,
+ histogramas,
+ números pseudo randômicos.
+ Estatística descritiva.
+ Probabilidades.
+ Variáveis aleatórias Unidimensionais.
+ Função de variáveis aleatórias.
+ Variáveis aleatórias de duas ou mais dimensões.
+ Caracterização de variáveis aleatórias.
+ Variáveis aleatórias discretas e contínuas.
+ Teorema central do limite.
+ Amostragem
+\end_layout
+
+\begin_layout Itemize
+[ ] Intermediária:
+ Estimação.
+ Teste de hipótese.
+ Correlação e regressão.
+ Distribuições (normal.
+ T-Student,
+ X-quadrado)
+\end_layout
+
+\end_inset
+
+ [X] cálculo numérico 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+[ ] Básico:
+ erros,
+ solver de função (iteração de ponto fixo,
+ método das cordas,
+ Newton-Raphson),
+ integral numérica(trapésio,
+ Simpson,
+ Gauss),
+ interpolação(interpolação polinomial,
+ Lagrange,
+ Newton,
+ funções 
+\emph on
+spline
+\emph default
+),
+ ajuste de curvas(ajuste por polinômios,
+ mínimos quadrados) .
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[ ] Intermediário:
+ matrizes e sistemas de equações lineares(solver de sistema de equações - TDMA,
+ eliminação gauss,
+ fatoração LU),
+ solução numérica de equações diferenciais(método de Euler,
+ método de Taylor e Runge-Kutta)
+\end_layout
+
+\end_deeper
+\end_inset
+
+ [X]
 \family typewriter
  
 \family default
-modelamento numérico  [X] análise e processamento de imagens
+modelamento numérico 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[ ] Volume de controle (equações de balanço).
+ [ ] Diferenças finitas.
+ [ ] Elementos finitos
+\end_layout
+
+\end_inset
+
+ [X] análise e processamento de imagens
 \end_layout
 
 \end_inset

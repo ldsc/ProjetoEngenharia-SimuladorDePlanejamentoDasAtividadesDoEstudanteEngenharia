@@ -6,86 +6,28 @@
 \origin unavailable
 \textclass extbook
 \begin_preamble
-%-----------------------------------------------------------------
-% Para incluir formatações especificas para apresentações
-%-----------------------------------------------------------------
-%https://tex.stackexchange.com/questions/5894/latex-conditional-expression
-% Abaixo inserimos o pacote etoolbox que permite a gestão de if..else
-\usepackage{etoolbox}
-% Cria o flag
-\newtoggle{FormatoApresentacaoTRUE}
-\newtoggle{IncluirBibliografiaNoCapituloTRUE}
-%Seta o flag - deixe true se for para gerar apresentação de aula e false para formato livro
-%\toggletrue{FormatoApresentacaoTRUE}
-\togglefalse{FormatoApresentacaoTRUE}
-%\toggletrue{IncluirBibliografiaNoCapituloTRUE}
-\togglefalse{IncluirBibliografiaNoCapituloTRUE}
 
-% Para usar no meio dos arquivos do lyx crie um comando latex e cole o texto abaixo
-%\iftoggle{FormatoApresentacaoTRUE}{..verdadeiro..}{..falso..}
-%\iftoggle{FormatoApresentacaoTRUE}{\newpage}{}
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
 
-%---------------------------------------------------------------
-% Para adicionar/excluir uma seção inteira
-%---------------------------------------------------------------
-%https://tex.stackexchange.com/questions/193295/lyx-conditional-sections
-% Abaixo criamos um novo if
-\newif\ifIncluirSecaoProgramacaoAvancada
-%\FormatoApresentacaoWidefalse
-\IncluirSecaoProgramacaoAvancadatrue
-% Para usar
-% \ifIncluirSecaoProgramacaoAvancada no início do blobo
-% \fi para finalizar o bloco
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
 
-%---------------------------------------------------------------
-%GERAL
-%---------------------------------------------------------------
-\usepackage{verbatim}
-%%\usepackage{algorithm}
-\usepackage{fancyvrb}
-\usepackage{keyval} 
-\usepackage{indentfirst}
-%\usepackage{color}
-\usepackage{xcolor}
+% Para uso de listagens de código
+\usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-\definecolor{BLACK}{rgb}{0,0,0}%   rgb color model
-\definecolor{BLUE}{rgb}{0,0,1}%   rgb color model
-
-%Informa que vai usar o pacote listings, disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
-
-%Define um novo comando, chamado lst
-%observe que lst chama o comando  lstinputlisting.
-\newcommand{\lst}[2]{%
-    \noindent\rule[-1ex]{\textwidth}{0.3mm}\vspace{-1ex}
-    \lstinputlisting[caption={#2},label={#1},stringspaces=false,frame={tb},lineskip=-1pt,extendedchars=true,%
-    basicstyle=\footnotesize\tt,labelstep=1,labelstyle=\tiny,indent=2em,language=Java,breaklines]{#1}
-    \vspace{1ex}%
-}
-
-%\listfiles
-%\usepackage[]{hyperref}
-
-%\usepackage{mathptmx}  % instead of package times
-
-%\usepackage[scaled=0.9]{helvet} % or [scaled=0.92], if you like
-
-%% Pacote de citações para formato abnt
-%%\usepackage[num]{abntcite}
-%%\usepackage[alf]{abntcite}
-
-%%\usepackage[cam,a4,center]{crop}
-%% a4 é o tamanho físico
-%% center é para centralizar
-%% cam inclui quatro marcas diferentes
-
-%%\usepackage[cam,width=20truecm,height=28truecm,center]{crop}
-%\usepackage[cam,width=18truecm,height=26truecm,center]{crop}
-
-%\noindent
 \end_preamble
 \use_default_options false
-\master 3-Projeto-ModelosDeEngenharia-Master.lyx
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -299,76 +241,10 @@ O projeto é modular,
 \end_layout
 
 \begin_layout Section
-Metodologia
+Nome do sistema/produto
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Metodologia"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig: Metodologia utilizada no desenvolvimento do sistema"
-nolink "false"
-
-\end_inset
-
- apresenta a metodologia a ser utilizada no desenvolvimento do sistema.
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../../imagens/ProjetoEngenharia-Etapas-Geral-wide.png
-	lyxscale 50
-	width 100text%
-	keepAspectRatio
-	special height=0.8\textheight
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Metodologia utilizada no desenvolvimento do sistema
-\begin_inset CommandInset label
-LatexCommand label
-name "fig: Metodologia utilizada no desenvolvimento do sistema"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Nome do Sistema/Produto
-\begin_inset CommandInset label
-LatexCommand label
-name "sec: Nome do sistema/produto"
+name "sec:2.2 Nome do sistema/produto"
 
 \end_inset
 
@@ -397,7 +273,7 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-PetroPlanner 
+PetroPlanner
 \end_layout
 
 \end_inset
@@ -947,6 +823,10 @@ O sistema deve permitir que o aluno edite as disciplinas em curso,
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -994,7 +874,7 @@ RNF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve ser desenvolvido em C++ com uso do framework Qt para a interface gráfica.
+Os cálculos devem ser feitos utilizando-se xxxx.
 \end_layout
 
 \end_inset
@@ -1036,51 +916,21 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-A interface deve seguir padrões de usabilidade,
- com ícones intuitivos e navegação fluida.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-RNF-02
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-A interface deve seguir padrões de usabilidade,
- com ícones intuitivos e navegação fluida.
+O programa deverá ser multi-plataforma,
+ podendo ser executado em 
+\emph on
+Windows
+\emph default
+,
+ 
+\emph on
+GNU/Linux
+\emph default
+ ou 
+\emph on
+Mac
+\emph default
+.
 \end_layout
 
 \end_inset
@@ -1094,7 +944,7 @@ A interface deve seguir padrões de usabilidade,
 \end_layout
 
 \begin_layout Section
-Casos de Uso
+Casos de uso
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Casos-de-uso"
@@ -1114,16 +964,6 @@ Casos de uso
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1193,7 +1033,7 @@ Nome do caso de uso:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Acessar Módulo de Grade Curricular
+
 \end_layout
 
 \end_inset
@@ -1213,9 +1053,7 @@ Resumo/descrição:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Permite ao aluno visualizar sua grade curricular,
- disciplinas em andamento,
- e histórico de aprovações.
+
 \end_layout
 
 \end_inset
@@ -1235,26 +1073,7 @@ Etapas:
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
- O aluno seleciona "Grade Curricular" no menu.
-\end_layout
 
-\begin_layout Plain Layout
-2.
- O sistema carrega as disciplinas (em andamento,
- aprovadas,
- pendentes).
-\end_layout
-
-\begin_layout Plain Layout
-3.
- O aluno filtra por período ou ciclo (opcional).
-\end_layout
-
-\begin_layout Plain Layout
-4.
- O sistema exibe a grade com cores indicativas (ex:
- vermelho para disciplinas com pré-requisitos não atendidos).
 \end_layout
 
 \end_inset
@@ -1274,15 +1093,7 @@ Cenários alternativos:
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.
- Dados não carregados:
- Sistema exibe mensagem de erro e sugere recarregar.
-\end_layout
 
-\begin_layout Plain Layout
-2.
- Disciplinas conflitantes:
- Sistema alerta sobre horários sobrepostos.
 \end_layout
 
 \end_inset
@@ -1301,8 +1112,7 @@ Cenários alternativos:
 \end_layout
 
 \begin_layout Subsection
-Diagrama de Casos de Uso:
- Simular Notas das Disciplinas em Andamento
+Diagrama de caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de caso de uso geral"
@@ -1310,28 +1120,29 @@ name "subsec: Diagrama de caso de uso geral"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Este diagrama ilustra como o Aluno interage com o Módulo de Acompanhamento de Disciplinas do sistema PetroPlanner.
- Ele detalha as funcionalidades que permitem ao aluno visualizar suas disciplinas em andamento,
- acessar os detalhes de notas e faltas de uma disciplina específica,
- simular notas para projeções,
- inserir notas reais quando recebidas,
- acompanhar a média final da disciplina,
- registrar e atualizar faltas,
- e finalmente,
- finalizar uma disciplina para que ela seja removida da lista de disciplinas em andamento.
+....coloque aqui caso de uso geral,
+ descrição + figura(s)...
+\end_layout
+
+\begin_layout Standard
+exemplo...
+\end_layout
+
+\begin_layout Standard
+O diagrama de caso de uso geral da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
+nolink "false"
+
+\end_inset
+
+ mostra o usuário acessando os sistemas de ajuda do software,
+ calculando a área de uma função ou analisando resultados.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1343,18 +1154,24 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename C:/Users/abiga/Downloads/10. Diagrama de casos de uso 1 Simular Notas das Disciplinas em Andamento.png
+	filename imagens/DiagramaDeCasoUso-Geral.png
+	lyxscale 50
 	width 100text%
+	keepAspectRatio
+	special height=0.8\textheight
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de Casos de Uso:
- Simular Notas das Disciplinas em Andamento
+Diagrama de caso de uso – Caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-caso-uso-geral"
@@ -1375,8 +1192,7 @@ name "cap:Diagrama-caso-uso-geral"
 \end_layout
 
 \begin_layout Subsection
-Diagrama de Casos de Uso:
- Realizar Planejamento Semestral
+Diagrama de caso de uso específico
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Diagrama de caso de uso específico"
@@ -1397,15 +1213,50 @@ do software
 \end_layout
 
 \begin_layout Standard
-Este diagrama descreve como o Aluno utiliza o Módulo de Simulação de Planejamento Semestral do sistema PetroPlanner.
- Ele mostra como o aluno acessa este módulo,
- visualiza as disciplinas que já cursou ou está cursando,
- explora as disciplinas disponíveis para os próximos semestres (considerando pré-requisitos),
- seleciona e marca as disciplinas que deseja cursar,
- avança a simulação semestre a semestre,
- e,
- por fim,
- salva o planejamento semestral simulado.
+....coloque aqui casos de uso específicos,
+ descrição + figura(s)...
+\end_layout
+
+\begin_layout Standard
+exemplo...O caso de uso Calcular área função descrito na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-caso-uso-geral"
+nolink "false"
+
+\end_inset
+
+ e na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
+nolink "false"
+
+\end_inset
+
+ é detalhado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+nolink "false"
+
+\end_inset
+
+.
+ O usuário criará um objeto função matemática,
+ um objeto para sua integração;
+ em seguida,
+ definirá o intervalo de integração,
+ calculará a área da função criada e,
+  por fim,
+ analisará os resultados (eventualmente gerará gráficos com os resultados obtidos utilizando um sistema externo,
+ como o software 
+\emph on
+gnuplot
+\emph default
+).
+ Este diagrama de caso de uso ilustra as etapas a serem executadas pelo usuário ou sistema,
+ a iteração do usuário com o sistema.
 \end_layout
 
 \begin_layout Standard
@@ -1419,17 +1270,19 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/abiga/Downloads/11. Diagrama de Casos de Uso 2  Realizar Planejamento Semestral.png
+	filename imagens/DiagramaDeCasoDeUso-Especifico-AnaliseDosResultados.png
 	width 100text%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de Casos de Uso:
- Realizar Planejamento Semestral
+Diagrama de caso de uso específico – Título
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
@@ -1449,61 +1302,25 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-Diagrama de Casos de Uso:
- Montar Quadro de Horários
-\end_layout
-
-\begin_layout Standard
-Este diagrama mostra todo o processo de como o aluno pode visualizar,
- planejar,
- e personalizar seu quadro de horários no semestre atual,
- utilizando tanto a interface gráfica quanto,
- opcionalmente,
- um arquivo de texto para a entrada de dados.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename C:/Users/abiga/Downloads/12. Diagrama de Casos de Uso 3 Montar Quadro de Horários.png
-	width 100text%
-
+\begin_layout Description
+Nota:
+ 
+\begin_inset space ~
 \end_inset
 
 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diagrama de Casos de Uso:
- Montar Quadro de Horários
-\end_layout
-
+\begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+Não perca de vista a visão do todo;
+ do projeto de engenharia como um todo.
+ Cada capítulo,
+ cada seção,
+ cada parágrafo deve se encaixar.
+ Este é um diferencial fundamental do engenheiro em relação ao técnico,
+ a capacidade de desenvolver projetos,
+ de ver o todo e suas diferentes partes,
+ de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body
